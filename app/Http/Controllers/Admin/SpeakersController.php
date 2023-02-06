@@ -1,0 +1,121 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\Speaker;
+
+class SpeakersController extends Controller
+{
+    public function index()
+    {
+        $speakers = Speaker::paginate(10);
+
+        return view('admin.speakers.index', compact('speakers'));
+    }
+
+
+    public function create()
+    {
+        return view('admin.speakers.create');
+    }
+    public function store(Request $request)
+    {
+
+        $image_in_db = NULL;
+        if( $request->has('image') )
+        {
+            $request->validate([
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            ]);
+
+            $path = public_path().'/uploads/speakers';
+            $image = request('image');
+            $image_name = time().request('image')->getClientOriginalName();
+            $image->move($path , $image_name);
+            $image_in_db = '/uploads/speakers/'.$image_name;
+        }
+
+        Speaker::create([
+
+           'name'           => $request->name,
+           'email'          => $request->email,
+           'phone'          => $request->phone,
+           'description'    => $request->description,
+           'address'        => $request->address,
+           'website'        => $request->website,
+           'interview'      => $request->interview,
+           'twitter'        => $request->twitter,
+           'behance'        => $request->behance,
+           'linkedin'       => $request->linkedin,
+           'vimeo'          => $request->vimeo,
+           'instagram'      => $request->instagram,
+           'image'          => $image_in_db,
+
+        ]);
+        return redirect()->route('admin.speakers.index')->with('Successfully' , 'Slider Added Successfully');
+    }
+
+    public function show($id)
+    {
+        $speaker = Speaker::findOrFail($id);
+        return view('admin.speakers.show', compact('speaker'));
+    }
+
+
+    public function edit($id)
+    {
+        $speaker = Speaker::findOrFail($id);
+        return view('admin.speakers.edit', compact('speaker'));
+
+    }
+
+
+    public function update(Request $request, $id)
+    {
+
+        $speaker = Speaker::findOrFail($id);
+
+
+        $image_in_db = NULL;
+        if( $request->has('image') )
+        {
+            $request->validate([
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            ]);
+
+            $path = public_path().'/uploads/speakers';
+            $image = request('image');
+            $image_name = time().request('image')->getClientOriginalName();
+            $image->move($path , $image_name);
+            $image_in_db = '/uploads/speakers/'.$image_name;
+        }
+
+        $speaker->name        = $request->name;
+        $speaker->email       = $request->email;
+        $speaker->phone       = $request->phone;
+        $speaker->description = $request->description;
+        $speaker->address     = $request->address;
+        $speaker->website     = $request->website;
+        $speaker->interview   = $request->interview;
+        $speaker->twitter     = $request->twitter;
+        $speaker->behance     = $request->behance;
+        $speaker->linkedin    = $request->linkedin;
+        $speaker->vimeo       = $request->vimeo;
+        $speaker->instagram   = $request->instagram;
+        $speaker->image       = $image_in_db;
+
+        $speaker->save();
+
+        return redirect()->route('admin.speakers.index')->with('Successfully', 'Speaker Updated');
+    }
+
+    public function delete($id)
+    {
+        $speaker = Speaker::findOrFail($id);
+        $speaker->delete();
+        return redirect()->route('admin.speakers.index')->with('Successfully', 'Speaker Deleted Successfully');
+
+    }
+}

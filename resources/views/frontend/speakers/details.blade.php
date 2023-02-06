@@ -1,0 +1,133 @@
+@extends('frontend.layouts.master')
+
+@section('content')
+    <!-- Page Header Section Start Here -->
+    <section class="page-header bg_img padding-tb">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="page-header-content-area">
+                <h4 class="ph-title">Robot S. Jhonson</h4>
+                <ul class="lab-ul">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Speakers</a></li>
+                    <li><a class="active">Speaker-Details</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Page Header Section Ending Here -->
+
+    <!-- Scholar single section start Here -->
+    <div class="scholar-single-section padding-tb padding-b">
+        <div class="container">
+            <div class="section-wrapper rounded">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="scholar-left">
+                                <div class="scholar-single-item">
+                                    <div class="scholar-single-thumb">
+                                        <img src="{{ asset($speaker->image) }}" alt="scholar" />
+                                    </div>
+                                    <div class="scholar-single-content">
+                                        <span class="h7">Personal Language Skill</span>
+                                        <div class="skill-bar d-flex">
+                                            <div class="skill-item">
+                                                <div class="pie"
+                                                    data-pie='{ "index": 3, "percent": 80, "colorSlice": "#5338AA", "colorCircle": "#f1f1f1", "fontWeight": 700, "stroke": 5, "size": 90,
+                                            "fontSize": "1.125rem","fontColor":"#ffffff" }'>
+                                                </div>
+                                                <span>English</span>
+                                            </div>
+                                            <div class="skill-item">
+                                                <div class="pie"
+                                                    data-pie='{ "index": 6, "percent": 70, "colorSlice": "#5338AA", "colorCircle": "#f1f1f1", "fontWeight": 700, "stroke": 5, "size": 90,
+                                            "fontSize": "1.125rem","fontColor":"#ffffff" }'>
+                                                </div>
+                                                <span>Develop</span>
+                                            </div>
+                                            <div class="skill-item">
+                                                <div class="pie"
+                                                    data-pie='{ "index": 4, "percent": 60, "colorSlice": "#5338AA", "colorCircle": "#f1f1f1", "fontWeight": 700, "stroke": 5, "size": 90,
+                                            "fontSize": "1.125rem","fontColor":"#ffffff" }'>
+                                                </div>
+                                                <span>Motive</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="scholar-right">
+                                <div class="scholar-intro">
+                                    <h5>Robot S. Jhonson</h5>
+                                    <span class="d-inline-block">Self Development Speaker</span>
+                                    <p>Enthusias expedite client-focused growth strategies whereas a client-centered
+                                        infrastructur ntrinsicl grow optimal e-tailers or rather than effective
+                                        information.</p>
+                                </div>
+                                <div class="scholar-info">
+                                    <span class="h7 mb-3">Personal Statement</span>
+                                    <p class="mb-4">Expedite client-focused growth strateges whereas client centere
+                                        {{$speaker->description}}</p>
+                                    <div class="scholar-other-info">
+                                        <ul class="lab-ul">
+                                            <li><span class="info-title">Address </span><span class="info-details">:
+                                                  {{ $speaker->address }}</span></li>
+                                            <li><span class="info-title">Email</span><span class="info-details">:
+                                                    {{ $speaker->email }}</span></li>
+                                            <li><span class="info-title">Phone</span><span class="info-details">: +021
+                                                    {{ $speaker->phone }}</span></li>
+                                            <li><span class="info-title">Website</span><span class="info-details">:
+                                                    {{ $speaker->website }}</span></li>
+                                            <li><span class="info-title">Interview</span><span class="info-details">:
+                                                    {{$speaker->interview}}</span></li>
+                                            <li><span class="info-title">Follow Us</span>
+                                                <div class="info-details">
+                                                    <ul class="lab-ul d-flex">
+                                                        <li>: <a href="{{ $speaker->twitter }}" class="twitter"><i
+                                                                    class="icofont-twitter"></i></a>
+                                                        </li>
+                                                        <li><a href="{{ $speaker->behance }}" class="behance"><i
+                                                                    class="icofont-behance"></i></a>
+                                                        </li>
+                                                        <li> <a href="{{ $speaker->instagram }}" class="instagram"><i
+                                                                    class="icofont-instagram"></i></a></li>
+                                                        <li><a href="{{ $speaker->vimeo }}" class="vimeo"><i
+                                                                    class="icofont-vimeo"></i></a>
+                                                        </li>
+                                                        <li><a href="{{ $speaker->linkedin }}" class="linkedin"><i
+                                                                    class="icofont-linkedin"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="scholar-award">
+                                    <span class="h7">Recognitions Award</span>
+                                    <ul class="all-awards lab-ul d-flex">
+                                        <li class="single-award">
+                                            <img src="{{ asset('frontend') }}}}/assets/images/team/award/01.png" alt="award">
+                                            <p>Award 2016</p>
+                                        </li>
+                                        <li class="single-award">
+                                            <img src="{{ asset('frontend') }}}}/assets/images/team/award/02.png" alt="award">
+                                            <p>Award 2017</p>
+                                        </li>
+                                        <li class="single-award">
+                                            <img src="{{ asset('frontend') }}}}/assets/images/team/award/03.png" alt="award">
+                                            <p>Award 2018</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scholar single section end Here -->
+@endsection
