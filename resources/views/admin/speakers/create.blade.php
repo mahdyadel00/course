@@ -84,7 +84,7 @@
                                     <div class="col">
                                         <label>Image</label>
                                         <input type="file" class="form-control modal-title" name='image'
-                                            accept="image/jpeg,image/jpg,image/png">
+                                            accept="image/jpeg,image/jpg,image/png" required>
                                     </div>
                             </div>
                             <div class="d-flex justify-content-center">

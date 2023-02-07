@@ -33,7 +33,7 @@
                                     <span class="d-inline-block">Self Development Speaker</span>
                                     <p>{{ $speaker->personal_info }}</p>
                                     </div>
-                                    <div class="scholar-single-content">
+                                    {{-- <div class="scholar-single-content">
                                         <span class="h7">Personal Language Skill</span>
                                         <div class="skill-bar d-flex">
                                             <div class="skill-item">
@@ -58,7 +58,7 @@
                                                 <span>Motive</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -106,7 +106,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="scholar-award">
+                                {{-- <div class="scholar-award">
                                     <span class="h7">Recognitions Award</span>
                                     <ul class="all-awards lab-ul d-flex">
                                         <li class="single-award">
@@ -122,7 +122,7 @@
                                             <p>Award 2018</p>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
