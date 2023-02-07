@@ -73,6 +73,7 @@ class UserController extends Controller
 
     protected function update(UpdateUser $request, $id)
     {
+        // dd($request->all());
 
         $user = User::where('id', $id)->first();
 

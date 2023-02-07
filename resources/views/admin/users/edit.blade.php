@@ -19,14 +19,15 @@
                                     {{ csrf_field() }}
                                     <div class="col">
                                         <label> First Name </label>
-                                        <input class="form-control fc-datepicker" name="first_name" value="{{ $user->first_name }}"
-                                            type="text">
+                                        <input class="form-control fc-datepicker" name="first_name"
+                                            value="{{ $user->first_name }}" type="text">
                                     </div>
                                     <div class="col">
                                         <label> Last Name </label>
-                                        <input class="form-control fc-datepicker" name="last_name" value="{{ $user->last_name }}"
-                                            type="text">
+                                        <input class="form-control fc-datepicker" name="last_name"
+                                            value="{{ $user->last_name }}" type="text">
                                     </div>
+                                    <div class="col">
                                         <label> Name </label>
                                         <input class="form-control fc-datepicker" name="name" value="{{ $user->name }}"
                                             type="text">
@@ -43,44 +44,70 @@
                                     </div>
                                     <div class="col">
                                         <label>Birthdate</label>
-                                        <input class="form-control fc-datepicker" name="birthdate" value="{{ $user->birthdate }}"
-                                            type="text">
+                                        <input class="form-control fc-datepicker" name="birthdate"
+                                            value="{{ $user->birthdate }}" type="date">
                                     </div>
                                     <div class="col">
                                         <label>Address</label>
-                                        <input class="form-control fc-datepicker" name="address" value="{{ $user->address }}"
-                                            type="text">
+                                        <input class="form-control fc-datepicker" name="address"
+                                            value="{{ $user->address }}" type="text">
                                     </div>
                                     <div class="col">
                                         <label>Education</label>
-                                        <input class="form-control fc-datepicker" name="education" value="{{ $user->education }}"
-                                            type="text">
+                                        <input class="form-control fc-datepicker" name="education"
+                                            value="{{ $user->education }}" type="text">
                                     </div>
                                     <div class="col">
                                         <label>Qulification</label>
-                                        <input class="form-control fc-datepicker" name="qulification" value="{{ $user->qulification }}"
-                                            type="text">
+                                        <input class="form-control fc-datepicker" name="qulification"
+                                            value="{{ $user->qulification }}" type="text">
                                     </div>
                                     <div class="col">
                                         <label>English</label>
-                                        <input class="form-control fc-datepicker" name="english" value="{{ $user->english }}"
-                                            type="text">
+                                        <select class="form-control" name="english">
+                                            <option value="1" {{ $user->english == 1 ? 'selected' : '' }}>Elementary
+                                            </option>
+                                            <option value="2" {{ $user->english == 2 ? 'selected' : '' }}>Intermediate
+                                            </option>
+                                            <option value="3" {{ $user->english == 3 ? 'selected' : '' }}>Advanced
+                                            </option>
+                                        </select>
                                     </div>
                                     <div class="col">
                                         <label>Fill Survy</label>
-                                        <input class="form-control fc-datepicker" name="fill_survy" value="{{ $user->fill_survy }}"
-                                            type="checkbox">
+                                        <input name="fill_survy" value="1"
+                                            {{ $user->fill_survy == 1 ? 'checked' : '' }} type="checkbox">
                                     </div>
                                     <div class="col">
                                         <label>Policies</label>
-                                        <input class="form-control fc-datepicker" name="policies" value="{{ $user->policies }}"
+                                        <input name="policies" value="1" {{ $user->policies == 1 ? 'checked' : '' }}
                                             type="checkbox">
+                                    </div>
+                                    <div class="col">
+                                        <label for="task">Task</label>
+                                        <textarea name="task" class="form-control modal-title" id="task">{{ $user->task }}</textarea>
+                                    </div>
+                                    <div class="col">
+                                        <label for="nots">Nots</label>
+                                        <textarea name="nots" class="form-control modal-title" id="nots">{{ $user->nots }}</textarea>
                                     </div>
                                     <div class="col">
                                         <label>Image</label>
                                         <input type="file" class="form-control modal-title" name='image'
                                             accept="image/jpeg,image/jpg,image/png" required>
                                         <img src="{{ asset($user->image) }}" height="100px" width="100px" />
+                                    </div>
+                                    <div class="col">
+                                        <label>CV</label>
+                                        <input type="file" class="form-control modal-title" name='cv'
+                                            accept="application/pdf" required>
+                                        <a href="{{ asset($user->cv) }}" target="_blank">View CV</a>
+                                    </div>
+                                    <div class="col">
+                                        <label for="identy">Identy</label>
+                                        <input type="file" class="form-control modal-title" name='identy'
+                                            accept="image/jpeg,image/jpg,image/png" required>
+                                        <img src="{{ asset($user->identy) }}" height="100px" width="100px" />
                                     </div>
                                     <div class="col-md-12">
                                         <label class="infoTitle">@lang('site.status')</label>
