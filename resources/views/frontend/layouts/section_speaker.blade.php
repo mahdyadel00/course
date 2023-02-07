@@ -7,33 +7,43 @@
            </div>
            <div class="section-wrapper shape-b">
                <div class="row g-5">
-                @foreach ($speakers as $speaker)
-                <div class="col-lg-6 col-12">
-                    <div class="speaker-item">
-                        <div class="speaker-inner">
-                            <div class="speaker-thumb">
-                                <img src="{{ asset($speaker->image) }}" alt="speaker">
-                            </div>
-                            <div class="speaker-content">
-                                <div class="spkr-content-title">
-                                     <h5><a href="{{ route('speakers.details' , $speaker->id) }}">{{ $speaker->name }}</a> </h5>
-                                    <p>{{ $speaker->job_title }}</p>
-                                </div>
-                                <div class="spkr-content-details">
-                                    <p>{{ $speaker->personal_info }}</p>
-                                    <ul class="social-icons">
-                                        <li><a target="_blank" href="{{ $speaker->facebook }}"><i class="icofont-facebook"></i></a></li>
-                                        <li><a target="_blank" href="{{ $speaker->twitter }}"><i class="icofont-twitter"></i></a></li>
-                                        <li><a target="_blank" href="{{ $speaker->instagram }}"><i class="icofont-instagram"></i></a></li>
-                                        <li><a target="_blank" href="{{ $speaker->linkedin }}"><i class="icofont-linkedin"></i></a></li>
-                                        <li><a target="_blank" href="{{ $speaker->tiktok }}"><img src="{{ asset('frontend') }}/assets/images/tik.png" alt=""></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
+                   @foreach ($speakers as $speaker)
+                       <div class="col-lg-6 col-12">
+                           <div class="speaker-item">
+                               <div class="speaker-inner">
+                                   <div class="speaker-thumb">
+                                       <a href="{{ route('speakers.details', $speaker->id) }}">
+                                           <img src="{{ asset($speaker->image) }}" alt="speaker">
+                                       </a>
+                                   </div>
+                                   <div class="speaker-content">
+                                       <div class="spkr-content-title">
+                                           <h5><a
+                                                   href="{{ route('speakers.details', $speaker->id) }}">{{ $speaker->name }}</a>
+                                           </h5>
+                                           <p>{{ $speaker->job_title }}</p>
+                                       </div>
+                                       <div class="spkr-content-details">
+                                           {{-- <p>{{ $speaker->personal_info }}</p> --}}
+                                           <ul class="social-icons">
+                                               <li><a target="_blank" href="{{ $speaker->facebook }}"><i
+                                                           class="icofont-facebook"></i></a></li>
+                                               <li><a target="_blank" href="{{ $speaker->twitter }}"><i
+                                                           class="icofont-twitter"></i></a></li>
+                                               <li><a target="_blank" href="{{ $speaker->instagram }}"><i
+                                                           class="icofont-instagram"></i></a></li>
+                                               <li><a target="_blank" href="{{ $speaker->linkedin }}"><i
+                                                           class="icofont-linkedin"></i></a></li>
+                                               <li><a target="_blank" href="{{ $speaker->tiktok }}"><img
+                                                           src="{{ asset('frontend') }}/assets/images/tik.png"
+                                                           alt=""></a></li>
+                                           </ul>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   @endforeach
                    {{-- <div class="col-lg-6 col-12">
                        <div class="speaker-item">
                            <div class="speaker-inner">

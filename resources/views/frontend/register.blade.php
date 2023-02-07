@@ -1,4 +1,4 @@
-@extends('frontend.layouts.master')
+`@extends('frontend.layouts.master')
 
 @section('content')
     <!-- Page Header Section Start Here -->
@@ -37,8 +37,7 @@
                         <input type="password" placeholder="Password" name="password">
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="Confirm Password" name="password">
-                    </div>
+                        <input type="password" placeholder="Confirm Password" name="password_confirmation">
                     <div class="form-group">
                         <input type="text" placeholder="Address" name="address">
                     </div>

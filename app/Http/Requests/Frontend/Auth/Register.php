@@ -23,15 +23,17 @@ class Register extends FormRequest
      */
     public function rules()
     {
+        dd($this->all());
         return [
 
-            "name"          => ["required", "string"],
-            "birthdate"     => ["required", "date"], //
-            "email"         => ["required", "string", "email"],
-            "password"      => ["required", "string", "password", "confirmed"],
-            "address"       => ["required", "string"],
-            "fill_survy"    => ["required"], //
-            "policies"      => ["required"],
+                "name"            => ["required", "string"],
+                "birthdate"       => ["required", "date"],
+                "email"           => ["required", "email"],
+                "password"        => ["required", "string" , "min:8" , "max:20" , "confirmed"],
+                "address"         => ["required", "string"],
+                "fill_survy"      => ["required", "boolean"]??0,
+                "policies"        => ["required", "boolean"]??0,
+
         ];
     }
 
@@ -40,13 +42,13 @@ class Register extends FormRequest
     public function message()
     {
         return [
-            'name.required'         => __('validation.required', ['attribute' => __('attributes.name')]),
-            'birthdate.required'    => __('validation.required', ['attribute' => __('attributes.birthdate')]),
-            'email.required'        => __('validation.required', ['attribute' => __('attributes.email')]),
-            'password.required'     => __('validation.required', ['attribute' => __('attributes.password')]),
-            'address.required'      => __('validation.required', ['attribute' => __('attributes.address')]),
-            'fill_survy.required'   => __('validation.required', ['attribute' => __('attributes.fill_survy')]),
-            'policies.required'     => __('validation.required', ['attribute' => __('attributes.policies')]),
+            "name.required"             => "Name is required",
+            "birthdate.required"        => "Birthdate is required",
+            "email.required"            => "Email is required",
+            "password.required"         => "Password is required",
+            "address.required"          => "Address is required",
+            "fill_survy.required"       => "Fill Survy is required",
+            "policies.required"         => "Policies is required",
         ];
     }
 }
