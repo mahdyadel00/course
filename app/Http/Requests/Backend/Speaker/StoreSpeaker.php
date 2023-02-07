@@ -23,25 +23,12 @@ class StoreSpeaker extends FormRequest
      */
     public function rules()
     {
-        // dd($this->all());
         return [
 
             "name"        => ["required", "string"],
             "description" => ["required", "string"],
             "job_title"   => ["required", "string"],
             "personal_info"   => ["required", "string"],
-            "address"     => ["sometimes", "string"],
-            "email"       => ["sometimes", "string"],
-            "phone"       => ["sometimes", "string"],
-            "website"     => ["sometimes", "string"],
-            "twitter"     => ["sometimes", "string"],
-            "behance"     => ["sometimes", "string"],
-            "linkedin"    => ["sometimes", "string"],
-            "vimeo"       => ["sometimes", "string"],
-            "youtube"     => ["sometimes", "string"],
-            "facebook"    => ["sometimes", "string"],
-            "tiktok"      => ["sometimes", "string"],
-            "instagram"   => ["sometimes", "string"],
             "image"       => ["sometimes", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
 
         ];
@@ -60,18 +47,7 @@ class StoreSpeaker extends FormRequest
             "address.required"     => "Address is required",
             "job_title.required"   => "Job Title is required",
             "personal_info.required"   => "Personal Info is required",
-            "email.sometimes"       => "Email is required",
-            "phone.sometimes"       => "Phone is required",
             "image.required"       => "Image is required",
-            "website.sometimes"     => "Website is required",
-            "twitter.sometimes"     => "Twitter is required",
-            "behance.required"     => "Behance is required",
-            "linkedin.sometimes"    => "Linkedin is required",
-            "vimeo.sometimes"       => "Vimeo is required",
-            "youtube.sometimes"     => "Youtube is required",
-            "facebook.sometimes"    => "Facebook is required",
-            "tiktok.sometimes"      => "Tiktok is required",
-            "instagram.sometimes"   => "Instagram is required",
         ];
     }
 }

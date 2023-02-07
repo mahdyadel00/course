@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Speaker\StoreSpeaker;
+use App\Http\Requests\Backend\Speaker\UpdateSpeaker;
 use Illuminate\Http\Request;
 use App\Models\Speaker;
 
@@ -21,7 +22,7 @@ class SpeakersController extends Controller
     {
         return view('admin.speakers.create');
     }
-    public function store(Request $request)
+    public function store(StoreSpeaker $request)
     {
 
         $image_in_db = NULL;
@@ -78,7 +79,7 @@ class SpeakersController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(UpdateSpeaker $request, $id)
     {
 
         $speaker = Speaker::findOrFail($id);

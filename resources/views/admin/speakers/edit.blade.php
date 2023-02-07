@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="col">
                                         <label>Facebook</label>
-                                        <textarea class="form-control" name="facebook" >{{ $speaker->facebook }}</textarea>
+                                        <input class="form-control" name="facebook" value="{{ $speaker->facebook }}">
                                     </div>
                                     <div class="col">
                                         <label>Twitter</label>
