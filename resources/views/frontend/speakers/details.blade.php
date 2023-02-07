@@ -74,8 +74,10 @@
                                         <ul class="lab-ul">
                                             <li><span class="info-title">Address </span><span class="info-details">:
                                                     {{ $speaker->address }}</span></li>
-                                            <li><span class="info-title">Website</span><span class="info-details">:
-                                                    {{ $speaker->website }}</span></li>
+                                            @if ($speaker->website)
+                                                <li><span class="info-title">Website</span><span class="info-details">:
+                                                        {{ $speaker->website }}</span></li>
+                                            @endif
                                             <li><span class="info-title">Social Media</span>
                                                 <div class="info-details">
                                                     <ul class="lab-ul d-flex">
@@ -83,19 +85,16 @@
                                                             <li>: <a target="_blank" href="{{ $speaker->twitter }} "
                                                                     class="twitter"><i class="icofont-twitter"></i></a>
                                                             </li>
-                                                        @else
                                                         @endif
                                                         @if ($speaker->facebook)
                                                             <li><a target="_blank" href="{{ $speaker->facebook }}"
                                                                     class="linkedin"><i class="icofont-facebook"></i></a>
                                                             </li>
-                                                        @else
                                                         @endif
                                                         @if ($speaker->instagram)
                                                             <li><a target="_blank" href="{{ $speaker->instagram }}"
                                                                     class="instagram"><i class="icofont-instagram"></i></a>
                                                             </li>
-                                                        @else
                                                         @endif
                                                         @if ($speaker->youtube)
                                                             <li> <a target="_blank" href="{{ $speaker->tiktok }}"
@@ -104,13 +103,11 @@
                                                                         alt="">
                                                                 </a>
                                                             </li>
-                                                        @else
                                                         @endif
                                                         @if ($speaker->linkedin)
                                                             <li><a target="_blank" href="{{ $speaker->linkedin }}"
                                                                     class="linkedin"><i class="icofont-linkedin"></i></a>
                                                             </li>
-                                                        @else
                                                         @endif
                                                     </ul>
                                                 </div>

@@ -18,8 +18,8 @@
     <div class="speaker-section padding-tb padding-b custom">
         <div class="container">
             <!-- <div class="coming custom">
-                    <img src="{{ asset('frontend') }}/assets/images/rr.png" alt="">
-                </div> -->
+                <img src="{{ asset('frontend') }}/assets/images/rr.png" alt="">
+            </div> -->
             <h2 class="h1 text-center">Our special surprise is</h2>
             <h4 class="h4 text-center">Foreign speakers from different countries and companies are giving talks in marketing
                 topics.</h4>
@@ -30,19 +30,14 @@
                             <div class="speaker-item-2">
                                 <div class="speaker-inner">
                                     <div class="speaker-thumb addClass">
-                                        <a href="{{ route('speakers.details', $speaker->id) }}">
-                                            <img src="{{ asset($speaker->image) }}" alt="speaker" width="330px"
-                                                height="369px">
+                                        <a href="{{ route('speakers.details' , $speaker->id) }}">
+                                            <img src="{{ asset($speaker->image) }}" alt="speaker" width="330px" height="369px">
                                         </a><br><br>
-                                        <h4 style="text-align:center"><a
-                                                href="{{ route('speakers.details', $speaker->id) }}">{{ $speaker->name }}</a>
-                                        </h4>
+                                        <h4 style="text-align:center"><a href="{{ route('speakers.details' , $speaker->id) }}">{{ $speaker->name }}</a></h4>
                                     </div>
                                     <div class="speaker-content">
                                         <div class="speaker-content-inner">
-                                            <h6><a
-                                                    href="{{ route('speakers.details', $speaker->id) }}">{{ $speaker->job_title }}</a>
-                                            </h6>
+                                            <p><a href="{{ route('speakers.details' , $speaker->id) }}">{{ $speaker->job_title }}</a> </p>
                                         </div>
                                         <ul class="speaker-shape">
                                             <li class="shape-1 shape">
@@ -63,7 +58,7 @@
                             </div>
                         </div>
                     @endforeach
-                    {{-- <div class="col-lg-6 col-12">
+                     {{-- <div class="col-lg-6 col-12">
                     <div class="speaker-item-2">
                         <div class="speaker-inner">
                             <div class="speaker-thumb addClass">
@@ -91,7 +86,7 @@
                         </div>
                     </div>
                 </div> --}}
-                    {{--
+                {{--
                 <div class="col-lg-6 col-12">
                     <div class="speaker-item-2">
                         <div class="speaker-inner show">
