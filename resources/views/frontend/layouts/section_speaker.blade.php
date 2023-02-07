@@ -17,7 +17,7 @@
                             <div class="speaker-content">
                                 <div class="spkr-content-title">
                                      <h5><a href="{{ route('speakers.details' , $speaker->id) }}">{{ $speaker->name }}</a> </h5>
-                                    <p>Job Title</p>
+                                    <p>{{ $speaker->job_title }}</p>
                                 </div>
                                 <div class="spkr-content-details">
                                     <p>{{ $speaker->personal_info }}</p>

@@ -29,7 +29,7 @@
                                         Website</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Interview</th>
+                                        Facebook</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Twitter</th>
@@ -75,7 +75,7 @@
                                         <p class="text-xs font-weight-bold mb-0">{{ $speaker->website }}</p>
                                     </td>
                                     <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $speaker->interview }}</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $speaker->facebook }}</p>
                                     </td>
                                     <td>
                                         <p class="text-xs font-weight-bold mb-0">{{ $speaker->twitter }}</p>

@@ -6,7 +6,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="page-header-content-area">
-                <h4 class="ph-title">Robot S. Jhonson</h4>
+                <h4 class="ph-title">{{ $speaker->name }}</h4>
                 <ul class="lab-ul">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#">Speakers</a></li>
@@ -31,7 +31,7 @@
                                     </div>
                                     <div>
                                     <span class="d-inline-block">Self Development Speaker</span>
-                                    <p>{{ $speaker->description }}</p>
+                                    <p>{{ $speaker->personal_info }}</p>
                                     </div>
                                     <div class="scholar-single-content">
                                         <span class="h7">Personal Language Skill</span>
@@ -65,11 +65,11 @@
                         <div class="col-lg-6">
                             <div class="scholar-right">
                                 <div class="scholar-intro">
-                                    <h5>Robot S. Jhonson</h5>
+                                    <h5>{{ $speaker->name }}</h5>
                                 </div>
                                 <div class="scholar-info">
                                     <span class="h7 mb-3">Personal Statement</span>
-                                    <p class="mb-4">{{ $speaker->personal_info }}</p>
+                                    <p class="mb-4">{{ $speaker->description }}</p>
                                     <div class="scholar-other-info">
                                         <ul class="lab-ul">
                                             <li><span class="info-title">Address </span><span class="info-details">:
