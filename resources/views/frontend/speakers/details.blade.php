@@ -26,8 +26,12 @@
                         <div class="col-lg-6">
                             <div class="scholar-left">
                                 <div class="scholar-single-item">
-                                    <div class="scholar-single-thumb">
+                                    <div class="scholar-single-thumb" style="width: 330px; height: 363px;">
                                         <img src="{{ asset($speaker->image) }}" alt="scholar" />
+                                    </div>
+                                    <div>
+                                    <span class="d-inline-block">Self Development Speaker</span>
+                                    <p>{{ $speaker->description }}</p>
                                     </div>
                                     <div class="scholar-single-content">
                                         <span class="h7">Personal Language Skill</span>
@@ -62,42 +66,39 @@
                             <div class="scholar-right">
                                 <div class="scholar-intro">
                                     <h5>Robot S. Jhonson</h5>
-                                    <span class="d-inline-block">Self Development Speaker</span>
-                                    <p>Enthusias expedite client-focused growth strategies whereas a client-centered
-                                        infrastructur ntrinsicl grow optimal e-tailers or rather than effective
-                                        information.</p>
                                 </div>
                                 <div class="scholar-info">
                                     <span class="h7 mb-3">Personal Statement</span>
-                                    <p class="mb-4">Expedite client-focused growth strateges whereas client centere
-                                        {{$speaker->description}}</p>
+                                    <p class="mb-4">{{ $speaker->personal_info }}</p>
                                     <div class="scholar-other-info">
                                         <ul class="lab-ul">
                                             <li><span class="info-title">Address </span><span class="info-details">:
                                                   {{ $speaker->address }}</span></li>
-                                            <li><span class="info-title">Email</span><span class="info-details">:
-                                                    {{ $speaker->email }}</span></li>
-                                            <li><span class="info-title">Phone</span><span class="info-details">: +021
-                                                    {{ $speaker->phone }}</span></li>
+                                            {{-- <li><span class="info-title">Email</span><span class="info-details">:
+                                                    {{ $speaker->email }}</span></li> --}}
+                                            {{-- <li><span class="info-title">Phone</span><span class="info-details">: +021
+                                                    {{ $speaker->phone }}</span></li> --}}
                                             <li><span class="info-title">Website</span><span class="info-details">:
                                                     {{ $speaker->website }}</span></li>
-                                            <li><span class="info-title">Interview</span><span class="info-details">:
-                                                    {{$speaker->interview}}</span></li>
+                                            {{-- <li><span class="info-title">Interview</span><span class="info-details">:
+                                                    {{$speaker->interview}}</span></li> --}}
                                             <li><span class="info-title">Follow Us</span>
                                                 <div class="info-details">
                                                     <ul class="lab-ul d-flex">
-                                                        <li>: <a href="{{ $speaker->twitter }}" class="twitter"><i
+                                                        <li>: <a target="_blank" href="{{ $speaker->twitter }}" class="twitter"><i
                                                                     class="icofont-twitter"></i></a>
                                                         </li>
-                                                        <li><a href="{{ $speaker->behance }}" class="behance"><i
-                                                                    class="icofont-behance"></i></a>
+                                                        <li><a target="_blank" href="{{ $speaker->facebook }}" class="linkedin"><i
+                                                                    class="icofont-facebook"></i></a>
                                                         </li>
-                                                        <li> <a href="{{ $speaker->instagram }}" class="instagram"><i
+                                                        <li> <a target="_blank" href="{{ $speaker->instagram }}" class="instagram"><i
                                                                     class="icofont-instagram"></i></a></li>
-                                                        <li><a href="{{ $speaker->vimeo }}" class="vimeo"><i
-                                                                    class="icofont-vimeo"></i></a>
+                                                        <li>
+                                                            <a target="_blank" href="{{ $speaker->tiktok }}" class="tiktok">
+                                                                <img src="{{ asset('frontend') }}/assets/images/tik.png" alt="">
+                                                            </a>
                                                         </li>
-                                                        <li><a href="{{ $speaker->linkedin }}" class="linkedin"><i
+                                                        <li><a target="_blank" href="{{ $speaker->linkedin }}" class="linkedin"><i
                                                                     class="icofont-linkedin"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -109,15 +110,15 @@
                                     <span class="h7">Recognitions Award</span>
                                     <ul class="all-awards lab-ul d-flex">
                                         <li class="single-award">
-                                            <img src="{{ asset('frontend') }}}}/assets/images/team/award/01.png" alt="award">
+                                            <img src="{{ asset('frontend') }}/assets/images/team/award/01.png" alt="award">
                                             <p>Award 2016</p>
                                         </li>
                                         <li class="single-award">
-                                            <img src="{{ asset('frontend') }}}}/assets/images/team/award/02.png" alt="award">
+                                            <img src="{{ asset('frontend') }}/assets/images/team/award/02.png" alt="award">
                                             <p>Award 2017</p>
                                         </li>
                                         <li class="single-award">
-                                            <img src="{{ asset('frontend') }}}}/assets/images/team/award/03.png" alt="award">
+                                            <img src="{{ asset('frontend') }}/assets/images/team/award/03.png" alt="award">
                                             <p>Award 2018</p>
                                         </li>
                                     </ul>

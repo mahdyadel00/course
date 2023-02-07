@@ -17,9 +17,9 @@
     <!-- ==== Speaker-section start here ===== -->
     <div class="speaker-section padding-tb padding-b custom">
         <div class="container">
-            <div class="coming custom">
+            <!-- <div class="coming custom">
                 <img src="{{ asset('frontend') }}/assets/images/rr.png" alt="">
-            </div>
+            </div> -->
             <h2 class="h1 text-center">Our special surprise is</h2>
             <h4 class="h4 text-center">Foreign speakers from different countries and companies are giving talks in marketing
                 topics.</h4>
