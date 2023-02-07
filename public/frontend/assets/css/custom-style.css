@@ -2135,17 +2135,18 @@ hr {
 	border-radius: 10px;
 }
 
-.custom-btn{
+.custom-btn {
 	box-shadow: none !important;
 	border: 1px solid #5338AA;
 }
 
-.custom-btn:hover{
+.custom-btn:hover {
 	color: #fff !important;
 	border: 1px solid #fff;
 	background: #5338AA
 }
-.custom-btn:hover span{
+
+.custom-btn:hover span {
 	color: #fff !important;
 }
 
@@ -6932,33 +6933,46 @@ footer .custom-img img {
 	width: 690px;
 	transform: translateX(-50px);
 }
+
 .coming.custom {
 	margin: 0 auto;
 	width: 800px;
 	transform: translateX(0);
 }
-.padding-b.custom{
+
+.padding-b.custom {
 	padding-top: 0 !important;
 }
+
 .coming.custom {
-    width: 700px;
-  }
-  @media (max-width: 575px) {
-    .custom-h1 {
-    font-size: 100px !important;
-    text-align: center;
-  }
-  .coming {
-    width: 400px;
-    transform: translateX(0px);
-  }
-  .coming.custom {
-    width: 300px;
-  }
-}
-@media (min-width: 576px) and (max-width: 767px) {
-  .coming.custom {
-    width:500px;
-}
+	width: 700px;
 }
 
+.custom-logo{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+@media (max-width: 575px) {
+	.custom-h1 {
+		font-size: 100px !important;
+		text-align: center;
+	}
+
+	.coming {
+		width: 400px;
+		transform: translateX(0px);
+	}
+
+	.coming.custom {
+		width: 300px;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+	.coming.custom {
+		width: 500px;
+	}
+}

@@ -36,8 +36,8 @@
                                     </div>
                                     <div class="speaker-content">
                                         <div class="speaker-content-inner">
-                                            <h6><a href="{{ route('speakers.details' , $speaker->id) }}">{{ $speaker->anem }}</a> </h6>
-                                            <p>Speaker</p>
+                                            <h6><a href="{{ route('speakers.details' , $speaker->id) }}">{{ $speaker->name }}</a> </h6>
+                                            <p>{{ $speaker->job_title }}</p>
                                         </div>
                                         <ul class="speaker-shape">
                                             <li class="shape-1 shape">

@@ -99,7 +99,7 @@ $setting = App\Models\Settings::first();
         <div class="footer-bottom">
             <div class="container">
                 <div class="row text-center">
-                    <div class="col-md custom-img">
+                    <div class="col-md custom-img custom-logo">
                         <!-- <img src="{{ $setting->logo }}" alt=""> -->
                         <h1>GMC</h1>
                     </div>
