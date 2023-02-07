@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\Speaker\StoreSpeaker;
 use Illuminate\Http\Request;
 use App\Models\Speaker;
 
@@ -24,37 +25,43 @@ class SpeakersController extends Controller
     {
 
         $image_in_db = NULL;
-        if( $request->has('image') )
-        {
+        if ($request->has('image')) {
             $request->validate([
                 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
             ]);
 
-            $path = public_path().'/uploads/speakers';
+            $path = public_path() . '/uploads/speakers';
             $image = request('image');
-            $image_name = time().request('image')->getClientOriginalName();
-            $image->move($path , $image_name);
-            $image_in_db = '/uploads/speakers/'.$image_name;
+            $image_name = time() . request('image')->getClientOriginalName();
+            $image->move($path, $image_name);
+            $image_in_db = '/uploads/speakers/' . $image_name;
         }
 
         Speaker::create([
 
-           'name'           => $request->name,
-           'email'          => $request->email,
-           'phone'          => $request->phone,
-           'description'    => $request->description,
-           'address'        => $request->address,
-           'website'        => $request->website,
-           'interview'      => $request->interview,
-           'twitter'        => $request->twitter,
-           'behance'        => $request->behance,
-           'linkedin'       => $request->linkedin,
-           'vimeo'          => $request->vimeo,
-           'instagram'      => $request->instagram,
-           'image'          => $image_in_db,
+            'name'           => $request->name,
+            'email'          => $request->email,
+            'phone'          => $request->phone,
+            'description'    => $request->description,
+            'personal_info'  => $request->personal_info,
+            'address'        => $request->address,
+            'website'        => $request->website,
+            'twitter'        => $request->twitter,
+            'behance'        => $request->behance,
+            'linkedin'       => $request->linkedin,
+            'vimeo'          => $request->vimeo,
+            'instagram'      => $request->instagram,
+            'job_title'      => $request->job_title,
+            'facebook'       => $request->facebook,
+            'tiktok'         => $request->tiktok,
+            'youtube'        => $request->youtube,
+            'image'          => $image_in_db,
 
         ]);
-        return redirect()->route('admin.speakers.index')->with('Successfully' , 'Slider Added Successfully');
+
+
+
+        return redirect()->route('admin.speakers.index')->with('Successfully', 'Slider Added Successfully');
     }
 
     public function show($id)
@@ -68,7 +75,6 @@ class SpeakersController extends Controller
     {
         $speaker = Speaker::findOrFail($id);
         return view('admin.speakers.edit', compact('speaker'));
-
     }
 
 
@@ -79,34 +85,39 @@ class SpeakersController extends Controller
 
 
         $image_in_db = NULL;
-        if( $request->has('image') )
-        {
+        if ($request->has('image')) {
             $request->validate([
                 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
             ]);
 
-            $path = public_path().'/uploads/speakers';
+            $path = public_path() . '/uploads/speakers';
             $image = request('image');
-            $image_name = time().request('image')->getClientOriginalName();
-            $image->move($path , $image_name);
-            $image_in_db = '/uploads/speakers/'.$image_name;
+            $image_name = time() . request('image')->getClientOriginalName();
+            $image->move($path, $image_name);
+            $image_in_db = '/uploads/speakers/' . $image_name;
         }
 
-        $speaker->name        = $request->name;
-        $speaker->email       = $request->email;
-        $speaker->phone       = $request->phone;
-        $speaker->description = $request->description;
-        $speaker->address     = $request->address;
-        $speaker->website     = $request->website;
-        $speaker->interview   = $request->interview;
-        $speaker->twitter     = $request->twitter;
-        $speaker->behance     = $request->behance;
-        $speaker->linkedin    = $request->linkedin;
-        $speaker->vimeo       = $request->vimeo;
-        $speaker->instagram   = $request->instagram;
-        $speaker->image       = $image_in_db;
+        $speaker->update([
 
-        $speaker->save();
+            'name'           => $request->name,
+            'email'          => $request->email,
+            'phone'          => $request->phone,
+            'description'    => $request->description,
+            'personal_info'  => $request->personal_info,
+            'address'        => $request->address,
+            'website'        => $request->website,
+            'twitter'        => $request->twitter,
+            'behance'        => $request->behance,
+            'linkedin'       => $request->linkedin,
+            'vimeo'          => $request->vimeo,
+            'instagram'      => $request->instagram,
+            'job_title'      => $request->job_title,
+            'facebook'       => $request->facebook,
+            'tiktok'         => $request->tiktok,
+            'youtube'        => $request->youtube,
+            'image'          => $image_in_db,
+
+        ]);
 
         return redirect()->route('admin.speakers.index')->with('Successfully', 'Speaker Updated');
     }
@@ -116,6 +127,5 @@ class SpeakersController extends Controller
         $speaker = Speaker::findOrFail($id);
         $speaker->delete();
         return redirect()->route('admin.speakers.index')->with('Successfully', 'Speaker Deleted Successfully');
-
     }
 }

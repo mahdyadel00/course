@@ -16,9 +16,17 @@
                             <div class="card-body">
                                 <form class="forms-sample" action="{{ route('admin.users.update', [$user->id]) }}"
                                     method="post" enctype="multipart/form-data"autocomplete="off">
-
                                     {{ csrf_field() }}
                                     <div class="col">
+                                        <label> First Name </label>
+                                        <input class="form-control fc-datepicker" name="first_name" value="{{ $user->first_name }}"
+                                            type="text">
+                                    </div>
+                                    <div class="col">
+                                        <label> Last Name </label>
+                                        <input class="form-control fc-datepicker" name="last_name" value="{{ $user->last_name }}"
+                                            type="text">
+                                    </div>
                                         <label> Name </label>
                                         <input class="form-control fc-datepicker" name="name" value="{{ $user->name }}"
                                             type="text">
@@ -32,6 +40,41 @@
                                         <label>Phone</label>
                                         <input class="form-control fc-datepicker" name="phone" value="{{ $user->phone }}"
                                             type="text">
+                                    </div>
+                                    <div class="col">
+                                        <label>Birthdate</label>
+                                        <input class="form-control fc-datepicker" name="birthdate" value="{{ $user->birthdate }}"
+                                            type="text">
+                                    </div>
+                                    <div class="col">
+                                        <label>Address</label>
+                                        <input class="form-control fc-datepicker" name="address" value="{{ $user->address }}"
+                                            type="text">
+                                    </div>
+                                    <div class="col">
+                                        <label>Education</label>
+                                        <input class="form-control fc-datepicker" name="education" value="{{ $user->education }}"
+                                            type="text">
+                                    </div>
+                                    <div class="col">
+                                        <label>Qulification</label>
+                                        <input class="form-control fc-datepicker" name="qulification" value="{{ $user->qulification }}"
+                                            type="text">
+                                    </div>
+                                    <div class="col">
+                                        <label>English</label>
+                                        <input class="form-control fc-datepicker" name="english" value="{{ $user->english }}"
+                                            type="text">
+                                    </div>
+                                    <div class="col">
+                                        <label>Fill Survy</label>
+                                        <input class="form-control fc-datepicker" name="fill_survy" value="{{ $user->fill_survy }}"
+                                            type="checkbox">
+                                    </div>
+                                    <div class="col">
+                                        <label>Policies</label>
+                                        <input class="form-control fc-datepicker" name="policies" value="{{ $user->policies }}"
+                                            type="checkbox">
                                     </div>
                                     <div class="col">
                                         <label>Image</label>

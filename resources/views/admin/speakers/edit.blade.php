@@ -16,7 +16,6 @@
                             <div class="card-body">
                                 <form class="forms-sample" action="{{ route('admin.speakers.update', [$speaker->id]) }}"
                                     method="post" enctype="multipart/form-data"autocomplete="off">
-
                                     {{ csrf_field() }}
                                     <div class="col">
                                         <label> Name</label>
@@ -24,11 +23,19 @@
                                     </div>
                                     <div class="col">
                                         <label> Email </label>
-                                        <input class="form-control fc-datepicker" name="email" type="email" required value="{{ $speaker->email }}">
+                                        <input class="form-control fc-datepicker" name="email" type="email" value="{{ $speaker->email }}">
                                     </div>
                                     <div class="col">
                                         <label>Phone</label>
-                                        <input class="form-control fc-datepicker" name="phone" type="number" required value="{{ $speaker->phone }}">
+                                        <input class="form-control fc-datepicker" name="phone" type="number"  value="{{ $speaker->phone }}">
+                                    </div>
+                                    <div class="col">
+                                        <label>Job Title</label>
+                                        <textarea class="form-control" name="job_title" required>{{ $speaker->job_title }}</textarea>
+                                    </div>
+                                    <div class="col">
+                                        <label>Personal Statment</label>
+                                        <textarea class="form-control" name="personal_info" required>{{ $speaker->personal_info }}</textarea>
                                     </div>
                                     <div class="col">
                                         <label>Description</label>
@@ -36,19 +43,23 @@
                                     </div>
                                     <div class="col">
                                         <label>Address</label>
-                                        <textarea class="form-control" name="address" required>{{ $speaker->address }}</textarea>
+                                        <textarea class="form-control" name="address" >{{ $speaker->address }}</textarea>
                                     </div>
                                     <div class="col">
                                         <label>Website</label>
                                         <input type="text" name="website" class="form-control" value="{{ $speaker->website }}">
                                     </div>
                                     <div class="col">
-                                        <label>Interview</label>
-                                        <textarea class="form-control" name="interview" required>{{ $speaker->interview }}</textarea>
+                                        <label>Facebook</label>
+                                        <textarea class="form-control" name="facebook" >{{ $speaker->facebook }}</textarea>
                                     </div>
                                     <div class="col">
                                         <label>Twitter</label>
                                         <input type="text" name="twitter" class="form-control" value="{{ $speaker->twitter }}">
+                                    </div>
+                                    <div class="col">
+                                        <label>Youtube</label>
+                                        <input type="text" name="youtube" class="form-control" value="{{ $speaker->youtube }}">
                                     </div>
                                     <div class="col">
                                         <label>Behance</label>
@@ -59,7 +70,11 @@
                                         <input type="text" name="linkedin" class="form-control" value="{{ $speaker->linkedin }}">
                                     </div>
                                     <div class="col">
-                                        <label>Bimeo</label>
+                                        <label>Tiktok</label>
+                                        <input type="text" name="tiktok" class="form-control" value="{{ $speaker->tiktok }}">
+                                    </div>
+                                    <div class="col">
+                                        <label>Vimeo</label>
                                         <input type="text" name="vimeo" class="form-control" value="{{ $speaker->vimeo }}">
                                     </div>
                                     <div class="col">
@@ -70,6 +85,7 @@
                                         <label>Image</label>
                                         <input type="file" class="form-control modal-title" name='image'
                                             accept="image/jpeg,image/jpg,image/png">
+                                                <img src="{{ asset( $speaker->image) }}" alt="image" width="100px" height="100px">
                                     </div>
                             </div>
                             <div class="d-flex justify-content-center">

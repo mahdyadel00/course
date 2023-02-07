@@ -94,8 +94,13 @@
                                                         </li>
                                                         <li> <a href="{{ $speaker->instagram }}" class="instagram"><i
                                                                     class="icofont-instagram"></i></a></li>
-                                                        <li><a href="{{ $speaker->vimeo }}" class="vimeo"><i
+                                                        {{-- <li><a href="{{ $speaker->vimeo }}" class="vimeo"><i
                                                                     class="icofont-vimeo"></i></a>
+                                                        </li> --}}
+                                                        <li>
+                                                            <a href="{{ $speaker->tiktok }}" class="tiktok">
+                                                                <img src="{{ asset('frontend') }}/assets/images/tik.png" alt="">
+                                                            </a>
                                                         </li>
                                                         <li><a href="{{ $speaker->linkedin }}" class="linkedin"><i
                                                                     class="icofont-linkedin"></i></a></li>

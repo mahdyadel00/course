@@ -23,11 +23,19 @@
                                     </div>
                                     <div class="col">
                                         <label> Email </label>
-                                        <input class="form-control fc-datepicker" name="email" type="email" required>
+                                        <input class="form-control fc-datepicker" name="email" type="email">
                                     </div>
                                     <div class="col">
                                         <label>Phone</label>
-                                        <input class="form-control fc-datepicker" name="phone" type="number" required>
+                                        <input class="form-control fc-datepicker" name="phone" type="number">
+                                    </div>
+                                    <div class="col">
+                                        <label>Job Title</label>
+                                        <textarea class="form-control" name="job_title" required></textarea>
+                                    </div>
+                                    <div class="col">
+                                        <label>Personal Statment</label>
+                                        <textarea class="form-control" name="personal_info" required></textarea>
                                     </div>
                                     <div class="col">
                                         <label>Description</label>
@@ -35,19 +43,23 @@
                                     </div>
                                     <div class="col">
                                         <label>Address</label>
-                                        <textarea class="form-control" name="address" required></textarea>
+                                        <textarea class="form-control" name="address"></textarea>
                                     </div>
                                     <div class="col">
                                         <label>Website</label>
                                         <input type="text" name="website" class="form-control">
                                     </div>
                                     <div class="col">
-                                        <label>Interview</label>
-                                        <textarea class="form-control" name="interview" required></textarea>
+                                        <label>Facebook</label>
+                                        <input type="text" name="facebook" class="form-control">
                                     </div>
                                     <div class="col">
                                         <label>Twitter</label>
                                         <input type="text" name="twitter" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Youtube</label>
+                                        <input type="text" name="youtube" class="form-control">
                                     </div>
                                     <div class="col">
                                         <label>Behance</label>
@@ -56,6 +68,10 @@
                                     <div class="col">
                                         <label>Linkedin</label>
                                         <input type="text" name="linkedin" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label>Tiktok</label>
+                                        <input type="text" name="tiktok" class="form-control">
                                     </div>
                                     <div class="col">
                                         <label>Vimeo</label>
