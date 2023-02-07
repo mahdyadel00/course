@@ -24,19 +24,28 @@
                                            <p>{{ $speaker->job_title }}</p>
                                        </div>
                                        <div class="spkr-content-details">
-                                           {{-- <p>{{ $speaker->personal_info }}</p> --}}
                                            <ul class="social-icons">
+                                            @if($speaker->facebook)
                                                <li><a target="_blank" href="{{ $speaker->facebook }}"><i
                                                            class="icofont-facebook"></i></a></li>
+                                            @endif
+                                            @if($speaker->twitter)
                                                <li><a target="_blank" href="{{ $speaker->twitter }}"><i
                                                            class="icofont-twitter"></i></a></li>
+                                            @endif
+                                            @if($speaker->instagram)
                                                <li><a target="_blank" href="{{ $speaker->instagram }}"><i
                                                            class="icofont-instagram"></i></a></li>
+                                            @endif
+                                            @if($speaker->linkedin)
                                                <li><a target="_blank" href="{{ $speaker->linkedin }}"><i
                                                            class="icofont-linkedin"></i></a></li>
+                                            @endif
+                                            @if($speaker->tiktok)
                                                <li><a target="_blank" href="{{ $speaker->tiktok }}"><img
                                                            src="{{ asset('frontend') }}/assets/images/tik.png"
                                                            alt=""></a></li>
+                                            @endif
                                            </ul>
                                        </div>
                                    </div>
