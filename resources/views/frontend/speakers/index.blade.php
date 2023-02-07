@@ -32,7 +32,8 @@
                                     <div class="speaker-thumb addClass">
                                         <a href="{{ route('speakers.details' , $speaker->id) }}">
                                             <img src="{{ asset($speaker->image) }}" alt="speaker" width="330px" height="369px">
-                                        </a>
+                                        </a><br><br>
+                                        <h4><a href="{{ route('speakers.details' , $speaker->id) }}">{{ $speaker->name }}</a></h4>
                                     </div>
                                     <div class="speaker-content">
                                         <div class="speaker-content-inner">
