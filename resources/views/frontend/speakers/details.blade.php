@@ -31,7 +31,7 @@
                                     </div>
                                     <div>
                                         <span class="d-inline-block">Details</span>
-                                        <p>{{ $speaker->personal_info }}</p>
+                                        <p>{!! $speaker->personal_info !!}</p>
                                     </div>
                                     {{-- <div class="scholar-single-content">
                                         <span class="h7">Personal Language Skill</span>
@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="scholar-info">
                                     <span class="h7 mb-3">Personal Statement</span>
-                                    <p class="mb-4">{{ $speaker->description }}</p>
+                                    <p class="mb-4">{!! $speaker->description !!}</p>
                                     <div class="scholar-other-info">
                                         <ul class="lab-ul">
                                             <li><span class="info-title">Address </span><span class="info-details">:
