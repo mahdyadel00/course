@@ -94,7 +94,7 @@ class SpeakersController extends Controller
             $image_name = time() . request('image')->getClientOriginalName();
             $image->move($path, $image_name);
             $image_in_db = '/uploads/speakers/' . $image_name;
-        }else{
+        } else {
 
             $image_in_db = $speaker->image;
         }

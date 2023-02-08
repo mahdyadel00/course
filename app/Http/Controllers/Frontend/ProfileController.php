@@ -4,12 +4,10 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Country;
-use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
-class AccountController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,34 +24,18 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    protected function myAccount(Request $request)
+    protected function index(Request $request)
     {
         if (Auth::check()) {
 
-            $user = User::with('country')->first();
-            if(auth()->check()){
+            $user = User::first();
 
-                $products = product::with('user')->where('user_id' , auth()->user()->id)->where('nigotiable' , 0)->get();
-            }
-
-            return view('frontend.accounts.my_account', compact('user' , 'products'));
+            return view('frontend.profiles.index');
         } else {
 
             return redirect()->route('login.show')->with('Un Authanticated!');
         }
     }
-
-    protected function edit()
-    {
-        if (Auth::check()) {
-
-            $user = User::first();
-            $countries = Country::get();
-
-            return view('frontend.accounts.edit_profile', compact('user' , 'countries'));
-        }
-    }//End of Edit Profile
-
     protected function update(Request $request , $id){
 
         // dd($request->all());
@@ -83,30 +65,6 @@ class AccountController extends Controller
         ]);
 
         return redirect()->back()->with('success' , 'Updated Profile Sucessfully');
-    }
-
-    protected function help()
-    {
-
-        return view('frontend.accounts.help');
-    }
-
-    protected function favourite()
-    {
-
-        return view('frontend.accounts.favourite');
-
-    }//End of favourite
-
-    protected function promoted(){
-
-        $products = Product::where('user_id' , auth()->user()->id)->where('nigotiable' , 1)->get();
-
-        return view('frontend.accounts.promotede_add' , compact('products'));
-    }
-    protected function memberShip(){
-
-        return view('frontend.accounts.member_ship');
     }
 
 }

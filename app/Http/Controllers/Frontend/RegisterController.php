@@ -32,13 +32,13 @@ class RegisterController extends Controller
         return view('frontend.register');
     }
 
-    protected function doRegister(Request $request)
+    protected function doRegister(Register $request)
     {
 
         $users = User::query()->create([
 
             'name' => $request->name,
-            'birthdate' => $request->birthdate,
+            'birthdate' => $request->birthdate, 
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'address' => $request->address,

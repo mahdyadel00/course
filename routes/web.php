@@ -35,17 +35,16 @@ Route::prefix(LaravelLocalization::setLocale())
         Route::get('/speakers', [SpeakersController::class, 'index'])->name('speakers.index');
         Route::get('/speakers/details/{id}', [SpeakersController::class, 'details'])->name('speakers.details');
 
+        // ============================================================================** Profile Route ** ==========================================================================
+
+        Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+        Route::get('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+
         // ============================================================================** Speakers Route ** ==========================================================================
 
         Route::get('/features', function () {
             return view('frontend.features.index');
         })->name('features');
-        // Route::get('/speakers' , function(){
-        //     return view('frontend.speakers.index');
-        // })->name('speakers');
-        // Route::get('/speakers/details' , function(){
-        //     return view('frontend.speakers.details');
-        // })->name('speaker_details');
         Route::get('/course', function () {
             return view('frontend.features.index');
         })->name('course');
