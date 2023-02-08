@@ -34,11 +34,12 @@ class RegisterController extends Controller
 
     protected function doRegister(Register $request)
     {
+        dd($request->all());
 
         $users = User::query()->create([
 
             'name' => $request->name,
-            'birthdate' => $request->birthdate, 
+            'birthdate' => $request->birthdate,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'address' => $request->address,

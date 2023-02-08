@@ -10,16 +10,6 @@ use App\Models\User;
 class ProfileController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
-
-    /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
@@ -53,7 +43,6 @@ class ProfileController extends Controller
             $image->move($path, $image_name);
             $image_in_db = '/uploads/user/' . $image_name;
         }
-        // dd($id);
         $user->where('id' , $id)->update([
 
             'first_name'  => $request->first_name,

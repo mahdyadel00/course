@@ -25,21 +25,25 @@
                 <form class="account-form" action="{{ route('register.do') }}" method="post">
                     @csrf
                     <div class="form-group">
-                        <input type="text" placeholder="User Name" name="name">
+                        <input type="text" placeholder="User Name" name="name" required>
                     </div>
                     <div class="form-group">
                         <input type="date" placeholder="Date Of Birth" name="birthdate">
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Email" name="email">
+                        <input type="text" placeholder="Email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="Password" name="password">
+                        <input type="password" placeholder="Password" name="password" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="Confirm Password" name="password_confirmation">
+                        <input type="password" placeholder="Confirm Password" name="password_confirmation" required>
+                    </div>
                     <div class="form-group">
                         <input type="text" placeholder="Address" name="address">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="cv" placeholder="Enter Your CV">
                     </div>
                     <div class="form-group">
                         <label for="policies">Fill Survey</label>
@@ -47,7 +51,7 @@
                     </div>
                     <div class="form-group">
                         <label for="policies">Policies</label>
-                        <input type="checkbox" name="policies">
+                        <input type="checkbox" name="policies" required>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="d-block lab-btn"><span>Get Started Now</span></button>

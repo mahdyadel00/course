@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('education')->nullable();
             $table->string('qulification')->nullable();
             $table->enum('english' , ['Elementary' , 'Intermediate' , 'Advanced'])->nullable();
-            $table->tinyinteger('fill_survy');
+            $table->tinyinteger('fill_survy')->nullable();
             $table->tinyinteger('policies');
             $table->string('image')->nullable();
             $table->string('qr_code')->nullable();
