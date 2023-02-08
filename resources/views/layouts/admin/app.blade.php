@@ -1095,6 +1095,7 @@
     <script src="{{ asset('dashboard') }}/assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
     <script src="{{ asset('dashboard') }}/assets/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="{{ asset('dashboard') }}/assets/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 </body>
 
 </html>

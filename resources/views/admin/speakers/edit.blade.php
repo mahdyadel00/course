@@ -31,15 +31,15 @@
                                     </div>
                                     <div class="col">
                                         <label>Job Title</label>
-                                        <textarea class="form-control" name="job_title" required>{{ $speaker->job_title }}</textarea>
+                                        <textarea class="form-control ckeditor" name="job_title" required>{{ $speaker->job_title }}</textarea>
                                     </div>
                                     <div class="col">
                                         <label>Personal Statment</label>
-                                        <textarea class="form-control" name="personal_info" required>{{ $speaker->personal_info }}</textarea>
+                                        <textarea class="form-control ckeditor" name="personal_info" required>{{ $speaker->personal_info }}</textarea>
                                     </div>
                                     <div class="col">
                                         <label>Description</label>
-                                        <textarea class="form-control" name="description" required>{{ $speaker->description }}</textarea>
+                                        <textarea class="form-control ckeditor" name="description" required>{{ $speaker->description }}</textarea>
                                     </div>
                                     <div class="col">
                                         <label>Address</label>
