@@ -25,11 +25,8 @@ class StoreSpeaker extends FormRequest
     {
         return [
 
-            "name"        => ["required", "string"],
-            "description" => ["required", "string"],
-            "job_title"   => ["required", "string"],
-            "personal_info"   => ["required", "string"],
-            "image"       => ["sometimes", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
+            "name"              => ["required", "string"],
+            "image"             => ["sometimes", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
 
         ];
     }
@@ -42,12 +39,8 @@ class StoreSpeaker extends FormRequest
     public function messages()
     {
         return [
-            "name.required"        => "Name is required",
-            "description.required" => "Description is required",
-            "address.required"     => "Address is required",
-            "job_title.required"   => "Job Title is required",
-            "personal_info.required"   => "Personal Info is required",
-            "image.required"       => "Image is required",
+            "name.required"            => "Name is required",
+            "image.sometimes"           => "Image is required",
         ];
     }
 }

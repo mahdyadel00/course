@@ -31,15 +31,15 @@
                                     </div>
                                     <div class="col">
                                         <label>Job Title</label>
-                                        <textarea class="form-control" name="job_title" required></textarea>
+                                        <textarea class="form-control ckeditor" name="job_title"></textarea>
                                     </div>
                                     <div class="col">
                                         <label>Personal Statment</label>
-                                        <textarea class="form-control" name="personal_info" required></textarea>
+                                        <textarea class="form-control ckeditor" name="personal_info"></textarea>
                                     </div>
                                     <div class="col">
                                         <label>Description</label>
-                                        <textarea class="form-control" name="description" required></textarea>
+                                        <textarea class="form-control ckeditor" name="description"></textarea>
                                     </div>
                                     <div class="col">
                                         <label>Address</label>

@@ -16,11 +16,11 @@ class CreateSpeakersTable extends Migration
         Schema::create('speakers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->text('address')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
-            $table->text('personal_info');
+            $table->text('personal_info')->nullable();
             $table->string('image');
             $table->string('website')->nullable();
             $table->string('twitter')->nullable();

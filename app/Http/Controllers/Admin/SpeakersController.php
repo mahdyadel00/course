@@ -81,9 +81,7 @@ class SpeakersController extends Controller
 
     public function update(UpdateSpeaker $request, $id)
     {
-
         $speaker = Speaker::findOrFail($id);
-
 
         $image_in_db = NULL;
         if ($request->has('image')) {
@@ -96,6 +94,9 @@ class SpeakersController extends Controller
             $image_name = time() . request('image')->getClientOriginalName();
             $image->move($path, $image_name);
             $image_in_db = '/uploads/speakers/' . $image_name;
+        }else{
+
+            $image_in_db = $speaker->image;
         }
 
         $speaker->update([
