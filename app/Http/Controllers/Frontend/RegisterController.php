@@ -32,27 +32,37 @@ class RegisterController extends Controller
         return view('frontend.register');
     }
 
-    protected function doRegister(Register $request)
+    protected function doRegister(Request $request)
     {
-        dd($request->all());
+        //upload cv
+        $cvName = null;
+        if($request->hasFile('cv'))
+        {
+            $cv = $request->file('cv');
+            $cvName = time() . '.' . $cv->getClientOriginalExtension();
+            $cv->move(public_path('uploads/users/cv'), $cvName);
+        }
+
+
 
         $users = User::query()->create([
 
-            'name' => $request->name,
-            'birthdate' => $request->birthdate,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'address' => $request->address,
-            'fill_survy' => $request->fill_survy ? 1 : 0,
-            'policies' => $request->policies ? 1 : 0,
+            'name'          => $request->name,
+            'birthdate'     => $request->birthdate,
+            'email'         => $request->email,
+            'password'      => Hash::make($request->password),
+            'address'       => $request->address,
+            'fill_survy'    => $request->fill_survy ? 1 : 0,
+            'policies'      => $request->policies ? 1 : 0,
+            'cv'            => $cvName,
 
         ]);
 
         if ($users) {
 
-            return redirect()->to(route('home'))->with('sucess', 'Successfully Register');
+            return redirect()->route('login.show')->with('success', 'Register Successfully');
         } else {
-            return redirect(route('register'))->withErrors([('Data Error !')]);
+            return redirect()->route('register')->with('error', 'Register Failed');
         }
     }
 }

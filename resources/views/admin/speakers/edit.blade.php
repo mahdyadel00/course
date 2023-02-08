@@ -15,7 +15,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <form class="forms-sample" action="{{ route('admin.speakers.update', [$speaker->id]) }}"
-                                    method="post" enctype="multipart/form-data"autocomplete="off">
+                                    method="post" enctype="multipart/form-data" autocomplete="off">
                                     {{ csrf_field() }}
                                     <div class="col">
                                         <label> Name</label>

@@ -22,7 +22,7 @@
         <div class="container">
             <div class="account-wrapper">
                 <h3 class="title">Register Now</h3>
-                <form class="account-form" action="{{ route('register.do') }}" method="post">
+                <form class="account-form" action="{{ route('register.do') }}" method="post" enctype="multipart/form-data" >
                     @csrf
                     <div class="form-group">
                         <input type="text" placeholder="User Name" name="name" required>
@@ -58,7 +58,7 @@
                     </div>
                 </form>
                 <div class="account-bottom">
-                    <span class="d-block cate pt-10">Are you a member? <a href="login.html">Login</a></span>
+                    <span class="d-block cate pt-10">Are you a member? <a href="{{ route('login.show') }}">Login</a></span>
                 </div>
             </div>
         </div>

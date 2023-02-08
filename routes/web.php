@@ -25,6 +25,11 @@ Route::prefix(LaravelLocalization::setLocale())
         // ============================================================================** Register Route ** ==========================================================================
         Route::get('register/show', [RegisterController::class, 'register'])->name('register.show');
         Route::post('register/post', [RegisterController::class, 'doRegister'])->name('register.do');
+        // ============================================================================** Content Route ** ==========================================================================
+        Route::get('/contacts', [ContactController::class, 'index'])->name('contacts');
+        Route::post('/contacts/create', [ContactController::class, 'store'])->name('contacts.store');
+        Route::get('/about-us', [ContactController::class, 'aboutUs'])->name('about_us');
+
         // ============================================================================** Speakers Route ** ==========================================================================
 
         Route::get('/speakers', [SpeakersController::class, 'index'])->name('speakers.index');
