@@ -6969,6 +6969,10 @@ footer .custom-img img {
 	font-size: 22px;
 }
 
+.account-form input[type="checkbox"]{
+	margin-right: 10px;
+}
+
 @media (min-width: 1440px){
 	.speaker-item-2 .speaker-inner .speaker-content .speaker-content-inner {
 		height: 184px;

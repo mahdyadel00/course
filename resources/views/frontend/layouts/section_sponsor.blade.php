@@ -13,15 +13,48 @@
                     </div>
                 </div>
             </div>
-            <div class="coming">
-                <img src="{{ asset('frontend') }}/assets/images/rr.png" alt="">
-            </div>
-            <div class="d-none">
             <div class="col-12"> <strong class="sponsor-title">Main sponsors</strong> </div>
             <div class="col-lg-2 col-md-3 col-6">
                 <div data-scroll data-scroll-speed="0.5">
-                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/logo02.jpg" alt="Image">
-                        <figcaption><a href="#">1X</a></figcaption>
+                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/sponsor/redbull.png" alt="Image">
+                        <figcaption><a href="#">Red Bull</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-6">
+                <div data-scroll data-scroll-speed="0.5">
+                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/sponsor/isis.png" alt="Image">
+                        <figcaption><a href="#">ISIS</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="clearfix spacing-50"></div>
+            <div class="col-12"> <strong class="sponsor-title">Other sponsors</strong> </div>
+            <div class="col-lg-2 col-md-3 col-6">
+                <div data-scroll data-scroll-speed="0.5">
+                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/sponsor/bayro.png" alt="Image">
+                        <figcaption><a href="#">Bayro</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-6">
+                <div data-scroll data-scroll-speed="0.5">
+                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/sponsor/soul-bar.png" alt="Image">
+                        <figcaption><a href="#">Soul</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-6">
+                <div data-scroll data-scroll-speed="0.5">
+                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/sponsor/cat.png" alt="Image">
+                        <figcaption><a href="#">Cat</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-6">
+                <div data-scroll data-scroll-speed="0.5">
+                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/sponsor/ix.png" alt="Image">
+                        <figcaption><a href="#">IX</a></figcaption>
                     </figure>
                 </div>
             </div>
@@ -29,48 +62,47 @@
             <div class="col-12"> <strong class="sponsor-title">Product sponsors</strong> </div>
             <div class="col-lg-2 col-md-3 col-6">
                 <div data-scroll data-scroll-speed="0.5">
-                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/logo04.jpg" alt="Image">
-                        <figcaption><a href="#">CAT</a></figcaption>
+                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/sponsor/google.png" alt="Image">
+                        <figcaption><a href="#">Google</a></figcaption>
                     </figure>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-6">
                 <div data-scroll data-scroll-speed="-0.5">
-                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/logo05.jpg" alt="Image">
-                        <figcaption><a href="#">ISIS</a></figcaption>
+                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/sponsor/microsoft.png" alt="Image">
+                        <figcaption><a href="#">Microsoft</a></figcaption>
                     </figure>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-6">
                 <div data-scroll data-scroll-speed="0.5">
-                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/logo06.jpg" alt="Image">
-                        <figcaption><a href="#">IEEE</a></figcaption>
+                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/sponsor/samsung.png" alt="Image">
+                        <figcaption><a href="#">Samsung</a></figcaption>
                     </figure>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-6">
                 <div data-scroll data-scroll-speed="-0.5">
-                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/logo07.jpg" alt="Image">
-                        <figcaption><a href="#">Bayro</a></figcaption>
+                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/sponsor/philips.png" alt="Image">
+                        <figcaption><a href="#">Philips</a></figcaption>
                     </figure>
                 </div>
             </div>
 
             <div class="col-lg-2 col-md-3 col-6">
                 <div data-scroll data-scroll-speed="0.5">
-                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/logo08.jpg" alt="Image">
-                        <figcaption><a href="#">Soul Bar</a></figcaption>
+                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/sponsor/linked-in.png" alt="Image">
+                        <figcaption><a href="#">Linkedin</a></figcaption>
                     </figure>
                 </div>
             </div>
 
             <div class="clearfix"></div>
-            </div>
 
-            <!-- <div class="col-lg-2 col-md-3 col-6">
+            <div class="col-lg-2 col-md-3 col-6">
                 <div data-scroll data-scroll-speed="-0.5">
-                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/logo09.jpg" alt="Image">
-                        <figcaption><a href="#">Fleer de Leew</a></figcaption>
+                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/sponsor/space-toon.png" alt="Image">
+                        <figcaption><a href="#">SpaceToon</a></figcaption>
                     </figure>
 
                 </div>
@@ -79,8 +111,8 @@
 
             <div class="col-lg-2 col-md-3 col-6">
                 <div data-scroll data-scroll-speed="0.5">
-                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/logo10.jpg" alt="Image">
-                        <figcaption><a href="#">Armageddon</a></figcaption>
+                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/sponsor/semrush.png" alt="Image">
+                        <figcaption><a href="#">Semrush</a></figcaption>
                     </figure>
                 </div>
 
@@ -88,12 +120,18 @@
 
             <div class="col-lg-2 col-md-3 col-6">
                 <div data-scroll data-scroll-speed="-0.5">
-                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/logo11.jpg" alt="Image">
-                        <figcaption><a href="#">Georgia</a></figcaption>
+                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/sponsor/nestle.png" alt="Image">
+                        <figcaption><a href="#">Nestle</a></figcaption>
                     </figure>
-
                 </div>
-            </div> -->
+            </div>
+            <div class="col-lg-2 col-md-3 col-6">
+                <div data-scroll data-scroll-speed="-0.5">
+                    <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/sponsor/huawei.png" alt="Image">
+                        <figcaption><a href="#">Huawei</a></figcaption>
+                    </figure>
+                </div>
+            </div>
             <!-- end col-2 -->
         </div>
         <!-- end row -->

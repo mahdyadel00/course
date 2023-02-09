@@ -45,12 +45,11 @@
                     <div class="form-group">
                         <input type="file" name="cv" placeholder="Enter Your CV">
                     </div>
-                    <div class="form-group">
+                    <div class="text-start">
                         <label for="policies">Git 1 ticket free from the same type when booking</label>
                         <input type="checkbox" name="fill_survy">Fill Survey
                     </div>
-                    <div class="form-group">
-                        <label for="policies">Policies</label>
+                    <div class="text-start">
                         <input type="checkbox" name="policies" required>I Accept <a href="">privacy policy</a>
                     </div>
                     <div class="form-group">
