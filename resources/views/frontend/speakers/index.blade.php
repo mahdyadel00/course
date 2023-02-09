@@ -41,7 +41,7 @@
                                     <div class="speaker-content">
                                         <div class="speaker-content-inner">
                                             <h6><a
-                                                    href="{{ route('speakers.details', $speaker->id) }}">{!! $speaker->job_title !!}</a>
+                                                    href="{{ route('speakers.details', $speaker->id) }}">{!! $speaker->description !!}</a>
                                             </h6>
                                         </div>
                                         <ul class="speaker-shape">

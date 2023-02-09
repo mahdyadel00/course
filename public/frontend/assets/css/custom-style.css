@@ -6955,6 +6955,25 @@ footer .custom-img img {
     margin-top: 8px;
 }
 
+.swiper-container.swiper-slider.swiper-slider-1 .overlay{
+	z-index: 9;
+	background: rgba(0, 0, 0, 0.4);
+}
+
+.speaker-item-2 .speaker-inner .speaker-content .speaker-content-inner p{
+	font-size: 13px;
+}
+
+@media (min-width: 1440px){
+	.speaker-item-2 .speaker-inner .speaker-content .speaker-content-inner {
+		height: 184px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0 20px !important;
+	}
+}
+
 @media (max-width: 575px) {
 	.custom-h1 {
 		font-size: 100px !important;

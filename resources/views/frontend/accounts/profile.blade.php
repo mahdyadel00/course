@@ -33,32 +33,6 @@
                                         <span class="d-inline-block">Details</span>
                                         <p>{!! $speaker->personal_info !!}</p>
                                     </div>
-                                    <!-- <div class="scholar-single-content">
-                                        <span class="h7">Personal Language Skill</span>
-                                        <div class="skill-bar d-flex">
-                                            <div class="skill-item">
-                                                <div class="pie"
-                                                    data-pie='{ "index": 3, "percent": 80, "colorSlice": "#5338AA", "colorCircle": "#f1f1f1", "fontWeight": 700, "stroke": 5, "size": 90,
-                                            "fontSize": "1.125rem","fontColor":"#ffffff" }'>
-                                                </div>
-                                                <span>English</span>
-                                            </div>
-                                            <div class="skill-item">
-                                                <div class="pie"
-                                                    data-pie='{ "index": 6, "percent": 70, "colorSlice": "#5338AA", "colorCircle": "#f1f1f1", "fontWeight": 700, "stroke": 5, "size": 90,
-                                            "fontSize": "1.125rem","fontColor":"#ffffff" }'>
-                                                </div>
-                                                <span>Develop</span>
-                                            </div>
-                                            <div class="skill-item">
-                                                <div class="pie"
-                                                    data-pie='{ "index": 4, "percent": 60, "colorSlice": "#5338AA", "colorCircle": "#f1f1f1", "fontWeight": 700, "stroke": 5, "size": 90,
-                                            "fontSize": "1.125rem","fontColor":"#ffffff" }'>
-                                                </div>
-                                                <span>Motive</span>
-                                            </div>
-                                        </div>
-                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -66,7 +40,41 @@
                             <div class="scholar-right">
                                 <form>
                                     <div class="form-group">
-                                        <input type="text" class="form-control">
+                                        <label>First Name</label>
+                                        <input type="text" class="form-control" placeholder="first name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+                                        <input type="text" class="form-control" placeholder="last name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Phone</label>
+                                        <input type="text" class="form-control" placeholder="address">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input type="text" class="form-control" placeholder="address">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Birth Date</label>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Image</label>
+                                        <input type="file"  name="image" placeholder="Enter Your Image">
+                                    </div>
+                                    <hr>
+                                    <div class="form-group">
+                                        <label>New Password</label>
+                                        <input type="text" class="form-control" placeholder="new password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Confirm New Password</label>
+                                        <input type="text" class="form-control" placeholder="Confirm New Password">
                                     </div>
                                 </form>
                             </div>

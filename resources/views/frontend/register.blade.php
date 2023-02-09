@@ -46,13 +46,13 @@
                         <input type="file" name="cv" placeholder="Enter Your CV">
                     </div>
                     <div class="form-group">
-                        <label for="policies">Fill Survey</label>
-                        <input type="checkbox" name="fill_survy">
+                        <label for="policies">Git 1 ticket free from the same type when booking</label>
+                        <input type="checkbox" name="fill_survy">Fill Survey
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="policies">Policies</label>
-                        <input type="checkbox" name="policies" required>
-                    </div>
+                        <input type="checkbox" name="policies" required>I Accept <a href="">privacy policy</a>
+                    </div> -->
                     <div class="form-group">
                         <button type="submit" class="d-block lab-btn"><span>Get Started Now</span></button>
                     </div>

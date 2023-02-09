@@ -72,13 +72,14 @@
     </div>
     <!-- Swiper Slider Absolute-->
     <div class="swiper-container swiper-slider swiper-slider-1" data-loop="true" data-simulate-touch="false"
-        data-autoplay="8500" data-direction="horizontal" data-effect="fade">
+        data-autoplay="4000" data-direction="horizontal" data-effect="fade">
         <div class="swiper-wrapper">
             <!-- Swiper Slide 01-->
-            <div class="swiper-slide" data-slide-bg="{{ asset('frontend') }}/assets/images/slide1.jpg"></div>
+            <div class="swiper-slide" data-slide-bg="{{ asset('frontend') }}/assets/images/banner/s1.jpg"></div>
             <!-- Swiper Slide 02-->
-            <div class="swiper-slide" data-slide-bg="{{ asset('frontend') }}/assets/images/slide2.jpg"></div>
+            <div class="swiper-slide" data-slide-bg="{{ asset('frontend') }}/assets/images/banner/s2.jpg"></div>
         </div>
+        <div class="overlay"></div>
         <div class="swiper-pagination"></div>
     </div>
 </section>
