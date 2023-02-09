@@ -12,7 +12,7 @@ class SpeakersController extends Controller
 {
     public function index()
     {
-        $speakers = Speaker::paginate(10);
+        $speakers = Speaker::get();
 
         return view('admin.speakers.index', compact('speakers'));
     }
