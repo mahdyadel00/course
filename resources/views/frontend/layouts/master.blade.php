@@ -100,8 +100,7 @@ $setting = App\Models\Settings::first();
             <div class="container">
                 <div class="row text-center">
                     <div class="col-md custom-img custom-logo">
-                        <!-- <img src="{{ $setting->logo }}" alt=""> -->
-                        <h1>GMC</h1>
+                        <img src="{{ $setting->logo }}" alt="">
                     </div>
                     <div class="col-md">
                         <img src="{{ asset('frontend') }}/assets/images/logo/logo-white.png" alt="">

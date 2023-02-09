@@ -8,8 +8,8 @@ $setting = App\Models\Settings::first();
               <div class="header-wrapper">
                   <div class="logo custom-img">
                       <a href="{{  route('home') }}">
-                          <!-- <img src="{{ $setting->logo }}" alt="logo"> -->
-                          <h1>GMC</h1>
+                          <img src="{{ $setting->logo }}" alt="logo">
+                          <!-- <h1>GMC</h1> -->
                       </a>
                   </div>
                   <div class="menu-area">
@@ -23,12 +23,12 @@ $setting = App\Models\Settings::first();
                           <li>
                               <a href="{{ route('speakers.index') }}">Speakers</a>
                           </li>
-                          <!-- <li>
+                          <li>
                               <a href="{{ route('course') }}">Course</a>
                           </li>
                           <li>
                               <a href="{{ route('pricing') }}">Pricing</a>
-                          </li> -->
+                          </li>
                           <li><a href="{{ route('contacts') }}">Contact</a></li>
                       </ul>
                       <a href="{{ route('register.show') }}" class="ticket-btn lab-btn custom-btn">
