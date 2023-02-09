@@ -6961,7 +6961,7 @@ footer .custom-img img {
 }
 
 .speaker-item-2 .speaker-inner .speaker-content .speaker-content-inner p{
-	font-size: 13px;
+	font-size: 10px;
 }
 
 .speaker-thumb h4 a{
@@ -6975,7 +6975,7 @@ footer .custom-img img {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: 0 20px !important;
+		padding: 0 35px !important;
 	}
 }
 
