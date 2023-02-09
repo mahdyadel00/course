@@ -76,6 +76,7 @@
                                         <label>Confirm New Password</label>
                                         <input type="text" class="form-control" placeholder="Confirm New Password">
                                     </div>
+                                    <button class="submit">Update</button>
                                 </form>
                             </div>
                         </div>
