@@ -6964,6 +6964,11 @@ footer .custom-img img {
 	font-size: 13px;
 }
 
+.speaker-thumb h4 a{
+	text-transform: capitalize;
+	font-size: 22px;
+}
+
 @media (min-width: 1440px){
 	.speaker-item-2 .speaker-inner .speaker-content .speaker-content-inner {
 		height: 184px;
