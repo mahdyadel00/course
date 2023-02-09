@@ -76,6 +76,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
 
     ],
@@ -138,8 +139,11 @@ return [
         'Html'   =>Collective\Html\HtmlFacade::class,
         'Geocoder' => Spatie\Geocoder\Facades\Geocoder::class,
 
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
         'Image' => Intervention\Image\Facades\Image::class
+
+
     ],
 
 ];

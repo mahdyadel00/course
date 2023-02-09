@@ -17,7 +17,8 @@
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Image
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">User Name
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">User
+                                        Name
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Email</th>
@@ -62,11 +63,17 @@
                                                 class="text-secondary text-xs font-weight-bold">{{ $user->created_at }}</span>
                                         </td>
                                         <td class="align-middle">
+                                            <button class="btn btn-success">
+                                                <a href="{{ route('admin.users.show', [$user->id]) }}"
+                                                    class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+                                                    data-original-title="Show user">
+                                                    <i class="fa fa-eye"></i>
+                                                </a></button>
                                             <button class="btn btn-info">
                                                 <a href="{{ route('admin.users.edit', [$user->id]) }}"
                                                     class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
                                                     data-original-title="Edit user">
-                                                    <i class="fa fa-edit">Edit</i>
+                                                    <i class="fa fa-edit"></i>
                                                 </a></button>
                                             <form action="{{ route('admin.users.delete', [$user->id]) }}" method="post"
                                                 style="display: inline-block">
@@ -75,7 +82,7 @@
                                                 <button class="btn btn-danger" type="submit">
                                                     <a href="#" class="text-secondary font-weight-bold text-xs"
                                                         data-toggle="tooltip" data-original-title="Delete user">
-                                                        <i class="fa fa-trash">Delete</i>
+                                                        <i class="fa fa-trash"></i>
                                                     </a></button>
                                             </form><!-- end of form -->
                                         </td>

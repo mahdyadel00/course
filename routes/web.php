@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\LoginController;
 use App\Http\Controllers\Frontend\RegisterController;
 use App\Http\Controllers\Frontend\SpeakersController;

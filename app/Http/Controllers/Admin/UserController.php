@@ -10,6 +10,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\User\UpdateUser;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+//pdf
+use Barryvdh\DomPDF\Facade as PDF;
+
 use Illuminate\Support\Facades\Session;
 use Stevebauman\Location\Facades\Location;
 
@@ -61,6 +64,8 @@ class UserController extends Controller
 
     public function show($id)
     {
+        $user = User::where('id', $id)->first();
+        return view('admin.users.show', compact('user'));
     }
 
 
@@ -90,7 +95,7 @@ class UserController extends Controller
             $image_in_db = '/uploads/users/' . $image_name;
         }
 
-            $user->update($request->safe()->all());
+        $user->update($request->safe()->all());
         return redirect()->route('admin.users.index')->with('flash_message', 'User Updated successfully !');
     }
 
@@ -103,10 +108,22 @@ class UserController extends Controller
         flash()->success("User deleted successfully");
     }
 
-    protected function logout(){
+    protected function logout()
+    {
 
         auth()->logout();
 
         return redirect('/');
+    }
+
+    public function download($id)
+    {
+        $user = User::where('id', $id)->first();
+        // $pdf = \PDF::loadView('admin.users.show', compact('user'));
+        $pdf = PDF::loadView('admin.users.show')->setPaper('a4', 'portrait'); //or other values you need
+
+        // return view('admin.users.show', compact('user'));
+
+        return $pdf->download(public_path('uploads' . DIRECTORY_SEPARATOR . 'users'. DIRECTORY_SEPARATOR . $user->name . '.pdf'));
     }
 }//end of controller
