@@ -9,7 +9,6 @@
                 <h4 class="ph-title">Registration Page</h4>
                 <ul class="lab-ul">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Features</a></li>
                     <li><a class="active">Registration</a></li>
                 </ul>
             </div>

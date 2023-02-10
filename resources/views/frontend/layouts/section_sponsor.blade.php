@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div class="clearfix spacing-50"></div>
-            <div class="col-12"> <strong class="sponsor-title">Product sponsors</strong> </div>
+            <div class="col-12"> <strong class="sponsor-title">Speakers From</strong> </div>
             <div class="col-lg-2 col-md-3 col-6">
                 <div data-scroll data-scroll-speed="0.5">
                     <figure class="sponsor-logo"> <img src="{{ asset('frontend') }}/assets/images/sponsor/google.png" alt="Image">
