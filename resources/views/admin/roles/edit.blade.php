@@ -23,13 +23,14 @@
                                             type="text">
                                     </div>
                                     @foreach ($permission as $value)
-                                        {{-- <label>{{ Form::checkbox('permission[]', $value->id, in_array($value->id, $rolePermissions) ? true : false, ['class' => 'name']) }}
-                                            {{ $value->name }}</label>
-                                        <br /> --}}
                                         <div class="col">
-                                            <input class="name"
-                                            type="checkbox" {{ in_array($value->id, $rolePermissions) ? 'checked' : '' }} value="{{ $value->name }}">
-                                            <label for="">{{ $value->name }}</label>
+                                            <label for="{{$value->id}}">
+                                                <input data-name='{{$value->name}}' id="{{$value->id}}" type="checkbox" name="permissions[]" value="{{$value->id}}" data-parsley-multiple="groups"  {{$role->hasPermissionTo($value->name) ? 'checked' : ''}}>
+                                                <span class="cr">
+                                                    <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                </span>
+                                                {{$value['name']}}
+                                            </label>
                                         </div>
                                     @endforeach
                             </div>

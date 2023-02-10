@@ -56,6 +56,7 @@ class RegisterController extends Controller
             'fill_survy'    => $request->fill_survy ? 1 : 0,
             'policies'      => $request->policies ? 1 : 0,
             'cv'            => $cvName,
+            'roles_name'    => null
 
         ]);
 

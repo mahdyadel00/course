@@ -37,9 +37,8 @@ class RoleController extends Controller
      */
     public function index(Request $request)
     {
-        $roles = Role::orderBy('id', 'DESC')->paginate(5);
-        return view('admin.roles.index', compact('roles'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+        $roles = Role::get();
+        return view('admin.roles.index', compact('roles'));
     }
     /**
      * Show the form for creating a new resource.
@@ -59,16 +58,18 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|unique:roles,name',
-            'permission' => 'required',
-        ]);
+        // $request->validate([
+        //     'name' => 'required|unique:roles,name',
+        //     'permission' => 'required',
+        // ]);
         $role = Role::create([
             'name'          => $request->name,
             "guard_name"    => "web"
         ]);
-        $role->syncPermissions($request->input('permission'));
-        return redirect()->route('roles.index')->with('success', 'Role created successfully');
+        foreach ($request->groups as $key => $value) {
+            $role->givePermissionTo($value);
+        }
+        return redirect()->route('admin.roles.index')->with('success', 'Role created successfully');
     }
     /**
      * Display the specified resource.
@@ -108,10 +109,18 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // $request->validate([
+        //     'name' => 'required|unique:roles,name',
+        //     'permission' => 'required',
+        // ]);
+        // dd($request->all());
         $role = Role::find($id);
         $role->name = $request->input('name');
+        $role->guard_name = "web";
         $role->save();
-        $role->syncPermissions($request->input('permission'));
+        $permissions = $request->input('permissions');
+        $role->syncPermissions($permissions);
+        // $role->syncPermissions($request->input('permission'));
         return redirect()->route('admin.roles.index')->with('success', 'Role updated successfully');
     }
     /**
