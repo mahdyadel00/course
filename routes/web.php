@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\LoginController;
 use App\Http\Controllers\Frontend\RegisterController;
 use App\Http\Controllers\Frontend\SpeakersController;
+use App\Http\Controllers\Frontend\ContactController;
 
 Route::prefix(LaravelLocalization::setLocale())
     ->middleware([

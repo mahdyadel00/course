@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
@@ -16,10 +18,11 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
+        $user = User::create([
             'first_name'        => 'Mahdy',
             'last_name'         => 'Adel',
             'name'              => 'Mahdy Adel',
+            'roles_name'         => ['owner'],
             'birthdate'         => '2023-01-01',
             'address'           => 'Metghamer',
             'email'             => 'admin@email.com',
@@ -38,5 +41,10 @@ class UserSeeder extends Seeder
             'task'              => "task.pdf",
             'notes'             => "notes.pdf",
         ]);
+
+        $role = Role::create(['name' => 'owner']);
+        $permissions = Permission::pluck('id','id')->all();
+        $role->syncPermissions($permissions);
+        $user->assignRole([$role->id]);
     }
 }

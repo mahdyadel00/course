@@ -48,6 +48,7 @@ class RegisterController extends Controller
         $users = User::query()->create([
 
             'name'          => $request->name,
+            'guard'         => "web",
             'birthdate'     => $request->birthdate,
             'email'         => $request->email,
             'password'      => Hash::make($request->password),
