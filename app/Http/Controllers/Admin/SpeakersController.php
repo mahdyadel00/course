@@ -70,8 +70,6 @@ class SpeakersController extends Controller
         $speaker = Speaker::findOrFail($id);
         return view('admin.speakers.show', compact('speaker'));
     }
-
-
     public function edit($id)
     {
         $speaker = Speaker::findOrFail($id);

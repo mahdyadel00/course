@@ -21,6 +21,9 @@
     <link href="{{ asset('dashboard') }}/assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('dashboard') }}/assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+    {{-- select 2 --}}
+    <link rel="stylesheet" href="{{ asset('AdminFlatAble/bower_components/select2/css/select2.min.css') }}" />
+
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -1096,6 +1099,12 @@
     <script src="{{ asset('dashboard') }}/assets/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="{{ asset('dashboard') }}/assets/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+    <!-- Select 2 js -->
+    <script type="text/javascript" src="{{ asset('AdminFlatAble/bower_components/select2/js/select2.full.min.js') }}">
+    </script>
+    <!-- Custom js -->
+    <script type="text/javascript" src="{{ asset('AdminFlatAble/assets/pages/advance-elements/select2-custom.js') }}">
+    </script>
 </body>
 
 </html>

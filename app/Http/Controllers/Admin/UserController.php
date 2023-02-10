@@ -11,7 +11,7 @@ use App\Http\Requests\Backend\User\UpdateUser;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 //pdf
-use Barryvdh\DomPDF\Facade as PDF;
+use  PDF;
 
 use Illuminate\Support\Facades\Session;
 use Stevebauman\Location\Facades\Location;
@@ -50,14 +50,54 @@ class UserController extends Controller
             $image->move($path, $image_name);
             $image_in_db = '/uploads/users/' . $image_name;
         }
+        //identy
+        $identy_in_db = NULL;
+        if ($request->has('identy')) {
+            $request->validate([
+                'identy' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            ]);
+
+            $path = public_path() . '/uploads/users';
+            $identy = request('identy');
+            $identy_name = time() . request('identy')->getClientOriginalName();
+            $identy->move($path, $identy_name);
+            $identy_in_db = '/uploads/users/' . $identy_name;
+        }
+        //upload cv
+
+        $cv_in_db = NULL;
+        if ($request->has('cv')) {
+            $request->validate([
+                "cv" => "required|mimes:pdf|max:10000"
+            ]);
+
+            $path = public_path() . '/uploads/users';
+            $cv = request('cv');
+            $cv_name = time() . request('cv')->getClientOriginalName();
+            $cv->move($path, $cv_name);
+            $cv_in_db = '/uploads/users/' . $cv_name;
+        }
 
         User::create([
-            'name'  => $request->name,
-            'email'  => $request->email,
-            'password'  => $request->password,
-            'phone'  => $request->phone,
-            'status'  => $request->status ? 1 : 0,
-            'image'  => $image_in_db,
+            'first_name'    => $request->first_name,
+            'last_name'     => $request->last_name,
+            'name'          => $request->name,
+            'email'         => $request->email,
+            'password'      => Hash::make($request->password),
+            'phone'         => $request->phone,
+            'birthdate'     => $request->birthdate,
+            'address'       => $request->address,
+            'education'     => $request->education,
+            'qulification'  => $request->qulification,
+            'english'       => $request->english,
+            'task'          => $request->task,
+            'notes'         => $request->notes,
+            'status'        => $request->status ? 1 : 0,
+            'policies'      => $request->policies ? 1 : 0,
+            'fill_survy'    => $request->fill_survy ? 1 : 0,
+            'image'         => $image_in_db,
+            'identy'        => $identy_in_db,
+            'cv'            => $cv_in_db,
         ]);
         return redirect()->route('admin.users.index')->with('Successfully', 'User Added Successfully');
     }
@@ -72,7 +112,9 @@ class UserController extends Controller
     protected function edit($id)
     {
         $user = User::where('id', $id)->first();
-        return view('admin.users.edit', compact('user'));
+        $roles = Role::all();
+        $userRole = $user->roles->pluck('name', 'name')->all();
+        return view('admin.users.edit', compact('user', 'roles', 'userRole'));
     }
 
 
@@ -92,9 +134,40 @@ class UserController extends Controller
             $image_name = time() . request('image')->getClientOriginalName();
             $image->move($path, $image_name);
             $image_in_db = '/uploads/users/' . $image_name;
+        } else {
+
+            $image_in_db = $user->image;
+        }
+        //identy
+        $identy_in_db = NULL;
+        if ($request->has('identy')) {
+            $request->validate([
+                'identy' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            ]);
+
+            $path = public_path() . '/uploads/users';
+            $identy = request('identy');
+            $identy_name = time() . request('identy')->getClientOriginalName();
+            $identy->move($path, $identy_name);
+            $identy_in_db = '/uploads/users/' . $identy_name;
+        } else {
+
+            $image_in_db = $user->identy;
+        }
+        //upload cv
+        $cvName = null;
+        if ($request->hasFile('cv')) {
+            $cv = $request->file('cv');
+            $cvName = time() . '.' . $cv->getClientOriginalExtension();
+            $cv->move(public_path('uploads/users/cv'), $cvName);
+        } else {
+
+            $image_in_db = $user->cv;
         }
 
-        $user->update($request->safe()->all());
+        $user->update([]);
+        // DB::table('model_has_roles')->where('model_id', $id)->delete();
+        $user->assignRole($request->input('roles'));
         return redirect()->route('admin.users.index')->with('flash_message', 'User Updated successfully !');
     }
 
@@ -118,11 +191,11 @@ class UserController extends Controller
     public function download($id)
     {
         $user = User::where('id', $id)->first();
-        // $pdf = \PDF::loadView('admin.users.show', compact('user'));
-        $pdf = PDF::loadView('admin.users.show')->setPaper('a4', 'portrait'); //or other values you need
 
-        // return view('admin.users.show', compact('user'));
+            $file_path = public_path($user->cv);
+            // dd($file_path);
+            return response()->download($file_path);
+                    // return $pdf->download(public_path('uploads' . DIRECTORY_SEPARATOR . 'users'. DIRECTORY_SEPARATOR . $user->name . '.pdf'));
 
-        return $pdf->download(public_path('uploads' . DIRECTORY_SEPARATOR . 'users'. DIRECTORY_SEPARATOR . $user->name . '.pdf'));
     }
 }//end of controller

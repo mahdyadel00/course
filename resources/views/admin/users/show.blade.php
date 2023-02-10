@@ -90,7 +90,19 @@
                                 <tr>
                                     <th>CV</th>
                                     <td>
-                                        <a href="#">Dwonload Pdf</a>
+                                        <div class="download-catalog mt-3">
+                                        {{-- <a href="{{ asset($user->cv) }}">{{ basename($user->cv,".pdf") }}</a> --}}
+                                        <a href="{{ asset($user->cv) }}"
+                                            class="d-flex justify-content-between align-items-center" download="">
+                                            <p>
+                                                
+                                                <img src="{{ $user->cv }}" alt="" class="img-fluid" loading="lazy">
+                                                {{ basename($user->cv,".pdf") }}
+                                                {{-- {{ basename(explode($user->cv , 1 ))}} --}}
+                                            </p>
+                                            <i class="fas fa-download"></i>
+                                        </a>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>

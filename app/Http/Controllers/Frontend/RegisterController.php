@@ -35,12 +35,17 @@ class RegisterController extends Controller
     protected function doRegister(Request $request)
     {
         //upload cv
-        $cvName = null;
-        if($request->hasFile('cv'))
-        {
-            $cv = $request->file('cv');
-            $cvName = time() . '.' . $cv->getClientOriginalExtension();
-            $cv->move(public_path('uploads/users/cv'), $cvName);
+        $cv_in_db = NULL;
+        if ($request->has('cv')) {
+            $request->validate([
+                "cv" => "required|mimes:pdf|max:10000"
+            ]);
+
+            $path = public_path() . '/uploads/users';
+            $cv = request('cv');
+            $cv_name = time() . request('cv')->getClientOriginalName();
+            $cv->move($path, $cv_name);
+            $cv_in_db = '/uploads/users/' . $cv_name;
         }
 
 
@@ -55,7 +60,7 @@ class RegisterController extends Controller
             'address'       => $request->address,
             'fill_survy'    => $request->fill_survy ? 1 : 0,
             'policies'      => $request->policies ? 1 : 0,
-            'cv'            => $cvName,
+            'cv'            => $cv_in_db,
             'roles_name'    => null
 
         ]);

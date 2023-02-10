@@ -23,7 +23,6 @@ class Register extends FormRequest
      */
     public function rules()
     {
-        // dd($this->all());
         return [
 
             "name"           => ["required", "string", "max:255"],

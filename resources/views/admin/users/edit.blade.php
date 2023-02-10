@@ -114,6 +114,25 @@
                                         <input type="checkbox" value="1" {{ $user->status == 1 ? 'checked' : '' }}
                                             name="status">
                                     </div>
+                                    <div class="col-md-12">
+                                        <label class="infoTitle">@lang('site.roles')</label>
+                                        <select class="form-control{{ $errors->has('roles') ? ' is-invalid' : '' }}"
+                                            name="roles" required="">
+                                            <option value="">Please select </option>
+                                            @foreach ($roles as $role)
+                                                <option
+                                                    value="{{ $role->id }}"{{ $user->hasRole($role->name) ? 'selected' : '' }}>
+                                                    {{ $role->name }} </option>
+                                            @endforeach
+                                            @if ($errors->has('roles'))
+                                                <span class="text-danger invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('roles') }}</strong>
+                                                </span>
+                                            @endif
+                                        </select>
+                                        {{-- {!! Form::select('roles[]', $roles,$userRole, array('class' => 'form-control','multiple'))
+                                       !!} --}}
+                                    </div>
                             </div>
                             <div class="d-flex justify-content-center">
                                 <button type="submit" class="btn btn-primary">Edit</button>
