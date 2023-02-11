@@ -30,8 +30,19 @@ $setting = App\Models\Settings::first();
                           <li><a href="{{ route('contacts') }}">Contact</a></li>
                       </ul>
                       @if (auth()->check())
-                        <a href="{{ route('logout.front') }}" class="ticket-btn lab-btn custom-btn">
-                            <span>Logout</span>
+                        <!-- <a href="{{ route('logout.front') }}" class="ticket-btn lab-btn custom-btn">
+                            <span>Logout</span> -->
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <div class="btn-group btn-profile" role="group">
+                                    <button type="button" class="btn custom-btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="{{ asset('frontend') }}/assets/images/sponsor/google.png" alt="">
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('logout.front') }}">Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         @else
                             <a href="{{ route('register.show') }}" class="ticket-btn lab-btn custom-btn">
                                 <span>Register Now</span>

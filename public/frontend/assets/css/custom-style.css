@@ -6973,6 +6973,25 @@ footer .custom-img img {
 	margin-right: 10px;
 }
 
+.btn-group .btn.custom-btn{
+	padding: 0;
+	border: none;
+}
+
+.btn-group .btn.custom-btn:hover{
+	background: transparent;
+}
+
+.dropdown-toggle::after {
+    border-top: 0;
+}
+
+.btn-group .btn.custom-btn img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
 @media (min-width: 1440px){
 	.speaker-item-2 .speaker-inner .speaker-content .speaker-content-inner {
 		height: 184px;
