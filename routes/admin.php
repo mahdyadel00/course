@@ -97,12 +97,17 @@ Route::prefix('admin')->group(function () {
 
 
         //Sevay Routes
-        Route::get('/servay' , [ServayController::class, 'index'])->name('admin.servay.index');
-        Route::post('/servay' , [ServayController::class, 'update'])->name('admin.servay.update');
+        Route::get('/servay', [ServayController::class, 'index'])->name('admin.servay.index');
+        Route::get('/servay/create', [ServayController::class, 'create'])->name('admin.servay.create');
+        Route::post('/servay/store', [ServayController::class, 'store'])->name('admin.servay.store');
+        Route::get('/servay/show/{id}', [ServayController::class, 'show'])->name('admin.servay.show');
+        Route::get('/servay/edit/{id}', [ServayController::class, 'edit'])->name('admin.servay.edit');
+        Route::post('/servay/update/{id}', [ServayController::class, 'update'])->name('admin.servay.update');
+        Route::delete('/servay/delete/{id}', [ServayController::class, 'delete'])->name('admin.servay.delete');
 
         //polices Route
-        Route::get('/polices', [PolicesController::class , 'index'])->name('admin.polices.index'); //
-        Route::post('/polices', [PolicesController::class , 'update'])->name('admin.polices.update'); //
+        Route::get('/polices', [PolicesController::class, 'index'])->name('admin.polices.index'); //
+        Route::post('/polices', [PolicesController::class, 'update'])->name('admin.polices.update'); //
 
     });
 });

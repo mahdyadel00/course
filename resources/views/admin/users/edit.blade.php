@@ -114,7 +114,9 @@
                                         <label>CV</label>
                                         <input type="file" class="form-control modal-title" name='cv'
                                             accept="application/pdf">
-                                        <a href="{{ asset($user->cv) }}" target="_blank">View CV</a>
+                                            <a href="{{ route('admin.users.download', $user->id) }}">
+                                                <i class="fas fa-download">Dwonload CV</i>
+                                            </a>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="infoTitle">@lang('site.status')</label>

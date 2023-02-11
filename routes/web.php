@@ -10,13 +10,6 @@ use App\Http\Controllers\Frontend\RegisterController;
 use App\Http\Controllers\Frontend\SpeakersController;
 use App\Http\Controllers\Frontend\ContactController;
 
-// Route::prefix(LaravelLocalization::setLocale())
-//     ->middleware([
-//         'localeSessionRedirect',
-//         'localizationRedirect',
-//         'localeViewPath',
-//     ])
-//     ->group(function () {
         Auth::routes();
         Route::get('/', [HomeController::class, 'index'])->name('home');
         // ============================================================================** Login Route ** ==========================================================================
@@ -40,6 +33,8 @@ use App\Http\Controllers\Frontend\ContactController;
 
         Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
         Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+        // dwonload cv
+        Route::get('/profile/download/{id}', [ProfileController::class, 'download'])->name('profile.download');
 
         // ============================================================================** Speakers Route ** ==========================================================================
 

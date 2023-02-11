@@ -69,4 +69,12 @@ class ProfileController extends Controller
 
         return redirect()->back()->with('success', 'Updated Profile Sucessfully');
     }
+
+    public function download($id)
+    {
+        $user = User::where('id', $id)->first();
+
+        $file_path = public_path($user->cv);
+        return response()->download($file_path);
+    }
 }

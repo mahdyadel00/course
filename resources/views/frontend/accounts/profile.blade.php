@@ -30,8 +30,36 @@
                                         <img src="{{ asset($user->image) }}" alt="scholar" />
                                     </div>
                                     <div>
-                                        <span class="d-inline-block">Details</span>
-                                        <p>{!! $user->personal_info !!}</p>
+                                        <span class="d-inline-block">Change Password</span>
+                                        <!-- Button trigger modal -->
+                                        {{-- <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#exampleModal">
+                                            Launch demo modal
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        ...
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -75,6 +103,25 @@
                                         <input type="file" class="form-control modal-title" name='image'
                                             accept="image/jpeg,image/jpg,image/png">
                                         <img src="{{ asset($user->image) }}" height="100px" width="100px" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>English</label>
+                                        <select class="form-control modal-title" name="english">
+                                            <option value="1" {{ $user->english == 1 ? 'selected' : '' }}>Elementary
+                                            </option>
+                                            <option value="2" {{ $user->english == 2 ? 'selected' : '' }}>Intermediate
+                                            </option>
+                                            <option value="3" {{ $user->english == 3 ? 'selected' : '' }}>Advanced
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>CV</label>
+                                        <input type="file" class="form-control modal-title" name='cv'
+                                            accept="application/pdf">
+                                        <a href="{{ route('profile.download', $user->id) }}">
+                                            <i class="fas fa-download">Dwonload CV</i>
+                                        </a>
                                     </div>
                                     <hr>
                                     {{-- <div class="form-group">

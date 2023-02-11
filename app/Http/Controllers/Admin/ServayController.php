@@ -12,10 +12,9 @@ class ServayController extends Controller
 
     public function index()
     {
-       $servy = FillServy::get();
+        $servy = FillServy::get();
 
-       return view('admin.fill_servy.index' , compact('servy'));
-
+        return view('admin.fill_servy.index', compact('servy'));
     }
 
 
@@ -31,29 +30,61 @@ class ServayController extends Controller
 
             'faq' => 'required',
         ]);
+
+        FillServy::create([
+
+            'faq'  => $request->faq,
+            'answer'  => 0,
+        ]);
+
+        return redirect()->route('admin.servay.index')->with('Successfully', 'FillServy Create Successfully');
     }
 
 
     public function show($id)
     {
-
     }
 
 
     public function edit($id)
     {
+        $servay = FillServy::find($id);
 
+        return view('admin.fill_servy.edit', compact('servay'));
     }
 
 
     public function update(Request $request, $id)
     {
 
+        $request->validate([
+
+            'faq'  => 'required|string',
+        ]);
+
+        $servay = FillServy::find($id);
+
+        $servay->update([
+
+            'faq'       => $request->faq,
+            'answer'    => 0,
+        ]);
+
+        if ($servay) {
+
+            return redirect()->route('admin.servay.index');
+        }
     }
 
 
-    public function destroy($id)
+    public function delete($id)
     {
+        $servay = FillServy::find($id);
 
+        if ($servay) {
+            $servay->delete();
+
+            return redirect()->route('admin.servay.index');
+        }
     }
 }
