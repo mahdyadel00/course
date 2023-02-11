@@ -10,13 +10,13 @@ use App\Http\Controllers\Frontend\RegisterController;
 use App\Http\Controllers\Frontend\SpeakersController;
 use App\Http\Controllers\Frontend\ContactController;
 
-Route::prefix(LaravelLocalization::setLocale())
-    ->middleware([
-        'localeSessionRedirect',
-        'localizationRedirect',
-        'localeViewPath',
-    ])
-    ->group(function () {
+// Route::prefix(LaravelLocalization::setLocale())
+//     ->middleware([
+//         'localeSessionRedirect',
+//         'localizationRedirect',
+//         'localeViewPath',
+//     ])
+//     ->group(function () {
         Auth::routes();
         Route::get('/', [HomeController::class, 'index'])->name('home');
         // ============================================================================** Login Route ** ==========================================================================
@@ -39,7 +39,7 @@ Route::prefix(LaravelLocalization::setLocale())
         // ============================================================================** Profile Route ** ==========================================================================
 
         Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
-        Route::get('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+        Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
         // ============================================================================** Speakers Route ** ==========================================================================
 
@@ -52,4 +52,4 @@ Route::prefix(LaravelLocalization::setLocale())
         Route::get('/pricing', function () {
             return view('frontend.pricing.index');
         })->name('pricing');
-    });
+    // });

@@ -91,17 +91,9 @@
                                     <th>CV</th>
                                     <td>
                                         <div class="download-catalog mt-3">
-                                        {{-- <a href="{{ asset($user->cv) }}">{{ basename($user->cv,".pdf") }}</a> --}}
-                                        <a href="{{ asset($user->cv) }}"
-                                            class="d-flex justify-content-between align-items-center" download="">
-                                            <p>
-                                                
-                                                <img src="{{ $user->cv }}" alt="" class="img-fluid" loading="lazy">
-                                                {{ basename($user->cv,".pdf") }}
-                                                {{-- {{ basename(explode($user->cv , 1 ))}} --}}
-                                            </p>
-                                            <i class="fas fa-download"></i>
-                                        </a>
+                                            <a href="{{ route('admin.users.download', $user->id) }}">
+                                                <i class="fas fa-download">Dwonload CV</i>
+                                            </a>
                                         </div>
                                     </td>
                                 </tr>
@@ -118,7 +110,8 @@
                                 <tr>
                                     <th>Created_at</th>
                                     <td>
-                                        <span class="text-secondary text-xs font-weight-bold">{{ $user->created_at }}</span>
+                                        <span
+                                            class="text-secondary text-xs font-weight-bold">{{ $user->created_at }}</span>
                                     </td>
                                 </tr>
                                 <tr>

@@ -15,6 +15,7 @@ use  App\Http\Controllers\Admin\SettingsController;
 use  App\Http\Controllers\Admin\RoleController;
 use  App\Http\Controllers\Admin\AuthController;
 use  App\Http\Controllers\Admin\PolicesController;
+use  App\Http\Controllers\Admin\ServayController;
 
 
 Auth::routes(['except' => 'register']);
