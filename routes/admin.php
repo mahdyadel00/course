@@ -14,6 +14,7 @@ use  App\Http\Controllers\Admin\SubscriptionsController;
 use  App\Http\Controllers\Admin\SettingsController;
 use  App\Http\Controllers\Admin\RoleController;
 use  App\Http\Controllers\Admin\AuthController;
+use  App\Http\Controllers\Admin\PolicesController;
 
 
 Auth::routes(['except' => 'register']);
@@ -92,5 +93,15 @@ Route::prefix('admin')->group(function () {
         Route::get('/roles/edit/{id}', [RoleController::class, 'edit'])->name('admin.roles.edit');
         Route::post('/roles/update/{id}', [RoleController::class, 'update'])->name('admin.roles.update');
         Route::delete('/roles/delete/{id}', [RoleController::class, 'delete'])->name('admin.roles.delete');
+
+
+        //Sevay Routes
+        Route::get('/servay' , [ServayController::class, 'index'])->name('admin.servay.index');
+        Route::post('/servay' , [ServayController::class, 'update'])->name('admin.servay.update');
+
+        //polices Route
+        Route::get('/polices', [PolicesController::class , 'index'])->name('admin.polices.index'); //
+        Route::post('/polices', [PolicesController::class , 'update'])->name('admin.polices.update'); //
+
     });
 });

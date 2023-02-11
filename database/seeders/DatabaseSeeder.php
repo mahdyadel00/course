@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             SettingsSeeder::class,
             SpeakerSeeder::class,
             UserSeeder::class,
+            PolicesSeeder::class,
         ]);
 
 

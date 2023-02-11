@@ -23,6 +23,7 @@ $setting = App\Models\Settings::first();
                         </li>
                         <!-- <li>
                               <a href="{{ route('course') }}">Course</a>
+<<<<<<< HEAD
                           </li>
                           <li>
                               <a href="{{ route('pricing') }}">Pricing</a>
@@ -43,20 +44,31 @@ $setting = App\Models\Settings::first();
                                     </ul>
                                 </div>
                             </div>
+=======
+                          </li>-->
+                        <li>
+                            <a href="{{ route('pricing') }}">Pricing</a>
+                        </li>
+                        <li><a href="{{ route('contacts') }}">Contact</a></li>
+                    </ul>
+                    @if (auth()->check())
+                        <a href="{{ route('logout.front') }}" class="ticket-btn lab-btn custom-btn">
+                            <span>Logout</span>
+>>>>>>> 2278b1a (add polices)
                         @else
                             <a href="{{ route('register.show') }}" class="ticket-btn lab-btn custom-btn">
                                 <span>Register Now</span>
                             </a>
                     @endif
-                      <!-- toggle icons -->
-                      <div class="header-bar d-lg-none">
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </header>
-  <!-- ==========Header Section Ends Here========== -->
+                    <!-- toggle icons -->
+                    <div class="header-bar d-lg-none">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ==========Header Section Ends Here========== -->
