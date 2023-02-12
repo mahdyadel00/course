@@ -23,8 +23,7 @@ class UserController extends Controller
 
     public function __construct()
     {
-        //		$this->middleware('guest')->except('logout');
-        // $this->middleware('auth:admin')->except('logout');
+
     }
     protected function index()
     {
@@ -110,7 +109,13 @@ class UserController extends Controller
             'password'      => Hash::make($request->input('password')),
         ]);
         // $user->assignRole($request->input('roles_name'));
-        return redirect()->route('admin.users.index')->with('Successfully', 'User Added Successfully');
+
+        if($user){
+            $user->assignRole($request->input('roles_name'));
+            return redirect()->route('admin.users.index')->with('success', 'User created successfully.');
+        }else{
+            return redirect()->route('admin.users.index')->with('error', 'User created failed.');
+        } // end of if
     }
 
     public function show($id)

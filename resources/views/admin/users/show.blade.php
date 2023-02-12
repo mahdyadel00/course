@@ -103,6 +103,10 @@
                         </table>
                     </div>
                 </div>
+                <div class="d-flex justify-content-center col">
+                    <a href="{{ route('admin.users.index') }}" class="btn btn-primary"
+                        style="margin-top: 25px;padding: 10px 100px;">Go Back</a>
+                </div>
             </div>
         </div>
     </div>

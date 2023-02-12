@@ -16,6 +16,8 @@ use  App\Http\Controllers\Admin\RoleController;
 use  App\Http\Controllers\Admin\AuthController;
 use  App\Http\Controllers\Admin\PolicesController;
 use  App\Http\Controllers\Admin\ServayController;
+use  App\Http\Controllers\Admin\FeatureController;
+use  App\Http\Controllers\Admin\PricingController;
 
 
 Auth::routes(['except' => 'register']);
@@ -108,6 +110,28 @@ Route::prefix('admin')->group(function () {
         //polices Route
         Route::get('/polices', [PolicesController::class, 'index'])->name('admin.polices.index'); //
         Route::post('/polices', [PolicesController::class, 'update'])->name('admin.polices.update'); //
+
+
+        //Feature Route
+        Route::get('/features', [FeatureController::class, 'index'])->name('admin.features.index');
+        Route::get('/features/create', [FeatureController::class, 'create'])->name('admin.features.create');
+        Route::post('/features/store', [FeatureController::class, 'store'])->name('admin.features.store');
+        Route::get('/features/show/{id}', [FeatureController::class, 'show'])->name('admin.features.show');
+        Route::get('/features/edit/{id}', [FeatureController::class, 'edit'])->name('admin.features.edit');
+        Route::post('/features/update/{id}', [FeatureController::class, 'update'])->name('admin.features.update');
+        Route::delete('/features/delete/{id}', [FeatureController::class, 'delete'])->name('admin.features.delete');
+
+
+        //Pricing Route
+        Route::get('/pricing', [PricingController::class, 'index'])->name('admin.pricing.index');
+        Route::get('/pricing/create', [PricingController::class, 'create'])->name('admin.pricing.create');
+        Route::post('/pricing/store', [PricingController::class, 'store'])->name('admin.pricing.store');
+        Route::get('/pricing/show/{id}', [PricingController::class, 'show'])->name('admin.pricing.show');
+        Route::get('/pricing/edit/{id}', [PricingController::class, 'edit'])->name('admin.pricing.edit');
+        Route::post('/pricing/update/{id}', [PricingController::class, 'update'])->name('admin.pricing.update');
+        Route::delete('/pricing/delete/{id}', [PricingController::class, 'delete'])->name('admin.pricing.delete');
+
+
 
     });
 });
