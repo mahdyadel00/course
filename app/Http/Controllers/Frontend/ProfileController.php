@@ -29,17 +29,17 @@ class ProfileController extends Controller
     protected function update(Request $request)
     {
 
-        // dd($request->all());
-        // $request->validate([
-
-        //     'first_name' => 'somtimes',
-        //     'last_name'  => 'somtimes',
-        //     'email'      => 'somtimes',
-        //     'phone'      => 'somtimes',
-        //     'address'    => 'somtimes',
-        //     'birthdate'  => 'somtimes',
-
-        // ]);
+        $request->validate([
+            'first_name'    => 'required',
+            'last_name'     => 'required',
+            'email'         => 'required',
+            'phone'         => 'required',
+            'address'       => 'required',
+            'birthdate'     => 'required',
+            'education'     => 'required',
+            'qulification'  => 'required',
+            'english'       => 'required',
+        ]);
         $user = User::where('id', auth()->user()->id)->first();
         $image_in_db = NULL;
         if ($request->has('image')) {
@@ -56,18 +56,59 @@ class ProfileController extends Controller
 
             $image_in_db = $user->image;
         }
+        //identy
+        $identy_in_db = NULL;
+        if ($request->has('identy')) {
+            $request->validate([
+                'identy' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            ]);
+
+            $path = public_path() . '/uploads/users';
+            $identy = request('identy');
+            $identy_name = time() . request('identy')->getClientOriginalName();
+            $identy->move($path, $identy_name);
+            $identy_in_db = '/uploads/users/' . $identy_name;
+        } else {
+
+            $identy_in_db = $user->identy;
+        }
+        //cv
+        $cv_in_db = NULL;
+        if ($request->has('cv')) {
+            $request->validate([
+                'cv' => 'required|mimes:pdf,doc,docx,zip',
+            ]);
+
+            $path = public_path() . '/uploads/users';
+            $cv = request('cv');
+            $cv_name = time() . request('cv')->getClientOriginalName();
+            $cv->move($path, $cv_name);
+            $cv_in_db = '/uploads/users/' . $cv_name;
+        } else {
+
+            $cv_in_db = $user->cv;
+        }
         $user->update([
 
-            'first_name'  => $request->first_name,
-            'last_name'   => $request->last_name,
-            'email'       => $request->email,
-            'phone'       => $request->phone,
-            'address'     => $request->address,
-            'birthdate'   => $request->birthdate,
-            'image'       => $image_in_db,
+            'first_name'    => $request->first_name,
+            'last_name'     => $request->last_name,
+            'email'         => $request->email,
+            'phone'         => $request->phone,
+            'address'       => $request->address,
+            'birthdate'     => $request->birthdate,
+            'education'     => $request->education,
+            'qulification'  => $request->qulification,
+            'english'       => $request->english,
+            'image'         => $image_in_db,
+            'identy'        => $identy_in_db,
+            'cv'            => $cv_in_db,
         ]);
 
-        return redirect()->back()->with('success', 'Updated Profile Sucessfully');
+        if ($user) {
+            return redirect()->back()->with('success', 'Profile Updated Successfully');
+        } else {
+            return redirect()->back()->with('error', 'Something went wrong');
+        }
     }
 
     public function download($id)

@@ -99,10 +99,14 @@
                                             class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label>Image</label>
-                                        <input type="file" class="form-control modal-title" name='image'
-                                            accept="image/jpeg,image/jpg,image/png">
-                                        <img src="{{ asset($user->image) }}" height="100px" width="100px" />
+                                        <label>Education</label>
+                                        <input type="text" name="education" value="{{ $user->education }}"
+                                            class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Qulification</label>
+                                        <input type="text" name="qulification" value="{{ $user->qulification }}"
+                                            class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label>English</label>
@@ -116,10 +120,22 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
+                                        <label>Image</label>
+                                        <input type="file" class="form-control modal-title" name='image'
+                                            accept="image/jpeg,image/jpg,image/png">
+                                        <img src="{{ asset($user->image) }}" height="100px" width="100px" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Identy</label>
+                                        <input type="file" class="form-control modal-title" name='identy'
+                                            accept="image/jpeg,image/jpg,image/png">
+                                        <img src="{{ asset($user->identy) }}" height="100px" width="100px" />
+                                    </div>
+                                    <div class="form-group">
                                         <label>CV</label>
                                         <input type="file" class="form-control modal-title" name='cv'
                                             accept="application/pdf">
-                                        <a href="{{ route('profile.download', $user->id) }}">
+                                        <a href="{{ route('profile.download', $user->id) }}" style="margin-top: 20px">
                                             <i class="fas fa-download">Dwonload CV</i>
                                         </a>
                                     </div>

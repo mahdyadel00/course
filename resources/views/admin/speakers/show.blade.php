@@ -9,93 +9,112 @@
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
                         <table class="table align-items-center mb-0">
-                            <thead>
-                                <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Image
-                                    </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Email</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Phone</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Description</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Address</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Website</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Facebook</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Twitter</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Behance</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Linkedin</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Vimeo</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Instgram</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        CXreated At</th>
-                                    <th class="text-secondary opacity-7"></th>
-                                </tr>
-                            </thead>
                             <tbody>
                                 <tr>
+                                    <th>Image</th>
                                     <td>
                                         <img src="{{ $speaker->image }}" width="100px" height="100px" alt="">
                                     </td>
+                                </tr>
+                                <tr>
+                                    <th>Name</th>
+                                    <td>{{ $speaker->name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <td>{{ $speaker->email }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Phone</th>
+                                    <td>{{ $speaker->phone }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Job Title</th>
+                                    <td>{!! $speaker->job_title !!}</td>
+                                </tr>
+                                <tr>
+                                    <th>Personal Statment</th>
+                                    <td>{!! $speaker->personal_info !!}</td>
+                                </tr>
+                                <tr>
+                                    <th>Description</th>
+                                    <td>{!! $speaker->description !!}</td>
+                                </tr>
+                                <tr>
+                                    <th>Address</th>
+                                    <td>{{ $speaker->address }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Website</th>
+                                    <td>{{ $speaker->website }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Facebook</th>
                                     <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $speaker->name }}</p>
+                                        <a href="{{ $speaker->facebook }}" target="_blank">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <th>Twitter</th>
                                     <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $speaker->email }}</p>
+                                        <a href="{{ $speaker->twitter }}" target="_blank">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <th>Behance</th>
                                     <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $speaker->phone }}</p>
+                                        <a href="{{ $speaker->behance }}" target="_blank">
+                                            <i class="fa fa-behance"></i>
+                                        </a>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <th>Linkedin</th>
                                     <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $speaker->description }}</p>
+                                        <a href="{{ $speaker->linkedin }}" target="_blank">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <th>Vimeo</th>
                                     <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $speaker->address }}</p>
+                                        <a href="{{ $speaker->vimeo }}" target="_blank">
+                                            <i class="fa fa-vimeo"></i>
+                                        </a>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <th>Instagram</th>
                                     <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $speaker->website }}</p>
+                                        <a href="{{ $speaker->instagram }}" target="_blank">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <th>Youtube</th>
                                     <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $speaker->facebook }}</p>
+                                        <a href="{{ $speaker->youtube }}" target="_blank">
+                                            <i class="fa fa-youtube"></i>
+                                        </a>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <th>Tiktok</th>
                                     <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $speaker->twitter }}</p>
+                                        <a target="_blank" href="{{ $speaker->tiktok }}" class="tiktok" style="background:black">
+                                            <img src="{{ asset('dashboard') }}/assets/img/tik.png" alt="">
+                                        </a>
                                     </td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $speaker->behance }}</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $speaker->linkedin }}</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $speaker->vimeo }}</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $speaker->instagram }}</p>
-                                    </td>
-                                    <td class="align-middle text-center">
-                                        <span
-                                            class="text-secondary text-xs font-weight-bold">{{ $speaker->created_at->format('d/m/Y') }}</span>
-                                    </td>
+                                <tr>
+                                    <th>Created At</th>
+                                    <td>{{ date('d-m-Y', strtotime($speaker->created_at)) }}</td>
+                                </tr>
                                 </tr>
                             </tbody>
                         </table>

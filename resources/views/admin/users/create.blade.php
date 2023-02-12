@@ -75,7 +75,7 @@
                                         </select>
                                     </div>
                                     {{-- roles --}}
-                                    <div class="col">
+                                    {{-- <div class="col">
                                         <label>Roles</label>
                                         <select name="roles_name[]" id="roles" class="form-control js-example-basic-multiple"
                                             multiple="multiple">
@@ -84,7 +84,7 @@
                                                 <option>{{ $role }}</option>
                                             @endforeach
                                         </select>
-                                    </div>
+                                    </div> --}}
                                         <div class="col">
                                             <label>Image</label>
                                             <input type="file" class="form-control modal-title" name='image'
@@ -114,8 +114,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="d-flex justify-content-center">
-                                        <button type="submit" class="btn btn-primary">Add</button>
+                                    <div class="d-flex justify-content-center col">
+                                        <button type="submit" class="btn btn-primary" style="margin-top: 25px;padding: 10px 100px;">Add User</button>
                                     </div>
                                 </form>
                             </div>

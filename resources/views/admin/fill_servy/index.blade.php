@@ -34,7 +34,7 @@
                                                 <span class="badge badge-sm bg-gradient-danger">False</span>
                                             @endif
                                         </td>
-                                        <td>{{ $serv->created_at }}</td>
+                                        <td>{{ date('d-m-Y', strtotime($serv->created_at)) }}</td>
                                         <td class="align-middle">
                                             {{-- <button class="btn btn-success">
                                                 <a href="{{ route('admin.servay.show', [$serv->id]) }}"

@@ -57,7 +57,7 @@
                                         </td>
                                         <td class="align-middle text-center">
                                             <span
-                                                class="text-secondary text-xs font-weight-bold">{{ $user->created_at }}</span>
+                                                class="text-secondary text-xs font-weight-bold">{{  date('d-m-Y', strtotime($user->created_at)) }}</span>
                                         </td>
                                         <td class="align-middle">
                                             <button class="btn btn-success">

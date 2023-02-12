@@ -17,37 +17,34 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name
-                                    </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Phone</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Image</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Created_at</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Image</th>
+                                    <th>Created At</th>
+                                    <th>Action</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($speakers as $speaker)
                                     <tr>
-                                        <td><p class="text-xs font-weight-bold mb-0">{{ $speaker->name }}</p></td>
-                                        <td><p class="text-xs font-weight-bold mb-0">{{ $speaker->email }}</p></td>
-                                        <td><p class="text-xs font-weight-bold mb-0">{{ $speaker->phone }}</p></td>
+                                        <td>{{ $speaker->name }}</td>
+                                        <td>{{ $speaker->email }}</td>
+                                        <td>{{ $speaker->phone }}</td>
                                         <td><img src="{{ $speaker->image }}" width="100px" height="100px" alt=""></td>
-                                        </td><td class="align-middle text-center"><span
-                                                class="text-secondary text-xs font-weight-bold">{{ $speaker->created_at }}</span>
-                                        </td>
+                                        <td>{{ date('d-m-Y', strtotime($speaker->created_at)) }}</td>
                                         <td class="align-middle">
-                                            <a href="{{ route('admin.speakers.show', $speaker->id) }}" class="btn btn-info"><i
-                                                    class="fa fa-eye"></i></a>
+                                            <a href="{{ route('admin.speakers.show', $speaker->id) }}"
+                                                class="btn btn-info"><i class="fa fa-eye"></i></a>
                                             <button class="btn btn-primary">
                                                 <a href="{{ route('admin.speakers.edit', [$speaker->id]) }}"
                                                     class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
                                                     data-original-title="Edit speaker">
                                                     <i class="fa fa-edit"></i>
                                                 </a></button>
-                                            <form action="{{ route('admin.speakers.delete', [$speaker->id]) }}" method="post"
-                                                style="display: inline-block">
+                                            <form action="{{ route('admin.speakers.delete', [$speaker->id]) }}"
+                                                method="post" style="display: inline-block">
                                                 {{ csrf_field() }}
                                                 {{ method_field('delete') }}
                                                 <button class="btn btn-danger" type="submit">
