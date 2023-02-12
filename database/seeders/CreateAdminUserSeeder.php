@@ -9,7 +9,7 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Hash;
 
-class UserSeeder extends Seeder
+class CreateAdminUserSeeder extends Seeder
 {
     /**
      * Run the database seeds.

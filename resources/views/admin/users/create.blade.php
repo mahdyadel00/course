@@ -74,50 +74,68 @@
                                             <option value="advanced">Advanced</option>
                                         </select>
                                     </div>
+                                    {{-- roles --}}
                                     <div class="col">
-                                        <label>Image</label>
-                                        <input type="file" class="form-control modal-title" name='image'
-                                            accept="image/jpeg,image/jpg,image/png">
+                                        <label>Roles</label>
+                                        <select name="roles_name[]" id="roles" class="form-control js-example-basic-multiple"
+                                            multiple="multiple">
+                                            <option disabled value="0">Select Roles</option>
+                                            @foreach ($roles as $role)
+                                                <option>{{ $role }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
-                                    <div class="col">
-                                        <label>Identy</label>
-                                        <input type="file" class="form-control modal-title" name='identy'
-                                            accept="image/jpeg,image/jpg,image/png">
-                                    </div>
-                                    <div class="col">
-                                        <label>CV</label>
-                                        <input type="file" class="form-control modal-title" name='cv'>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="col-md-3">
-                                            <label class="infoTitle">@lang('site.status')</label>
-                                            <input type="checkbox" value="1" name="status">
+                                        <div class="col">
+                                            <label>Image</label>
+                                            <input type="file" class="form-control modal-title" name='image'
+                                                accept="image/jpeg,image/jpg,image/png">
                                         </div>
-                                        <div class="col-md-3">
-                                            <label class="infoTitle">@lang('site.fill_survy')</label>
-                                            <input type="checkbox" value="1" name="fill_survy">
+                                        <div class="col">
+                                            <label>Identy</label>
+                                            <input type="file" class="form-control modal-title" name='identy'
+                                                accept="image/jpeg,image/jpg,image/png">
                                         </div>
-                                        <div class="col-md-3">
-                                            <label class="infoTitle">@lang('site.policies')</label>
-                                            <input type="checkbox" value="1" name="policies">
+                                        <div class="col">
+                                            <label>CV</label>
+                                            <input type="file" class="form-control modal-title" name='cv'>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-3">
+                                                <label class="infoTitle">@lang('site.status')</label>
+                                                <input type="checkbox" value="1" name="status">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label class="infoTitle">@lang('site.fill_survy')</label>
+                                                <input type="checkbox" value="1" name="fill_survy">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label class="infoTitle">@lang('site.policies')</label>
+                                                <input type="checkbox" value="1" name="policies">
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-primary">Add</button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary">Add</button>
-                            </div>
-                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- row closed -->
         </div>
-        <!-- row closed -->
-    </div>
     </div>
     <!-- row closed -->
     </div>
     </div>
     </div>
     </div>
+    @push('js')
+        <script>
+            $(document).ready(function() {
+                $('.js-example-basic-multiple').select2();
+            });
+        </script>
+    @endpush
 @endsection

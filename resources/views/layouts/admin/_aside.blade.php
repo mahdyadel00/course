@@ -67,7 +67,7 @@
                     </a>
                 </li>
             {{-- @endcan --}}
-            {{-- @can('roles') --}}
+            {{-- @can('role-list') --}}
                 <li class="nav-item">
                     <a class="nav-link  " href="{{ route('admin.roles.index') }}">
                         <div
@@ -95,7 +95,7 @@
                     </a>
                 </li>
             {{-- @endcan --}}
-            @can('contacts')
+            {{-- @can('contacts') --}}
                 <li class="nav-item">
                     <a class="nav-link  " href="{{ route('admin.contacts.index') }}">
                         <div
@@ -123,7 +123,7 @@
                         <span class="nav-link-text ms-1">Contacts</span>
                     </a>
                 </li>
-            @endcan
+            {{-- @endcan --}}
             {{-- @can('speakers') --}}
                 <li class="nav-item">
                     <a class="nav-link  " href="{{ route('admin.speakers.index') }}">

@@ -22,7 +22,7 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('dashboard') }}/assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
     {{-- select 2 --}}
-    <link rel="stylesheet" href="{{ asset('AdminFlatAble/bower_components/select2/css/select2.min.css') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 </head>
 
@@ -1092,6 +1092,7 @@
             Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
         }
     </script>
+     @stack('js')
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
@@ -1100,11 +1101,11 @@
     <script src="{{ asset('dashboard') }}/assets/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     <!-- Select 2 js -->
-    <script type="text/javascript" src="{{ asset('AdminFlatAble/bower_components/select2/js/select2.full.min.js') }}">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- Custom js -->
     <script type="text/javascript" src="{{ asset('AdminFlatAble/assets/pages/advance-elements/select2-custom.js') }}">
     </script>
+
 </body>
 
 </html>

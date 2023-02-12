@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
             PermissionTableSeeder::class,
             SettingsSeeder::class,
             SpeakerSeeder::class,
-            UserSeeder::class,
+            CreateAdminUserSeeder::class,
         ]);
 
 

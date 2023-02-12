@@ -15,42 +15,39 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Image
-                                    </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">User
-                                        Name
-                                    </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Email</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Phone</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Status</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Created_at</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Action</th>
+                                    <th>#</th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    {{-- <th>Roles</th> --}}
+                                    <th>Status</th>
+                                    <th>Creaed At</th>
+                                    <th>Action</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($users as $user)
                                     <tr>
+                                        <td>{{ $user->id }}</td>
                                         <td>
                                             <img src="{{ $user->image }}" width="100px" height="100px" alt="">
                                         </td>
-                                        <td>
-                                            <p class="text-xs font-weight-bold mb-0">{{ $user->name }}</p>
-                                        </td>
+                                        <td>{{ $user->name }}</td>
                                         <td>
                                             <p class="text-xs font-weight-bold mb-0">{{ $user->email }}</p>
                                         </td>
                                         <td>
                                             <p class="text-xs font-weight-bold mb-0">{{ $user->phone }}</p>
                                         </td>
+                                        {{-- <td>
+                                            @if (!empty($user->getRoleNames()))
+                                                @foreach ($user->getRoleNames() as $v)
+                                                    <span>{{ $v }}</span>
+                                                @endforeach
+                                            @endif
+                                        </td> --}}
                                         <td class="align-middle text-center text-sm">
                                             @if ($user->id == auth()->user()->id)
                                                 <span class="badge badge-sm bg-gradient-success">Online</span>
