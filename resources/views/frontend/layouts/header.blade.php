@@ -23,29 +23,42 @@ $setting = App\Models\Settings::first();
                         </li>
                         <!-- <li>
                               <a href="{{ route('course') }}">Course</a>
-                          </li>
+                          </li>-->
                           <li>
                               <a href="{{ route('pricing') }}">Pricing</a>
-                          </li> -->
-                          <li><a href="{{ route('contacts') }}">Contact</a></li>
-                      </ul>
-                      @if (auth()->check())
-                        <a href="{{ route('logout.front') }}" class="ticket-btn lab-btn custom-btn">
-                            <span>Logout</span>
-                        @else
-                            <a href="{{ route('register.show') }}" class="ticket-btn lab-btn custom-btn">
-                                <span>Register Now</span>
-                            </a>
+                          </li>
+                        <li><a href="{{ route('contacts') }}">Contact</a></li>
+                    </ul>
+                    @if (auth()->check())
+                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                            <div class="btn-group btn-profile" role="group">
+                                <button type="button" class="btn custom-btn dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img src="{{ asset(auth()->user()->image) }}" alt="">
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{{ route('profile.index') }}">Profile</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('logout.front') }}">Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    @else
+                        <a href="{{ route('register.show') }}" class="ticket-btn lab-btn custom-btn">
+                            <span>Register Now</span>
+                        </a>
+                        <a href="{{ route('login.show') }}"  class="ticket-btn lab-btn custom-btn">
+                            <span>Login</span>
+                        </a>
                     @endif
-                      <!-- toggle icons -->
-                      <div class="header-bar d-lg-none">
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </header>
-  <!-- ==========Header Section Ends Here========== -->
+                    <!-- toggle icons -->
+                    <div class="header-bar d-lg-none">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ==========Header Section Ends Here========== -->

@@ -9,7 +9,7 @@
                 <h4 class="ph-title">Purchase a Ticket</h4>
                 <ul class="lab-ul">
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="{{ route('features')  }}">Features</a></li>
+                    <li><a href="{{ route('pricing')  }}">Pricing</a></li>
                     <li><a class="active">Ticket</a></li>
                 </ul>
             </div>

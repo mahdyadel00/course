@@ -14,6 +14,8 @@ use  App\Http\Controllers\Admin\SubscriptionsController;
 use  App\Http\Controllers\Admin\SettingsController;
 use  App\Http\Controllers\Admin\RoleController;
 use  App\Http\Controllers\Admin\AuthController;
+use  App\Http\Controllers\Admin\PolicesController;
+use  App\Http\Controllers\Admin\ServayController;
 
 
 Auth::routes(['except' => 'register']);
@@ -92,5 +94,20 @@ Route::prefix('admin')->group(function () {
         Route::get('/roles/edit/{id}', [RoleController::class, 'edit'])->name('admin.roles.edit');
         Route::post('/roles/update/{id}', [RoleController::class, 'update'])->name('admin.roles.update');
         Route::delete('/roles/delete/{id}', [RoleController::class, 'delete'])->name('admin.roles.delete');
+
+
+        //Sevay Routes
+        Route::get('/servay', [ServayController::class, 'index'])->name('admin.servay.index');
+        Route::get('/servay/create', [ServayController::class, 'create'])->name('admin.servay.create');
+        Route::post('/servay/store', [ServayController::class, 'store'])->name('admin.servay.store');
+        Route::get('/servay/show/{id}', [ServayController::class, 'show'])->name('admin.servay.show');
+        Route::get('/servay/edit/{id}', [ServayController::class, 'edit'])->name('admin.servay.edit');
+        Route::post('/servay/update/{id}', [ServayController::class, 'update'])->name('admin.servay.update');
+        Route::delete('/servay/delete/{id}', [ServayController::class, 'delete'])->name('admin.servay.delete');
+
+        //polices Route
+        Route::get('/polices', [PolicesController::class, 'index'])->name('admin.polices.index'); //
+        Route::post('/polices', [PolicesController::class, 'update'])->name('admin.polices.update'); //
+
     });
 });
