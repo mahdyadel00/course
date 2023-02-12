@@ -23,7 +23,6 @@ class PricingSeeder extends Seeder
                 'title'           => 'title',
                 'price'           => 'price',
                 'description'     => 'description',
-                'feature_id'      => 1,
           ]);
     }
 }

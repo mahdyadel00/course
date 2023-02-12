@@ -13,11 +13,10 @@ class Pricing extends Model
         'title',
         'price',
         'description',
-        'feature_id',
     ];
 
     public function feature()
     {
-        return $this->belongsTo(Feature::class);
+        return $this->belongsTo(Feature::class , 'price_id' , 'id');
     }
 }

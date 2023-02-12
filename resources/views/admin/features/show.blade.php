@@ -19,6 +19,10 @@
                                     <td>{!! $feature->description !!}</td>
                                 </tr>
                                 <tr>
+                                    <th>Pricing</th>
+                                    <td>{{ $feature->pricing ? $feature->pricing->title : '' }}</td>
+                                </tr>
+                                <tr>
                                     <th>Created At</th>
                                     <td>{{ date('d-m-Y', strtotime($feature->created_at)) }}</td>
                                 </tr>

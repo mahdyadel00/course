@@ -31,17 +31,6 @@
                                         <input class="form-control fc-datepicker" name="price"
                                             value="{{ $pricing->price }}" type="text">
                                     </div>
-                                    <div class="col">
-                                        <label for="features">Features</label>
-                                        <select name="feature_id" id="feature_id" class="form-control fc-datepicker">
-                                            <option value="" selected disabled>Select Features</option>
-                                            @foreach ($features as $feature)
-                                                <option value="{{ $feature->id }}"
-                                                    {{ $feature->id == $pricing->feature_id ? 'selected' : '' }}>
-                                                    {{ $feature->title }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
                                     <div class="d-flex justify-content-center col">
                                         <button type="submit" class="btn btn-primary"
                                             style="margin-top: 25px;padding: 10px 100px;">Edit Pricing</button>

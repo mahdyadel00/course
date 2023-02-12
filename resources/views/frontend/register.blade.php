@@ -1,4 +1,4 @@
-`@extends('frontend.layouts.master')
+@extends('frontend.layouts.master')
 
 @section('content')
     <!-- Page Header Section Start Here -->
@@ -49,7 +49,7 @@
                         <input type="checkbox" name="fill_survy">Fill Survey
                     </div>
                     <div class="text-start">
-                        <input type="checkbox" name="policies" required>I Accept <a href="">privacy policy</a>
+                        <input type="checkbox" name="policies" required>I Accept <a href="{{ route('polices.index') }}">privacy policy</a>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="d-block lab-btn"><span>Get Started Now</span></button>

@@ -12,10 +12,11 @@ class Feature extends Model
     protected $fillable = [
         'title',
         'description',
+        'price_id',
     ];
 
     public function pricing()
     {
-        return $this->hasMany(Pricing::class);
+        return $this->belongsTo(Pricing::class , 'price_id' , 'id');
     }
 }

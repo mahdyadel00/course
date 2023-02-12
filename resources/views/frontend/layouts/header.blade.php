@@ -12,24 +12,13 @@ $setting = App\Models\Settings::first();
                 </div>
                 <div class="menu-area">
                     <ul class="menu">
-                        <li>
-                            <a href="{{ route('home') }}">Home</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('features') }}">Features</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('speakers.index') }}">Speakers</a>
-                        </li>
-                        <!-- <li>
-                              <a href="{{ route('course') }}">Course</a>
-                          </li>-->
-                          <li>
-                              <a href="{{ route('pricing') }}">Pricing</a>
-                          </li>
+                        <li><a href="{{ route('home') }}">Home</a></li>
+                        <li><a href="{{ route('features') }}">Features</a></li>
+                        <li><a href="{{ route('speakers.index') }}">Speakers</a></li>
+                        <li><a href="{{ route('pricing.index') }}">Pricing</a></li>
                         <li><a href="{{ route('contacts') }}">Contact</a></li>
                     </ul>
-                    @if (auth()->check())
+                    @auth
                         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                             <div class="btn-group btn-profile" role="group">
                                 <button type="button" class="btn custom-btn dropdown-toggle" data-bs-toggle="dropdown"
@@ -46,16 +35,10 @@ $setting = App\Models\Settings::first();
                         <a href="{{ route('register.show') }}" class="ticket-btn lab-btn custom-btn">
                             <span>Register Now</span>
                         </a>
-                        <a href="{{ route('login.show') }}"  class="ticket-btn lab-btn custom-btn">
+                        <a href="{{ route('login.show') }}" class="ticket-btn lab-btn custom-btn">
                             <span>Login</span>
                         </a>
-                    @endif
-                    <!-- toggle icons -->
-                    <div class="header-bar d-lg-none">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                    @endauth
                 </div>
             </div>
         </div>

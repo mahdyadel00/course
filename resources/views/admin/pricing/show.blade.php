@@ -23,10 +23,6 @@
                                     <td>{{ $pricing->price }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Features</th>
-                                    <td>{{ $pricing->feature ? $pricing->feature->title : '' }}</td>
-                                </tr>
-                                <tr>
                                     <th>Created At</th>
                                     <td>{{ date('d-m-Y', strtotime($pricing->created_at)) }}</td>
                                 </tr>

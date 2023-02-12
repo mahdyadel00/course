@@ -22,8 +22,8 @@
                                         <label> Description </label>
                                         <textarea class="form-control fc-datepicker ckeditor" name="description" id="description" cols="30" rows="10">{!! $polices->description !!}</textarea>
                                     </div>
-                                    <div class="d-flex justify-content-center">
-                                        <button type="submit" class="btn btn-primary">Edit</button>
+                                    <div class="d-flex justify-content-center col">
+                                        <button type="submit" class="btn btn-primary" style="margin-top: 25px;padding: 10px 100px;">Edit plices</button>
                                     </div>
                                 </form>
                             </div>

@@ -2,13 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\LoginController;
 use App\Http\Controllers\Frontend\RegisterController;
 use App\Http\Controllers\Frontend\SpeakersController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\PricingController;
+use App\Http\Controllers\Frontend\PolicesController;
 
         Auth::routes();
         Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -36,7 +37,13 @@ use App\Http\Controllers\Frontend\ContactController;
         // dwonload cv
         Route::get('/profile/download/{id}', [ProfileController::class, 'download'])->name('profile.download');
 
-        // ============================================================================** Speakers Route ** ==========================================================================
+        // ============================================================================** Pricing Route ** ==========================================================================
+        Route::get('/pricing', [PricingController::class, 'index'])->name('pricing.index');
+        Route::get('/pricing/{id}', [PricingController::class, 'pricingDetails'])->name('pricing.details');
+
+        // ============================================================================** Polices Route ** ==========================================================================
+        Route::get('polices', [PolicesController::class, 'index'])->name('polices.index');
+        // ============================================================================** Polices Route ** ==========================================================================
 
         Route::get('/features', function () {
             return view('frontend.features.index');
@@ -44,7 +51,5 @@ use App\Http\Controllers\Frontend\ContactController;
         Route::get('/course', function () {
             return view('frontend.features.index');
         })->name('course');
-        Route::get('/pricing', function () {
-            return view('frontend.pricing.index');
-        })->name('pricing');
+
     // });

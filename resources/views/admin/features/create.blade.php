@@ -21,6 +21,16 @@
                                         <label> Title</label>
                                         <input class="form-control fc-datepicker" name="title">
                                     </div>
+                                    {{-- pricing --}}
+                                    <div class="col">
+                                        <label for="priceing">Pricing</label>
+                                        <select name="price_id" id="price_id" class="form-control fc-datepicker">
+                                            <option value="" selected disabled>Select Pricing</option>
+                                            @foreach ($pricing as $price)
+                                                <option value="{{ $price->id }}">{{ $price->title }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                     <div class="col">
                                         <label> Description</label>
                                         <textarea class="form-control fc-datepicker ckeditor" name="description" id="description" cols="30" rows="10"></textarea>

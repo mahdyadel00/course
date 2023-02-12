@@ -22,6 +22,8 @@ class FeatureSeeder extends Seeder
        Feature::create([
             'title'           => 'title',
             'description'     => 'description',
+            'price_id'        => '1',
         ]);
     }
 }
+

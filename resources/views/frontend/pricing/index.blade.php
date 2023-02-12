@@ -9,7 +9,7 @@
                 <h4 class="ph-title">Purchase a Ticket</h4>
                 <ul class="lab-ul">
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="{{ route('pricing')  }}">Pricing</a></li>
+                    <li><a href="{{ route('pricing.index') }}">Pricing</a></li>
                     <li><a class="active">Ticket</a></li>
                 </ul>
             </div>
@@ -25,165 +25,81 @@
             </div>
             <div class="section-wrapper">
                 <div class="row g-4 justify-content-center">
-                    <div class="col-xl-4 col-md-6 col-12">
-                        <div class="pricing-item">
-                            <div class="pricing-inner">
-                                <div class="pricing-header">
-                                    <h3>1-Day-Pass</h3>
-                                    <p>For Normal Seating</p>
-                                </div>
-                                <div class="pricing-content">
-                                    <ul class="facilites">
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> Event Attendance
-                                        </li>
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> Networking Area Access
-                                        </li>
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> Tea And Coffee
-                                        </li>
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> Lunch
-                                        </li>
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> Free Wifi
-                                        </li>
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> 3 Lottery Ticket
-                                        </li>
-                                    </ul>
-                                    <div class="get-ticket">
-                                        <a href="#">
-                                            <ul>
-                                                <li class="vat">
-                                                    <h4>$24</h4>
-                                                    <p>ex. VAT</p>
+                    @foreach ($pricing as $price)
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="pricing-item">
+                                <div class="pricing-inner">
+                                    <div class="pricing-header" style="width:352px;height:207px">
+                                        <h3>{{ $price->title }}</h3>
+                                        <p>{!! $price->description !!}</p>
+                                    </div>
+                                    <div class="pricing-content">
+                                        <ul class="facilites">
+                                            @foreach ($features as $feature)
+                                                <li class="facility-item">
+                                                    <span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                    </span> {{ $feature->title }}
                                                 </li>
-                                                <li class="icon"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                                {{-- <li class="facility-item">
+                                                    <span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                    </span> Networking Area Access
                                                 </li>
-                                                <li class="ticket-text">
-                                                    <p>Get Ticket</p>
+                                                <li class="facility-item">
+                                                    <span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                    </span> Tea And Coffee
                                                 </li>
-                                            </ul>
-                                        </a>
+                                                <li class="facility-item">
+                                                    <span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                    </span> Lunch
+                                                </li>
+                                                <li class="facility-item">
+                                                    <span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                    </span> Free Wifi
+                                                </li>
+                                                <li class="facility-item">
+                                                    <span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                    </span> 3 Lottery Ticket
+                                                </li> --}}
+                                            @endforeach
+                                        </ul>
+                                        @auth
+                                            <div class="get-ticket">
+                                                <a href="#">
+                                                    <ul>
+                                                        <li class="vat">
+                                                            <h4>${{ $price->price }}</h4>
+                                                            {{-- <p>ex. VAT</p> --}}
+                                                        </li>
+                                                        <li class="icon">
+                                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                                        </li>
+                                                        <li class="ticket-text">
+                                                            <p>Get Ticket</p>
+                                                        </li>
+                                                    </ul>
+                                                </a>
+                                            </div>
+                                        @else
+                                            <div class="get-ticket">
+                                                <a href="{{ route('login.show') }}">
+                                                    <ul>
+                                                        <li class="vat">
+                                                            <h4>${{ $price->price }}</h4>
+                                                        </li>
+                                                        <li class="icon"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                                        </li>
+                                                        <li class="ticket-text">
+                                                            <p>Get Ticket</p>
+                                                        </li>
+                                                    </ul>
+                                                </a>
+                                            </div>
+                                        @endauth
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6 col-12">
-                        <div class="pricing-item">
-                            <div class="pricing-inner">
-                                <div class="pricing-header">
-                                    <h3>Full Pass</h3>
-                                    <p>For Corporate Seating</p>
-                                </div>
-                                <div class="pricing-content">
-                                    <ul class="facilites">
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> Event Attendance
-                                        </li>
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> Networking Area Access
-                                        </li>
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> Tea And Coffee
-                                        </li>
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> Lunch
-                                        </li>
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> Free Wifi
-                                        </li>
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> 3 Lottery Ticket
-                                        </li>
-                                    </ul>
-                                    <div class="get-ticket">
-                                        <a href="#">
-                                            <ul>
-                                                <li class="vat">
-                                                    <h4>$24</h4>
-                                                    <p>ex. VAT</p>
-                                                </li>
-                                                <li class="icon"><i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                                </li>
-                                                <li class="ticket-text">
-                                                    <p>Get Ticket</p>
-                                                </li>
-                                            </ul>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6 col-12">
-                        <div class="pricing-item">
-                            <div class="pricing-inner">
-                                <div class="pricing-header">
-                                    <h3>VIP Pass</h3>
-                                    <p>For VIP Seating</p>
-                                </div>
-                                <div class="pricing-content">
-                                    <ul class="facilites">
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> Event Attendance
-                                        </li>
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> Networking Area Access
-                                        </li>
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> Tea And Coffee
-                                        </li>
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> Lunch
-                                        </li>
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> Free Wifi
-                                        </li>
-                                        <li class="facility-item">
-                                            <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                            </span> 3 Lottery Ticket
-                                        </li>
-                                    </ul>
-                                    <div class="get-ticket">
-                                        <a href="#">
-                                            <ul>
-                                                <li class="vat">
-                                                    <h4>$24</h4>
-                                                    <p>ex. VAT</p>
-                                                </li>
-                                                <li class="icon"><i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                                </li>
-                                                <li class="ticket-text">
-                                                    <p>Get Ticket</p>
-                                                </li>
-                                            </ul>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

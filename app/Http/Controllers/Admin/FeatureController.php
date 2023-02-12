@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Feature;
+use App\Models\Pricing;
 
 class FeatureController extends Controller
 {
@@ -17,24 +18,28 @@ class FeatureController extends Controller
 
     public function create()
     {
-        return view('admin.features.create');
+        $pricing = Pricing::get();
+        return view('admin.features.create' , compact('pricing'));
     }
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
+            'title'       => 'required',
             'description' => 'required',
+            'price_id'    => 'required',
         ]);
+        $pricing = Pricing::find($request->price_id);
         Feature::create([
-            'title' => $request->title,
+            'title'       => $request->title,
             'description' => $request->description,
+            'price_id'    => $pricing->id,
         ]);
         return redirect()->route('admin.features.index')->with('success', 'Feature created successfully');
     }
 
     public function show($id)
     {
-        $feature = Feature::find($id);
+        $feature = Feature::with('pricing')->find($id);
         return view('admin.features.show', compact('feature'));
     }
 
@@ -42,7 +47,8 @@ class FeatureController extends Controller
     public function edit($id)
     {
         $feature = Feature::find($id);
-        return view('admin.features.edit', compact('feature'));
+        $pricing = Pricing::get();
+        return view('admin.features.edit', compact('feature' , 'pricing'));
     }
 
 
@@ -50,13 +56,16 @@ class FeatureController extends Controller
     {
 
         $request->validate([
-            'title' => 'required',
+            'title'       => 'required',
             'description' => 'required',
+            'price_id'    => 'required',
         ]);
+        $pricing = Pricing::find($request->price_id);
         $feature = Feature::find($id);
         $feature->update([
-            'title' => $request->title,
+            'title'       => $request->title,
             'description' => $request->description,
+            'price_id'    => $pricing->id,
         ]);
         return redirect()->route('admin.features.index')->with('success', 'Feature updated successfully');
     }

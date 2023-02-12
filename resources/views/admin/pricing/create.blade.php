@@ -26,15 +26,6 @@
                                         <input class="form-control fc-datepicker" name="price">
                                     </div>
                                     <div class="col">
-                                        <label for="features">Features</label>
-                                        <select name="feature_id" id="feature_id" class="form-control fc-datepicker">
-                                            <option value="" selected disabled>Select Features</option>
-                                            @foreach ($features as $feature)
-                                                <option value="{{ $feature->id }}">{{ $feature->title }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="col">
                                         <label> Description</label>
                                         <textarea class="form-control fc-datepicker ckeditor" name="description" id="description" cols="30" rows="10"></textarea>
                                     </div>
