@@ -20,6 +20,7 @@ use  App\Http\Controllers\Admin\PackageFeatureController;
 use  App\Http\Controllers\Admin\PricingController;
 use  App\Http\Controllers\Admin\FeatureController;
 use  App\Http\Controllers\Admin\CourseController;
+use  App\Http\Controllers\Admin\SponserController;
 
 
 Auth::routes(['except' => 'register']);
@@ -113,6 +114,15 @@ Route::prefix('admin')->group(function () {
         Route::get('/pricing/edit/{id}', [PricingController::class, 'edit'])->name('admin.pricing.edit');
         Route::post('/pricing/update/{id}', [PricingController::class, 'update'])->name('admin.pricing.update');
         Route::delete('/pricing/delete/{id}', [PricingController::class, 'delete'])->name('admin.pricing.delete');
+
+        //Sponser Route
+        Route::get('/sponsers', [SponserController::class, 'index'])->name('admin.sponsers.index');
+        Route::get('/sponsers/create', [SponserController::class, 'create'])->name('admin.sponsers.create');
+        Route::post('/sponsers/store', [SponserController::class, 'store'])->name('admin.sponsers.store');
+        Route::get('/sponsers/show/{id}', [SponserController::class, 'show'])->name('admin.sponsers.show');
+        Route::get('/sponsers/edit/{id}', [SponserController::class, 'edit'])->name('admin.sponsers.edit');
+        Route::post('/sponsers/update/{id}', [SponserController::class, 'update'])->name('admin.sponsers.update');
+        Route::delete('/sponsers/delete/{id}', [SponserController::class, 'delete'])->name('admin.sponsers.delete');
 
         //Features Route
         Route::get('/features', [FeatureController::class, 'index'])->name('admin.features.index');
