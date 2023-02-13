@@ -7,25 +7,13 @@
                     <h6>Settings</h6>
                 </div>
                 {{-- //message --}}
-                @if (session()->has('success'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>Success!</strong> {{ session()->get('success') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endif
-                @if (session()->has('error'))
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong>Error!</strong> {{ session()->get('error') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endif
+               @include('layouts.admin._partials._session')
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
                             <div class="card-body">
                                 <form class="forms-sample" action="{{ route('admin.settings.update') }}"
                                     method="post" enctype="multipart/form-data" autocomplete="off">
-
                                     {{ csrf_field() }}
                                     <div class="col">
                                         <label>English Name </label>
@@ -65,22 +53,22 @@
                                     <div class="col">
                                         <label>Facebook_link</label>
                                         <input class="form-control fc-datepicker" name="facebook_link"
-                                            value="{{ $setting ? $setting->facebook_link : '' }}" type="url">
+                                            value="{{ $setting ? $setting->facebook_link : '' }}" type="text">
                                     </div>
                                     <div class="col">
                                         <label>Twitter</label>
                                         <input class="form-control fc-datepicker" name="twitter_link"
-                                            value="{{ $setting->twitter_link }}" type="url">
+                                            value="{{ $setting->twitter_link }}" type="text">
                                     </div>
                                     <div class="col">
                                         <label>YouTube</label>
                                         <input class="form-control fc-datepicker" name="youtube_link"
-                                            value="{{ $setting ? $setting->youtube_link : '' }}" type="url">
+                                            value="{{ $setting ? $setting->youtube_link : '' }}" type="text">
                                     </div>
                                     <div class="col">
                                         <label>Linkedin</label>
                                         <input class="form-control fc-datepicker" name="linkedin_link"
-                                            value="{{ $setting ? $setting->linkedin_link : ''}}" type="url">
+                                            value="{{ $setting ? $setting->linkedin_link : ''}}" type="text">
                                     </div>
                                     <div class="col">
                                         <label> Logo</label>
@@ -95,8 +83,9 @@
                                         <img src="{{ asset( $setting->image) }}" height="100px" width="100px" />
                                     </div>
                             </div>
-                            <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary">Edit</button>
+                            <div class="d-flex justify-content-center col">
+                                <button type="submit" class="btn btn-primary"
+                                    style="margin-top: 25px;padding: 10px 100px;">Update Settings</button>
                             </div>
                             </form>
                         </div>

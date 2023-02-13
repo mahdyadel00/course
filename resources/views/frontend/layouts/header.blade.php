@@ -23,7 +23,15 @@ $setting = App\Models\Settings::first();
                             <div class="btn-group btn-profile" role="group">
                                 <button type="button" class="btn custom-btn dropdown-toggle" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    <img src="{{ asset(auth()->user()->image) }}" alt="">
+                                    @php
+                                        $path = asset(auth()->user()->image);
+                                    @endphp
+                                    @if (asset(auth()->user()->image) == $path)
+                                        <img src="{{ asset('frontend/assets/images/user.jpg') }}" alt="scholar"
+                                            height="50px" width="100px" />
+                                    @else
+                                        <img src="{{ asset(auth()->user()->image) }}" alt="">
+                                    @endif
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="{{ route('profile.index') }}">Profile</a></li>

@@ -6,10 +6,11 @@
                 <div class="card-header pb-0">
                     <h6>Course</h6>
                     <button class="btn btn-primary">
-                        <a href="{{ route('admin.courses.index') }}">
+                        <a href="#">
                             <i class="fa fa-plus">Edit Course</i>
                         </a></button>
                 </div>
+                @include('layouts.admin._partials._session')
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
@@ -63,9 +64,10 @@
                                     {{-- //file_course --}}
                                     <div class="col">
                                         <label>File Course</label>
-                                        <input type="file" name="file_course" class="form-control fc-datepicker">
+                                        <input type="file" name="course_file" class="form-control fc-datepicker">
                                         <br>
-                                        <a href="{{ route('admin.courses.download' , $course->course_file) }}" target="_blank">Download File</a>
+                                        <a href="{{ route('admin.courses.download', $course->id) }}"
+                                            target="_blank">Download File</a>
                                     </div>
                                     <div class="d-flex justify-content-center col">
                                         <button type="submit" class="btn btn-primary"

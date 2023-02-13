@@ -10,6 +10,7 @@
                             <i class="fa fa-plus">Show Packages Features</i>
                         </a></button>
                 </div>
+                @include('layouts.admin._partials._session')
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
@@ -19,12 +20,12 @@
                                     {{ csrf_field() }}
                                     <div class="col">
                                         <label> Title</label>
-                                        <input class="form-control fc-datepicker" name="title">
+                                        <input class="form-control fc-datepicker" name="title" required>
                                     </div>
                                     {{-- pricing --}}
                                     <div class="col">
                                         <label for="priceing">Pricing</label>
-                                        <select name="price_id" id="price_id" class="form-control fc-datepicker">
+                                        <select name="price_id" id="price_id" class="form-control fc-datepicker" required>
                                             <option value="" selected disabled>Select Pricing</option>
                                             @foreach ($pricing as $price)
                                                 <option value="{{ $price->id }}">{{ $price->title }}</option>
@@ -33,7 +34,7 @@
                                     </div>
                                     <div class="col">
                                         <label> Description</label>
-                                        <textarea class="form-control fc-datepicker ckeditor" name="description" id="description" cols="30" rows="10"></textarea>
+                                        <textarea class="form-control fc-datepicker ckeditor" name="description" id="description" cols="30" rows="10" required></textarea>
                                     </div>
                                     <div class="d-flex justify-content-center col">
                                         <button type="submit" class="btn btn-primary"

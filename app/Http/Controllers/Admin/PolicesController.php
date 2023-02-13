@@ -34,7 +34,7 @@ class PolicesController extends Controller
 
         if ($polices) {
 
-            return redirect()->back();
+            return redirect()->back()->with('success', 'Polices updated successfully');
         }
     }
 }

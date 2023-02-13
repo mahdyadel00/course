@@ -177,7 +177,7 @@ class UserController extends Controller
             $identy_in_db = '/uploads/users/' . $identy_name;
         } else {
 
-            $image_in_db = $user->identy;
+            $identy_in_db = $user->identy;
         }
         //upload cv
         $cv_in_db = NULL;
@@ -193,7 +193,7 @@ class UserController extends Controller
             $cv_in_db = '/uploads/users/' . $cv_name;
         } else {
 
-            $image_in_db = $user->cv;
+            $cv_in_db = $user->cv;
         }
 
         $user->update([
@@ -218,7 +218,7 @@ class UserController extends Controller
         ]);
         // DB::table('model_has_roles')->where('model_id', $id)->delete();
         // $user->assignRole($request->input('roles'));
-        return redirect()->route('admin.users.index')->with('flash_message', 'User Updated successfully !');
+        return redirect()->route('admin.users.index')->with('success', 'User Updated successfully !');
     }
 
     public function delete($id)
@@ -226,8 +226,7 @@ class UserController extends Controller
         $user = User::where('id', $id)->first();
         $user->delete();
 
-        return back();
-        flash()->success("User deleted successfully");
+        return back()->with('error' , "User deleted successfully");
     }
 
     protected function logout()

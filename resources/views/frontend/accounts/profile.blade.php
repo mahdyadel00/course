@@ -17,18 +17,7 @@
     </section>
     <!-- Page Header Section Ending Here -->
     {{-- //message --}}
-    @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Success!</strong> {{ session()->get('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
-    @if (session()->has('error'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Error!</strong> {{ session()->get('error') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
+    @include('frontend.layouts.session')
     <!-- Scholar single section start Here -->
     <div class="scholar-single-section padding-tb padding-b">
         <div class="container">
@@ -39,7 +28,11 @@
                             <div class="scholar-left">
                                 <div class="scholar-single-item">
                                     <div class="scholar-single-thumb" style="width: 330px; height: 363px;">
-                                        <img src="{{ asset($user->image) }}" alt="scholar" />
+                                        @if ($user->image == 'mahdy.png')
+                                            <img src="{{ asset('frontend/assets/images/user.jpg') }}" alt="scholar" />
+                                        @else
+                                            <img src="{{ asset($user->image) }}" alt="scholar" />
+                                        @endif
                                     </div>
                                     <div>
                                         <span class="d-inline-block">Change Password</span>
@@ -48,7 +41,6 @@
                                             data-target="#exampleModal">
                                             Launch demo modal
                                         </button>
-
                                         <!-- Modal -->
                                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -135,13 +127,25 @@
                                         <label>Image</label>
                                         <input type="file" class="form-control modal-title" name='image'
                                             accept="image/jpeg,image/jpg,image/png">
-                                        <img src="{{ asset($user->image) }}" height="100px" width="100px" />
+                                        @if ($user->image == 'mahdy.png')
+                                            <img src="{{ asset('frontend/assets/images/user.jpg') }}" alt="scholar"
+                                                height="50px" width="100px" />
+                                        @else
+                                            <img src="{{ asset($user->image) }}" alt="scholar" height="100px"
+                                                width="100px" />
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label>ID</label>
                                         <input type="file" class="form-control modal-title" name='identy'
                                             accept="image/jpeg,image/jpg,image/png">
-                                        <img src="{{ asset($user->identy) }}" height="100px" width="100px" />
+                                        @if ($user->image == 'mahdy.png')
+                                            <img src="{{ asset('frontend/assets/images/identity.png') }}" alt="scholar"
+                                                height="50px" width="100px" />
+                                        @else
+                                            <img src="{{ asset($user->identy) }}" alt="scholar" height="100px"
+                                                width="100px" />
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label>CV</label>

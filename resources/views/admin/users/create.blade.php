@@ -10,10 +10,9 @@
                             <i class="fa fa-plus">Show users</i>
                         </a></button>
                 </div>
+                {{-- message --}}
+                @include('layouts.admin._partials._session')
                 <div class="row">
-                    {{-- message --}}
-                    @include('layouts.admin._partials._session')
-                    {{-- message --}}
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
                             <div class="card-body">
@@ -88,46 +87,47 @@
                                             @endforeach
                                         </select>
                                     </div> --}}
-                                        <div class="col">
-                                            <label>Image</label>
-                                            <input type="file" class="form-control modal-title" name='image'
-                                                accept="image/jpeg,image/jpg,image/png">
+                                    <div class="col">
+                                        <label>Image</label>
+                                        <input type="file" class="form-control modal-title" name='image'
+                                            accept="image/jpeg,image/jpg,image/png">
+                                    </div>
+                                    <div class="col">
+                                        <label>Identy</label>
+                                        <input type="file" class="form-control modal-title" name='identy'
+                                            accept="image/jpeg,image/jpg,image/png">
+                                    </div>
+                                    <div class="col">
+                                        <label>CV</label>
+                                        <input type="file" class="form-control modal-title" name='cv'>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="col-md-3">
+                                            <label class="infoTitle">@lang('site.status')</label>
+                                            <input type="checkbox" value="1" name="status">
                                         </div>
-                                        <div class="col">
-                                            <label>Identy</label>
-                                            <input type="file" class="form-control modal-title" name='identy'
-                                                accept="image/jpeg,image/jpg,image/png">
+                                        <div class="col-md-3">
+                                            <label class="infoTitle">@lang('site.fill_survy')</label>
+                                            <input type="checkbox" value="1" name="fill_survy">
                                         </div>
-                                        <div class="col">
-                                            <label>CV</label>
-                                            <input type="file" class="form-control modal-title" name='cv'>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="col-md-3">
-                                                <label class="infoTitle">@lang('site.status')</label>
-                                                <input type="checkbox" value="1" name="status">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <label class="infoTitle">@lang('site.fill_survy')</label>
-                                                <input type="checkbox" value="1" name="fill_survy">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <label class="infoTitle">@lang('site.policies')</label>
-                                                <input type="checkbox" value="1" name="policies">
-                                            </div>
+                                        <div class="col-md-3">
+                                            <label class="infoTitle">@lang('site.policies')</label>
+                                            <input type="checkbox" value="1" name="policies">
                                         </div>
                                     </div>
-                                    <div class="d-flex justify-content-center col">
-                                        <button type="submit" class="btn btn-primary" style="margin-top: 25px;padding: 10px 100px;">Add User</button>
-                                    </div>
-                                </form>
                             </div>
+                            <div class="d-flex justify-content-center col">
+                                <button type="submit" class="btn btn-primary"
+                                    style="margin-top: 25px;padding: 10px 100px;">Add User</button>
+                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- row closed -->
         </div>
+        <!-- row closed -->
+    </div>
     </div>
     <!-- row closed -->
     </div>

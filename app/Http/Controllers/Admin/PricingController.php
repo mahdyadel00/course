@@ -70,6 +70,6 @@ class PricingController extends Controller
     {
         $pricing = Pricing::find($id);
         $pricing->delete();
-        return redirect()->route('admin.pricing.index')->with('success', 'Pricing deleted successfully');
+        return redirect()->route('admin.pricing.index')->with('error', 'Pricing deleted successfully');
     }
 }

@@ -37,7 +37,7 @@ class CourseController extends Controller
             $image_name = time() . request('image')->getClientOriginalName();
             $image->move($path, $image_name);
             $image_in_db = '/uploads/courses/' . $image_name;
-        }else{
+        } else {
             $image_in_db = $course->image;
         }
 
@@ -52,7 +52,7 @@ class CourseController extends Controller
             $image_name_1 = time() . request('image_1')->getClientOriginalName();
             $image_1->move($path, $image_name_1);
             $image_in_db_1 = '/uploads/courses/' . $image_name_1;
-        }else{
+        } else {
             $image_in_db_1 = $course->image_1;
         }
         //course_file upload
@@ -66,7 +66,7 @@ class CourseController extends Controller
             $course_file_name = time() . request('course_file')->getClientOriginalName();
             $course_file->move($path, $course_file_name);
             $course_file_in_db = '/uploads/courses/' . $course_file_name;
-        }else{
+        } else {
             $course_file_in_db = $course->course_file;
         }
 
