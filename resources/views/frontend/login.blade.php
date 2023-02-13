@@ -16,11 +16,22 @@
         </div>
     </section>
     <!-- Page Header Section Ending Here -->
-
+    {{-- //message --}}
+    {{-- @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> {{ session()->get('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    @if (session()->has('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error!</strong> {{ session()->get('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif --}}
     <!-- Login Section Section Starts Here -->
     <div class="login-section padding-tb">
         <div class=" container">
-            @include('frontend.layouts.session')
             <div class="account-wrapper">
                 <h3 class="title">Login</h3>
                 <form class="account-form" action="{{ route('login.do') }}" method="post">

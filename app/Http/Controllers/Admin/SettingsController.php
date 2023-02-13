@@ -83,7 +83,6 @@ class SettingsController extends Controller
 
         $setting->save();
         Cache::forget('setting');
-
-        return redirect()->back()->with('flash_message', ('Updated Successfully !'));
+        return redirect()->back()->with('success', 'Settings Updated Successfully');
     }
 }

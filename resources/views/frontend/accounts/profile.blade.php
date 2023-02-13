@@ -16,7 +16,19 @@
         </div>
     </section>
     <!-- Page Header Section Ending Here -->
-
+    {{-- //message --}}
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> {{ session()->get('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    @if (session()->has('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error!</strong> {{ session()->get('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <!-- Scholar single section start Here -->
     <div class="scholar-single-section padding-tb padding-b">
         <div class="container">
@@ -126,7 +138,7 @@
                                         <img src="{{ asset($user->image) }}" height="100px" width="100px" />
                                     </div>
                                     <div class="form-group">
-                                        <label>Identy</label>
+                                        <label>ID</label>
                                         <input type="file" class="form-control modal-title" name='identy'
                                             accept="image/jpeg,image/jpg,image/png">
                                         <img src="{{ asset($user->identy) }}" height="100px" width="100px" />
