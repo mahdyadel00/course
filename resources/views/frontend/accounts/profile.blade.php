@@ -28,7 +28,7 @@
                             <div class="scholar-left">
                                 <div class="scholar-single-item">
                                     <div class="scholar-single-thumb" style="width: 330px; height: 363px;">
-                                        @if ($user->image == 'mahdy.png')
+                                        @if ($user->image == 'mahdy.png' || $user->image == null)
                                             <img src="{{ asset('frontend/assets/images/user.jpg') }}" alt="scholar" />
                                         @else
                                             <img src="{{ asset($user->image) }}" alt="scholar" />
@@ -152,7 +152,9 @@
                                         <input type="file" class="form-control modal-title" name='cv'
                                             accept="application/pdf">
                                         <a href="{{ route('profile.download', $user->id) }}" style="margin-top: 20px">
-                                            <i class="fas fa-download">Dwonload CV</i>
+                                            @if (!$user->cv == null)
+                                                <i class="fas fa-download">Dwonload CV</i>
+                                            @endif
                                         </a>
                                     </div>
                                     <hr>
