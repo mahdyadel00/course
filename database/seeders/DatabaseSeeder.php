@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             PricingSeeder::class,
             FeatureSeeder::class,
             CourseSeeder::class,
+            SponserSeeder::class,
         ]);
 
 
