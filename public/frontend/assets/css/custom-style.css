@@ -6992,6 +6992,13 @@ footer .custom-img img {
 	border-radius: 50%;
 }
 
+.speaker-item .speaker-inner .speaker-thumb:after {
+    bottom: 27px !important;
+    left: 15px !important;
+    width: 190px !important;
+    height: 190px !important;
+}
+
 @media (min-width: 1440px){
 	.speaker-item-2 .speaker-inner .speaker-content .speaker-content-inner {
 		height: 184px;
