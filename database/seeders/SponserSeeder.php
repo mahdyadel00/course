@@ -17,7 +17,7 @@ class SponserSeeder extends Seeder
         Sponser::create([
             'name' => 'Sponser',
             'image' => 'sponserimage.png',
-            'linke' => 'linkelinke.png',
+            'link' => 'linkelinke.png',
 
         ]);
     }
