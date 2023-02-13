@@ -6999,7 +6999,7 @@ footer .custom-img img {
     height: 190px !important;
 }
 
-@media (min-width: 576px){
+@media (min-width: 1440px){
 	.speaker-item-2 .speaker-inner .speaker-content .speaker-content-inner {
 		height: 184px;
 		display: flex;
