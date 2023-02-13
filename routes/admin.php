@@ -14,6 +14,11 @@ use  App\Http\Controllers\Admin\SubscriptionsController;
 use  App\Http\Controllers\Admin\SettingsController;
 use  App\Http\Controllers\Admin\RoleController;
 use  App\Http\Controllers\Admin\AuthController;
+use  App\Http\Controllers\Admin\PolicesController;
+use  App\Http\Controllers\Admin\ServayController;
+use  App\Http\Controllers\Admin\PackageFeatureController;
+use  App\Http\Controllers\Admin\PricingController;
+use  App\Http\Controllers\Admin\FeatureController;
 
 
 Auth::routes(['except' => 'register']);
@@ -92,5 +97,47 @@ Route::prefix('admin')->group(function () {
         Route::get('/roles/edit/{id}', [RoleController::class, 'edit'])->name('admin.roles.edit');
         Route::post('/roles/update/{id}', [RoleController::class, 'update'])->name('admin.roles.update');
         Route::delete('/roles/delete/{id}', [RoleController::class, 'delete'])->name('admin.roles.delete');
+
+
+        //Sevay Routes
+        Route::get('/servay', [ServayController::class, 'index'])->name('admin.servay.index');
+        Route::get('/servay/create', [ServayController::class, 'create'])->name('admin.servay.create');
+        Route::post('/servay/store', [ServayController::class, 'store'])->name('admin.servay.store');
+        Route::get('/servay/show/{id}', [ServayController::class, 'show'])->name('admin.servay.show');
+        Route::get('/servay/edit/{id}', [ServayController::class, 'edit'])->name('admin.servay.edit');
+        Route::post('/servay/update/{id}', [ServayController::class, 'update'])->name('admin.servay.update');
+        Route::delete('/servay/delete/{id}', [ServayController::class, 'delete'])->name('admin.servay.delete');
+
+        //polices Route
+        Route::get('/polices', [PolicesController::class, 'index'])->name('admin.polices.index'); //
+        Route::post('/polices', [PolicesController::class, 'update'])->name('admin.polices.update'); //
+
+
+        //PackageFeature Route
+        Route::get('/packages_features', [PackageFeatureController::class, 'index'])->name('admin.packages_features.index');
+        Route::get('/packages_features/create', [PackageFeatureController::class, 'create'])->name('admin.packages_features.create');
+        Route::post('/packages_features/store', [PackageFeatureController::class, 'store'])->name('admin.packages_features.store');
+        Route::get('/packages_features/show/{id}', [PackageFeatureController::class, 'show'])->name('admin.packages_features.show');
+        Route::get('/packages_features/edit/{id}', [PackageFeatureController::class, 'edit'])->name('admin.packages_features.edit');
+        Route::post('/packages_features/update/{id}', [PackageFeatureController::class, 'update'])->name('admin.packages_features.update');
+        Route::delete('/packages_features/delete/{id}', [PackageFeatureController::class, 'delete'])->name('admin.packages_features.delete');
+
+
+        //Pricing Route
+        Route::get('/pricing', [PricingController::class, 'index'])->name('admin.pricing.index');
+        Route::get('/pricing/create', [PricingController::class, 'create'])->name('admin.pricing.create');
+        Route::post('/pricing/store', [PricingController::class, 'store'])->name('admin.pricing.store');
+        Route::get('/pricing/show/{id}', [PricingController::class, 'show'])->name('admin.pricing.show');
+        Route::get('/pricing/edit/{id}', [PricingController::class, 'edit'])->name('admin.pricing.edit');
+        Route::post('/pricing/update/{id}', [PricingController::class, 'update'])->name('admin.pricing.update');
+        Route::delete('/pricing/delete/{id}', [PricingController::class, 'delete'])->name('admin.pricing.delete');
+
+        //Features Route
+        Route::get('/features', [FeatureController::class, 'index'])->name('admin.features.index');
+        Route::post('/features', [FeatureController::class, 'update'])->name('admin.features.update');
+
+
+
+
     });
 });

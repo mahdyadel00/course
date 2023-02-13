@@ -31,32 +31,11 @@
                 </div>
                 <div class="col-lg-10">
                     <div class="section-header text-center">
-                        <h2>Big Marketing Meetup</h2>
-                        <p>About "GMC" Conference 2023</p>
+                        <h2>{{ $feature->title }}</h2>
+                        {{-- <p>About "GMC" Conference 2023</p> --}}
                     </div>
                     <div class="section-wrapper text-center">
-                        <p>The Conference aims to gather pioneers of marketing and entrepreneurs in Egypt and some
-                            countries
-                            of the world to transfer their marketing experiences, and to follow up on the most important
-                            new marketing methods after the presence of artificial intelligence and technological
-                            change.
-                            <br>
-                            <br>
-                            Knowing the importance of marketing in the development of companies and countries, helping
-                            youth in obtaining jobs in the field of marketing and freelancing, spreading awareness that
-                            marketing is a science that should be studied and not just propaganda stations or social
-                            media tools.
-                            <br>
-                            <br>
-                            Providing training opportunities and workshops to qualify youth for the market labor.
-                            <br>
-                            <br>
-                            Knowing how does the power of marketing affect the success of companies and individuals.
-                            <br>
-                            <br>
-                            Helping entrepreneurs follow the recent marketing methods in the largest companies, and how
-                            successful companies can effect on the economic conditions of the country.
-                        </p>
+                        <p>{!! $feature->description !!}</p>
                         <div class="about-btn-grp">
                             <a href="{{ route('register.show') }}" class="lab-btn "><span>Register Now</span> </a>
                         </div>
@@ -67,32 +46,12 @@
                     <br><br>
                     <br>
                     <div class="section-header text-center" id="benefits">
-                        <h2>Event Key Benefits</h2>
-                        <p>About "GMC" Conference Features</p>
+                        <h2>{{ $feature->title_1 }}</h2>
+                        {{-- <p>About "GMC" Conference Features</p> --}}
 
                     </div>
                     <div class="section-wrapper text-center">
-                        <p>
-                            For those attending the event:
-                            Understand the actual marketing methods in the current market by colliding or
-                            friction with the success stories of actual companies
-
-                            <br> An opportunity to qualify for the market labour by understanding the mechanism
-                            of
-                            corporate marketing.
-
-                            <br>Learn how to prepare for an interview and choosing the right scope that matches
-                            your skills.
-
-                            <br>Marketing materials for free. (Course – E-book)
-                            As an Incentive from GEEXAR:
-                            <br>
-                            5 internship opportunities on real projects. (Two months)
-                            <br>5 workshops for 25 students. (Every workshop lasts for a week)
-                            <br> 10 opportunities to attend the first week of the course free.<br><br><br><br><br>
-                         <span class="discount">50% Discount on
-                         a marketing course.</span>
-                        </p>
+                        <p>{!! $feature->description_1 !!}</p>
                         <div class="about-btn-grp">
                             <a href="{{ route('home') }}" class="lab-btn "><span>Course Details</span> </a>
                         </div>
@@ -101,20 +60,14 @@
                     <br>
                     <br>
                     <br>
-
-                 <div class="section-header text-center">
-                     <h2>Who To Attend</h2>
-                     <p>About Conference's Audience</p>
-                 </div>
-                 <div class="section-wrapper text-center">
-                     <p>
-                         
-                         Students interested in marketing
-                         <br> Business owners and entrepreneurs who are responsible for business.
-                        <br> All small and large business representatives.
-                         <br> Freelancers CEOs and other senior leaders who manage large organizations.
-                         <br> Who studies majors related to marketing or business as
-                         <div class="ttt">
+                    <div class="section-header text-center">
+                        <h2>{{ $feature->title_2 }}</h2>
+                        {{-- <p>About Conference's Audience</p> --}}
+                    </div>
+                    <div class="section-wrapper text-center">
+                        <p>
+                            {!! $feature->description_2 !!}
+                          <div class="ttt">
                             <div class="first">
                                 <ul>
                                     <li>Marketing Plan</li>
@@ -133,13 +86,13 @@
                                     <li>Graphic Designers</li>
                                 </ul>
                             </div>
-                         </div>
-                         
-                         <!-- (voice over, graphic designers ,art directors, video editors, business, career development
-                         coaches, content creators, copy writers, media buyers,....etc) -->
+                          </div>
 
-                     </p>
-                 </div>
+                         <!-- (voice over, graphic designers ,art directors, video editors, business, career development
+                                 coaches, content creators, copy writers, media buyers,....etc) -->
+
+                        </p>
+                    </div>
                 </div>
             </div>
     </section>
@@ -168,9 +121,9 @@
                                 class="nav-link-cite">Third Day</span><span class="nav-link-title">February 4,
                                 2023</span></a></li>
                     <!-- <li class="nav-item" role="presentation"><a class="nav-link nav-link-secodanry" href="#tabs-1-4"
-                            data-toggle="tab" data-triangle=".nav-link-overlay"><span
-                                class="nav-link-overlay"></span><span class="nav-link-cite">Fourth Day</span><span
-                                class="nav-link-title">January 9, 2019</span></a></li> -->
+                                    data-toggle="tab" data-triangle=".nav-link-overlay"><span
+                                        class="nav-link-overlay"></span><span class="nav-link-cite">Fourth Day</span><span
+                                        class="nav-link-title">January 9, 2019</span></a></li> -->
                 </ul>
                 <!--Tab panes-->
                 <div class="tab-content wow fadeIn">
@@ -187,8 +140,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">9:00 am to 10:00
                                                                 am</span><span
@@ -232,8 +186,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-02-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-02-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">10:00 am to 11:00
                                                                 am</span><span
@@ -278,8 +233,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">11:00 am to 12:00
                                                                 pm</span><span
@@ -326,8 +282,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">11:00 am to 12:00
                                                                 pm</span><span
@@ -372,8 +329,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">11:00 am to 12:00
                                                                 pm</span><span
@@ -417,8 +375,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">11:00 am to 12:00
                                                                 pm</span><span
@@ -463,8 +422,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">11:00 am to 12:00
                                                                 pm</span><span
@@ -521,11 +481,13 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-04-58x58.jpg" alt=""
-                                                                width="58" height="58" /></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-04-58x58.jpg"
+                                                                alt="" width="58"
+                                                                height="58" /></span><span
                                                             class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-05-58x58.jpg" alt=""
-                                                                width="58" height="58" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-05-58x58.jpg"
+                                                                alt="" width="58"
+                                                                height="58" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">11:00 am to 12:00
                                                                 pm</span><span
@@ -579,8 +541,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">11:00 am to 12:00
                                                                 pm</span><span
@@ -626,8 +589,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-02-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-02-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">10:00 am to 11:00
                                                                 am</span><span
@@ -672,8 +636,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">9:00 am to 10:00
                                                                 am</span><span
@@ -718,8 +683,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">9:00 am to 10:00
                                                                 am</span><span class="schedule-classic-title heading-4">Ads
@@ -762,8 +728,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">9:00 am to 10:00
                                                                 am</span><span
@@ -808,8 +775,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">9:00 am to 10:00
                                                                 am</span><span
@@ -853,8 +821,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">9:00 am to 10:00
                                                                 am</span><span class="schedule-classic-title heading-4">How
@@ -909,11 +878,13 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-04-58x58.jpg" alt=""
-                                                                width="58" height="58" /></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-04-58x58.jpg"
+                                                                alt="" width="58"
+                                                                height="58" /></span><span
                                                             class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-05-58x58.jpg" alt=""
-                                                                width="58" height="58" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-05-58x58.jpg"
+                                                                alt="" width="58"
+                                                                height="58" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">11:00 am to 12:00
                                                                 pm</span><span class="schedule-classic-title heading-4">UI
@@ -966,8 +937,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-02-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-02-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">10:00 am to 11:00
                                                                 am</span><span class="schedule-classic-title heading-4">UI
@@ -1011,8 +983,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">11:00 am to 12:00
                                                                 pm</span><span
@@ -1056,8 +1029,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">9:00 am to 10:00
                                                                 am</span><span
@@ -1101,8 +1075,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">9:00 am to 10:00
                                                                 am</span><span class="schedule-classic-title heading-4">How
@@ -1147,8 +1122,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">9:00 am to 10:00
                                                                 am</span><span
@@ -1193,8 +1169,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">9:00 am to 10:00
                                                                 am</span><span
@@ -1238,8 +1215,9 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg"
+                                                                alt="" width="122"
+                                                                height="122" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">9:00 am to 10:00
                                                                 am</span><span
@@ -1342,11 +1320,13 @@
                                             role="button"><span class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
                                                         class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-04-58x58.jpg" alt=""
-                                                                width="58" height="58" /></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-04-58x58.jpg"
+                                                                alt="" width="58"
+                                                                height="58" /></span><span
                                                             class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-05-58x58.jpg" alt=""
-                                                                width="58" height="58" /></span></span><span
+                                                                src="{{ asset('frontend') }}/assets/images/schedule-05-58x58.jpg"
+                                                                alt="" width="58"
+                                                                height="58" /></span></span><span
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">11:00 am to 12:00
                                                                 pm</span><span
@@ -1388,207 +1368,207 @@
                         </div>
                     </div>
                     <!-- <div class="tab-pane fade" id="tabs-1-4">
-                        <div class="card-group-custom card-group-corporate" id="accordion4" role="tablist"
-                            aria-multiselectable="false">
-                            <article class="card card-custom card-corporate">
-                                <div class="card-header" role="tab">
-                                    <div class="card-title"><a class="collapsed" id="accordion4-card-head-ybgfluus"
-                                            data-toggle="collapse" data-parent="#accordion4"
-                                            href="#accordion4-card-body-vujqeaao"
-                                            aria-controls="accordion4-card-body-vujqeaao" aria-expanded="false"
-                                            role="button"><span class="schedule-classic"><span
-                                                    class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
-                                                        class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
-                                                        class="unit-body"><span class="schedule-classic-content"><span
-                                                                class="schedule-classic-time">9:00 am to 10:00
-                                                                am</span><span
-                                                                class="schedule-classic-title heading-4">Digital
-                                                                Conference 2019 Introduction</span><span
-                                                                class="schedule-classic-author">by <span
-                                                                    class="schedule-classic-author-name">Jessica
-                                                                    Brown</span> - Co
-                                                                Founder</span></span></span></span></span></a></div>
-                                </div>
-                                <div class="collapse" id="accordion4-card-body-vujqeaao"
-                                    aria-labelledby="accordion4-card-head-ybgfluus" data-parent="#accordion4"
-                                    role="tabpanel">
-                                    <div class="card-body">
-                                        <p>Ubi est nobilis cobaltum? Domesticus capios ducunt ad demissio. Torquiss
-                                            favere, tanquam bassus glos. Vae, hippotoxota! Superbus, mirabilis poetas
-                                            vix aperto de teres, germanus amicitia. Vae. Fortis nixs ducunt ad
-                                            acipenser. A falsis, musa nobilis gabalium. Cum decor ire, omnes
-                                            fraticinidaes.</p>
-                                        <div class="unit unit-spacing-xxs">
-                                            <div class="unit-left">
-                                                <svg class="svg-icon-sm svg-icon-primary" role="img">
-                                                    <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
-                                                </svg>
-                                            </div>
-                                            <div class="unit-body">
-                                                <h5>Where</h5>
-                                                <p class="font-secondary">Hall 22, Building 2, New York, United States
-                                                    of America</p>
+                                <div class="card-group-custom card-group-corporate" id="accordion4" role="tablist"
+                                    aria-multiselectable="false">
+                                    <article class="card card-custom card-corporate">
+                                        <div class="card-header" role="tab">
+                                            <div class="card-title"><a class="collapsed" id="accordion4-card-head-ybgfluus"
+                                                    data-toggle="collapse" data-parent="#accordion4"
+                                                    href="#accordion4-card-body-vujqeaao"
+                                                    aria-controls="accordion4-card-body-vujqeaao" aria-expanded="false"
+                                                    role="button"><span class="schedule-classic"><span
+                                                            class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
+                                                                class="unit-left"><span class="schedule-classic-img"><img
+                                                                        src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg" alt=""
+                                                                        width="122" height="122" /></span></span><span
+                                                                class="unit-body"><span class="schedule-classic-content"><span
+                                                                        class="schedule-classic-time">9:00 am to 10:00
+                                                                        am</span><span
+                                                                        class="schedule-classic-title heading-4">Digital
+                                                                        Conference 2019 Introduction</span><span
+                                                                        class="schedule-classic-author">by <span
+                                                                            class="schedule-classic-author-name">Jessica
+                                                                            Brown</span> - Co
+                                                                        Founder</span></span></span></span></span></a></div>
+                                        </div>
+                                        <div class="collapse" id="accordion4-card-body-vujqeaao"
+                                            aria-labelledby="accordion4-card-head-ybgfluus" data-parent="#accordion4"
+                                            role="tabpanel">
+                                            <div class="card-body">
+                                                <p>Ubi est nobilis cobaltum? Domesticus capios ducunt ad demissio. Torquiss
+                                                    favere, tanquam bassus glos. Vae, hippotoxota! Superbus, mirabilis poetas
+                                                    vix aperto de teres, germanus amicitia. Vae. Fortis nixs ducunt ad
+                                                    acipenser. A falsis, musa nobilis gabalium. Cum decor ire, omnes
+                                                    fraticinidaes.</p>
+                                                <div class="unit unit-spacing-xxs">
+                                                    <div class="unit-left">
+                                                        <svg class="svg-icon-sm svg-icon-primary" role="img">
+                                                            <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="unit-body">
+                                                        <h5>Where</h5>
+                                                        <p class="font-secondary">Hall 22, Building 2, New York, United States
+                                                            of America</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="card card-custom card-corporate">
-                                <div class="card-header" role="tab">
-                                    <div class="card-title"><a class="collapsed" id="accordion4-card-head-kkanjswy"
-                                            data-toggle="collapse" data-parent="#accordion4"
-                                            href="#accordion4-card-body-luhibwcd"
-                                            aria-controls="accordion4-card-body-luhibwcd" aria-expanded="false"
-                                            role="button"><span class="schedule-classic"><span
-                                                    class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
-                                                        class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
-                                                        class="unit-body"><span class="schedule-classic-content"><span
-                                                                class="schedule-classic-time">11:00 am to 12:00
-                                                                pm</span><span
-                                                                class="schedule-classic-title heading-4">Evolution of
-                                                                user interface in 2019</span><span
-                                                                class="schedule-classic-author">by <span
-                                                                    class="schedule-classic-author-name">Manager</span>
-                                                                - Co Founder</span></span></span></span></span></a>
-                                    </div>
-                                </div>
-                                <div class="collapse" id="accordion4-card-body-luhibwcd"
-                                    aria-labelledby="accordion4-card-head-kkanjswy" data-parent="#accordion4"
-                                    role="tabpanel">
-                                    <div class="card-body">
-                                        <p>There are many variations of passages of lorem ipsum available, but the
-                                            majority have suffered alteration in some form, by injected humour or
-                                            randomised words which don't look even slightly believable. If you are going
-                                            to use a passage randomised words which don't look even slightly believable.
-                                        </p>
-                                        <div class="unit unit-spacing-xxs">
-                                            <div class="unit-left">
-                                                <svg class="svg-icon-sm svg-icon-primary" role="img">
-                                                    <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
-                                                </svg>
-                                            </div>
-                                            <div class="unit-body">
-                                                <h5>Where</h5>
-                                                <p class="font-secondary">Hall 22, Building 2, New York, United States
-                                                    of America</p>
+                                    </article>
+                                    <article class="card card-custom card-corporate">
+                                        <div class="card-header" role="tab">
+                                            <div class="card-title"><a class="collapsed" id="accordion4-card-head-kkanjswy"
+                                                    data-toggle="collapse" data-parent="#accordion4"
+                                                    href="#accordion4-card-body-luhibwcd"
+                                                    aria-controls="accordion4-card-body-luhibwcd" aria-expanded="false"
+                                                    role="button"><span class="schedule-classic"><span
+                                                            class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
+                                                                class="unit-left"><span class="schedule-classic-img"><img
+                                                                        src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg" alt=""
+                                                                        width="122" height="122" /></span></span><span
+                                                                class="unit-body"><span class="schedule-classic-content"><span
+                                                                        class="schedule-classic-time">11:00 am to 12:00
+                                                                        pm</span><span
+                                                                        class="schedule-classic-title heading-4">Evolution of
+                                                                        user interface in 2019</span><span
+                                                                        class="schedule-classic-author">by <span
+                                                                            class="schedule-classic-author-name">Manager</span>
+                                                                        - Co Founder</span></span></span></span></span></a>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="card card-custom card-corporate">
-                                <div class="card-header" role="tab">
-                                    <div class="card-title"><a class="collapsed" id="accordion4-card-head-icjoexwh"
-                                            data-toggle="collapse" data-parent="#accordion4"
-                                            href="#accordion4-card-body-bjyiygqy"
-                                            aria-controls="accordion4-card-body-bjyiygqy" aria-expanded="false"
-                                            role="button"><span class="schedule-classic"><span
-                                                    class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
-                                                        class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-02-122x122.jpg" alt=""
-                                                                width="122" height="122" /></span></span><span
-                                                        class="unit-body"><span class="schedule-classic-content"><span
-                                                                class="schedule-classic-time">10:00 am to 11:00
-                                                                am</span><span
-                                                                class="schedule-classic-title heading-4">Wordpress
-                                                                developement stages</span><span
-                                                                class="schedule-classic-author">by <span
-                                                                    class="schedule-classic-author-name">Mike
-                                                                    Hardson</span> - Lead
-                                                                Developer</span></span></span></span></span></a></div>
-                                </div>
-                                <div class="collapse" id="accordion4-card-body-bjyiygqy"
-                                    aria-labelledby="accordion4-card-head-icjoexwh" data-parent="#accordion4"
-                                    role="tabpanel">
-                                    <div class="card-body">
-                                        <p>Est emeritis epos, cesaris. Competition de brevis zelus, imperium solem!
-                                            Byssus prareres, tanquam dexter glos. Eheu, habena! Lotus monss ducunt ad
-                                            idoleum. Castus fluctuss ducunt ad mineralis. A falsis, magister castus
-                                            ignigena. Demolitiones cadunt in fortis avenio! Audax, raptus exsuls
-                                            superbe.</p>
-                                        <div class="unit unit-spacing-xxs">
-                                            <div class="unit-left">
-                                                <svg class="svg-icon-sm svg-icon-primary" role="img">
-                                                    <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
-                                                </svg>
-                                            </div>
-                                            <div class="unit-body">
-                                                <h5>Where</h5>
-                                                <p class="font-secondary">Hall 22, Building 2, New York, United States
-                                                    of America</p>
+                                        <div class="collapse" id="accordion4-card-body-luhibwcd"
+                                            aria-labelledby="accordion4-card-head-kkanjswy" data-parent="#accordion4"
+                                            role="tabpanel">
+                                            <div class="card-body">
+                                                <p>There are many variations of passages of lorem ipsum available, but the
+                                                    majority have suffered alteration in some form, by injected humour or
+                                                    randomised words which don't look even slightly believable. If you are going
+                                                    to use a passage randomised words which don't look even slightly believable.
+                                                </p>
+                                                <div class="unit unit-spacing-xxs">
+                                                    <div class="unit-left">
+                                                        <svg class="svg-icon-sm svg-icon-primary" role="img">
+                                                            <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="unit-body">
+                                                        <h5>Where</h5>
+                                                        <p class="font-secondary">Hall 22, Building 2, New York, United States
+                                                            of America</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <div class="schedule-classic schedule-classic-simple">
-                                <div class="schedule-classic-content">
-                                    <div class="schedule-classic-img">
-                                        <svg class="svg-icon-md svg-icon-primary" role="img">
-                                            <use xlink:href="images/svg/sprite.svg#clock"></use>
-                                        </svg>
-                                    </div><span class="schedule-classic-time">11:00 am to 12:00 pm</span><span
-                                        class="schedule-classic-title heading-4">Enjoy the coffee break</span>
-                                </div>
-                            </div>
-                            <article class="card card-custom card-corporate">
-                                <div class="card-header" role="tab">
-                                    <div class="card-title"><a class="collapsed" id="accordion4-card-head-fccgfuhi"
-                                            data-toggle="collapse" data-parent="#accordion4"
-                                            href="#accordion4-card-body-utqsdqvx"
-                                            aria-controls="accordion4-card-body-utqsdqvx" aria-expanded="false"
-                                            role="button"><span class="schedule-classic"><span
-                                                    class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
-                                                        class="unit-left"><span class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-04-58x58.jpg" alt=""
-                                                                width="58" height="58" /></span><span
-                                                            class="schedule-classic-img"><img
-                                                                src="{{ asset('frontend') }}/assets/images/schedule-05-58x58.jpg" alt=""
-                                                                width="58" height="58" /></span></span><span
-                                                        class="unit-body"><span class="schedule-classic-content"><span
-                                                                class="schedule-classic-time">11:00 am to 12:00
-                                                                pm</span><span
-                                                                class="schedule-classic-title heading-4">Digital
-                                                                Conference 2019 Introduction</span><span
-                                                                class="schedule-classic-author">by <span
-                                                                    class="schedule-classic-author-name">Kevin
-                                                                    Martin</span>
-                                                                - Supporter&nbsp;&nbsp;
-                                                                .&nbsp;&nbsp; <span
-                                                                    class="schedule-classic-author-name">Sarah
-                                                                    Rose</span> -
-                                                                Designer</span></span></span></span></span></a></div>
-                                </div>
-                                <div class="collapse" id="accordion4-card-body-utqsdqvx"
-                                    aria-labelledby="accordion4-card-head-fccgfuhi" data-parent="#accordion4"
-                                    role="tabpanel">
-                                    <div class="card-body">
-                                        <p>Fiscina domesticus lixa est. Cur vita mori? Triticum, heuretes, et nixus.
-                                            Clabulare superbus abaculus est. Est lotus gemna, cesaris. Equisos mori!
-                                            Uria moris, tanquam dexter cedrium. Hydras ridetis, tanquam bi-color saga.
-                                            Pol, a bene tumultumque, castus nuptia! Noster, neuter stellas diligenter.
-                                        </p>
-                                        <div class="unit unit-spacing-xxs">
-                                            <div class="unit-left">
-                                                <svg class="svg-icon-sm svg-icon-primary" role="img">
-                                                    <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
-                                                </svg>
-                                            </div>
-                                            <div class="unit-body">
-                                                <h5>Where</h5>
-                                                <p class="font-secondary">Hall 22, Building 2, New York, United States
-                                                    of America</p>
+                                    </article>
+                                    <article class="card card-custom card-corporate">
+                                        <div class="card-header" role="tab">
+                                            <div class="card-title"><a class="collapsed" id="accordion4-card-head-icjoexwh"
+                                                    data-toggle="collapse" data-parent="#accordion4"
+                                                    href="#accordion4-card-body-bjyiygqy"
+                                                    aria-controls="accordion4-card-body-bjyiygqy" aria-expanded="false"
+                                                    role="button"><span class="schedule-classic"><span
+                                                            class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
+                                                                class="unit-left"><span class="schedule-classic-img"><img
+                                                                        src="{{ asset('frontend') }}/assets/images/schedule-02-122x122.jpg" alt=""
+                                                                        width="122" height="122" /></span></span><span
+                                                                class="unit-body"><span class="schedule-classic-content"><span
+                                                                        class="schedule-classic-time">10:00 am to 11:00
+                                                                        am</span><span
+                                                                        class="schedule-classic-title heading-4">Wordpress
+                                                                        developement stages</span><span
+                                                                        class="schedule-classic-author">by <span
+                                                                            class="schedule-classic-author-name">Mike
+                                                                            Hardson</span> - Lead
+                                                                        Developer</span></span></span></span></span></a></div>
+                                        </div>
+                                        <div class="collapse" id="accordion4-card-body-bjyiygqy"
+                                            aria-labelledby="accordion4-card-head-icjoexwh" data-parent="#accordion4"
+                                            role="tabpanel">
+                                            <div class="card-body">
+                                                <p>Est emeritis epos, cesaris. Competition de brevis zelus, imperium solem!
+                                                    Byssus prareres, tanquam dexter glos. Eheu, habena! Lotus monss ducunt ad
+                                                    idoleum. Castus fluctuss ducunt ad mineralis. A falsis, magister castus
+                                                    ignigena. Demolitiones cadunt in fortis avenio! Audax, raptus exsuls
+                                                    superbe.</p>
+                                                <div class="unit unit-spacing-xxs">
+                                                    <div class="unit-left">
+                                                        <svg class="svg-icon-sm svg-icon-primary" role="img">
+                                                            <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="unit-body">
+                                                        <h5>Where</h5>
+                                                        <p class="font-secondary">Hall 22, Building 2, New York, United States
+                                                            of America</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
+                                    </article>
+                                    <div class="schedule-classic schedule-classic-simple">
+                                        <div class="schedule-classic-content">
+                                            <div class="schedule-classic-img">
+                                                <svg class="svg-icon-md svg-icon-primary" role="img">
+                                                    <use xlink:href="images/svg/sprite.svg#clock"></use>
+                                                </svg>
+                                            </div><span class="schedule-classic-time">11:00 am to 12:00 pm</span><span
+                                                class="schedule-classic-title heading-4">Enjoy the coffee break</span>
+                                        </div>
                                     </div>
+                                    <article class="card card-custom card-corporate">
+                                        <div class="card-header" role="tab">
+                                            <div class="card-title"><a class="collapsed" id="accordion4-card-head-fccgfuhi"
+                                                    data-toggle="collapse" data-parent="#accordion4"
+                                                    href="#accordion4-card-body-utqsdqvx"
+                                                    aria-controls="accordion4-card-body-utqsdqvx" aria-expanded="false"
+                                                    role="button"><span class="schedule-classic"><span
+                                                            class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
+                                                                class="unit-left"><span class="schedule-classic-img"><img
+                                                                        src="{{ asset('frontend') }}/assets/images/schedule-04-58x58.jpg" alt=""
+                                                                        width="58" height="58" /></span><span
+                                                                    class="schedule-classic-img"><img
+                                                                        src="{{ asset('frontend') }}/assets/images/schedule-05-58x58.jpg" alt=""
+                                                                        width="58" height="58" /></span></span><span
+                                                                class="unit-body"><span class="schedule-classic-content"><span
+                                                                        class="schedule-classic-time">11:00 am to 12:00
+                                                                        pm</span><span
+                                                                        class="schedule-classic-title heading-4">Digital
+                                                                        Conference 2019 Introduction</span><span
+                                                                        class="schedule-classic-author">by <span
+                                                                            class="schedule-classic-author-name">Kevin
+                                                                            Martin</span>
+                                                                        - Supporter&nbsp;&nbsp;
+                                                                        .&nbsp;&nbsp; <span
+                                                                            class="schedule-classic-author-name">Sarah
+                                                                            Rose</span> -
+                                                                        Designer</span></span></span></span></span></a></div>
+                                        </div>
+                                        <div class="collapse" id="accordion4-card-body-utqsdqvx"
+                                            aria-labelledby="accordion4-card-head-fccgfuhi" data-parent="#accordion4"
+                                            role="tabpanel">
+                                            <div class="card-body">
+                                                <p>Fiscina domesticus lixa est. Cur vita mori? Triticum, heuretes, et nixus.
+                                                    Clabulare superbus abaculus est. Est lotus gemna, cesaris. Equisos mori!
+                                                    Uria moris, tanquam dexter cedrium. Hydras ridetis, tanquam bi-color saga.
+                                                    Pol, a bene tumultumque, castus nuptia! Noster, neuter stellas diligenter.
+                                                </p>
+                                                <div class="unit unit-spacing-xxs">
+                                                    <div class="unit-left">
+                                                        <svg class="svg-icon-sm svg-icon-primary" role="img">
+                                                            <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="unit-body">
+                                                        <h5>Where</h5>
+                                                        <p class="font-secondary">Hall 22, Building 2, New York, United States
+                                                            of America</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
                                 </div>
-                            </article>
-                        </div>
-                    </div> -->
+                            </div> -->
                 </div>
             </div>
         </div>

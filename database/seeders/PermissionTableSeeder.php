@@ -15,9 +15,9 @@ class PermissionTableSeeder extends Seeder
     {
         $permissions =  [
 
-            'roles',
+            'role-list',
             'role_create',
-            'role_update',
+            'role_edit',
             'role_delete',
 
             'settings',
@@ -38,7 +38,7 @@ class PermissionTableSeeder extends Seeder
             'contact_update',
             'contact_delete',
 
-            
+
         ];
 
         foreach ($permissions as $permission) {

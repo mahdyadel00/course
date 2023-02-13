@@ -2,21 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\LoginController;
 use App\Http\Controllers\Frontend\RegisterController;
 use App\Http\Controllers\Frontend\SpeakersController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\PricingController;
+use App\Http\Controllers\Frontend\PolicesController;
+use App\Http\Controllers\Frontend\FeatureController;
 
-Route::prefix(LaravelLocalization::setLocale())
-    ->middleware([
-        'localeSessionRedirect',
-        'localizationRedirect',
-        'localeViewPath',
-    ])
-    ->group(function () {
         Auth::routes();
         Route::get('/', [HomeController::class, 'index'])->name('home');
         // ============================================================================** Login Route ** ==========================================================================
@@ -39,17 +34,23 @@ Route::prefix(LaravelLocalization::setLocale())
         // ============================================================================** Profile Route ** ==========================================================================
 
         Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
-        Route::get('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+        Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+        // dwonload cv
+        Route::get('/profile/download/{id}', [ProfileController::class, 'download'])->name('profile.download');
 
-        // ============================================================================** Speakers Route ** ==========================================================================
+        // ============================================================================** Pricing Route ** ==========================================================================
+        Route::get('/pricing', [PricingController::class, 'index'])->name('pricing.index');
+        Route::get('/pricing/{id}', [PricingController::class, 'pricingDetails'])->name('pricing.details');
 
-        Route::get('/features', function () {
-            return view('frontend.features.index');
-        })->name('features');
+        // ============================================================================** Polices Route ** ==========================================================================
+        Route::get('polices', [PolicesController::class, 'index'])->name('polices.index');
+        // ============================================================================** Features Route ** ==========================================================================
+        Route::get('features', [FeatureController::class, 'index'])->name('features.index');
+        // ============================================================================** Features Route ** ==========================================================================
+
+
         Route::get('/course', function () {
             return view('frontend.features.index');
         })->name('course');
-        Route::get('/pricing', function () {
-            return view('frontend.pricing.index');
-        })->name('pricing');
-    });
+
+    // });

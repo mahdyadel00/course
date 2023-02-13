@@ -17,91 +17,65 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>First Name</th>
+                                    <th>Identy</th>
                                     <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $user->first_name }}</p>
+                                        <img src="{{ $user->identy }}" width="100px" height="100px" alt="">
                                     </td>
+                                </tr>
+                                <tr>
+                                    <th>First Name</th>
+                                    <td>{{ $user->first_name }}</td>
                                 <tr>
                                 <tr>
                                     <th>Last Name</th>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $user->last_name }}</p>
-                                    </td>
+                                    <td>{{ $user->last_name }}</td>
                                 </tr>
                                 <th>User Name</th>
-                                <td>
-                                    <p class="text-xs font-weight-bold mb-0">{{ $user->name }}</p>
-                                </td>
+                                <td>{{ $user->name }}</td>
                                 </tr>
                                 <tr>
                                     <th>Email</th>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $user->email }}</p>
-                                    </td>
+                                    <td>{{ $user->email }}</td>
                                 </tr>
                                 <tr>
                                     <th>Phone</th>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $user->phone }}</p>
-                                    </td>
+                                    <td>{{ $user->phone }}</td>
                                 </tr>
                                 <tr>
                                     <th>Address</th>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $user->address }}</p>
-                                    </td>
+                                    <td>{{ $user->address }}</td>
                                 </tr>
                                 <tr>
                                     <th>Birthdata</th>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $user->birthdate }}</p>
-                                    </td>
+                                    <td>{{ $user->birthdate }}</td>
                                 </tr>
                                 <tr>
                                     <th>Education</th>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $user->education }}</p>
-                                    </td>
+                                    <td>{{ $user->education }}</td>
                                 </tr>
                                 <tr>
                                     <th>Qulification</th>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $user->qulification }}</p>
-                                    </td>
+                                    <td>{{ $user->qulification }}</td>
                                 </tr>
                                 <tr>
                                     <th>English</th>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $user->english }}</p>
-                                    </td>
+                                    <td>{{ $user->english }}</td>
                                 </tr>
                                 <tr>
                                     <th>Fill Survy</th>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $user->fill_survy }}</p>
-                                    </td>
+                                    <td>{{ $user->fill_survy }}</td>
                                 </tr>
                                 <tr>
                                     <th>Policies</th>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $user->policies }}</p>
-                                    </td>
+                                    <td>{{ $user->policies }}</td>
                                 </tr>
                                 <tr>
                                     <th>CV</th>
                                     <td>
                                         <div class="download-catalog mt-3">
-                                        {{-- <a href="{{ asset($user->cv) }}">{{ basename($user->cv,".pdf") }}</a> --}}
-                                        <a href="{{ asset($user->cv) }}"
-                                            class="d-flex justify-content-between align-items-center" download="">
-                                            <p>
-                                                
-                                                <img src="{{ $user->cv }}" alt="" class="img-fluid" loading="lazy">
-                                                {{ basename($user->cv,".pdf") }}
-                                                {{-- {{ basename(explode($user->cv , 1 ))}} --}}
-                                            </p>
-                                            <i class="fas fa-download"></i>
-                                        </a>
+                                            <a href="{{ route('admin.users.download', $user->id) }}">
+                                                <i class="fas fa-download">Dwonload CV</i>
+                                            </a>
                                         </div>
                                     </td>
                                 </tr>
@@ -116,9 +90,10 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Created_at</th>
+                                    <th>Created At</th>
                                     <td>
-                                        <span class="text-secondary text-xs font-weight-bold">{{ $user->created_at }}</span>
+                                        <span
+                                            class="text-secondary text-xs font-weight-bold">{{ date('d-m-Y', strtotime($user->created_at)) }}</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -127,6 +102,10 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+                <div class="d-flex justify-content-center col">
+                    <a href="{{ route('admin.users.index') }}" class="btn btn-primary"
+                        style="margin-top: 25px;padding: 10px 100px;">Go Back</a>
                 </div>
             </div>
         </div>

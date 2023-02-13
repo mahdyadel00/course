@@ -12,44 +12,24 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name
-                                    </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Email</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Number</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Subject</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Message</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Number</th>
+                                    <th>Subject</th>
+                                    <th>Message</th>
+                                    <th>Created At</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($contacts as $contact)
                                     <tr>
-                                        <td>
-                                            <p class="text-xs font-weight-bold mb-0">{{ $contact->name }}</p>
-                                        </td>
-                                        <td>
-                                            <p class="text-xs font-weight-bold mb-0">{{ $contact->email }}</p>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-bold">{{ $contact->number }}</span>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-bold">{{ $contact->subject }}</span>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-bold">{{ $contact->message }}</span>
-                                        </td>
-                                        </td>
+                                        <td>{{ $contact->name }}</td>
+                                        <td>{{ $contact->email }}</td>
+                                        <td>{{ $contact->number }}</td>
+                                        <td>{{ $contact->subject }}</td>
+                                        <td>{{ $contact->message }}</td>
+                                        <td>{{ date('d-m-Y', strtotime($contact->created_at)) }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -15,7 +15,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <form class="forms-sample" action="{{ route('admin.users.update', [$user->id]) }}"
-                                    method="post" enctype="multipart/form-data"autocomplete="off">
+                                    method="post" enctype="multipart/form-data" autocomplete="off">
                                     {{ csrf_field() }}
                                     <div class="col">
                                         <label> First Name </label>
@@ -73,6 +73,50 @@
                                             </option>
                                         </select>
                                     </div>
+                                    {{-- <div class="col-md-12">
+                                        <label class="infoTitle">@lang('site.roles')</label>
+                                        <select name="roles_name[]" id="roles"
+                                            class="form-control js-example-basic-multiple" multiple="multiple">
+                                            <option disabled value="0">Select Roles</option>
+                                            @foreach ($roles as $role)
+                                                <option value={{ $role  }}>
+                                                    {{ $role }} </option>
+                                            @endforeach
+                                        </select>
+                                    </div> --}}
+                                    <div class="col">
+                                        <label for="task">Task</label>
+                                        <textarea name="task" class="form-control modal-title ckeditor" id="task">{{ $user->task }}</textarea>
+                                    </div>
+                                    <div class="col">
+                                        <label for="nots">Notes</label>
+                                        <textarea name="notes" class="form-control modal-title ckeditor" id="notes">{{ $user->notes }}</textarea>
+                                    </div>
+                                    <div class="col">
+                                        <label>Image</label>
+                                        <input type="file" class="form-control modal-title" name='image'
+                                            accept="image/jpeg,image/jpg,image/png">
+                                        <img src="{{ asset($user->image) }}" height="100px" width="100px" />
+                                    </div>
+                                    <div class="col">
+                                        <label for="identy">Identy</label>
+                                        <input type="file" class="form-control modal-title" name='identy'
+                                            accept="image/jpeg,image/jpg,image/png">
+                                        <img src="{{ asset($user->identy) }}" height="100px" width="100px" />
+                                    </div>
+                                    <div class="col">
+                                        <label>CV</label>
+                                        <input type="file" class="form-control modal-title" name='cv'
+                                            accept="application/pdf">
+                                            <a href="{{ route('admin.users.download', $user->id) }}">
+                                                <i class="fas fa-download">Dwonload CV</i>
+                                            </a>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label class="infoTitle">@lang('site.status')</label>
+                                        <input type="checkbox" value="1" {{ $user->status == 1 ? 'checked' : '' }}
+                                            name="status">
+                                    </div>
                                     <div class="col">
                                         <label>Fill Survy</label>
                                         <input name="fill_survy" value="1"
@@ -83,59 +127,10 @@
                                         <input name="policies" value="1" {{ $user->policies == 1 ? 'checked' : '' }}
                                             type="checkbox">
                                     </div>
-                                    <div class="col">
-                                        <label for="task">Task</label>
-                                        <textarea name="task" class="form-control modal-title" id="task">{{ $user->task }}</textarea>
-                                    </div>
-                                    <div class="col">
-                                        <label for="nots">Nots</label>
-                                        <textarea name="nots" class="form-control modal-title" id="nots">{{ $user->nots }}</textarea>
-                                    </div>
-                                    <div class="col">
-                                        <label>Image</label>
-                                        <input type="file" class="form-control modal-title" name='image'
-                                            accept="image/jpeg,image/jpg,image/png">
-                                        <img src="{{ asset($user->image) }}" height="100px" width="100px" />
-                                    </div>
-                                    <div class="col">
-                                        <label>CV</label>
-                                        <input type="file" class="form-control modal-title" name='cv'
-                                            accept="application/pdf" required>
-                                        <a href="{{ asset($user->cv) }}" target="_blank">View CV</a>
-                                    </div>
-                                    <div class="col">
-                                        <label for="identy">Identy</label>
-                                        <input type="file" class="form-control modal-title" name='identy'
-                                            accept="image/jpeg,image/jpg,image/png" required>
-                                        <img src="{{ asset($user->identy) }}" height="100px" width="100px" />
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="infoTitle">@lang('site.status')</label>
-                                        <input type="checkbox" value="1" {{ $user->status == 1 ? 'checked' : '' }}
-                                            name="status">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="infoTitle">@lang('site.roles')</label>
-                                        <select class="form-control{{ $errors->has('roles') ? ' is-invalid' : '' }}"
-                                            name="roles" required="">
-                                            <option value="">Please select </option>
-                                            @foreach ($roles as $role)
-                                                <option
-                                                    value="{{ $role->id }}"{{ $user->hasRole($role->name) ? 'selected' : '' }}>
-                                                    {{ $role->name }} </option>
-                                            @endforeach
-                                            @if ($errors->has('roles'))
-                                                <span class="text-danger invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('roles') }}</strong>
-                                                </span>
-                                            @endif
-                                        </select>
-                                        {{-- {!! Form::select('roles[]', $roles,$userRole, array('class' => 'form-control','multiple'))
-                                       !!} --}}
-                                    </div>
+
                             </div>
-                            <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary">Edit</button>
+                            <div class="d-flex justify-content-center col">
+                                <button type="submit" class="btn btn-primary" style="margin-top: 25px;padding: 10px 100px;">Edit User</button>
                             </div>
                             </form>
                         </div>

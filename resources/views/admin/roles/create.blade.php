@@ -21,14 +21,17 @@
                                         <label> Name</label>
                                         <input class="form-control fc-datepicker" name="name" required>
                                     </div>
-                                    @foreach($permission as $value)
-                                    <label>
-                                        <input id="{{$value->id}}" type="checkbox" name="groups[]" value="{{$value->id}}" data-parsley-multiple="groups">
-                                        <span class="cr">
-                                       <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
-                                    </span>
-                                        {{$value['name']}}
-                                    </label>
+                                    @foreach ($permission as $value)
+                                    <div class="col">
+                                        <label>
+                                            <input id="{{ $value->id }}" type="checkbox" name="groups[]"
+                                                value="{{ $value->id }}" data-parsley-multiple="groups">
+                                            <span class="cr">
+                                                <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                            </span>
+                                            {{ $value['name'] }}
+                                        </label>
+                                    </div>
                                     @endforeach
                             </div>
                             <div class="d-flex justify-content-center">

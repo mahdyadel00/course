@@ -16,15 +16,12 @@ class RoleController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-
     // function __construct()
     // {
-
-    // $this->middleware('permission:عرض صلاحية', ['only' => ['index']]);
-    // $this->middleware('permission:اضافة صلاحية', ['only' => ['create','store']]);
-    // $this->middleware('permission:تعديل صلاحية', ['only' => ['edit','update']]);
-    // $this->middleware('permission:حذف صلاحية', ['only' => ['destroy']]);
-
+    //      $this->middleware('permission:roles|role-create|role-update|role-delete', ['only' => ['index','store']]);
+    //      $this->middleware('permission:role-create', ['only' => ['create','store']]);
+    //      $this->middleware('permission:role-update', ['only' => ['edit','update']]);
+    //      $this->middleware('permission:role-delete', ['only' => ['destroy']]);
     // }
 
 
@@ -105,11 +102,6 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $request->validate([
-        //     'name' => 'required|unique:roles,name',
-        //     'permission' => 'required',
-        // ]);
-        // dd($request->all());
         $role = Role::find($id);
         $role->name = $request->input('name');
         $role->guard_name = "web";
