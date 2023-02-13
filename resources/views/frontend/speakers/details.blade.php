@@ -30,7 +30,7 @@
                                         <img src="{{ asset($speaker->image) }}" alt="scholar" />
                                     </div>
                                     <div>
-                                        <span class="d-inline-block">Details</span>
+                                        <span class="d-inline-block">Personal Statement</span>
                                         <p>{!! $speaker->personal_info !!}</p>
                                     </div>
                                     {{-- <div class="scholar-single-content">
@@ -68,7 +68,7 @@
                                     <h5>{{ $speaker->name }}</h5>
                                 </div>
                                 <div class="scholar-info">
-                                    <span class="h7 mb-3">Personal Statement</span>
+                                    <span class="h7 mb-3">Details</span>
                                     <p class="mb-4">{!! $speaker->description !!}</p>
                                     <div class="scholar-other-info">
                                         <ul class="lab-ul">
