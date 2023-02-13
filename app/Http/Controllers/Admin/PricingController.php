@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Feature;
+use App\Models\PackageFeature;
 use Illuminate\Http\Request;
 use App\Models\Pricing;
 

@@ -5,75 +5,44 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Feature;
-use App\Models\Pricing;
+use Illuminate\Support\Facades\Cache;
 
 class FeatureController extends Controller
 {
+
     public function index()
     {
-        $features = Feature::get();
-        return view('admin.features.index', compact('features'));
+        $feature = Feature::first();
+        return view('admin.features.index', compact('feature'));
     }
 
 
-    public function create()
-    {
-        $pricing = Pricing::get();
-        return view('admin.features.create' , compact('pricing'));
-    }
-    public function store(Request $request)
+    public function update(Request $request)
     {
         $request->validate([
-            'title'       => 'required',
-            'description' => 'required',
-            'price_id'    => 'required',
+            'title'           => 'required',
+            'description'     => 'required',
+            'title_1'         => 'required',
+            'description_1'   => 'required',
+            'title_2'         => 'required',
+            'description_2'   => 'required',
         ]);
-        $pricing = Pricing::find($request->price_id);
-        Feature::create([
-            'title'       => $request->title,
-            'description' => $request->description,
-            'price_id'    => $pricing->id,
-        ]);
-        return redirect()->route('admin.features.index')->with('success', 'Feature created successfully');
-    }
 
-    public function show($id)
-    {
-        $feature = Feature::with('pricing')->find($id);
-        return view('admin.features.show', compact('feature'));
-    }
-
-
-    public function edit($id)
-    {
-        $feature = Feature::find($id);
-        $pricing = Pricing::get();
-        return view('admin.features.edit', compact('feature' , 'pricing'));
-    }
-
-
-    public function update(Request $request, $id)
-    {
-
-        $request->validate([
-            'title'       => 'required',
-            'description' => 'required',
-            'price_id'    => 'required',
-        ]);
-        $pricing = Pricing::find($request->price_id);
-        $feature = Feature::find($id);
+        $feature = Feature::first();
         $feature->update([
-            'title'       => $request->title,
-            'description' => $request->description,
-            'price_id'    => $pricing->id,
+            'title'           => $request->title,
+            'description'     => $request->description,
+            'title_1'         => $request->title_1,
+            'description_1'   => $request->description_1,
+            'title_2'         => $request->title_2,
+            'description_2'   => $request->description_2,
         ]);
-        return redirect()->route('admin.features.index')->with('success', 'Feature updated successfully');
-    }
 
-    public function delete($id)
-    {
-        $feature = Feature::find($id);
-        $feature->delete();
-        return redirect()->route('admin.features.index')->with('success', 'Feature deleted successfully');
+        if ($feature) {
+            Cache::forget('feature');
+            return redirect()->back()->with('success', 'Feature Updated Successfully');
+        } else {
+            return redirect()->back()->with('error', 'Feature Not Updated');
+        }
     }
 }

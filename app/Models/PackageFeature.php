@@ -5,16 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Feature extends Model
+class PackageFeature extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'title',
         'description',
-        'title_1',
-        'description_1',
-        'title_2',
-        'description_2',
+        'price_id',
     ];
+
+    public function pricing()
+    {
+        return $this->belongsTo(Pricing::class , 'price_id' , 'id');
+    }
 }

@@ -10,6 +10,7 @@ use App\Http\Controllers\Frontend\SpeakersController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\PricingController;
 use App\Http\Controllers\Frontend\PolicesController;
+use App\Http\Controllers\Frontend\FeatureController;
 
         Auth::routes();
         Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -43,11 +44,11 @@ use App\Http\Controllers\Frontend\PolicesController;
 
         // ============================================================================** Polices Route ** ==========================================================================
         Route::get('polices', [PolicesController::class, 'index'])->name('polices.index');
-        // ============================================================================** Polices Route ** ==========================================================================
+        // ============================================================================** Features Route ** ==========================================================================
+        Route::get('features', [FeatureController::class, 'index'])->name('features.index');
+        // ============================================================================** Features Route ** ==========================================================================
 
-        Route::get('/features', function () {
-            return view('frontend.features.index');
-        })->name('features');
+
         Route::get('/course', function () {
             return view('frontend.features.index');
         })->name('course');

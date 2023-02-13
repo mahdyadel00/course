@@ -11,7 +11,7 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Hash;
 
-class FeatureSeeder extends Seeder
+class PackageFeatureSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -20,14 +20,11 @@ class FeatureSeeder extends Seeder
      */
     public function run()
     {
-         Feature::create([
-                'title'           => 'title',
-                'description'     => 'description',
-                'title_1'         => 'title_1',
-                'description_1'   => 'description_1',
-                'title_2'         => 'title_2',
-                'description_2'   => 'description_2',
-          ]);
+       PackageFeature::create([
+            'title'           => 'title',
+            'description'     => 'description',
+            'price_id'        => '1',
+        ]);
     }
 }
 

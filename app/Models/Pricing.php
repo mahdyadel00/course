@@ -17,6 +17,6 @@ class Pricing extends Model
 
     public function feature()
     {
-        return $this->belongsTo(Feature::class , 'price_id' , 'id');
+        return $this->belongsTo(PackageFeature::class , 'price_id' , 'id');
     }
 }

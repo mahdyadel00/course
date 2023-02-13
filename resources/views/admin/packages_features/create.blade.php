@@ -4,17 +4,17 @@
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
-                    <h6>Features</h6>
+                    <h6>Packages Features</h6>
                     <button class="btn btn-primary">
-                        <a href="{{ route('admin.features.index') }}">
-                            <i class="fa fa-plus">Show Features</i>
+                        <a href="{{ route('admin.packages_features.index') }}">
+                            <i class="fa fa-plus">Show Packages Features</i>
                         </a></button>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{ route('admin.features.store') }}" method="post"
+                                <form action="{{ route('admin.packages_features.store') }}" method="post"
                                     enctype="multipart/form-data"autocomplete="off">
                                     {{ csrf_field() }}
                                     <div class="col">

@@ -18,8 +18,9 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             PolicesSeeder::class,
             FiillServySeeder::class,
-            FeatureSeeder::class,
+            PackageFeatureSeeder::class,
             PricingSeeder::class,
+            FeatureSeeder::class,
         ]);
 
 
