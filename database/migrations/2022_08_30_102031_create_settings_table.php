@@ -11,19 +11,19 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title_en');
-            $table->string('title_ar');
-            $table->string('logo');
-            $table->string('image');
-            $table->text('address');
-            $table->string('facebook_link');
-            $table->string('twitter_link');
-            $table->string('linkedin_link');
-            $table->string('youtube_link');
-            $table->time('start_from');
-            $table->time('end_at');
-            $table->string('email');
-            $table->integer('phone');
+            $table->string('title_en')->nullable();
+            $table->string('title_ar')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('image')->nullable();
+            $table->text('address')->nullable();
+            $table->string('facebook_link')->nullable();
+            $table->string('twitter_link')->nullable();
+            $table->string('linkedin_link')->nullable();
+            $table->string('youtube_link')->nullable();
+            $table->time('start_from')->nullable();
+            $table->time('end_at')->nullable();
+            $table->string('email')->nullable();
+            $table->integer('phone')->nullable();
             $table->timestamps();
         });
     }

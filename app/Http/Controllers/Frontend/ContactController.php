@@ -28,7 +28,8 @@ class ContactController extends Controller
             'message'      =>     $request->message,
         ]);
 
-        return redirect()->back()->withSuccess('Successfully created');
+        return redirect()->back();
+        session()->flash('success', 'Your message has been sent successfully');
     }
 
     protected function aboutUs()

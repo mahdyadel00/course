@@ -15,11 +15,13 @@
         </div>
     </section>
     <!-- Page Header Section Ending Here -->
-
+    {{-- session --}}
+    @include('frontend.layouts.session')
     <!-- Registration section start Here -->
     <div class="login-section padding-tb">
         <div class="container">
             <div class="account-wrapper">
+
                 <h3 class="title">Register Now</h3>
                 <form class="account-form" action="{{ route('register.do') }}" method="post" enctype="multipart/form-data" >
                     @csrf
@@ -42,11 +44,12 @@
                         <input type="text" placeholder="Address" name="address">
                     </div>
                     <div class="form-group">
+                        <label for="cv">Upload CV</label>
                         <input type="file" name="cv" placeholder="Enter Your CV">
                     </div>
                     <div class="text-start">
-                        <label for="policies">Git 1 ticket free from the same type when booking</label>
-                        <input type="checkbox" name="fill_survy">Fill Survey
+                        {{-- <label for="policies"></label> --}}
+                        <input type="checkbox" name="fill_survy">Fill Survey <span>(Git 1 ticket free from the same type when booking)</span>
                     </div>
                     <div class="text-start">
                         <input type="checkbox" name="policies" required>I Accept <a href="{{ route('polices.index') }}">privacy policy</a>

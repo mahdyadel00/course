@@ -21,6 +21,21 @@ class SettingsController extends Controller
 
     public function update(Request $request)
     {
+        $request->validate([
+            'title'         => 'sometimes',
+            'description'   => 'sometimes',
+            'address'       => 'sometimes',
+            'phone'         => 'sometimes',
+            'email'         => 'sometimes',
+            'facebook'      => 'sometimes',
+            'twitter'       => 'sometimes',
+            'instagram'     => 'sometimes',
+            'youtube'       => 'sometimes',
+            'linkedin'      => 'sometimes',
+            'google_plus'   => 'sometimes',
+            'pinterest'     => 'sometimes',
+            'footer_text'   => 'sometimes',
+        ]);
 
         $setting = Settings::first();
 
@@ -35,6 +50,8 @@ class SettingsController extends Controller
             $logo_name = time() . request('logo')->getClientOriginalName();
             $logo->move($path, $logo_name);
             $logo_in_db = '/uploads/settings/' . $logo_name;
+        }else{
+            $logo_in_db = $setting->logo;
         }
         $image_in_db = NULL;
         if ($request->has('image')) {
@@ -47,6 +64,8 @@ class SettingsController extends Controller
             $image_name = time() . request('image')->getClientOriginalName();
             $image->move($path, $image_name);
             $image_in_db = '/uploads/settings/' . $image_name;
+        }else{
+            $image_in_db = $setting->image;
         }
         $setting->title_en = $request->title_en;
         $setting->title_ar = $request->title_ar;

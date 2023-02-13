@@ -18,7 +18,7 @@ $setting = App\Models\Settings::first();
         </div>
     </section>
     <!-- Page Header Section Ending Here -->
-
+    @include('frontend.layouts.session')
     <!-- Contact Us Section Start Here -->
     <div class="contact-section">
         <div class="contact-top padding-tb aside-bg padding-b">

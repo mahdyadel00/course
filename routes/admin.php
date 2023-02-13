@@ -19,6 +19,7 @@ use  App\Http\Controllers\Admin\ServayController;
 use  App\Http\Controllers\Admin\PackageFeatureController;
 use  App\Http\Controllers\Admin\PricingController;
 use  App\Http\Controllers\Admin\FeatureController;
+use  App\Http\Controllers\Admin\CourseController;
 
 
 Auth::routes(['except' => 'register']);
@@ -39,25 +40,6 @@ Route::prefix('admin')->group(function () {
         // dwonload cv
         Route::get('/users/download/{id}', [UserController::class, 'download'])->name('admin.users.download');
         Route::get('logout', [UserController::class, 'logout'])->name('logout');
-
-        //  Category Route
-        //  Route::resource('admin.categories', CategoryController::class);
-        Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories.index');
-        Route::get('/categories/create', [CategoryController::class, 'create'])->name('admin.categories.create');
-        Route::post('/categories/store', [CategoryController::class, 'store'])->name('admin.categories.store');
-        Route::get('/categories/edit/{id}', [CategoryController::class, 'edit'])->name('admin.categories.edit');
-        Route::post('/categories/update/{id}', [CategoryController::class, 'update'])->name('admin.categories.update');
-        Route::delete('/categories/delete/{id}', [CategoryController::class, 'delete'])->name('admin.categories.delete');
-
-
-
-        //Products Route
-        Route::get('/products', [ProductController::class, 'index'])->name('admin.products.index');
-        Route::delete('/products/delete/{id}', [ProductController::class, 'delete'])->name('admin.products.delete');
-
-
-        //email_subscriptions Route
-        Route::get('/email_subscriptions', [SubscriptionsController::class, 'index'])->name('admin.subscriptions.index');
 
         //Contacts Route
         Route::get('/contacts', [ContactController::class, 'index'])->name('admin.contacts.index');
@@ -135,6 +117,13 @@ Route::prefix('admin')->group(function () {
         //Features Route
         Route::get('/features', [FeatureController::class, 'index'])->name('admin.features.index');
         Route::post('/features', [FeatureController::class, 'update'])->name('admin.features.update');
+
+        //Courses Route
+        Route::get('/courses', [CourseController::class, 'index'])->name('admin.courses.index');
+        Route::post('/courses', [CourseController::class, 'update'])->name('admin.courses.update');
+        Route::get('/courses/download/{id}', [CourseController::class, 'download'])->name('admin.courses.download');
+
+
 
 
 

@@ -17,12 +17,13 @@
     </section>
     <!-- Page Header Section Ending Here -->
 
-     <!-- Login Section Section Starts Here -->
-     <div class="login-section padding-tb">
+    <!-- Login Section Section Starts Here -->
+    <div class="login-section padding-tb">
         <div class=" container">
+            @include('frontend.layouts.session')
             <div class="account-wrapper">
                 <h3 class="title">Login</h3>
-                <form class="account-form"  action="{{ route('login.do') }}" method="post">
+                <form class="account-form" action="{{ route('login.do') }}" method="post">
                     @csrf
                     <div class="form-group">
                         <input type="text" placeholder="Email" name="email">

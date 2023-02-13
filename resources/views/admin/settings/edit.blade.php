@@ -72,13 +72,13 @@
                                     <div class="col">
                                         <label> Logo</label>
                                         <input type="file" class="form-control modal-title" name='logo'
-                                            accept="image/jpeg,image/jpg,image/png" required>
+                                            accept="image/jpeg,image/jpg,image/png">
                                         <img src="{{ asset( $setting->logo) }}" height="100px" width="100px" />
                                     </div>
                                     <div class="col">
                                         <label> Image</label>
                                         <input type="file" class="form-control modal-title" name='image'
-                                            accept="image/jpeg,image/jpg,image/png" required>
+                                            accept="image/jpeg,image/jpg,image/png">
                                         <img src="{{ asset( $setting->image) }}" height="100px" width="100px" />
                                     </div>
                             </div>
