@@ -82,6 +82,12 @@
                                             accept="image/jpeg,image/jpg,image/png">
                                         <img src="{{ asset( $setting->image) }}" height="100px" width="100px" />
                                     </div>
+                                    <div class="col">
+                                        <label>Main Image</label>
+                                        <input type="file" class="form-control modal-title" name='main_image'
+                                            accept="image/jpeg,image/jpg,image/png">
+                                        <img src="{{ asset( $setting->main_image) }}" height="100px" width="100px" />
+                                    </div>
                             </div>
                             <div class="d-flex justify-content-center col">
                                 <button type="submit" class="btn btn-primary"

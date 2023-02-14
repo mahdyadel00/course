@@ -45,8 +45,8 @@
                  </div>
                  <div class="col-lg-6 col-12">
                      <div class="banner-image">
-                         <!-- <img src="{{ asset('frontend') }}/assets/images/logo/GEEXAR2.png" alt="banner-img"> -->
-                         <h1 class="custom-h1">GMC</h1>
+                          <img src="{{ asset($setting->main_image) }}" alt="banner-img">
+                         {{-- <h1 class="custom-h1">GMC</h1> --}}
                      </div>
                  </div>
              </div>
