@@ -74,6 +74,26 @@
                 </form>
                 <div class="account-bottom">
                     <span class="d-block cate pt-10">Are you a member? <a href="{{ route('login.show') }}">Login</a></span>
+
+                    <span class="or"><span>or</span></span>
+                    <h5 class="subtitle">Login With Social Media</h5>
+                    <ul class="social-media social-color lab-ul d-flex justify-content-center">
+                        <li>
+                            <a href="{{ route('facebook.login') }}" class="facebook"><i class="fab fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="{{ route('google.login') }}" class="google"><i class="fab fa-google"></i></a>
+                        </li>
+                        <li>
+                            <a href="http://linkedin.com/h" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                        <li>
+                            <a href="http://instgram.com/h" class="instagram"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="http://pinterest.com/h" class="pinterest"><i class="fab fa-pinterest"></i></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
