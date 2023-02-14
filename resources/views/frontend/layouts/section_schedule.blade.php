@@ -1,5 +1,5 @@
  <!-- ==========schedule Section start Here========== -->
- <section class="section section-lg bg-default text-center d-none">
+ <section class="section section-lg bg-default text-center">
      <div class="container">
          <div class="section-header text-center">
              <h2>Event Schedule plan</h2>
@@ -1236,7 +1236,7 @@
          </div>
      </div>
  </section>
- <section class="schedule-section padding-tb padding-b bg-image d-none">
+ <section class="schedule-section padding-tb padding-b bg-image">
      <div class="container">
          <div class="section-header">
              <h2>Days Details</h2>

@@ -108,7 +108,7 @@
                                             class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label>Select</label>
+                                        <label>Marketing Fields</label>
                                         <select name="fields" id="" class="form-control">
                                             <option value="digital_marketing">Digital Marketing</option>
                                             <option value="graphic_design">Graphic Design</option>
