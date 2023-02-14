@@ -45,8 +45,8 @@ class LoginController extends Controller
         $user =  Socialite::driver('google')->user();
 
         $data = User::where('email', $user->email)->first();
-        dd($data);
         if(is_null($data)){
+            dd($data);
 
             // $users['anme'] = $user->name;
             $users['email'] = $user->email;
