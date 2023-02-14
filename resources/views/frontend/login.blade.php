@@ -51,7 +51,7 @@
                     <h5 class="subtitle">Login With Social Media</h5>
                     <ul class="social-media social-color lab-ul d-flex justify-content-center">
                         <li>
-                            <a href="http://facebook.com/h" class="facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="{{ route('facebook.login') }}" class="facebook"><i class="fab fa-facebook"></i></a>
                         </li>
                         <li>
                             <a href="http://twitter.com/h" class="twitter"><i class="fab fa-twitter"></i></a>

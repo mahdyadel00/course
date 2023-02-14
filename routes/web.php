@@ -18,6 +18,10 @@ use App\Http\Controllers\Frontend\FeatureController;
         Route::get('login/show', [LoginController::class, 'login'])->name('login.show');
         Route::post('login/post', [LoginController::class, 'doLogin'])->name('login.do');
         Route::get('logout', [LoginController::class, 'logout'])->name('logout.front');
+
+        //facebook login
+        Route::get('login/facebook', [LoginController::class, 'redirectToFacebook'])->name('facebook.login');
+        Route::get('login/facebook/callback', [LoginController::class, 'handleFacebookCallback']);
         // ============================================================================** Register Route ** ==========================================================================
         Route::get('register/show', [RegisterController::class, 'register'])->name('register.show');
         Route::post('register/post', [RegisterController::class, 'doRegister'])->name('register.do');
