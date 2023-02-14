@@ -12,6 +12,7 @@
                             <i class="fa fa-plus">Create</i>
                         </a></button>
                 </div>
+                @include('layouts.admin._partials._session')
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
                         <table class="table align-items-center mb-0">
@@ -32,7 +33,8 @@
                                         <td>{{ $speaker->name }}</td>
                                         <td>{{ $speaker->email }}</td>
                                         <td>{{ $speaker->phone }}</td>
-                                        <td><img src="{{ $speaker->image }}" width="100px" height="100px" alt=""></td>
+                                        <td><img src="{{ $speaker->image }}" width="100px" height="100px" alt="">
+                                        </td>
                                         <td>{{ date('d-m-Y', strtotime($speaker->created_at)) }}</td>
                                         <td class="align-middle">
                                             <a href="{{ route('admin.speakers.show', $speaker->id) }}"

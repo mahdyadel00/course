@@ -78,6 +78,9 @@ return [
         Barryvdh\DomPDF\ServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
 
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
+
 
     ],
 
@@ -142,7 +145,9 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade::class,
 
 
-        'Image' => Intervention\Image\Facades\Image::class
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
 
 
     ],

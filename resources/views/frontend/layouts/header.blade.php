@@ -15,6 +15,7 @@ $setting = App\Models\Settings::first();
                         <li><a href="{{ route('home') }}">Home</a></li>
                         <li><a href="{{ route('features.index') }}">Features</a></li>
                         <li><a href="{{ route('speakers.index') }}">Speakers</a></li>
+                        <li><a href="{{ route('courses.index') }}">Diploma</a></li>
                         <li><a href="{{ route('pricing.index') }}">Pricing</a></li>
                         <li><a href="{{ route('contacts') }}">Contact</a></li>
                     </ul>
@@ -23,7 +24,15 @@ $setting = App\Models\Settings::first();
                             <div class="btn-group btn-profile" role="group">
                                 <button type="button" class="btn custom-btn dropdown-toggle" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    <img src="{{ asset(auth()->user()->image) }}" alt="">
+                                    @php
+                                        $path = asset(auth()->user()->image);
+                                    @endphp
+                                    @if ((auth()->user()->image) == null)
+                                        <img src="{{ asset('frontend/assets/images/user.jpg') }}" alt="scholar"
+                                            height="50px" width="100px" />
+                                    @else
+                                        <img src="{{ asset(auth()->user()->image) }}" alt="">
+                                    @endif
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="{{ route('profile.index') }}">Profile</a></li>

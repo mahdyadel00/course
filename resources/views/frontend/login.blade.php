@@ -16,13 +16,14 @@
         </div>
     </section>
     <!-- Page Header Section Ending Here -->
-
-     <!-- Login Section Section Starts Here -->
-     <div class="login-section padding-tb">
+    {{-- //message --}}
+    @include('frontend.layouts.session')
+    <!-- Login Section Section Starts Here -->
+    <div class="login-section padding-tb">
         <div class=" container">
             <div class="account-wrapper">
                 <h3 class="title">Login</h3>
-                <form class="account-form"  action="{{ route('login.do') }}" method="post">
+                <form class="account-form" action="{{ route('login.do') }}" method="post">
                     @csrf
                     <div class="form-group">
                         <input type="text" placeholder="Email" name="email">
@@ -43,14 +44,14 @@
                         <button type="submit" class="d-block lab-btn"><span>Submit Now</span></button>
                     </div>
                 </form>
-                <div class="account-bottom">
+                {{-- <div class="account-bottom">
                     <span class="d-block cate pt-10">Don’t Have any Account? <a href="{{ route('register.show') }}"> Sign
                             Up</a></span>
                     <span class="or"><span>or</span></span>
                     <h5 class="subtitle">Login With Social Media</h5>
                     <ul class="social-media social-color lab-ul d-flex justify-content-center">
                         <li>
-                            <a href="http://facebook.com/h" class="facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="{{ route('facebook.login') }}" class="facebook"><i class="fab fa-facebook"></i></a>
                         </li>
                         <li>
                             <a href="http://twitter.com/h" class="twitter"><i class="fab fa-twitter"></i></a>
@@ -65,7 +66,7 @@
                             <a href="http://pinterest.com/h" class="pinterest"><i class="fab fa-pinterest"></i></a>
                         </li>
                     </ul>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

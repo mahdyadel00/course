@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-xl-5 col-lg-12">
                     <div class="contact-Wrapper">
-                        <form action="{{ route('profile.update', auth()->user()->id) }}" method="post" class="form-control col-md-12"
-                            id="add-form" enctype="multipart/form-data" >
+                        <form action="{{ route('profile.update', auth()->user()->id) }}" method="post"
+                            class="form-control col-md-12" id="add-form" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-12">
@@ -42,7 +42,8 @@
                                 <div class="col-lg-12">
                                     <div class="input-form">
                                         <label class="infoTitle">@lang('site.phone')</label>
-                                        <input id="phone" name="phone" type="number" value="{{ auth()->user()->phone }}">
+                                        <input id="phone" name="phone" type="number"
+                                            value="{{ auth()->user()->phone }}">
                                     </div>
                                 </div>
 
@@ -76,14 +77,14 @@
                                 <button type="submit" form="add-form" class="cmn-btn4 w-100">@lang('site.edit')</button>
                                 {{-- <button type="submit" class="btn btn-primary waves-effect waves-light" form='add-form'>Send
                                     Message</button> --}}
-
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-7 col-lg-12">
                     <div class="contactRight-img">
-                        <img src="{{ asset(auth()->user()->image) }}" width="100px" height="100px" alt="images" class="contactImg">
+                        <img src="{{ asset(auth()->user()->image) }}" width="100px" height="100px" alt="images"
+                            class="contactImg">
                     </div>
                 </div>
             </div>

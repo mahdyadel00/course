@@ -10,6 +10,7 @@
                             <i class="fa fa-plus">Show Pricing</i>
                         </a></button>
                 </div>
+                @include('layouts.admin._partials._session')
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="card">

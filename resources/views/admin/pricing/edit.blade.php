@@ -10,6 +10,7 @@
                             <i class="fa fa-plus">Edit Pricing</i>
                         </a></button>
                 </div>
+                @include('layouts.admin._partials._session')
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
@@ -23,13 +24,13 @@
                                             value="{{ $pricing->title }}" type="text">
                                     </div>
                                     <div class="col">
-                                        <label>Description</label>
-                                        <textarea class="form-control fc-datepicker ckeditor" name="description" id="description" cols="30" rows="10">{{ $pricing->description }}</textarea>
-                                    </div>
-                                    <div class="col">
                                         <label>Price</label>
                                         <input class="form-control fc-datepicker" name="price"
                                             value="{{ $pricing->price }}" type="text">
+                                    </div>
+                                    <div class="col">
+                                        <label>Description</label>
+                                        <textarea class="form-control fc-datepicker ckeditor" name="description" id="description" cols="30" rows="10">{{ $pricing->description }}</textarea>
                                     </div>
                                     <div class="d-flex justify-content-center col">
                                         <button type="submit" class="btn btn-primary"

@@ -62,7 +62,7 @@ class SpeakersController extends Controller
 
 
 
-        return redirect()->route('admin.speakers.index')->with('Successfully', 'Slider Added Successfully');
+        return redirect()->route('admin.speakers.index')->with('success', 'Pricing Created successfully');
     }
 
     public function show($id)
@@ -119,13 +119,13 @@ class SpeakersController extends Controller
 
         ]);
 
-        return redirect()->route('admin.speakers.index')->with('Successfully', 'Speaker Updated');
+        return redirect()->route('admin.speakers.index')->with('success' , 'Speaker updated successfully');
     }
 
     public function delete($id)
     {
         $speaker = Speaker::findOrFail($id);
         $speaker->delete();
-        return redirect()->route('admin.speakers.index')->with('Successfully', 'Speaker Deleted Successfully');
+        return redirect()->route('admin.speakers.index')->with('error', 'Speaker Deleted Successfully');
     }
 }

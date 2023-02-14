@@ -22,6 +22,7 @@ class SettingsSeeder extends Seeder
             'title_ar'          => 'title_ar',
             'logo'              => 'logo.png',
             'image'             => 'image.png',
+            'main_image'        => 'image.png',
             'address'           => 'address',
             'facebook_link'     => 'facebook_link',
             'twitter_link'      => 'twitter_link',

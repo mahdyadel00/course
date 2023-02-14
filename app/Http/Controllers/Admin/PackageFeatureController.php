@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\PackageFeature\StorePackageFeature;
 use Illuminate\Http\Request;
 use App\Models\PackageFeature;
 use App\Models\Pricing;
@@ -21,13 +22,13 @@ class PackageFeatureController extends Controller
         $pricing = Pricing::get();
         return view('admin.packages_features.create' , compact('pricing'));
     }
-    public function store(Request $request)
+    public function store(StorePackageFeature $request)
     {
-        $request->validate([
-            'title'       => 'required',
-            'description' => 'required',
-            'price_id'    => 'required',
-        ]);
+        // $request->validate([
+        //     'title'       => 'required',
+        //     'description' => 'required',
+        //     'price_id'    => 'required',
+        // ]);
         $pricing = Pricing::find($request->price_id);
         PackageFeature::create([
             'title'       => $request->title,
@@ -74,6 +75,6 @@ class PackageFeatureController extends Controller
     {
         $package_feature = PackageFeature::find($id);
         $package_feature->delete();
-        return redirect()->route('admin.packages_features.index')->with('success', 'Package Feature deleted successfully');
+        return redirect()->route('admin.packages_features.index')->with('error', 'Package Feature deleted successfully');
     }
 }

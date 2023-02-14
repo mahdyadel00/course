@@ -21,6 +21,21 @@ class SettingsController extends Controller
 
     public function update(Request $request)
     {
+        $request->validate([
+            'title'         => 'sometimes',
+            'description'   => 'sometimes',
+            'address'       => 'sometimes',
+            'phone'         => 'sometimes',
+            'email'         => 'sometimes',
+            'facebook'      => 'sometimes',
+            'twitter'       => 'sometimes',
+            'instagram'     => 'sometimes',
+            'youtube'       => 'sometimes',
+            'linkedin'      => 'sometimes',
+            'google_plus'   => 'sometimes',
+            'pinterest'     => 'sometimes',
+            'footer_text'   => 'sometimes',
+        ]);
 
         $setting = Settings::first();
 
@@ -35,6 +50,8 @@ class SettingsController extends Controller
             $logo_name = time() . request('logo')->getClientOriginalName();
             $logo->move($path, $logo_name);
             $logo_in_db = '/uploads/settings/' . $logo_name;
+        } else {
+            $logo_in_db = $setting->logo;
         }
         $image_in_db = NULL;
         if ($request->has('image')) {
@@ -47,24 +64,43 @@ class SettingsController extends Controller
             $image_name = time() . request('image')->getClientOriginalName();
             $image->move($path, $image_name);
             $image_in_db = '/uploads/settings/' . $image_name;
+        } else {
+            $image_in_db = $setting->image;
         }
-        $setting->title_en = $request->title_en;
-        $setting->title_ar = $request->title_ar;
-        $setting->email = $request->email;
-        $setting->phone = $request->phone;
-        $setting->address = $request->address;
-        $setting->start_from = $request->start_from;
-        $setting->end_at = $request->end_at;
-        $setting->facebook_link = $request->facebook_link;
-        $setting->twitter_link = $request->twitter_link;
-        $setting->youtube_link = $request->youtube_link;
-        $setting->linkedin_link = $request->linkedin_link;
-        $setting->logo = $logo_in_db;
-        $setting->image = $image_in_db;
+        //main image
+        $main_image_in_db = NULL;
+        if ($request->has('main_image')) {
+            $request->validate([
+                'main_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            ]);
+
+            $path = public_path() . '/uploads/settings';
+            $main_image = request('main_image');
+            $main_image_name = time() . request('main_image')->getClientOriginalName();
+            $main_image->move($path, $main_image_name);
+            $main_image_in_db = '/uploads/settings/' . $main_image_name;
+        } else {
+            $main_image_in_db = $setting->main_image;
+        }
+
+
+        $setting->title_en      =   $request->title_en;
+        $setting->title_ar      =   $request->title_ar;
+        $setting->email         =   $request->email;
+        $setting->phone         =   $request->phone;
+        $setting->address       =   $request->address;
+        $setting->start_from    =   $request->start_from;
+        $setting->end_at        =   $request->end_at;
+        $setting->facebook_link =   $request->facebook_link;
+        $setting->twitter_link  =   $request->twitter_link;
+        $setting->youtube_link  =   $request->youtube_link;
+        $setting->linkedin_link =   $request->linkedin_link;
+        $setting->logo          =   $logo_in_db;
+        $setting->image         =   $image_in_db;
+        $setting->main_image    =   $main_image_in_db;
 
         $setting->save();
         Cache::forget('setting');
-
-        return redirect()->back()->with('flash_message', ('Updated Successfully !'));
+        return redirect()->back()->with('success', 'Settings Updated Successfully');
     }
 }

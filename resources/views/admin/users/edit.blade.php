@@ -10,6 +10,7 @@
                             <i class="fa fa-plus">Edit User</i>
                         </a></button>
                 </div>
+                @include('layouts.admin._partials._session')
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
@@ -108,9 +109,9 @@
                                         <label>CV</label>
                                         <input type="file" class="form-control modal-title" name='cv'
                                             accept="application/pdf">
-                                            <a href="{{ route('admin.users.download', $user->id) }}">
-                                                <i class="fas fa-download">Dwonload CV</i>
-                                            </a>
+                                        <a href="{{ route('admin.users.download', $user->id) }}">
+                                            <i class="fas fa-download">Dwonload CV</i>
+                                        </a>
                                     </div>
                                     <div class="col-md-12">
                                         <label class="infoTitle">@lang('site.status')</label>
@@ -130,7 +131,8 @@
 
                             </div>
                             <div class="d-flex justify-content-center col">
-                                <button type="submit" class="btn btn-primary" style="margin-top: 25px;padding: 10px 100px;">Edit User</button>
+                                <button type="submit" class="btn btn-primary"
+                                    style="margin-top: 25px;padding: 10px 100px;">Edit User</button>
                             </div>
                             </form>
                         </div>

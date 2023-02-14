@@ -22,13 +22,13 @@ class ContactController extends Controller
         Contact::query()->create([
 
             'name'      =>     $request->name,
-            'email'          =>     $request->email,
-            'number'          =>     $request->number,
-            'subject'        =>     $request->subject,
-            'message'      =>     $request->message,
+            'email'     =>     $request->email,
+            'number'    =>     $request->number,
+            'subject'   =>     $request->subject,
+            'message'   =>     $request->message,
         ]);
 
-        return redirect()->back()->withSuccess('Successfully created');
+        return redirect()->back()->with('success', 'Your message has been sent successfully');
     }
 
     protected function aboutUs()

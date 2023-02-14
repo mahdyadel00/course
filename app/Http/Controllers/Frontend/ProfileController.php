@@ -18,7 +18,7 @@ class ProfileController extends Controller
     {
         if (Auth::check()) {
 
-            $user = User::first();
+            $user = User::where('id', auth()->user()->id)->first();
 
             return view('frontend.accounts.profile', compact('user'));
         } else {
@@ -30,15 +30,15 @@ class ProfileController extends Controller
     {
 
         $request->validate([
-            'first_name'    => 'required',
-            'last_name'     => 'required',
-            'email'         => 'required',
-            'phone'         => 'required',
-            'address'       => 'required',
-            'birthdate'     => 'required',
-            'education'     => 'required',
-            'qulification'  => 'required',
-            'english'       => 'required',
+            'first_name'    => 'sometimes',
+            'last_name'     => 'sometimes',
+            'email'         => 'sometimes',
+            'phone'         => 'sometimes',
+            'address'       => 'sometimes',
+            'birthdate'     => 'sometimes',
+            'education'     => 'sometimes',
+            'qulification'  => 'sometimes',
+            'english'       => 'sometimes',
         ]);
         $user = User::where('id', auth()->user()->id)->first();
         $image_in_db = NULL;

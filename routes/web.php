@@ -11,46 +11,47 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\PricingController;
 use App\Http\Controllers\Frontend\PolicesController;
 use App\Http\Controllers\Frontend\FeatureController;
+use App\Http\Controllers\Frontend\CourseController;
 
-        Auth::routes();
-        Route::get('/', [HomeController::class, 'index'])->name('home');
-        // ============================================================================** Login Route ** ==========================================================================
-        Route::get('login/show', [LoginController::class, 'login'])->name('login.show');
-        Route::post('login/post', [LoginController::class, 'doLogin'])->name('login.do');
-        Route::get('logout', [LoginController::class, 'logout'])->name('logout.front');
-        // ============================================================================** Register Route ** ==========================================================================
-        Route::get('register/show', [RegisterController::class, 'register'])->name('register.show');
-        Route::post('register/post', [RegisterController::class, 'doRegister'])->name('register.do');
-        // ============================================================================** Content Route ** ==========================================================================
-        Route::get('/contacts', [ContactController::class, 'index'])->name('contacts');
-        Route::post('/contacts/create', [ContactController::class, 'store'])->name('contacts.store');
-        Route::get('/about-us', [ContactController::class, 'aboutUs'])->name('about_us');
+Auth::routes();
+Route::get('/', [HomeController::class, 'index'])->name('home');
+// ============================================================================** Login Route ** ==========================================================================
+Route::get('login/show', [LoginController::class, 'login'])->name('login.show');
+Route::post('login/post', [LoginController::class, 'doLogin'])->name('login.do');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout.front');
 
-        // ============================================================================** Speakers Route ** ==========================================================================
+//facebook login
+Route::get('login/facebook', [LoginController::class, 'provider'])->name('facebook.login');
+Route::get('facebook/callback', [LoginController::class, 'handleCallback'])->name('facebook.callback');
+// ============================================================================** Register Route ** ==========================================================================
+Route::get('register/show', [RegisterController::class, 'register'])->name('register.show');
+Route::post('register/post', [RegisterController::class, 'doRegister'])->name('register.do');
+// ============================================================================** Content Route ** ==========================================================================
+Route::get('/contacts', [ContactController::class, 'index'])->name('contacts');
+Route::post('/contacts/create', [ContactController::class, 'store'])->name('contacts.store');
+Route::get('/about-us', [ContactController::class, 'aboutUs'])->name('about_us');
 
-        Route::get('/speakers', [SpeakersController::class, 'index'])->name('speakers.index');
-        Route::get('/speakers/details/{id}', [SpeakersController::class, 'details'])->name('speakers.details');
+// ============================================================================** Speakers Route ** ==========================================================================
 
-        // ============================================================================** Profile Route ** ==========================================================================
+Route::get('/speakers', [SpeakersController::class, 'index'])->name('speakers.index');
+Route::get('/speakers/details/{id}', [SpeakersController::class, 'details'])->name('speakers.details');
 
-        Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
-        Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
-        // dwonload cv
-        Route::get('/profile/download/{id}', [ProfileController::class, 'download'])->name('profile.download');
+// ============================================================================** Profile Route ** ==========================================================================
 
-        // ============================================================================** Pricing Route ** ==========================================================================
-        Route::get('/pricing', [PricingController::class, 'index'])->name('pricing.index');
-        Route::get('/pricing/{id}', [PricingController::class, 'pricingDetails'])->name('pricing.details');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+// dwonload cv
+Route::get('/profile/download/{id}', [ProfileController::class, 'download'])->name('profile.download');
 
-        // ============================================================================** Polices Route ** ==========================================================================
-        Route::get('polices', [PolicesController::class, 'index'])->name('polices.index');
-        // ============================================================================** Features Route ** ==========================================================================
-        Route::get('features', [FeatureController::class, 'index'])->name('features.index');
-        // ============================================================================** Features Route ** ==========================================================================
+// ============================================================================** Pricing Route ** ==========================================================================
+Route::get('/pricing', [PricingController::class, 'index'])->name('pricing.index');
+Route::get('/pricing/{id}', [PricingController::class, 'pricingDetails'])->name('pricing.details');
 
+// ============================================================================** Polices Route ** ==========================================================================
+Route::get('polices', [PolicesController::class, 'index'])->name('polices.index');
+// ============================================================================** Features Route ** ==========================================================================
+Route::get('features', [FeatureController::class, 'index'])->name('features.index');
 
-        Route::get('/course', function () {
-            return view('frontend.features.index');
-        })->name('course');
-
-    // });
+// ============================================================================** Courses Route ** ==========================================================================
+Route::get('courses', [CourseController::class, 'index'])->name('courses.index');
+// Route::get('courses/details/{id}', [CourseController::class, 'details'])->name('courses.details');

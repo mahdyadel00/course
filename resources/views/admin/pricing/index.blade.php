@@ -10,6 +10,7 @@
                             <i class="fa fa-plus">Create Pricing</i>
                         </a></button>
                 </div>
+                @include('layouts.admin._partials._session')
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
                         <table class="table align-items-center mb-0">
@@ -43,8 +44,8 @@
                                                     data-original-title="Edit price">
                                                     <i class="fa fa-edit"></i>
                                                 </a></button>
-                                            <form action="{{ route('admin.pricing.delete', [$price->id]) }}"
-                                                method="post" style="display: inline-block">
+                                            <form action="{{ route('admin.pricing.delete', [$price->id]) }}" method="post"
+                                                style="display: inline-block">
                                                 {{ csrf_field() }}
                                                 {{ method_field('delete') }}
                                                 <button class="btn btn-danger" type="submit">

@@ -18,7 +18,8 @@ $setting = App\Models\Settings::first();
         </div>
     </section>
     <!-- Page Header Section Ending Here -->
-
+    {{-- //message --}}
+    @include('frontend.layouts.session')
     <!-- Contact Us Section Start Here -->
     <div class="contact-section">
         <div class="contact-top padding-tb aside-bg padding-b">
@@ -100,9 +101,12 @@ $setting = App\Models\Settings::first();
                         <div class="location-map">
                             <div id="map">
                                 <!-- <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.227736753981!2d90.38698831452395!3d23.739256984594892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b85c740f17d1%3A0xdd3daab8c90eb11f!2sCodexCoder!5e0!3m2!1sbn!2sbd!4v1610134370994!5m2!1sbn!2sbd"
-                                    allowfullscreen=""></iframe> -->
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3418.262964085923!2d31.361119!3d31.0467782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x35e19c8a157da2c6!2sAlHawwar%20Club!5e0!3m2!1sen!2seg!4v1673954967259!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.227736753981!2d90.38698831452395!3d23.739256984594892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b85c740f17d1%3A0xdd3daab8c90eb11f!2sCodexCoder!5e0!3m2!1sbn!2sbd!4v1610134370994!5m2!1sbn!2sbd"
+                                        allowfullscreen=""></iframe> -->
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3418.262964085923!2d31.361119!3d31.0467782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x35e19c8a157da2c6!2sAlHawwar%20Club!5e0!3m2!1sen!2seg!4v1673954967259!5m2!1sen!2seg"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                     </div>

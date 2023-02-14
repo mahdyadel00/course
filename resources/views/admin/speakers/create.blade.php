@@ -10,6 +10,7 @@
                             <i class="fa fa-plus">Show Speaker</i>
                         </a></button>
                 </div>
+                @include('layouts.admin._partials._session')
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
@@ -87,8 +88,9 @@
                                             accept="image/jpeg,image/jpg,image/png" required>
                                     </div>
                             </div>
-                            <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary">Add</button>
+                            <div class="d-flex justify-content-center col">
+                                <button type="submit" class="btn btn-primary"
+                                    style="margin-top: 25px;padding: 10px 100px;">Add Speakers</button>
                             </div>
                             </form>
                         </div>

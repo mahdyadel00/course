@@ -10,6 +10,7 @@
                             <i class="fa fa-plus">Edit Feature</i>
                         </a></button>
                 </div>
+                @include('layouts.admin._partials._session')
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
@@ -33,7 +34,8 @@
                                     </div>
                                     <div class="col">
                                         <label for="description_1">Description 2</label>
-                                        <textarea class="form-control fc-datepicker ckeditor" name="description_1" id="description_1" cols="30" rows="10">{!! $feature->description_1 !!}</textarea>
+                                        <textarea class="form-control fc-datepicker ckeditor" name="description_1" id="description_1" cols="30"
+                                            rows="10">{!! $feature->description_1 !!}</textarea>
                                     </div>
                                     <div class="col">
                                         <label for="title_2">Title 2</label>
@@ -42,7 +44,8 @@
                                     </div>
                                     <div class="col">
                                         <label for="description_2">Description 2</label>
-                                        <textarea class="form-control fc-datepicker ckeditor" name="description_2" id="description_2" cols="30" rows="10">{!! $feature->description_2 !!}</textarea>
+                                        <textarea class="form-control fc-datepicker ckeditor" name="description_2" id="description_2" cols="30"
+                                            rows="10">{!! $feature->description_2 !!}</textarea>
                                     </div>
                                     <div class="d-flex justify-content-center col">
                                         <button type="submit" class="btn btn-primary"

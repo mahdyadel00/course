@@ -14,6 +14,12 @@ return [
     |
     */
 
+    'facebook' => [
+        'client_id' => '576524384517307', //USE FROM FACEBOOK DEVELOPER ACCOUNT
+        'client_secret' => 'f54c7f2131ce6e01a1e4962e95447aad', //USE FROM FACEBOOK DEVELOPER ACCOUNT
+        'redirect' => 'https://grow.geexar.dev/facebook/callback'
+    ],
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
@@ -29,5 +35,6 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+
 
 ];

@@ -10,10 +10,9 @@
                             <i class="fa fa-plus">Create</i>
                         </a></button>
                 </div>
+                @include('layouts.admin._partials._session')
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
-                        {{-- // message --}}
-                        @include('layouts.admin._partials._session')
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>

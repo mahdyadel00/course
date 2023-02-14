@@ -67,7 +67,7 @@
                     <div class="section-wrapper text-center">
                         <p>
                             {!! $feature->description_2 !!}
-                          <div class="ttt">
+                          {{-- <div class="ttt">
                             <div class="first">
                                 <ul>
                                     <li>Marketing Plan</li>
@@ -86,7 +86,7 @@
                                     <li>Graphic Designers</li>
                                 </ul>
                             </div>
-                          </div>
+                          </div> --}}
 
                          <!-- (voice over, graphic designers ,art directors, video editors, business, career development
                                  coaches, content creators, copy writers, media buyers,....etc) -->
