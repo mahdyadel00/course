@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\Auth\Register;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Laravel\Socialite\Facades\Socialite;
 use Validator;
 use Stevebauman\Location\Facades\Location;
 
@@ -70,6 +71,36 @@ class RegisterController extends Controller
             return redirect()->route('login.show')->with('success', 'Register Successfully');
         } else {
             return redirect()->route('register')->with('error', 'Register Failed');
+        }
+    }
+
+    public function provider()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function callbackHandel()
+    {
+        $user =  Socialite::driver('google')->user();
+
+        $data = User::create([
+            'name'       => $user->name,
+            'email'      => $user->email,
+            'birthdate'  => $user->birthdate,
+            'address'    => $user->address,
+            'fill_survy' => $user->fill_survy,
+            'policies'   => $user->policies,
+            'cv'         => $user->cv,
+            'password'   => Hash::make($user->id),
+            'guard'      => 'web',
+            'roles_name' => null
+
+        ]);
+        if ($data) {
+            // Auth::login($data);
+            return redirect()->route('home')->with('success', 'Login Successfully BY Google');
+        } else {
+            return redirect()->back()->with('error', 'Email or password is incorrect');
         }
     }
 }
