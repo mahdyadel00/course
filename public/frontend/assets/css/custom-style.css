@@ -7009,6 +7009,9 @@ footer .custom-img img {
 .text-none{
 	text-transform: none;
 }
+.social-media li a{
+	color: #fff !important;
+}
 @media (min-width: 576px){
 	.speaker-item-2 .speaker-inner .speaker-content .speaker-content-inner {
 		height: 184px;

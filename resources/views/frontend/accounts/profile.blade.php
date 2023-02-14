@@ -108,6 +108,33 @@
                                             class="form-control">
                                     </div>
                                     <div class="form-group">
+                                        <label>Select</label>
+                                        <select name="fields" id="" class="form-control">
+                                            <option value="digital_marketing">Digital Marketing</option>
+                                            <option value="graphic_design">Graphic Design</option>
+                                            <option value="market_research">Market Research</option>
+                                            <option value="seo">ESO</option>
+                                            <option value="voice_over">Voice Over</option>
+                                            <option value="google_ads">Google Ads</option>
+                                            <option value="customer_relationship">Customer Relationship</option>
+                                            <option value="customer_behavior">Customer Behavior</option>
+                                            <option value="brand_strategy">Brand Strategy</option>
+                                            <option value="personal_branding">Personal Branding</option>
+                                            <option value="media_buying">Media Buying</option>
+                                            <option value="business_strategy">Business Strategy</option>
+                                            <option value="marketing_plan">Marketing Plan</option>
+                                            <option value="ui_ux">UI/UX</option>
+                                            <option value="sem">SEM</option>
+                                            <option value="sales">Sales</option>
+                                            <option value="content_creation">Content Creation</option>
+                                            <option value="copy_writing">Copy Writing</option>
+                                            <option value="photography">Photography</option>
+                                            <option value="videography">Videography</option>
+                                            <option value="b2b_marketing">B2B Marketing</option>
+                                            <option value="pr">PR</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
                                         <label>Qulification</label>
                                         <input type="text" name="qulification" value="{{ $user->qulification }}"
                                             class="form-control">
