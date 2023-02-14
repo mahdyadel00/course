@@ -23,4 +23,12 @@ class CourseController extends Controller
         return view('frontend.courses.index', compact('course'));
     }
 
+    //dwonload
+    public function download($id)
+    {
+        $course = Course::where('id', $id)->first();
+        $file_path = public_path($course->course_file);
+        return response()->download($file_path);
+    }
+
 }
