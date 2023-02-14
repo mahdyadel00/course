@@ -35,13 +35,14 @@ class LoginController extends Controller
         }
     }
 
-    public function redirectToFacebook()
+    public function provider()
     {
         return Socialite::driver('facebook')->redirect();
     }
 
-    public function handleFacebookCallback()
+    public function handleCallback()
     {
+        dd('ok');
         $user =  Socialite::driver('facebook')->user();
         dd($user);
         $finduser = User::where('facebook_id', $user->id)->first();
