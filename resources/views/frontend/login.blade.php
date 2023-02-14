@@ -54,7 +54,7 @@
                             <a href="{{ route('facebook.login') }}" class="facebook"><i class="fab fa-facebook"></i></a>
                         </li>
                         <li>
-                            <a href="http://twitter.com/h" class="twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="{{ route('google.login') }}" class="google"><i class="fab fa-google"></i></a>
                         </li>
                         <li>
                             <a href="http://linkedin.com/h" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
