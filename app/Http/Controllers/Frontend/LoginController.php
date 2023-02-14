@@ -45,15 +45,15 @@ class LoginController extends Controller
         $user =  Socialite::driver('google')->user();
 
         $data = User::where('email', $user->email)->first();
-        if(!$data){
-            dd($data);
-
-            // $users['anme'] = $user->name;
-            $users['email'] = $user->email;
-            $data = User::create($users);
+        if ($data) {
+            dd(0);
+            Auth::login($data);
+            return redirect()->route('home');
         }
-        Auth::login($data);
-        return redirect()->route('home');
+        dd(1);
+        // $users['anme'] = $user->name;
+        $users['email'] = $user->email;
+        $data = User::create($users);
     }
 
     protected function logout()
