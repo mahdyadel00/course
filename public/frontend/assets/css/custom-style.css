@@ -6999,6 +6999,14 @@ footer .custom-img img {
     height: 190px !important;
 }
 
+.course-image img{
+	display: block;
+	margin: 0 auto;
+}
+.speaker-item .speaker-inner .spkr-content-title h5 a{
+	text-transform: capitalize;
+}
+
 @media (min-width: 576px){
 	.speaker-item-2 .speaker-inner .speaker-content .speaker-content-inner {
 		height: 184px;
