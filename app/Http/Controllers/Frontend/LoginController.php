@@ -49,7 +49,7 @@ class LoginController extends Controller
 
         if(is_null($data)){
 
-            $users['anme'] = $user->name;
+            // $users['anme'] = $user->name;
             $users['email'] = $user->email;
             $data = User::create($users);
         }
