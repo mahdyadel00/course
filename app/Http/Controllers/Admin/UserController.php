@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
-use App\Models\Country;
+use App\Models\Marketing;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
@@ -23,22 +23,19 @@ class UserController extends Controller
 
     public function __construct()
     {
-
     }
     protected function index()
     {
 
-        $users = User::get();
+        $users = User::with('marketing')->get();
         return view('admin.users.index', compact('users'));
     } // end of index
 
     public function create()
     {
+        $marketings = Marketing::get();
         $roles = Role::pluck('name', 'name')->all();
-        return view(
-            'admin.users.create',
-            compact('roles')
-        );
+        return view('admin.users.create', compact('roles', 'marketings'));
     }
     public function store(Request $request)
     {
@@ -55,6 +52,7 @@ class UserController extends Controller
             'english'       => 'sometimes',
             'policies'      => 'sometimes',
             'password'      => 'sometimes',
+            'marketing_id'  => 'sometimes',
         ]);
         $image_in_db = NULL;
         if ($request->has('image')) {
@@ -102,7 +100,8 @@ class UserController extends Controller
             'education'     => $request->education,
             'qulification'  => $request->qulification,
             'english'       => $request->english,
-            'policies'       => $request->policies,
+            'marketing_id'  => $request->marketing_id,
+            'policies'      => $request->policies,
             'image'         => $image_in_db,
             'identy'        => $identy_in_db,
             'cv'            => $cv_in_db,
@@ -110,10 +109,10 @@ class UserController extends Controller
         ]);
         // $user->assignRole($request->input('roles_name'));
 
-        if($user){
+        if ($user) {
             $user->assignRole($request->input('roles_name'));
             return redirect()->route('admin.users.index')->with('success', 'User created successfully.');
-        }else{
+        } else {
             return redirect()->route('admin.users.index')->with('error', 'User created failed.');
         } // end of if
     }
@@ -127,10 +126,11 @@ class UserController extends Controller
 
     protected function edit($id)
     {
+        $marketings = Marketing::get();
         $user = User::where('id', $id)->first();
         $roles = Role::pluck('name', 'name')->all();
         $userRole = $user->roles->pluck('name', 'name')->all();
-        return view('admin.users.edit', compact('user', 'roles', 'userRole'));
+        return view('admin.users.edit', compact('user', 'roles', 'userRole', 'marketings'));
     }
 
 
@@ -146,6 +146,7 @@ class UserController extends Controller
             'education'     => 'required',
             'qulification'  => 'required',
             'english'       => 'required',
+            'marketing_id'  => 'required',
         ]);
         $user = User::where('id', $id)->first();
         $image_in_db = NULL;
@@ -207,6 +208,7 @@ class UserController extends Controller
             'education'     => $request->education,
             'qulification'  => $request->qulification,
             'english'       => $request->english,
+            'marketing_id'  => $request->marketing_id,
             'task'          => $request->task,
             'notes'         => $request->notes,
             'status'        => $request->status ? 1 : 0,
@@ -226,7 +228,7 @@ class UserController extends Controller
         $user = User::where('id', $id)->first();
         $user->delete();
 
-        return back()->with('error' , "User deleted successfully");
+        return back()->with('error', "User deleted successfully");
     }
 
     protected function logout()

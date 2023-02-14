@@ -28,7 +28,7 @@
                             <div class="scholar-left">
                                 <div class="scholar-single-item">
                                     <div class="scholar-single-thumb" style="width: 330px; height: 363px;">
-                                        @if ($user->image == 'mahdy.png'||$user->image == null)
+                                        @if ($user->image == 'mahdy.png' || $user->image == null)
                                             <img src="{{ asset('frontend/assets/images/user.jpg') }}" alt="scholar" />
                                         @else
                                             <img src="{{ asset($user->image) }}" alt="scholar" />
@@ -109,30 +109,18 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Marketing Fields</label>
-                                        <select name="fields" id="" class="form-control">
-                                            <option value="digital_marketing">Digital Marketing</option>
-                                            <option value="graphic_design">Graphic Design</option>
-                                            <option value="market_research">Market Research</option>
-                                            <option value="seo">ESO</option>
-                                            <option value="voice_over">Voice Over</option>
-                                            <option value="google_ads">Google Ads</option>
-                                            <option value="customer_relationship">Customer Relationship</option>
-                                            <option value="customer_behavior">Customer Behavior</option>
-                                            <option value="brand_strategy">Brand Strategy</option>
-                                            <option value="personal_branding">Personal Branding</option>
-                                            <option value="media_buying">Media Buying</option>
-                                            <option value="business_strategy">Business Strategy</option>
-                                            <option value="marketing_plan">Marketing Plan</option>
-                                            <option value="ui_ux">UI/UX</option>
-                                            <option value="sem">SEM</option>
-                                            <option value="sales">Sales</option>
-                                            <option value="content_creation">Content Creation</option>
-                                            <option value="copy_writing">Copy Writing</option>
-                                            <option value="photography">Photography</option>
-                                            <option value="videography">Videography</option>
-                                            <option value="b2b_marketing">B2B Marketing</option>
-                                            <option value="pr">PR</option>
-                                        </select>
+                                        <div class="col">
+                                            <label>Marketing Fields</label>
+                                            <select name="marketing_id" id="marketing_id"
+                                                class="form-control fc-datepicker">
+                                                <option disabled value="0">Select Marketing Fields</option>
+                                                @foreach ($marketings as $marketing)
+                                                    <option value="{{ $marketing->id }}"
+                                                        {{ $user->marketing_id == $marketing->id ? 'selected' : '' }}>
+                                                        {{ $marketing->title }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Qulification</label>
@@ -154,7 +142,7 @@
                                         <label>Image</label>
                                         <input type="file" class="form-control modal-title" name='image'
                                             accept="image/jpeg,image/jpg,image/png">
-                                            @if ($user->image == 'mahdy.png'||$user->image == null)
+                                        @if ($user->image == 'mahdy.png' || $user->image == null)
                                             <img src="{{ asset('frontend/assets/images/user.jpg') }}" alt="scholar"
                                                 height="50px" width="100px" />
                                         @else
@@ -166,7 +154,7 @@
                                         <label>ID</label>
                                         <input type="file" class="form-control modal-title" name='identy'
                                             accept="image/jpeg,image/jpg,image/png">
-                                        @if ($user->identy ==  null || $user->identy == 'identy.img')
+                                        @if ($user->identy == null || $user->identy == 'identy.img')
                                             <img src="{{ asset('frontend/assets/images/identity.png') }}" alt="scholar"
                                                 height="50px" width="100px" />
                                         @else

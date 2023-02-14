@@ -42,6 +42,10 @@
                                     <td>{{ $user->phone }}</td>
                                 </tr>
                                 <tr>
+                                    <th>Marketing</th>
+                                    <td>{{ $user->marketing ? $user->marketing->title : '' }}</td>
+                                </tr>
+                                <tr>
                                     <th>Address</th>
                                     <td>{{ $user->address }}</td>
                                 </tr>

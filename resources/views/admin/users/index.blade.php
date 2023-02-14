@@ -21,6 +21,7 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
+                                    <th>Marketing</th>
                                     {{-- <th>Roles</th> --}}
                                     <th>Status</th>
                                     <th>Creaed At</th>
@@ -41,6 +42,9 @@
                                         </td>
                                         <td>
                                             <p class="text-xs font-weight-bold mb-0">{{ $user->phone }}</p>
+                                        </td>
+                                         <td>
+                                            <p class="text-xs font-weight-bold mb-0">{{ $user->marketing ? $user->marketing->title : '' }}</p>
                                         </td>
                                         {{-- <td>
                                             @if (!empty($user->getRoleNames()))

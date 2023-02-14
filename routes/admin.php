@@ -21,6 +21,7 @@ use  App\Http\Controllers\Admin\PricingController;
 use  App\Http\Controllers\Admin\FeatureController;
 use  App\Http\Controllers\Admin\CourseController;
 use  App\Http\Controllers\Admin\SponserController;
+use  App\Http\Controllers\Admin\MarketingController;
 
 
 Auth::routes(['except' => 'register']);
@@ -41,6 +42,15 @@ Route::prefix('admin')->group(function () {
         // dwonload cv
         Route::get('/users/download/{id}', [UserController::class, 'download'])->name('admin.users.download');
         Route::get('logout', [UserController::class, 'logout'])->name('logout');
+
+        //marketing Route
+        Route::get('/marketings', [MarketingController::class, 'index'])->name('admin.marketings.index');
+        Route::get('/marketings/create', [MarketingController::class, 'create'])->name('admin.marketings.create');
+        Route::post('/marketings/store', [MarketingController::class, 'store'])->name('admin.marketings.store');
+        Route::get('/marketings/show/{id}', [MarketingController::class, 'show'])->name('admin.marketings.show');
+        Route::get('/marketings/edit/{id}', [MarketingController::class, 'edit'])->name('admin.marketings.edit');
+        Route::post('/marketings/update/{id}', [MarketingController::class, 'update'])->name('admin.marketings.update');
+        Route::delete('/marketings/delete/{id}', [MarketingController::class, 'delete'])->name('admin.marketings.delete');
 
         //Contacts Route
         Route::get('/contacts', [ContactController::class, 'index'])->name('admin.contacts.index');
