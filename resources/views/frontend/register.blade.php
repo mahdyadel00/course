@@ -56,7 +56,7 @@
                         <input type="text" placeholder="Address" name="address">
                     </div>
                     <div class="form-group">
-                        <label for="cv">Upload CV</label>
+                        <label for="cv">Upload CV (Optional)</label>
                         <input type="file" name="cv" placeholder="Enter Your CV">
                     </div>
                     <div class="text-start">

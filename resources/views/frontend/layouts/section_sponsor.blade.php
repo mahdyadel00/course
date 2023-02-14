@@ -113,7 +113,7 @@
                </div> --}}
 
                <div class="clearfix"></div>
-               @foreach ($sponser_four as $s_four)
+               {{-- @foreach ($sponser_four as $s_four)
                    <div class="col-lg-2 col-md-3 col-6">
                        <div data-scroll data-scroll-speed="-0.5">
                            <figure class="sponsor-logo"> <img src="{{ asset($s_four->imge) }}" alt="Image">
@@ -121,7 +121,7 @@
                            </figure>
                        </div>
                    </div>
-               @endforeach
+               @endforeach --}}
                {{-- <div class="col-lg-2 col-md-3 col-6">
                    <div data-scroll data-scroll-speed="0.5">
                        <figure class="sponsor-logo"> <img

@@ -26,7 +26,7 @@ $setting = App\Models\Settings::first();
                                     @php
                                         $path = asset(auth()->user()->image);
                                     @endphp
-                                    @if (asset(auth()->user()->image) == null)
+                                    @if ((auth()->user()->image) == null)
                                         <img src="{{ asset('frontend/assets/images/user.jpg') }}" alt="scholar"
                                             height="50px" width="100px" />
                                     @else

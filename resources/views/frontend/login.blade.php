@@ -44,7 +44,7 @@
                         <button type="submit" class="d-block lab-btn"><span>Submit Now</span></button>
                     </div>
                 </form>
-                <div class="account-bottom">
+                {{-- <div class="account-bottom">
                     <span class="d-block cate pt-10">Don’t Have any Account? <a href="{{ route('register.show') }}"> Sign
                             Up</a></span>
                     <span class="or"><span>or</span></span>
@@ -66,7 +66,7 @@
                             <a href="http://pinterest.com/h" class="pinterest"><i class="fab fa-pinterest"></i></a>
                         </li>
                     </ul>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

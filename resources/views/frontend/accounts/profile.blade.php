@@ -127,7 +127,7 @@
                                         <label>Image</label>
                                         <input type="file" class="form-control modal-title" name='image'
                                             accept="image/jpeg,image/jpg,image/png">
-                                        @if ($user->image == null)
+                                            @if ($user->image == 'mahdy.png'||$user->image == null)
                                             <img src="{{ asset('frontend/assets/images/user.jpg') }}" alt="scholar"
                                                 height="50px" width="100px" />
                                         @else
@@ -139,7 +139,7 @@
                                         <label>ID</label>
                                         <input type="file" class="form-control modal-title" name='identy'
                                             accept="image/jpeg,image/jpg,image/png">
-                                        @if ($user->identy ==  null)
+                                        @if ($user->identy ==  null || $user->identy == 'identy.img')
                                             <img src="{{ asset('frontend/assets/images/identity.png') }}" alt="scholar"
                                                 height="50px" width="100px" />
                                         @else
