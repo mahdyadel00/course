@@ -37,13 +37,13 @@ class LoginController extends Controller
 
     public function provider()
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('google')->redirect();
     }
 
-    public function handleCallback()
+    public function callbackHandel()
     {
-        $user =  Socialite::driver('facebook')->user();
-        // dd($user);
+        $user =  Socialite::driver('google')->user();
+        dd($user);
 
         $data = User::where('email', $user->email)->first();
 

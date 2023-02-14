@@ -23,6 +23,11 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout.front');
 //facebook login
 Route::get('login/facebook', [LoginController::class, 'provider'])->name('facebook.login');
 Route::get('facebook/callback', [LoginController::class, 'handleCallback'])->name('facebook.callback');
+
+//google login
+Route::get('google/login', [LoginController::class, 'Provider'])->name('google.login');
+Route::get('google/callback', [LoginController::class, 'callbackHandel'])->name('google.login.callback');
+
 // ============================================================================** Register Route ** ==========================================================================
 Route::get('register/show', [RegisterController::class, 'register'])->name('register.show');
 Route::post('register/post', [RegisterController::class, 'doRegister'])->name('register.do');
