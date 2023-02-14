@@ -7006,7 +7006,9 @@ footer .custom-img img {
 .speaker-item .speaker-inner .spkr-content-title h5 a{
 	text-transform: capitalize;
 }
-
+.text-none{
+	text-transform: none;
+}
 @media (min-width: 576px){
 	.speaker-item-2 .speaker-inner .speaker-content .speaker-content-inner {
 		height: 184px;
