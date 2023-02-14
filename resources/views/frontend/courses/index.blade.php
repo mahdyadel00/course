@@ -1574,4 +1574,27 @@
         </div>
     </section>
     <!-- ==========schedule Section end Here========== -->
+
+    <!-- ==========Images Section start Here========== -->
+    <section class="course-image">
+        <div class="container about-section">
+            <div class="row section-wrapper">
+                <div class="col-md-6">
+                    <div class="frame px-5 mb-5">
+                        <img src="{{ asset('frontend') }}/assets/images/speakers/tt.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="frame px-5 mb-5">
+                        <img src="{{ asset('frontend') }}/assets/images/banner/s2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="about-btn-grp text-center mb-5">
+                    <a href="{{ route('home') }}" class="lab-btn"><span>Route Button</span> </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==========Images Section end Here========== -->
+
 @endsection
