@@ -19,7 +19,7 @@
                              $seconds = $now->diffInSeconds($end);
                              $seconds = $seconds - $minutes * 60;
                          @endphp
-                         <ul  class="countdown count-down" data-date="{{ $end  }}">
+                         <ul class="countdown count-down" data-date="{{ $end }}">
                              <li class="clock-item"><span class="count-number days">{{ $diff }}</span>
                                  <p class="count-text">Days</p>
                              </li>
@@ -45,7 +45,7 @@
                  </div>
                  <div class="col-lg-6 col-12">
                      <div class="banner-image">
-                          <img src="{{ asset($setting->main_image) }}" alt="banner-img">
+                         <img src="{{ asset($setting->main_image) }}" alt="banner-img">
                          {{-- <h1 class="custom-h1">GMC</h1> --}}
                      </div>
                  </div>
