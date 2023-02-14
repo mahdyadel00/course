@@ -47,7 +47,7 @@
                  <br><br>
                  <br><br>
                  <br>
-                 <div class="section-header text-center" id="benefits">
+                 {{-- <div class="section-header text-center" id="benefits">
                      <h2>Event Key Benefits</h2>
                      <p>About "GMC" Conference Features</p>
                  </div>
@@ -68,13 +68,13 @@
                          <br>5 workshops for 25 students. (Every workshop lasts for a week)
                          <br> 10 opportunities to attend the first week of the course free.<br><br><br><br><br>
                          <span class="discount">50% Discount on
-                         a marketing course.</span>
+                             a marketing course.</span>
                      </p>
                      <div class="about-btn-grp">
                          <a href="course.html" class="lab-btn "><span>Course Details</span> </a>
                      </div>
-                 </div>
-                 <br>
+                 </div> --}}
+                 {{-- <br>
                  <br>
                  <br>
                  <br>
@@ -84,38 +84,38 @@
                  </div>
                  <div class="section-wrapper text-center">
                      <p>
-                         
+
                          Students interested in marketing
                          <br> Business owners and entrepreneurs who are responsible for business.
-                        <br> All small and large business representatives.
+                         <br> All small and large business representatives.
                          <br> Freelancers CEOs and other senior leaders who manage large organizations.
                          <br> Who studies majors related to marketing or business as
-                         <div class="ttt">
-                            <div class="first">
-                                <ul>
-                                    <li>Marketing Plan</li>
-                                    <li>Business</li>
-                                    <li>Media Buyers</li>
-                                    <li>Content Creators</li>
-                                    <li>Copy Writers</li>
-                                </ul>
-                            </div>
-                            <div class="second">
-                                <ul>
-                                    <li>Career Development</li>
-                                    <li>Human Resourse</li>
-                                    <li>Voice Over</li>
-                                    <li>Video Editors</li>
-                                    <li>Graphic Designers</li>
-                                </ul>
-                            </div>
+                     <div class="ttt">
+                         <div class="first">
+                             <ul>
+                                 <li>Marketing Plan</li>
+                                 <li>Business</li>
+                                 <li>Media Buyers</li>
+                                 <li>Content Creators</li>
+                                 <li>Copy Writers</li>
+                             </ul>
                          </div>
-                         
-                         <!-- (voice over, graphic designers ,art directors, video editors, business, career development
+                         <div class="second">
+                             <ul>
+                                 <li>Career Development</li>
+                                 <li>Human Resourse</li>
+                                 <li>Voice Over</li>
+                                 <li>Video Editors</li>
+                                 <li>Graphic Designers</li>
+                             </ul>
+                         </div>
+                     </div>
+
+                     <!-- (voice over, graphic designers ,art directors, video editors, business, career development
                          coaches, content creators, copy writers, media buyers,....etc) -->
 
                      </p>
-                 </div>
+                 </div> --}}
              </div>
          </div>
  </section>
