@@ -44,13 +44,17 @@ class LoginController extends Controller
     {
         $user =  Socialite::driver('facebook')->user();
         // dd($user);
-        $finduser = User::where('facebook_id', $user->id)->first();
-        if ($finduser) {
-            Auth::login($finduser);
-            return redirect()->route('home')->with('success', 'Login Successfully');
-        } else {
-            return redirect()->route('login.show')->with('error', 'Email or password is incorrect');
+
+        $data = User::where('email', $user->email)->first();
+
+        if(is_null($data)){
+
+            $users['anme'] = $user->name;
+            $users['email'] = $user->email;
+            $data = User::create($users);
         }
+        Auth::login($data);
+        return redirect()->route('home');
     }
 
     protected function logout()
