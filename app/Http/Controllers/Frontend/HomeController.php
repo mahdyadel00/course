@@ -23,8 +23,8 @@ class HomeController extends Controller
         $setting = Settings::first();
        $speakers = Speaker::get();
        $sponser_one = Sponser::take(2)->get();
-       $sponser_two = Sponser::skip(2)->take(10)->get();
-       $sponser_three = Sponser::skip(10)->take(100)->get();
+       $sponser_two = Sponser::skip(2)->take(4)->get();
+       $sponser_three = Sponser::skip(4)->take(100)->get();
     //    dd($sponser_three);
     //    $sponser_four = Sponser::skip(11)->take(4)->get();
 
