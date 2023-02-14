@@ -83,19 +83,15 @@ class RegisterController extends Controller
     {
         $user =  Socialite::driver('google')->user();
 
-        // dd($user);
        $data = User::updateOrCreate([
         'id' => $user->id,
     ], [
         'name' => $user->name,
         'email' => $user->email,
         'token' => $user->token,
-        // 'google_refresh_token' => $user->refreshToken,
     ]);
 
-        // dd($data);
         if ($data) {
-            // Auth::login($data);
             return redirect()->route('home')->with('success', 'Login Successfully BY Google');
         } else {
             return redirect()->back()->with('error', 'Email or password is incorrect');
