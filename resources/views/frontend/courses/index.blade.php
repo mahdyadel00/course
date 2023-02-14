@@ -6,10 +6,10 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="page-header-content-area">
-                <h4 class="ph-title">Course</h4>
+                <h4 class="ph-title">Diploma</h4>
                 <ul class="lab-ul">
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a class="active">Course</a></li>
+                    <li><a class="active">Diploma</a></li>
                 </ul>
             </div>
         </div>
@@ -53,7 +53,7 @@
                     <div class="section-wrapper text-center">
                         <p>{!! $course->description_1 !!}</p>
                         <div class="about-btn-grp">
-                            <a href="{{ route('home') }}" class="lab-btn "><span>Course Details</span> </a>
+                            <a href="{{ route('home') }}" class="lab-btn "><span>Booking Now</span> </a>
                         </div>
                     </div>
                     <br>

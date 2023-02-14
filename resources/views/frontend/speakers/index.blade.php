@@ -21,8 +21,8 @@
                         <img src="{{ asset('frontend') }}/assets/images/rr.png" alt="">
                     </div> -->
             <h2 class="h1 text-center">Our special surprise is</h2>
-            <h4 class="h4 text-center">Foreign speakers from different countries and companies are giving talks in marketing
-                topics.</h4>
+            <h4 class="h4 text-center text-none">The field of marketing is vast and other areas serve marketing as well. That's why we invite the top leading experts for each topic.
+If you are still hesitating about participation, then you should definitely meet our speakers!</h4>
             <div class="section-wrapper">
                 <div class="row g-5">
                     @foreach ($speakers as $speaker)
