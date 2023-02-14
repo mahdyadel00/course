@@ -83,14 +83,13 @@ class RegisterController extends Controller
     {
         $user =  Socialite::driver('google')->user();
 
-       $data = User::updateOrCreate([
-        'id' => $user->id,
-    ], [
-        'name' => $user->name,
-        'email' => $user->email,
-        'token' => $user->token,
-    ]);
-
+        $data = User::updateOrCreate([
+            'id' => $user->id,
+        ], [
+            'name' => $user->name,
+            'email' => $user->email,
+            'token' => $user->token,
+        ]);
         if ($data) {
             return redirect()->route('home')->with('success', 'Login Successfully BY Google');
         } else {
