@@ -33,7 +33,7 @@ return [
     'facebook' => [
         'client_id' => '576524384517307', //USE FROM FACEBOOK DEVELOPER ACCOUNT
         'client_secret' => 'f54c7f2131ce6e01a1e4962e95447aad', //USE FROM FACEBOOK DEVELOPER ACCOUNT
-        'redirect' => 'https://examplelaravel8.test/facebook/callback/'
+        'redirect' => 'https://grow.geexar.dev/facebook/callback/'
     ],
 
 ];
