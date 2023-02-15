@@ -74,7 +74,6 @@ class RegisterController extends Controller
 
     public function callbackHandel()
     {
-        dd('here');
         $user =  Socialite::driver('google')->user();
 
         dd($user);
