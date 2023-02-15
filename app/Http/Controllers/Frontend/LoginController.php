@@ -29,52 +29,27 @@ class LoginController extends Controller
         }
     }
 
-    public function provider()
+    public function google()
     {
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver('google')->redirect()->stateless();
     }
 
     public function callbackHandel()
     {
-        $user =  Socialite::driver('google')->user();
-
-        // $data = User::where('email', $user->email)->first();
-        // if ($data) {
-        //     Auth::login($data);
-        //     return redirect()->route('home')->with('success', 'Login Successfully BY Google');
-        // }else{
-        //     return redirect()->back()->with('error', 'Email or password is incorrect');
-        // }
-        dd('here');
+        dd('ok' );
         try {
-
             $user = Socialite::driver('google')->user();
-
-            $finduser = User::where('google_id', $user->id)->first();
-
-            if($finduser){
-
-                Auth::login($finduser);
-
-                return redirect()->intended('dashboard');
-
-            }else{
-                $newUser = User::create([
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'google_id'=> $user->id,
-                    // 'password' => encrypt('123456dummy')
-                ]);
-
-                Auth::login($newUser);
-
-                return redirect()->intended('dashboard');
-            }
-
         } catch (Exception $e) {
-            dd($e->getMessage());
+            return redirect()->route('login');
         }
 
+        $data = User::where('email', $user->email)->first();
+        if ($data) {
+            Auth::login($data);
+            return redirect()->route('home')->with('success', 'Login Successfully BY Google');
+        } else {
+            return redirect()->back()->with('error', 'Email or password is incorrect');
+        }
     }
 
     protected function logout()
