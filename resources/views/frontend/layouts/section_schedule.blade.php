@@ -1,5 +1,5 @@
  <!-- ==========schedule Section start Here========== -->
- <section class="section section-lg bg-default text-center d-none">
+ <section class="section section-lg bg-default text-center">
      <div class="container">
          <div class="section-header text-center">
              <h2>Event Schedule plan</h2>
@@ -42,9 +42,9 @@
                                                      class="unit-body"><span class="schedule-classic-content"><span
                                                              class="schedule-classic-time">9:00 am to 10:00
                                                              am</span><span
-                                                             class="schedule-classic-title heading-4">Startups.</span><span
+                                                             class="schedule-classic-title heading-4">Intro</span><span
                                                              class="schedule-classic-author">by <span
-                                                                 class="schedule-classic-author-name">Speaker</span> - Co
+                                                                 class="schedule-classic-author-name">......</span> - Co
                                                              Founder</span></span></span></span></span></a></div>
                              </div>
                              <div class="collapse" id="accordion1-card-body-onwkttkd"
@@ -85,13 +85,11 @@
                                                              alt="" width="122"
                                                              height="122" /></span></span><span
                                                      class="unit-body"><span class="schedule-classic-content"><span
-                                                             class="schedule-classic-time">10:00 am to 11:00
+                                                             class="schedule-classic-time">11:00 am to 11:30
                                                              am</span><span
-                                                             class="schedule-classic-title heading-4">Wordpress
-                                                             developement stages</span><span
+                                                             class="schedule-classic-title heading-4">growth hacking</span><span
                                                              class="schedule-classic-author">by <span
-                                                                 class="schedule-classic-author-name">Abdelrahman
-                                                                 Elsaudy.</span> - Lead
+                                                                 class="schedule-classic-author-name">Abdelrahman sleem</span> - Lead
                                                              Developer</span></span></span></span></span></a></div>
                              </div>
                              <div class="collapse" id="accordion1-card-body-lffuwxio"
@@ -132,12 +130,10 @@
                                                              alt="" width="122"
                                                              height="122" /></span></span><span
                                                      class="unit-body"><span class="schedule-classic-content"><span
-                                                             class="schedule-classic-time">11:00 am to 12:00
+                                                             class="schedule-classic-time">11:30 am to 12:00
                                                              pm</span><span
-                                                             class="schedule-classic-title heading-4">Content
-                                                             Creation.</span><span class="schedule-classic-author">by
-                                                             <span class="schedule-classic-author-name">Marie
-                                                                 Haddad.</span>
+                                                             class="schedule-classic-title heading-4">Meta verse</span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">Victor de la fuente </span>
                                                              - Owner & Founder of The Ceas Agency | Digital
                                                              Marketer</span></span></span></span></span></a>
                                  </div>
@@ -179,14 +175,14 @@
                                                              alt="" width="122"
                                                              height="122" /></span></span><span
                                                      class="unit-body"><span class="schedule-classic-content"><span
-                                                             class="schedule-classic-time">11:00 am to 12:00
+                                                             class="schedule-classic-time">12:00 am to 12:30
                                                              pm</span><span
-                                                             class="schedule-classic-title heading-4">Storytelling by
-                                                             Design.</span><span class="schedule-classic-author">by
-                                                             <span class="schedule-classic-author-name">Speaker</span>
+                                                             class="schedule-classic-title heading-4">growing business</span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">Mohamed Tohami</span>
                                                              - Co Founder</span></span></span></span></span></a>
                                  </div>
                              </div>
+                            
                              <div class="collapse" id="AhmedEmad" aria-labelledby="accordion1-card-head-hpaxeker"
                                  data-parent="#accordion1" role="tabpanel">
                                  <div class="card-body">
@@ -210,6 +206,17 @@
                                  </div>
                              </div>
                          </article>
+                         <div class="schedule-classic schedule-classic-simple">
+                                <div class="schedule-classic-content">
+                                    <div class="schedule-classic-img">
+                                        <svg class="svg-icon-md svg-icon-primary" role="img">
+                                            <use xlink:href="images/svg/sprite.svg#clock"></use>
+                                        </svg>
+                                    </div><span class="schedule-classic-time">12:30 pm to 01:00 pm</span><span
+                                        class="schedule-classic-title heading-4">activity time</span>
+                                </div>
+                            </div>
+                            
                          <!--Bootstrap card-->
                          <article class="card card-custom card-corporate">
                              <div class="card-header" role="tab">
@@ -223,12 +230,9 @@
                                                              alt="" width="122"
                                                              height="122" /></span></span><span
                                                      class="unit-body"><span class="schedule-classic-content"><span
-                                                             class="schedule-classic-time">11:00 am to 12:00
-                                                             pm</span><span
-                                                             class="schedule-classic-title heading-4">Voice
-                                                             Over.</span><span class="schedule-classic-author">by
-                                                             <span class="schedule-classic-author-name">Marina
-                                                                 Bkheet.</span>
+                                                             class="schedule-classic-time">01:00 pm to 01:30 pm</span><span
+                                                             class="schedule-classic-title heading-4">.....</span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">Maria Hadad</span>
                                                              - Co Founder</span></span></span></span></span></a>
                                  </div>
                              </div>
@@ -267,12 +271,10 @@
                                                              alt="" width="122"
                                                              height="122" /></span></span><span
                                                      class="unit-body"><span class="schedule-classic-content"><span
-                                                             class="schedule-classic-time">11:00 am to 12:00
+                                                             class="schedule-classic-time">01:30 pm to 02:00
                                                              pm</span><span
-                                                             class="schedule-classic-title heading-4">Copy
-                                                             Writing.</span><span class="schedule-classic-author">by
-                                                             <span class="schedule-classic-author-name">Walid
-                                                                 Taha.</span>
+                                                             class="schedule-classic-title heading-4">how marketing change your life</span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">saed mohamed</span>
                                                              - Co Founder</span></span></span></span></span></a>
                                  </div>
                              </div>
@@ -312,13 +314,10 @@
                                                              alt="" width="122"
                                                              height="122" /></span></span><span
                                                      class="unit-body"><span class="schedule-classic-content"><span
-                                                             class="schedule-classic-time">11:00 am to 12:00
-                                                             pm</span><span
-                                                             class="schedule-classic-title heading-4">Meta Verse:
-                                                             exploitation v opportunity.</span><span
+                                                             class="schedule-classic-time">02:00 pm to 02:30 pm</span><span
+                                                             class="schedule-classic-title heading-4">......</span><span
                                                              class="schedule-classic-author">by <span
-                                                                 class="schedule-classic-author-name">Victor de la
-                                                                 Fuente.</span>
+                                                                 class="schedule-classic-author-name">Marina bkheet</span>
                                                              - Co Founder</span></span></span></span></span></a>
                                  </div>
                              </div>
@@ -352,10 +351,279 @@
                                      <svg class="svg-icon-md svg-icon-primary" role="img">
                                          <use xlink:href="images/svg/sprite.svg#clock"></use>
                                      </svg>
-                                 </div><span class="schedule-classic-time">11:00 am to 12:00 pm</span><span
-                                     class="schedule-classic-title heading-4">Enjoy the coffee break</span>
+                                 </div><span class="schedule-classic-time">02:30 pm to 03:00 pm</span><span
+                                     class="schedule-classic-title heading-4">break time</span>
                              </div>
                          </div>
+                         <!--Bootstrap card-->
+                         <article class="card card-custom card-corporate">
+                             <div class="card-header" role="tab">
+                                 <div class="card-title"><a class="collapsed" id="accordion1-card-head-hpaxeker"
+                                         data-toggle="collapse" data-parent="#accordion1" href="#AhmedEmad"
+                                         aria-controls="AhmedEmad" aria-expanded="false" role="button"><span
+                                             class="schedule-classic"><span
+                                                 class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
+                                                     class="unit-left"><span class="schedule-classic-img"><img
+                                                             src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg"
+                                                             alt="" width="122"
+                                                             height="122" /></span></span><span
+                                                     class="unit-body"><span class="schedule-classic-content"><span
+                                                             class="schedule-classic-time">03:00 pm to 03:30 pm</span><span
+                                                             class="schedule-classic-title heading-4">how to communicate with customers </span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">Ramy yassen</span>
+                                                             - Co Founder</span></span></span></span></span></a>
+                                 </div>
+                             </div>
+                            
+                             <div class="collapse" id="AhmedEmad" aria-labelledby="accordion1-card-head-hpaxeker"
+                                 data-parent="#accordion1" role="tabpanel">
+                                 <div class="card-body">
+                                     <p>There are many variations of passages of lorem ipsum available, but the
+                                         majority have suffered alteration in some form, by injected humour or
+                                         randomised words which don't look even slightly believable. If you are going
+                                         to use a passage randomised words which don't look even slightly believable.
+                                     </p>
+                                     <div class="unit unit-spacing-xxs">
+                                         <div class="unit-left">
+                                             <svg class="svg-icon-sm svg-icon-primary" role="img">
+                                                 <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
+                                             </svg>
+                                         </div>
+                                         <div class="unit-body">
+                                             <h5>Where</h5>
+                                             <p class="font-secondary">Hall 22, Building 2, New York, United States
+                                                 of America</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </article>
+                         <!--Bootstrap card-->
+                         <article class="card card-custom card-corporate">
+                             <div class="card-header" role="tab">
+                                 <div class="card-title"><a class="collapsed" id="accordion1-card-head-hpaxeker"
+                                         data-toggle="collapse" data-parent="#accordion1" href="#AhmedEmad"
+                                         aria-controls="AhmedEmad" aria-expanded="false" role="button"><span
+                                             class="schedule-classic"><span
+                                                 class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
+                                                     class="unit-left"><span class="schedule-classic-img"><img
+                                                             src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg"
+                                                             alt="" width="122"
+                                                             height="122" /></span></span><span
+                                                     class="unit-body"><span class="schedule-classic-content"><span
+                                                             class="schedule-classic-time">03:30 pm to 04:00 pm</span><span
+                                                             class="schedule-classic-title heading-4">growing business</span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">sara de Oliveira </span>
+                                                             - Co Founder</span></span></span></span></span></a>
+                                 </div>
+                             </div>
+                            
+                             <div class="collapse" id="AhmedEmad" aria-labelledby="accordion1-card-head-hpaxeker"
+                                 data-parent="#accordion1" role="tabpanel">
+                                 <div class="card-body">
+                                     <p>There are many variations of passages of lorem ipsum available, but the
+                                         majority have suffered alteration in some form, by injected humour or
+                                         randomised words which don't look even slightly believable. If you are going
+                                         to use a passage randomised words which don't look even slightly believable.
+                                     </p>
+                                     <div class="unit unit-spacing-xxs">
+                                         <div class="unit-left">
+                                             <svg class="svg-icon-sm svg-icon-primary" role="img">
+                                                 <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
+                                             </svg>
+                                         </div>
+                                         <div class="unit-body">
+                                             <h5>Where</h5>
+                                             <p class="font-secondary">Hall 22, Building 2, New York, United States
+                                                 of America</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </article>
+                         <!--Bootstrap card-->
+                         <article class="card card-custom card-corporate">
+                             <div class="card-header" role="tab">
+                                 <div class="card-title"><a class="collapsed" id="accordion1-card-head-hpaxeker"
+                                         data-toggle="collapse" data-parent="#accordion1" href="#AhmedEmad"
+                                         aria-controls="AhmedEmad" aria-expanded="false" role="button"><span
+                                             class="schedule-classic"><span
+                                                 class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
+                                                     class="unit-left"><span class="schedule-classic-img"><img
+                                                             src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg"
+                                                             alt="" width="122"
+                                                             height="122" /></span></span><span
+                                                     class="unit-body"><span class="schedule-classic-content"><span
+                                                             class="schedule-classic-time">04:00 pm to 04:30 pm</span><span
+                                                             class="schedule-classic-title heading-4">........</span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">Ahmed adel</span>
+                                                             - Co Founder</span></span></span></span></span></a>
+                                 </div>
+                             </div>
+                            
+                             <div class="collapse" id="AhmedEmad" aria-labelledby="accordion1-card-head-hpaxeker"
+                                 data-parent="#accordion1" role="tabpanel">
+                                 <div class="card-body">
+                                     <p>There are many variations of passages of lorem ipsum available, but the
+                                         majority have suffered alteration in some form, by injected humour or
+                                         randomised words which don't look even slightly believable. If you are going
+                                         to use a passage randomised words which don't look even slightly believable.
+                                     </p>
+                                     <div class="unit unit-spacing-xxs">
+                                         <div class="unit-left">
+                                             <svg class="svg-icon-sm svg-icon-primary" role="img">
+                                                 <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
+                                             </svg>
+                                         </div>
+                                         <div class="unit-body">
+                                             <h5>Where</h5>
+                                             <p class="font-secondary">Hall 22, Building 2, New York, United States
+                                                 of America</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </article>
+                         <!-- Schedule Simple-->
+                         <div class="schedule-classic schedule-classic-simple">
+                             <div class="schedule-classic-content">
+                                 <div class="schedule-classic-img">
+                                     <svg class="svg-icon-md svg-icon-primary" role="img">
+                                         <use xlink:href="images/svg/sprite.svg#clock"></use>
+                                     </svg>
+                                 </div><span class="schedule-classic-time">04:30 pm to 05:00 pm</span><span
+                                     class="schedule-classic-title heading-4">activitiy time</span>
+                             </div>
+                         </div>
+                         <!--Bootstrap card-->
+                         <article class="card card-custom card-corporate">
+                             <div class="card-header" role="tab">
+                                 <div class="card-title"><a class="collapsed" id="accordion1-card-head-hpaxeker"
+                                         data-toggle="collapse" data-parent="#accordion1" href="#AhmedEmad"
+                                         aria-controls="AhmedEmad" aria-expanded="false" role="button"><span
+                                             class="schedule-classic"><span
+                                                 class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
+                                                     class="unit-left"><span class="schedule-classic-img"><img
+                                                             src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg"
+                                                             alt="" width="122"
+                                                             height="122" /></span></span><span
+                                                     class="unit-body"><span class="schedule-classic-content"><span
+                                                             class="schedule-classic-time">05:00 pm to 05:30 pm</span><span
+                                                             class="schedule-classic-title heading-4">........</span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">Nabil shalby </span>
+                                                             - Co Founder</span></span></span></span></span></a>
+                                 </div>
+                             </div>
+                            
+                             <div class="collapse" id="AhmedEmad" aria-labelledby="accordion1-card-head-hpaxeker"
+                                 data-parent="#accordion1" role="tabpanel">
+                                 <div class="card-body">
+                                     <p>There are many variations of passages of lorem ipsum available, but the
+                                         majority have suffered alteration in some form, by injected humour or
+                                         randomised words which don't look even slightly believable. If you are going
+                                         to use a passage randomised words which don't look even slightly believable.
+                                     </p>
+                                     <div class="unit unit-spacing-xxs">
+                                         <div class="unit-left">
+                                             <svg class="svg-icon-sm svg-icon-primary" role="img">
+                                                 <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
+                                             </svg>
+                                         </div>
+                                         <div class="unit-body">
+                                             <h5>Where</h5>
+                                             <p class="font-secondary">Hall 22, Building 2, New York, United States
+                                                 of America</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </article>
+                         <!--Bootstrap card-->
+                         <article class="card card-custom card-corporate">
+                             <div class="card-header" role="tab">
+                                 <div class="card-title"><a class="collapsed" id="accordion1-card-head-hpaxeker"
+                                         data-toggle="collapse" data-parent="#accordion1" href="#AhmedEmad"
+                                         aria-controls="AhmedEmad" aria-expanded="false" role="button"><span
+                                             class="schedule-classic"><span
+                                                 class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
+                                                     class="unit-left"><span class="schedule-classic-img"><img
+                                                             src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg"
+                                                             alt="" width="122"
+                                                             height="122" /></span></span><span
+                                                     class="unit-body"><span class="schedule-classic-content"><span
+                                                             class="schedule-classic-time">05:30 pm to 06:00 pm</span><span
+                                                             class="schedule-classic-title heading-4">Sponser </span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">......... </span>
+                                                             - Co Founder</span></span></span></span></span></a>
+                                 </div>
+                             </div>
+                            
+                             <div class="collapse" id="AhmedEmad" aria-labelledby="accordion1-card-head-hpaxeker"
+                                 data-parent="#accordion1" role="tabpanel">
+                                 <div class="card-body">
+                                     <p>There are many variations of passages of lorem ipsum available, but the
+                                         majority have suffered alteration in some form, by injected humour or
+                                         randomised words which don't look even slightly believable. If you are going
+                                         to use a passage randomised words which don't look even slightly believable.
+                                     </p>
+                                     <div class="unit unit-spacing-xxs">
+                                         <div class="unit-left">
+                                             <svg class="svg-icon-sm svg-icon-primary" role="img">
+                                                 <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
+                                             </svg>
+                                         </div>
+                                         <div class="unit-body">
+                                             <h5>Where</h5>
+                                             <p class="font-secondary">Hall 22, Building 2, New York, United States
+                                                 of America</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </article>
+                         <!--Bootstrap card-->
+                         <article class="card card-custom card-corporate">
+                             <div class="card-header" role="tab">
+                                 <div class="card-title"><a class="collapsed" id="accordion1-card-head-hpaxeker"
+                                         data-toggle="collapse" data-parent="#accordion1" href="#AhmedEmad"
+                                         aria-controls="AhmedEmad" aria-expanded="false" role="button"><span
+                                             class="schedule-classic"><span
+                                                 class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
+                                                     class="unit-left"><span class="schedule-classic-img"><img
+                                                             src="{{ asset('frontend') }}/assets/images/schedule-03-122x122.jpg"
+                                                             alt="" width="122"
+                                                             height="122" /></span></span><span
+                                                     class="unit-body"><span class="schedule-classic-content"><span
+                                                             class="schedule-classic-time">06:30 pm to 07:00 pm</span><span
+                                                             class="schedule-classic-title heading-4">giveaway </span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">........ </span>
+                                                             - Co Founder</span></span></span></span></span></a>
+                                 </div>
+                             </div>
+                            
+                             <div class="collapse" id="AhmedEmad" aria-labelledby="accordion1-card-head-hpaxeker"
+                                 data-parent="#accordion1" role="tabpanel">
+                                 <div class="card-body">
+                                     <p>There are many variations of passages of lorem ipsum available, but the
+                                         majority have suffered alteration in some form, by injected humour or
+                                         randomised words which don't look even slightly believable. If you are going
+                                         to use a passage randomised words which don't look even slightly believable.
+                                     </p>
+                                     <div class="unit unit-spacing-xxs">
+                                         <div class="unit-left">
+                                             <svg class="svg-icon-sm svg-icon-primary" role="img">
+                                                 <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
+                                             </svg>
+                                         </div>
+                                         <div class="unit-body">
+                                             <h5>Where</h5>
+                                             <p class="font-secondary">Hall 22, Building 2, New York, United States
+                                                 of America</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </article>
                          <!--Bootstrap card-->
                          <article class="card card-custom card-corporate">
                              <div class="card-header" role="tab">
@@ -1236,7 +1504,7 @@
          </div>
      </div>
  </section>
- <section class="schedule-section padding-tb padding-b bg-image d-none">
+ <section class="schedule-section padding-tb padding-b bg-image">
      <div class="container">
          <div class="section-header">
              <h2>Days Details</h2>

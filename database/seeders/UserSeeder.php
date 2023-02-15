@@ -41,6 +41,7 @@ class UserSeeder extends Seeder
             'key_api'           => "key Api.pdf",
             'task'              => "task.pdf",
             'notes'             => "notes.pdf",
+            'marketing_id'      => 1,
         ]);
 
         $role = Role::create(['name' => 'owner']);

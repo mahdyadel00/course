@@ -68,6 +68,15 @@
                                         <textarea class="ckeditor" name="notes" id="notes" cols="30" rows="10"></textarea>
                                     </div>
                                     <div class="col">
+                                        <label>Marketing Fields</label>
+                                        <select name="marketing_id" id="marketing_id" class="form-control fc-datepicker">
+                                            <option disabled value="0">Select Marketing Fields</option>
+                                            @foreach ($marketings as $marketing)
+                                            <option value="{{ $marketing->id }}">{{ $marketing->title }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col">
                                         <label>English</label>
                                         <select name="english" id="english" class="form-control fc-datepicker">
                                             <option disabled value="0">Select Level Language</option>

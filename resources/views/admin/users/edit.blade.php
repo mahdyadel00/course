@@ -64,6 +64,17 @@
                                             value="{{ $user->qulification }}" type="text">
                                     </div>
                                     <div class="col">
+                                        <label>Marketing Fields</label>
+                                        <select name="marketing_id" id="marketing_id" class="form-control fc-datepicker">
+                                            <option disabled value="0">Select Marketing Fields</option>
+                                            @foreach ($marketings as $marketing)
+                                            <option value="{{ $marketing->id }}"
+                                                {{ $user->marketing_id == $marketing->id ? 'selected' : '' }}>
+                                                {{ $marketing->title }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col">
                                         <label>English</label>
                                         <select class="form-control" name="english">
                                             <option value="1" {{ $user->english == 1 ? 'selected' : '' }}>Elementary

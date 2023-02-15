@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             FeatureSeeder::class,
             CourseSeeder::class,
             SponserSeeder::class,
+            MarketingSeeder::class,
         ]);
 
 

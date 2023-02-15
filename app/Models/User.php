@@ -41,6 +41,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'task',
         'notes',
         'phone',
+        'marketing_id',
     ];
 
     /**
@@ -62,4 +63,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'roles_name'        => 'array',
     ];
+
+    public function marketing(){
+
+        return $this->belongsTo(Marketing::class);
+    }
 }
