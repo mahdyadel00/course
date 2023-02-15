@@ -29,24 +29,29 @@ class LoginController extends Controller
         }
     }
 
-    public function google()
+    public function provider()
     {
         return Socialite::driver('google')->redirect();
+
     }
 
-    public function callbackHandel()
+    public function handleProviderCallback()
     {
-
-            $user = Socialite::driver('google')->user();
+        $user = Socialite::driver('google')->user();
             dd($user );
 
-        $data = User::where('email', $user->email)->first();
-        if ($data) {
-            Auth::login($data);
-            return redirect()->route('home')->with('success', 'Login Successfully BY Google');
-        } else {
-            return redirect()->back()->with('error', 'Email or password is incorrect');
-        }
+        $user = User::updateOrCreate([
+            'google_id' => $user->id,
+        ], [
+            'name' => $user->name,
+            'email' => $user->email,
+            'github_token' => $user->token,
+            'github_refresh_token' => $user->refreshToken,
+        ]);
+
+        Auth::login($user);
+
+        return redirect('/dashboard');
     }
 
     protected function logout()

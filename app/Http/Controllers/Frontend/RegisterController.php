@@ -74,16 +74,16 @@ class RegisterController extends Controller
 
     public function callbackHandel()
     {
+        dd('here');
         $user =  Socialite::driver('google')->user();
 
-        // dd($user);
+        dd($user);
         $data = User::updateOrCreate([
-            'id' => $user->id,
+            'google_id' => $user->id,
         ], [
             'name' => $user->name,
             'email' => $user->email,
             'token' => $user->token,
-            // 'google_refresh_token' => $user->refreshToken,
         ]);
 
         // dd($data);
