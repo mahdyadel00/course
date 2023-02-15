@@ -23,11 +23,6 @@ class PricingController extends Controller
     }
     public function store(Request $request)
     {
-        $request->validate([
-            'title'         => 'required',
-            'price'         => 'required',
-            'description'   => 'required',
-        ]);
         Pricing::create([
             'title'         => $request->title,
             'price'         => $request->price,
