@@ -36,13 +36,13 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'admin' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'admin' => [
+        'web' => [
             'driver' => 'session',
-            'provider' => 'admins',
+            'provider' => 'users',
         ],
     ],
 
