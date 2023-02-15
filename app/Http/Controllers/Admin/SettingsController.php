@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\Settings\UpdateSettingsRequest;
 use Illuminate\Http\Request;
 use App\Models\Settings;
 use Validator;
@@ -19,31 +20,13 @@ class SettingsController extends Controller
     }
 
 
-    public function update(Request $request)
+    public function update(UpdateSettingsRequest $request)
     {
-        $request->validate([
-            'title'         => 'sometimes',
-            'description'   => 'sometimes',
-            'address'       => 'sometimes',
-            'phone'         => 'sometimes',
-            'email'         => 'sometimes',
-            'facebook'      => 'sometimes',
-            'twitter'       => 'sometimes',
-            'instagram'     => 'sometimes',
-            'youtube'       => 'sometimes',
-            'linkedin'      => 'sometimes',
-            'google_plus'   => 'sometimes',
-            'pinterest'     => 'sometimes',
-            'footer_text'   => 'sometimes',
-        ]);
 
         $setting = Settings::first();
 
         $logo_in_db = NULL;
         if ($request->has('logo')) {
-            $request->validate([
-                'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            ]);
 
             $path = public_path() . '/uploads/settings';
             $logo = request('logo');
@@ -55,10 +38,6 @@ class SettingsController extends Controller
         }
         $image_in_db = NULL;
         if ($request->has('image')) {
-            $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            ]);
-
             $path = public_path() . '/uploads/settings';
             $image = request('image');
             $image_name = time() . request('image')->getClientOriginalName();
@@ -70,10 +49,6 @@ class SettingsController extends Controller
         //main image
         $main_image_in_db = NULL;
         if ($request->has('main_image')) {
-            $request->validate([
-                'main_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            ]);
-
             $path = public_path() . '/uploads/settings';
             $main_image = request('main_image');
             $main_image_name = time() . request('main_image')->getClientOriginalName();
