@@ -4,7 +4,7 @@
         <div class="row flex-lg-row-reverse">
             <div class="col-lg-6 col-12">
                 <div class="section-header">
-                    <h2>Event Gifts</h2>
+                    <h2>Conference Gifts</h2>
                     <p>Our Encouragment Gifts For You</p>
                 </div>
                 <div class="section-wrapper">

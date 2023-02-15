@@ -2,8 +2,7 @@
  <section class="section section-lg bg-default text-center">
      <div class="container">
          <div class="section-header text-center">
-             <h2>Event Schedule plan</h2>
-             <p>Conference Schedule.</p>
+             <h2>Conference Schedule</h2>
          </div>
          <div class="tabs-custom tabs-horizontal tabs-corporate" id="tabs-1">
              <!--Nav tabs-->
@@ -1715,7 +1714,7 @@
          </div>
      </div>
  </section>
- <section class="schedule-section padding-tb padding-b bg-image">
+ <!-- <section class="schedule-section padding-tb padding-b bg-image">
      <div class="container">
          <div class="section-header">
              <h2>Days Details</h2>
@@ -2634,5 +2633,5 @@
              </div>
          </div>
      </div>
- </section>
+ </section> -->
  <!-- ==========schedule Section end Here========== -->

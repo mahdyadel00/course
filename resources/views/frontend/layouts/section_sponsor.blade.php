@@ -9,7 +9,7 @@
                <div class="col-12">
                    <div data-scroll data-scroll-speed="0.5">
                        <div class="section-header">
-                           <h2>Event Sponsors</h2>
+                           <h2>Conference Sponsors</h2>
                            <p>Check Who Makes The Event Possible</p>
                        </div>
                    </div>

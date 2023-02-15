@@ -84,7 +84,7 @@
     </section>
     <!-- ===== Pricing Plan end here  ==== -->
     <!-- ===== Event Gift start here  ==== -->
-    <section class="event-gift-section padding-tb padding-b bg-image">
+    <!-- <section class="event-gift-section padding-tb padding-b bg-image">
         <div class="container">
             <div class="row flex-lg-row-reverse">
             <div class="col-lg-6 col-12">
@@ -123,6 +123,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- ===== Event Gift end here  ==== -->
 @endsection
