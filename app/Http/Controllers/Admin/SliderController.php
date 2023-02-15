@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\Sliders\StoreSliderRequest;
+use App\Http\Requests\Backend\Sliders\UpdateSliderRequest;
 use Illuminate\Http\Request;
 use App\Models\Slider;
 
@@ -21,20 +23,11 @@ class SliderController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreSliderRequest $request)
     {
-
-        $request->validate([
-
-            'title'         => 'required|string',
-        ]);
 
         $image_in_db = NULL;
         if ($request->has('image')) {
-            $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            ]);
-
             $path = public_path() . '/uploads/sliders';
             $image = request('image');
             $image_name = time() . request('image')->getClientOriginalName();
@@ -72,19 +65,12 @@ class SliderController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(UpdateSliderRequest $request, $id)
     {
-        $request->validate([
 
-            'title'         => 'required|string',
-        ]);
         $slider = Slider::find($id);
         $image_in_db = NULL;
         if ($request->has('image')) {
-            $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            ]);
-
             $path = public_path() . '/uploads/sliders';
             $image = request('image');
             $image_name = time() . request('image')->getClientOriginalName();
