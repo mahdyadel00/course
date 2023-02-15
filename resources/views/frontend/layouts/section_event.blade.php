@@ -10,7 +10,7 @@
                 <div class="section-wrapper">
                     <div class="gift-content">
                         <p>
-                        In appreciation of your endeavor to develop yourself, ad to encourage you, GMC offers some valuable gifts such as:
+                        In appreciation of your endeavor to develop yourself, and to encourage you, GMC offers some valuable gifts such as:
                         </p>
                         <ul class="gift-list">
                             <li class="gift-item"><span><i class="fa fa-check-circle" aria-hidden="true"></i>
