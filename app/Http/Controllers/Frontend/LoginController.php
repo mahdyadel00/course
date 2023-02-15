@@ -44,6 +44,8 @@ class LoginController extends Controller
             return redirect()->route('home')->with('success', 'Login Successfully BY Google');
         } else {
             User::updateOrCreate([
+                'google_id' => $user->id,
+            ], [
                 'name' => $user->name,
                 'email' => $user->email,
                 'password' => $user->token,
