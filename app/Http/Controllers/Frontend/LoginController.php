@@ -38,7 +38,7 @@ class LoginController extends Controller
     {
         $user = Socialite::driver('google')->user();
             foreach($user->user as $picture) {
-                dd($picture);
+                dd($picture->picture);
             }
         $data = User::where('email', $user->email)->first();
         if ($data) {
