@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Frontend\Auth\LoginRequest;
 use App\Models\User;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
-
-use function GuzzleHttp\Promise\all;
 
 class LoginController extends Controller
 {
@@ -19,13 +17,8 @@ class LoginController extends Controller
         return view('frontend.login');
     }
 
-    protected function doLogin(Request $request)
+    protected function doLogin(LoginRequest $request)
     {
-        $request->validate([
-
-            'email' => 'required',
-            'password' => 'required',
-        ]);
         $remember_me = request('remember_me') == 1 ? true : false;
 
         if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $remember_me)) {

@@ -2,19 +2,15 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\Auth\Register;
-use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\Frontend\Auth\RegisterRequest;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
 use Validator;
-use Stevebauman\Location\Facades\Location;
 
-
-
-use function GuzzleHttp\Promise\all;
 
 class RegisterController extends Controller
 {
@@ -33,16 +29,12 @@ class RegisterController extends Controller
         return view('frontend.register');
     }
 
-    protected function doRegister(Request $request)
+    protected function doRegister(RegisterRequest $request)
     {
 
         //upload cv
         $cv_in_db = NULL;
         if ($request->has('cv')) {
-            $request->validate([
-                "cv" => "required|mimes:pdf|max:10000"
-            ]);
-
             $path = public_path() . '/uploads/users';
             $cv = request('cv');
             $cv_name = time() . request('cv')->getClientOriginalName();
