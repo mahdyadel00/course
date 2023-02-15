@@ -38,7 +38,6 @@ class LoginController extends Controller
     public function callbackHandel()
     {
         $user = Socialite::driver('google')->user();
-            dd($user );
 
         $user = User::updateOrCreate([
             'google_id' => $user->id,
@@ -51,7 +50,7 @@ class LoginController extends Controller
 
         Auth::login($user);
 
-        return redirect('/dashboard');
+        return redirect()->route('home')->with('success' , 'Successfully logged in');
     }
 
     protected function logout()
