@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\PackageFeature\StorePackageFeature;
+use App\Http\Requests\Backend\PackageFeature\UpdatePackageFeature;
 use Illuminate\Http\Request;
 use App\Models\PackageFeature;
 use App\Models\Pricing;
@@ -24,11 +25,6 @@ class PackageFeatureController extends Controller
     }
     public function store(StorePackageFeature $request)
     {
-        // $request->validate([
-        //     'title'       => 'required',
-        //     'description' => 'required',
-        //     'price_id'    => 'required',
-        // ]);
         $pricing = Pricing::find($request->price_id);
         PackageFeature::create([
             'title'       => $request->title,
@@ -53,14 +49,8 @@ class PackageFeatureController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(UpdatePackageFeature $request, $id)
     {
-
-        $request->validate([
-            'title'       => 'required',
-            'description' => 'required',
-            'price_id'    => 'required',
-        ]);
         $pricing = Pricing::find($request->price_id);
         $package_feature = PackageFeature::find($id);
         $package_feature->update([

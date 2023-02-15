@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\Feature\UpdateFeatureRequest;
 use Illuminate\Http\Request;
 use App\Models\Feature;
 use Illuminate\Support\Facades\Cache;
@@ -17,17 +18,8 @@ class FeatureController extends Controller
     }
 
 
-    public function update(Request $request)
+    public function update(UpdateFeatureRequest $request)
     {
-        $request->validate([
-            'title'           => 'required',
-            'description'     => 'required',
-            'title_1'         => 'required',
-            'description_1'   => 'required',
-            'title_2'         => 'required',
-            'description_2'   => 'required',
-        ]);
-
         $feature = Feature::first();
         $feature->update([
             'title'           => $request->title,
