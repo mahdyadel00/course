@@ -26,7 +26,5 @@ class DatabaseSeeder extends Seeder
             MarketingSeeder::class,
             RoleHasPermissionSeeder::class,
         ]);
-
-
     }
 }

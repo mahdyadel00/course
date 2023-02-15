@@ -15,12 +15,12 @@ class RoleHasPermissionSeeder extends Seeder
      */
     public function run()
     {
-        $role = Role::findByName('owner');
-        $role->syncPermissions(Permission::all());
+        $role = Role::create(['name' => 'admin', 'guard_name' => 'admin']);
+        $role->syncPermissions(Permission::where('guard_name', 'admin')->get());
 
         $user = \App\Models\User::find(1);
-        $user->assignRole('owner');
+        $user->assignRole($role);
 
-        $user->syncPermissions(Permission::all());
+        $user->syncPermissions(Permission::where('guard_name', 'admin')->get());
     }
 }

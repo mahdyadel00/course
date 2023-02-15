@@ -20,23 +20,19 @@ class PermissionTableSeeder extends Seeder
             ->map(function ($route) {
                 $guard = Route::getRoutes()->getRoutesByName()[$route]->getAction()['middleware'];
                 $guard = in_array('auth:admin', $guard, true) ? 'admin' : 'web';
-                return str_replace(array('admin.', '.'), array('', '_'), $route) . "@$guard";
+                return str_replace(array('admin.', '.'), array('', '_'), $route) . "_$guard";
             })
             ->filter(function ($route) {
-                $route_name = explode("_", $route)[0];
-                if (strpos($route_name, '@') !== false) {
-                    $route_name = explode("@", $route_name)[0];
-                }
-                return !in_array($route_name,
+                return !in_array(explode("_", $route)[0],
                     ['sanctum', 'ignition', 'verification', 'chatify', 'pusher', 'do', 'auth',
                         'debugbar', 'facebook', 'google', 'password', 'register', 'login', 'logout',
                         'two-factor', 'email', 'confirm', 'verification', 'verification-notification',
                         'forgot-password', 'reset-password']);
             })
             ->each(function ($route) {
-                Permission::firstOrCreate([
-                    'name'       => explode("@", $route)[0],
-                    'guard_name' => explode("@", $route)[1]
+                Permission::create([
+                    'name' => implode('_', array_diff(explode("_", $route), [last(explode("_", $route))])),
+                    'guard_name' => last(explode("_", $route)),
                 ]);
             });
     }

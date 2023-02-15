@@ -22,6 +22,7 @@ use  App\Http\Controllers\Admin\FeatureController;
 use  App\Http\Controllers\Admin\CourseController;
 use  App\Http\Controllers\Admin\SponserController;
 use  App\Http\Controllers\Admin\MarketingController;
+use Spatie\Permission\Models\Permission;
 
 
 Auth::routes(['except' => 'register']);
@@ -29,27 +30,30 @@ Auth::routes(['except' => 'register']);
 Route::prefix('admin')->group(function () {
     Route::get('test', function () {
         // Get all routes with guard name
-        $routes = collect(Route::getRoutes()->getRoutesByName())
-            ->keys()
-            ->map(function ($route) {
-                $guard = Route::getRoutes()->getRoutesByName()[$route]->getAction()['middleware'];
-                $guard = in_array('auth:admin', $guard, true) ? 'admin' : 'web';
-                return str_replace(array('admin.', '.'), array('', '_'), $route) . "@$guard";
-            })
-            ->filter(function ($route) {
-                $route_name = explode("_", $route)[0];
-                if (strpos($route_name, '@') !== false) {
-                    $route_name = explode("@", $route_name)[0];
-                }
-                return !in_array($route_name,
-                    ['sanctum', 'ignition', 'verification', 'chatify', 'pusher', 'do', 'auth',
-                        'debugbar', 'facebook', 'google', 'password', 'register', 'login', 'logout',
-                        'two-factor', 'email', 'confirm', 'verification', 'verification-notification',
-                        'forgot-password', 'reset-password']);
-            });
-
-        dd($routes);
+//        $routes = collect(Route::getRoutes()->getRoutesByName())
+//            ->keys()
+//            ->map(function ($route) {
+//                $guard = Route::getRoutes()->getRoutesByName()[$route]->getAction()['middleware'];
+//                $guard = in_array('auth:admin', $guard, true) ? 'admin' : 'web';
+//                return str_replace(array('admin.', '.'), array('', '_'), $route) . "_$guard";
+//            })
+//            ->filter(function ($route) {
+//                return !in_array(explode("_", $route)[0],
+//                    ['sanctum', 'ignition', 'verification', 'chatify', 'pusher', 'do', 'auth',
+//                        'debugbar', 'facebook', 'google', 'password', 'register', 'login', 'logout',
+//                        'two-factor', 'email', 'confirm', 'verification', 'verification-notification',
+//                        'forgot-password', 'reset-password']);
+//            })
+//            ->each(function ($route) {
+//                Permission::create([
+//                    'name'       => implode('_', array_diff(explode("_", $route), [last(explode("_", $route))])),
+//                    'guard_name' => last(explode("_", $route)),
+//                ]);
+//            });
+//
+//        dd($routes);
     });
+
     Route::get('login-show', [AdminLoginController::class, 'login'])->name('admin.login');
     Route::post('login', [AdminLoginController::class, 'doLogin'])->name('admin.do.login');
     Route::group(['middleware' => ['auth:admin']], function () {
