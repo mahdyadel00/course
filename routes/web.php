@@ -28,8 +28,8 @@ Route::get('facebook/callback', [LoginController::class, 'handleCallback'])->nam
 Route::get('google/login', [LoginController::class, 'google'])->name('google.login');
 Route::get('google/callback', [LoginController::class, 'callbackHandel'])->name('google.callback');
 
-// Route::get('google/register', [RegisterController::class, 'Provider'])->name('google.register');
-// Route::get('google/callback', [RegisterController::class, 'callbackHandel'])->name('google.register.callback');
+Route::get('google/register', [RegisterController::class, 'Provider'])->name('google.register');
+Route::get('google/callback', [RegisterController::class, 'callbackHandel'])->name('google.register.callback');
 
 // ============================================================================** Register Route ** ==========================================================================
 Route::get('register/show', [RegisterController::class, 'register'])->name('register.show');
