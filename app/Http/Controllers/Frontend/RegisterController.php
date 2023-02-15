@@ -67,31 +67,31 @@ class RegisterController extends Controller
         }
     }
 
-    public function provider()
-    {
-        return Socialite::driver('google')->redirect();
-    }
+    // public function provider()
+    // {
+    //     return Socialite::driver('google')->redirect();
+    // }
 
-    public function callbackHandel()
-    {
-        $user =  Socialite::driver('google')->user();
+    // public function callbackHandel()
+    // {
+    //     $user =  Socialite::driver('google')->user();
 
-        $data = User::updateOrCreate([
-            'google_id' => $user->id,
-        ], [
-            'name' => $user->name,
-            'email' => $user->email,
-            'token' => $user->token,
-        ]);
+    //     $data = User::updateOrCreate([
+    //         'google_id' => $user->id,
+    //     ], [
+    //         'name' => $user->name,
+    //         'email' => $user->email,
+    //         'token' => $user->token,
+    //     ]);
 
-        // dd(0);
-        Auth::login($user);
-        // dd(1);
-        if ($data) {
-            // Auth::login($data);
-            return redirect()->route('home')->with('success', 'Login Successfully BY Google');
-        } else {
-            return redirect()->back()->with('error', 'Email or password is incorrect');
-        }
-    }
+    //     // dd(0);
+    //     Auth::login($user);
+    //     // dd(1);
+    //     if ($data) {
+    //         // Auth::login($data);
+    //         return redirect()->route('home')->with('success', 'Login Successfully BY Google');
+    //     } else {
+    //         return redirect()->back()->with('error', 'Email or password is incorrect');
+    //     }
+    // }
 }

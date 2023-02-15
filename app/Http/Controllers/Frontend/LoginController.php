@@ -35,7 +35,7 @@ class LoginController extends Controller
 
     }
 
-    public function handleProviderCallback()
+    public function callbackHandel()
     {
         $user = Socialite::driver('google')->user();
             dd($user );
