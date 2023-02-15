@@ -92,6 +92,7 @@ class LoginController extends Controller
     }
     public function callbackHandelInstgram()
     {
+        dd('her');
         $user = Socialite::driver('instgram')->user();
         dd($user);
         $data = User::where('email', $user->email)->first();
