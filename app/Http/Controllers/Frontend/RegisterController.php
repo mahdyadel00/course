@@ -84,9 +84,9 @@ class RegisterController extends Controller
             'token' => $user->token,
         ]);
 
-        dd(0);
+        // dd(0);
         Auth::login($user);
-        dd(1);
+        // dd(1);
         if ($data) {
             // Auth::login($data);
             return redirect()->route('home')->with('success', 'Login Successfully BY Google');
