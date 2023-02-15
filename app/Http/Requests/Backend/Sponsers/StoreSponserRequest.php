@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Backend\Sliders;
+namespace App\Http\Requests\Backend\Sponsers;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateSliderRequest extends FormRequest
+class StoreSponserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,9 @@ class UpdateSliderRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'         => 'required|string',
-            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'name' => 'required',
+            'link'  => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
         ];
     }
 }
