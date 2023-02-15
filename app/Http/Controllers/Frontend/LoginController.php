@@ -44,8 +44,8 @@ class LoginController extends Controller
         ], [
             'name' => $user->name,
             'email' => $user->email,
-            'github_token' => $user->token,
-            'github_refresh_token' => $user->refreshToken,
+            // 'github_token' => $user->token,
+            // 'github_refresh_token' => $user->refreshToken,
         ]);
 
         Auth::login($user);
