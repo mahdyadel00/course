@@ -45,6 +45,9 @@ class LoginController extends Controller
     {
         // $user =  Socialite::driver('google')->user();
 
+        dd('here');
+        $user =  Socialite::driver('google')->user();
+
         // $data = User::where('email', $user->email)->first();
         // if ($data) {
         //     Auth::login($data);
