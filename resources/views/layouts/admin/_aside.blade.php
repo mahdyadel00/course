@@ -269,7 +269,7 @@
                 </li>
             {{-- @endcan --}}
             {{-- @can('packages_features') --}}
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link  " href="{{ route('admin.packages_features.index') }}">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -295,7 +295,7 @@
                         </div>
                         <span class="nav-link-text ms-1">Packages Features</span>
                     </a>
-                </li>
+                </li> --}}
             {{-- @endcan --}}
             {{-- @can('Pricing') --}}
                 <li class="nav-item">
