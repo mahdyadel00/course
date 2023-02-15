@@ -24,6 +24,11 @@ return [
         'client_secret' => 'f54c7f2131ce6e01a1e4962e95447aad', //USE FROM FACEBOOK DEVELOPER ACCOUNT
         'redirect' => 'https://grow.geexar.dev/facebook/callback'
     ],
+    'instgram' => [
+        'client_id' => '540013058117269', //USE FROM FACEBOOK DEVELOPER ACCOUNT
+        'client_secret' => 'a415628cb151bf9348027f05f16ecc2b', //USE FROM FACEBOOK DEVELOPER ACCOUNT
+        'redirect' => 'https://grow.geexar.dev/facebook/callback'
+    ],
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),

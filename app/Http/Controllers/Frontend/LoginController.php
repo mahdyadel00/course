@@ -66,7 +66,7 @@ class LoginController extends Controller
     public function callbackHandelFacebook()
     {
         $user = Socialite::driver('facebook')->user();
-        
+
         $data = User::where('email', $user->email)->first();
         if ($data) {
             Auth::login($data);
@@ -74,6 +74,33 @@ class LoginController extends Controller
         } else {
             User::updateOrCreate([
                 'facebook_id' => $user->id,
+            ], [
+                'name'     => $user->name,
+                'password' => $user->token,
+                'image'    => $user->attributes['avatar_original'],
+            ]);
+
+            return redirect()->route('login.show')->with('success', 'Registration Successfully BY Facebook');
+        }
+        return redirect()->back()->with('error', 'Email or password is incorrect');
+    }
+    //login with Instgram
+
+    public function providerInstgram()
+    {
+        return Socialite::driver('instgram')->redirect();
+    }
+    public function callbackHandelInstgram()
+    {
+        $user = Socialite::driver('instgram')->user();
+        dd($user);
+        $data = User::where('email', $user->email)->first();
+        if ($data) {
+            Auth::login($data);
+            return redirect()->route('home')->with('success', 'Login Successfully BY Instgram');
+        } else {
+            User::updateOrCreate([
+                'instgram_id' => $user->id,
             ], [
                 'name'     => $user->name,
                 'password' => $user->token,

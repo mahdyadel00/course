@@ -28,6 +28,10 @@ Route::any('facebook/callback', [LoginController::class, 'callbackHandelFacebook
 Route::get('google/login', [LoginController::class, 'provider'])->name('google.login');
 Route::any('google/callback', [LoginController::class, 'callbackHandel'])->name('google.login.callback');
 
+//instgram login
+Route::get('instgram/login', [LoginController::class, 'providerInstgram'])->name('instgram.login');
+Route::any('instgram/callback', [LoginController::class, 'callbackHandelInstgram'])->name('instgram.login.callback');
+
 // ============================================================================** Register Route ** ==========================================================================
 Route::get('register/show', [RegisterController::class, 'register'])->name('register.show');
 Route::post('register/post', [RegisterController::class, 'doRegister'])->name('register.do');
