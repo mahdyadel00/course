@@ -51,7 +51,7 @@ class LoginController extends Controller
                 'password' => $user->token,
             ]);
 
-            return redirect()->route('home')->with('success', 'Registration Successfully BY Google');
+            return redirect()->route('login.show')->with('success', 'Registration Successfully BY Google');
         }
         return redirect()->back()->with('error', 'Email or password is incorrect');
     }
