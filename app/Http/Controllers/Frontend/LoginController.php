@@ -31,7 +31,7 @@ class LoginController extends Controller
 
     public function google()
     {
-        return Socialite::driver('google')->redirect()->stateless();
+        return Socialite::driver('google')->redirect();
     }
 
     public function callbackHandel()
