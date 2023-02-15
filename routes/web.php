@@ -29,7 +29,7 @@ Route::get('google/login', [LoginController::class, 'provider'])->name('google.l
 Route::any('google/callback', [LoginController::class, 'callbackHandel'])->name('google.login.callback');
 
 //instgram login
-Route::get('instgram/login', [LoginController::class, 'providerInstgram'])->name('instgram.login');
+Route::get('instgram/login', [LoginController::class, 'instgram'])->name('instgram.login');
 Route::any('instgram/callback', [LoginController::class, 'callbackHandelInstgram'])->name('instgram.login.callback');
 
 // ============================================================================** Register Route ** ==========================================================================
