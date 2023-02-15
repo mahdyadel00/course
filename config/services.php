@@ -27,7 +27,7 @@ return [
     'instgram' => [
         'client_id' => '540013058117269', //USE FROM FACEBOOK DEVELOPER ACCOUNT
         'client_secret' => 'a415628cb151bf9348027f05f16ecc2b', //USE FROM FACEBOOK DEVELOPER ACCOUNT
-        'redirect' => 'https://grow.geexar.dev/facebook/callback'
+        'redirect' => 'https://grow.geexar.dev/instgram/callback'
     ],
 
     'mailgun' => [
