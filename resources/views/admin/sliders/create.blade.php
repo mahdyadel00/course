@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="d-flex justify-content-center col">
                                         <button type="submit" class="btn btn-primary"
-                                            style="margin-top: 25px;padding: 10px 100px;">Add Marketing</button>
+                                            style="margin-top: 25px;padding: 10px 100px;">Add Slider</button>
                                     </div>
                                 </form>
                             </div>

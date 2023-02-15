@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Http\Requests\Frontend\Contact\ContactRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
@@ -16,11 +17,10 @@ class ContactController extends Controller
         return view('frontend.contacts.form');
     }
 
-    protected function store(Request $request)
+    protected function store(ContactRequest $request)
     {
 
         Contact::query()->create([
-
             'name'      =>     $request->name,
             'email'     =>     $request->email,
             'number'    =>     $request->number,
