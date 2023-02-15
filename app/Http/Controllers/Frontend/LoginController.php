@@ -43,8 +43,15 @@ class LoginController extends Controller
             Auth::login($data);
             return redirect()->route('home')->with('success', 'Login Successfully BY Google');
         } else {
-            return redirect()->back()->with('error', 'Email or password is incorrect');
+            User::createOrUpdate([
+                'name' => $user->name,
+                'email' => $user->email,
+            ]);
+
+            return redirect()->route('home')->with('success', 'Registration Successfully BY Google');
+
         }
+        return redirect()->back()->with('error', 'Email or password is incorrect');
     }
 
     protected function logout()
