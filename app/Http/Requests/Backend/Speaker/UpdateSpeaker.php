@@ -25,11 +25,23 @@ class UpdateSpeaker extends FormRequest
     {
         return [
 
-            "name"            => ["sometimes", "string"],
-            "description"     => ["sometimes", "string"],
-            "job_title"       => ["sometimes", "string"],
-            "personal_info"   => ["sometimes", "string"],
-            "image"           => ["sometimes", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
+            "name"              => ["required", "string"],
+            "email"             => ["required", "string", "email", "max:255", "unique:users"],
+            "phone" => ["nullable", "string", "max:255"],
+            "job_title" => ["nullable", "string", "max:255"],
+            "personal_info" => ["nullable", "string"],
+            "description" => ["nullable", "string"],
+            "address" => ["nullable", "string"],
+            "website" => ["nullable", "string"],
+            "facebook" => ["nullable", "string"],
+            "twitter" => ["nullable", "string"],
+            "linkedin" => ["nullable", "string"],
+            "instagram" => ["nullable", "string"],
+            "youtube" => ["nullable", "string"],
+            "behance" => ["nullable", "string"],
+            "tiktok" => ["nullable", "string"],
+            "vimeo" => ["nullable", "string"],
+            "image" => ["nullable", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
 
         ];
     }

@@ -24,13 +24,8 @@ class SpeakersController extends Controller
     }
     public function store(StoreSpeaker $request)
     {
-
         $image_in_db = NULL;
         if ($request->has('image')) {
-            $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            ]);
-
             $path = public_path() . '/uploads/speakers';
             $image = request('image');
             $image_name = time() . request('image')->getClientOriginalName();
@@ -83,10 +78,6 @@ class SpeakersController extends Controller
 
         $image_in_db = NULL;
         if ($request->has('image')) {
-            $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            ]);
-
             $path = public_path() . '/uploads/speakers';
             $image = request('image');
             $image_name = time() . request('image')->getClientOriginalName();
