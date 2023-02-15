@@ -41,15 +41,12 @@ class RegisterController extends Controller
             $request->validate([
                 "cv" => "required|mimes:pdf|max:10000"
             ]);
-
             $path = public_path() . '/uploads/users';
             $cv = request('cv');
             $cv_name = time() . request('cv')->getClientOriginalName();
             $cv->move($path, $cv_name);
             $cv_in_db = '/uploads/users/' . $cv_name;
         }
-
-
 
         $users = User::query()->create([
 
