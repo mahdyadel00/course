@@ -37,7 +37,7 @@ class LoginController extends Controller
     public function callbackHandel()
     {
         $user = Socialite::driver('google')->user();
-        
+
         $data = User::where('email', $user->email)->first();
         if ($data) {
             Auth::login($data);
@@ -53,6 +53,35 @@ class LoginController extends Controller
             ]);
 
             return redirect()->route('login.show')->with('success', 'Registration Successfully BY Google');
+        }
+        return redirect()->back()->with('error', 'Email or password is incorrect');
+    }
+
+    //login with Facebook
+
+    public function providerFacebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+    public function callbackHandelFacebook()
+    {
+        $user = Socialite::driver('facebook')->user();
+        dd($user);
+        $data = User::where('email', $user->email)->first();
+        if ($data) {
+            Auth::login($data);
+            return redirect()->route('home')->with('success', 'Login Successfully BY Facebook');
+        } else {
+            User::updateOrCreate([
+                'facebook_id' => $user->id,
+            ], [
+                'name'     => $user->name,
+                'email'    => $user->email,
+                'password' => $user->token,
+                'image'    => $user->user['picture'],
+            ]);
+
+            return redirect()->route('login.show')->with('success', 'Registration Successfully BY Facebook');
         }
         return redirect()->back()->with('error', 'Email or password is incorrect');
     }
