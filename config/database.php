@@ -32,6 +32,7 @@ return [
     | choice installed on your machine before you begin development.
     |
     */
+    'connection' => env('SESSION_CONNECTION', null),
 
     'connections' => [
 
