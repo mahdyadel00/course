@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\Marketing\StoreMarketingRequest;
+use App\Http\Requests\Backend\Marketing\UpdateMarketingRequest;
 use Illuminate\Http\Request;
 use App\Models\Marketing;
 
@@ -22,18 +24,12 @@ class MarketingController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreMarketingRequest $request)
     {
-        $request->validate([
-
-            'title'        => 'required',
-            'description'  => 'required',
-        ]);
 
         Marketing::create([
-
-            'title'         => $request->title,
-            'description'   => $request->description,
+            'title' => $request->title,
+            'description' => $request->description,
         ]);
 
         return redirect()->route('admin.marketings.index')->with('success', 'Marketings Create Successfully');
@@ -55,22 +51,13 @@ class MarketingController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(UpdateMarketingRequest $request, $id)
     {
-
-        $request->validate([
-
-            'title'         => 'required|string',
-            'description'   => 'required',
-        ]);
-
         $marketing = Marketing::find($id);
 
         $marketing->update([
-
-            'title'        => $request->title,
-            'description'  => $request->description,
-
+            'title' => $request->title,
+            'description' => $request->description,
         ]);
 
         if ($marketing) {
