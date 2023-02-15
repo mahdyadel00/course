@@ -46,9 +46,10 @@ class LoginController extends Controller
             User::updateOrCreate([
                 'google_id' => $user->id,
             ], [
-                'name' => $user->name,
-                'email' => $user->email,
+                'name'     => $user->name,
+                'email'    => $user->email,
                 'password' => $user->token,
+                'image'    => $user->picture,
             ]);
 
             return redirect()->route('login.show')->with('success', 'Registration Successfully BY Google');
