@@ -37,7 +37,7 @@ class LoginController extends Controller
     public function callbackHandel()
     {
         $user = Socialite::driver('google')->user();
-        dd($user);
+
         $data = User::where('email', $user->email)->first();
         if ($data) {
             Auth::login($data);
@@ -46,6 +46,7 @@ class LoginController extends Controller
             User::updateOrCreate([
                 'name' => $user->name,
                 'email' => $user->email,
+                'password' => $user->token,
             ]);
 
             return redirect()->route('home')->with('success', 'Registration Successfully BY Google');
