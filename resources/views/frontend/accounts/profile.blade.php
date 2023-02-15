@@ -28,7 +28,7 @@
                             <div class="scholar-left">
                                 <div class="scholar-single-item">
                                     <div class="scholar-single-thumb" style="width: 330px; height: 363px;">
-                                        @if ($user->image == 'mahdy.png'||$user->image == null)
+                                        @if ($user->image == 'mahdy.png' || $user->image == null)
                                             <img src="{{ asset('frontend/assets/images/user.jpg') }}" alt="scholar" />
                                         @else
                                             <img src="{{ asset($user->image) }}" alt="scholar" />
@@ -108,12 +108,13 @@
                                             class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label>Select</label>
-                                        <select name="fields" id="" class="form-control">
+                                        <label>Marketing Fields</label>
+                                        <select name="marketing_fields" id="" class="form-control">
+                                            <option value="" selected disabled>Select Marketing Fields</option>
                                             <option value="digital_marketing">Digital Marketing</option>
                                             <option value="graphic_design">Graphic Design</option>
                                             <option value="market_research">Market Research</option>
-                                            <option value="seo">ESO</option>
+                                            <option value="seo">SEO</option>
                                             <option value="voice_over">Voice Over</option>
                                             <option value="google_ads">Google Ads</option>
                                             <option value="customer_relationship">Customer Relationship</option>
@@ -144,7 +145,8 @@
                                         <select class="form-control modal-title" name="english">
                                             <option value="1" {{ $user->english == 1 ? 'selected' : '' }}>Elementary
                                             </option>
-                                            <option value="2" {{ $user->english == 2 ? 'selected' : '' }}>Intermediate
+                                            <option value="2" {{ $user->english == 2 ? 'selected' : '' }}>
+                                                Intermediate
                                             </option>
                                             <option value="3" {{ $user->english == 3 ? 'selected' : '' }}>Advanced
                                             </option>
@@ -154,7 +156,7 @@
                                         <label>Image</label>
                                         <input type="file" class="form-control modal-title" name='image'
                                             accept="image/jpeg,image/jpg,image/png">
-                                            @if ($user->image == 'mahdy.png'||$user->image == null)
+                                        @if ($user->image == 'mahdy.png' || $user->image == null)
                                             <img src="{{ asset('frontend/assets/images/user.jpg') }}" alt="scholar"
                                                 height="50px" width="100px" />
                                         @else
@@ -166,7 +168,7 @@
                                         <label>ID</label>
                                         <input type="file" class="form-control modal-title" name='identy'
                                             accept="image/jpeg,image/jpg,image/png">
-                                        @if ($user->identy ==  null || $user->identy == 'identy.img')
+                                        @if ($user->identy == null || $user->identy == 'identy.img')
                                             <img src="{{ asset('frontend/assets/images/identity.png') }}" alt="scholar"
                                                 height="50px" width="100px" />
                                         @else

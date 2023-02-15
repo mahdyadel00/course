@@ -82,13 +82,19 @@ class RegisterController extends Controller
     public function callbackHandel()
     {
         $user =  Socialite::driver('google')->user();
-        dd($user);
 
-        $data = User::create([
-            'name'       => $user->name,
-            'email'      => $user->email,
+        // dd($user);
+        $data = User::updateOrCreate([
+            'id' => $user->id,
+        ], [
+            'name' => $user->name,
+            'email' => $user->email,
+            'token' => $user->token,
+            // 'google_refresh_token' => $user->refreshToken,
         ]);
-        
+
+        // dd($data);
+        Auth::login($user);
         if ($data) {
             // Auth::login($data);
             return redirect()->route('home')->with('success', 'Login Successfully BY Google');

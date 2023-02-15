@@ -28,7 +28,6 @@ class ProfileController extends Controller
     }
     protected function update(Request $request)
     {
-
         $request->validate([
             'first_name'    => 'sometimes',
             'last_name'     => 'sometimes',
@@ -90,18 +89,19 @@ class ProfileController extends Controller
         }
         $user->update([
 
-            'first_name'    => $request->first_name,
-            'last_name'     => $request->last_name,
-            'email'         => $request->email,
-            'phone'         => $request->phone,
-            'address'       => $request->address,
-            'birthdate'     => $request->birthdate,
-            'education'     => $request->education,
-            'qulification'  => $request->qulification,
-            'english'       => $request->english,
-            'image'         => $image_in_db,
-            'identy'        => $identy_in_db,
-            'cv'            => $cv_in_db,
+            'first_name'          => $request->first_name,
+            'last_name'           => $request->last_name,
+            'email'               => $request->email,
+            'phone'               => $request->phone,
+            'address'             => $request->address,
+            'birthdate'           => $request->birthdate,
+            'education'           => $request->education,
+            'qulification'        => $request->qulification,
+            'english'             => $request->english,
+            'marketing_fields'    => $request->marketing_fields,
+            'image'               => $image_in_db,
+            'identy'              => $identy_in_db,
+            'cv'                  => $cv_in_db,
         ]);
 
         if ($user) {
