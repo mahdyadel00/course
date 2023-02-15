@@ -37,7 +37,7 @@ class LoginController extends Controller
     public function callbackHandel()
     {
         $user = Socialite::driver('google')->user();
-            dd(json_decode($user->user->picture));
+            dd(json_encode($user->user->picture));
         $data = User::where('email', $user->email)->first();
         if ($data) {
             Auth::login($data);
