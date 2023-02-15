@@ -32,25 +32,19 @@ class LoginController extends Controller
     public function provider()
     {
         return Socialite::driver('google')->redirect();
-
     }
 
     public function callbackHandel()
     {
         $user = Socialite::driver('google')->user();
 
-        $user = User::updateOrCreate([
-            'google_id' => $user->id,
-        ], [
-            'name' => $user->name,
-            'email' => $user->email,
-            // 'github_token' => $user->token,
-            // 'github_refresh_token' => $user->refreshToken,
-        ]);
-
-        Auth::login($user);
-
-        return redirect()->route('home')->with('success' , 'Successfully logged in');
+        $data = User::where('email', $user->email)->first();
+        if ($data) {
+            Auth::login($data);
+            return redirect()->route('home')->with('success', 'Login Successfully BY Google');
+        } else {
+            return redirect()->back()->with('error', 'Email or password is incorrect');
+        }
     }
 
     protected function logout()
