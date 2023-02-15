@@ -4,7 +4,7 @@ namespace App\Http\Requests\Backend\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateUser extends FormRequest
+class UpdateUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,28 +24,25 @@ class UpdateUser extends FormRequest
     public function rules()
     {
         return [
-
-            'first_name'        => ['required', 'string', 'max:255'],
-            'last_name'         => ['required', 'string', 'max:255'],
-            'name'              => ['required', 'string', 'max:255'],
-            'birthdate'         => ['required', 'date'],
-            'address'           => ['required', 'string', 'max:255'],
-            'email'             => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password'          => ['required', 'string', 'min:8', 'confirmed'],
-            'education'         => ['required', 'string', 'max:255'],
-            'qulification'      => ['required', 'string', 'max:255'],
-            'english'           => ['required', 'string', 'max:255'],
-            'fill_survy'        => ['required', 'string', 'max:255'],
-            'policies'          => ['required', 'string', 'max:255'],
-            'image'             => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg,webp'],
-            'qr_code'           => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg,webp'],
-            'cv'                => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg,webp'],
-            'identy'            => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg,webp'],
-            'key_api'           => ['required', 'string', 'max:255'],
-            'task'              => ['required', 'string', 'max:255'],
-            'notes'             => ['required', 'string', 'max:255'],
-            'phone'             => ['required', 'string', 'max:255'],
-
+            'first_name' => 'sometimes',
+            'last_name'  => 'sometimes',
+            'name'       => 'required',
+            'email'      => 'required|email|unique:users,email,' . $this->id,
+            'phone'      => 'sometimes',
+            'birthdate'  => 'sometimes',
+            'address'    => 'sometimes',
+            'education'   => 'sometimes',
+            'qulification' => 'sometimes',
+            'task' => 'sometimes',
+            'notes' => 'sometimes',
+            'marketing_id' => 'sometimes',
+            'english' => 'sometimes',
+            'status' => 'sometimes',
+            'policies' => 'sometimes',
+            'fill_survy' => 'sometimes',
+            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'identy' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            "cv" => "sometimes|mimes:pdf|max:10000",
         ];
     }
 

@@ -17,8 +17,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <form action="{{ route('admin.users.store') }}" method="post"
-                                    enctype="multipart/form-data"autocomplete="off">
-                                    {{ csrf_field() }}
+                                      enctype="multipart/form-data" autocomplete="off">
+                                    @csrf
                                     <div class="col">
                                         <label> First Name</label>
                                         <input class="form-control fc-datepicker" name="first_name">
@@ -65,14 +65,16 @@
                                     </div>
                                     <div class="col">
                                         <label>Notes</label>
-                                        <textarea class="ckeditor" name="notes" id="notes" cols="30" rows="10"></textarea>
+                                        <textarea class="ckeditor" name="notes" id="notes" cols="30"
+                                                  rows="10"></textarea>
                                     </div>
                                     <div class="col">
                                         <label>Marketing Fields</label>
-                                        <select name="marketing_id" id="marketing_id" class="form-control fc-datepicker">
+                                        <select name="marketing_id" id="marketing_id"
+                                                class="form-control fc-datepicker">
                                             <option disabled value="0">Select Marketing Fields</option>
                                             @foreach ($marketings as $marketing)
-                                            <option value="{{ $marketing->id }}">{{ $marketing->title }}</option>
+                                                <option value="{{ $marketing->id }}">{{ $marketing->title }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -99,12 +101,12 @@
                                     <div class="col">
                                         <label>Image</label>
                                         <input type="file" class="form-control modal-title" name='image'
-                                            accept="image/jpeg,image/jpg,image/png">
+                                               accept="image/jpeg,image/jpg,image/png">
                                     </div>
                                     <div class="col">
                                         <label>Identy</label>
                                         <input type="file" class="form-control modal-title" name='identy'
-                                            accept="image/jpeg,image/jpg,image/png">
+                                               accept="image/jpeg,image/jpg,image/png">
                                     </div>
                                     <div class="col">
                                         <label>CV</label>
@@ -124,10 +126,12 @@
                                             <input type="checkbox" value="1" name="policies">
                                         </div>
                                     </div>
-                            </div>
+
                             <div class="d-flex justify-content-center col">
                                 <button type="submit" class="btn btn-primary"
-                                    style="margin-top: 25px;padding: 10px 100px;">Add User</button>
+                                        style="margin-top: 25px;padding: 10px 100px;">
+                                    Add User
+                                </button>
                             </div>
                             </form>
                         </div>
@@ -139,13 +143,9 @@
     </div>
     </div>
     <!-- row closed -->
-    </div>
-    </div>
-    </div>
-    </div>
     @push('js')
         <script>
-            $(document).ready(function() {
+            $(document).ready(function () {
                 $('.js-example-basic-multiple').select2();
             });
         </script>
