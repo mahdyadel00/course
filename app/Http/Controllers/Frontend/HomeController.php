@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Speaker;
 use App\Models\Settings;
+use App\Models\Slider;
 use App\Models\Sponser;
 
 class HomeController extends Controller
@@ -19,7 +20,7 @@ class HomeController extends Controller
 
     public function index()
     {
-
+        $sliders = Slider::get();
         $setting = Settings::first();
        $speakers = Speaker::get();
        $sponser_one = Sponser::take(2)->get();
@@ -28,6 +29,6 @@ class HomeController extends Controller
     //    dd($sponser_three);
     //    $sponser_four = Sponser::skip(11)->take(4)->get();
 
-        return view('frontend.layouts.index', compact('setting' , 'speakers' , 'sponser_one' , 'sponser_two' , 'sponser_three'));
+        return view('frontend.layouts.index', compact('sliders' , 'setting' , 'speakers' , 'sponser_one' , 'sponser_two' , 'sponser_three'));
     }
 }

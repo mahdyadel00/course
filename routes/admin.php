@@ -5,8 +5,6 @@ use Illuminate\Support\Facades\Auth;
 use  App\Http\Controllers\Admin\AdminLoginController;
 use  App\Http\Controllers\Admin\DashboardController;
 use  App\Http\Controllers\Admin\UserController;
-use  App\Http\Controllers\Admin\CategoryController;
-use  App\Http\Controllers\Admin\ProductController;
 use  App\Http\Controllers\Admin\ContactController;
 use  App\Http\Controllers\Admin\BannerController;
 use  App\Http\Controllers\Admin\SpeakersController;
@@ -22,6 +20,8 @@ use  App\Http\Controllers\Admin\FeatureController;
 use  App\Http\Controllers\Admin\CourseController;
 use  App\Http\Controllers\Admin\SponserController;
 use  App\Http\Controllers\Admin\MarketingController;
+use  App\Http\Controllers\Admin\SliderController;
+
 
 
 Auth::routes(['except' => 'register']);
@@ -143,10 +143,14 @@ Route::prefix('admin')->group(function () {
         Route::post('/courses', [CourseController::class, 'update'])->name('admin.courses.update');
         Route::get('/courses/download/{id}', [CourseController::class, 'download'])->name('admin.courses.download');
 
-
-
-
-
+        //Slider Route
+        Route::get('/sliders', [SliderController::class, 'index'])->name('admin.sliders.index');
+        Route::get('/sliders/create', [SliderController::class, 'create'])->name('admin.sliders.create');
+        Route::post('/sliders/store', [SliderController::class, 'store'])->name('admin.sliders.store');
+        Route::get('/sliders/show/{id}', [SliderController::class, 'show'])->name('admin.sliders.show');
+        Route::get('/sliders/edit/{id}', [SliderController::class, 'edit'])->name('admin.sliders.edit');
+        Route::post('/sliders/update/{id}', [SliderController::class, 'update'])->name('admin.sliders.update');
+        Route::delete('/sliders/delete/{id}', [SliderController::class, 'delete'])->name('admin.sliders.delete');
 
     });
 });

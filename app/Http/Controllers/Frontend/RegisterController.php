@@ -35,6 +35,7 @@ class RegisterController extends Controller
 
     protected function doRegister(Request $request)
     {
+
         //upload cv
         $cv_in_db = NULL;
         if ($request->has('cv')) {

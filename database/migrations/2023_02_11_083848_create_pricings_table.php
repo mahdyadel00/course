@@ -17,7 +17,7 @@ class CreatePricingsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('price');
-            $table->string('description');
+            $table->text('description');
             $table->timestamps();
         });
     }
