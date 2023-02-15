@@ -36,12 +36,9 @@ class LoginController extends Controller
 
     public function callbackHandel()
     {
-        try {
+
             $user = Socialite::driver('google')->user();
             dd($user );
-        } catch (Exception $e) {
-            return redirect()->route('login');
-        }
 
         $data = User::where('email', $user->email)->first();
         if ($data) {
