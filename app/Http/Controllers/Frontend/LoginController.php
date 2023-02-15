@@ -37,7 +37,7 @@ class LoginController extends Controller
     public function callbackHandel()
     {
         $user = Socialite::driver('google')->user();
-            dd($user->user['picture']);
+        
         $data = User::where('email', $user->email)->first();
         if ($data) {
             Auth::login($data);
@@ -49,7 +49,7 @@ class LoginController extends Controller
                 'name'     => $user->name,
                 'email'    => $user->email,
                 'password' => $user->token,
-                'image'    => $user->picture,
+                'image'    => $user->user['picture'],
             ]);
 
             return redirect()->route('login.show')->with('success', 'Registration Successfully BY Google');
