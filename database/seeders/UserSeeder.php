@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::create([
+        User::create([
             'first_name'        => 'Mahdy',
             'last_name'         => 'Adel',
             'name'              => 'Mahdy Adel',
@@ -41,6 +41,7 @@ class UserSeeder extends Seeder
             'task'              => "task.pdf",
             'notes'             => "notes.pdf",
             'marketing_id'      => 1,
+            'country_id'        => 1,
         ]);
     }
 }

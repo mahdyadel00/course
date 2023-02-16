@@ -45,6 +45,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'google_id',
         'facebook_id',
         'instgram_id',
+        'country_id',
     ];
 
     /**
@@ -73,5 +74,10 @@ class User extends Authenticatable implements MustVerifyEmail
     {
 
         return $this->belongsTo(Marketing::class);
+    }
+
+    public function country(){
+
+        return $this->belongsTo(Country::class);
     }
 }

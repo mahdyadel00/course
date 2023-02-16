@@ -26,6 +26,8 @@ class DatabaseSeeder extends Seeder
             MarketingSeeder::class,
             SliderSeeder::class,
             RoleHasPermissionSeeder::class,
+            CountrySeeder::class,
+            CitySeeder::class,
         ]);
     }
 }

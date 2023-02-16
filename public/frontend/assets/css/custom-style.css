@@ -7028,17 +7028,6 @@ footer .custom-img img {
 #user-form{
 	display: none;
 }
-.social-icons{
-	display: flex;
-	column-gap: 15px;
-}
-footer .footer-top .footer-top-item .lab-inner .lab-thumb{
-	margin-right: 10px !important;
-	width: 30px;
-}
-footer .footer-top .footer-top-item .lab-inner .lab-content span{
-	font-size: 14px;
-}
 @media (min-width: 576px){
 	.speaker-item-2 .speaker-inner .speaker-content .speaker-content-inner {
 		height: 184px;

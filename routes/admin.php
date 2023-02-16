@@ -19,10 +19,16 @@ use  App\Http\Controllers\Admin\{
     CourseController,
     SponserController,
     MarketingController,
+    SliderController,
+    CountryController,
+    CityController,
 };
+
 
 Auth::routes(['except' => 'register']);
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+
+
     Route::get('login-show', [AdminLoginController::class, 'login'])->name('login');
     Route::post('login', [AdminLoginController::class, 'doLogin'])->name('do.login');
 
@@ -41,6 +47,33 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         // Dwonload cv
         Route::get('/users/download/{id}', [UserController::class, 'download'])->name('users.download');
         Route::get('logout', [UserController::class, 'logout'])->name('logout');
+
+        // Country Route
+        Route::get('/countries', [CountryController::class, 'index'])->name('countries.index');
+        Route::get('/countries/create', [CountryController::class, 'create'])->name('countries.create');
+        Route::post('/countries/store', [CountryController::class, 'store'])->name('countries.store');
+        Route::get('/countries/show/{id}', [CountryController::class, 'show'])->name('countries.show');
+        Route::get('/countries/edit/{id}', [CountryController::class, 'edit'])->name('countries.edit');
+        Route::post('/countries/update/{id}', [CountryController::class, 'update'])->name('countries.update');
+        Route::delete('/countries/delete/{id}', [CountryController::class, 'delete'])->name('countries.delete');
+
+        // City Route
+        Route::get('/cities', [CityController::class, 'index'])->name('cities.index');
+        Route::get('/cities/create', [CityController::class, 'create'])->name('cities.create');
+        Route::post('/cities/store', [CityController::class, 'store'])->name('cities.store');
+        Route::get('/cities/show/{id}', [CityController::class, 'show'])->name('cities.show');
+        Route::get('/cities/edit/{id}', [CityController::class, 'edit'])->name('cities.edit');
+        Route::post('/cities/update/{id}', [CityController::class, 'update'])->name('cities.update');
+        Route::delete('/cities/delete/{id}', [CityController::class, 'delete'])->name('cities.delete');
+
+        // Speakers Route
+        Route::get('/speakers', [SpeakersController::class, 'index'])->name('speakers.index');
+        Route::get('/speakers/create', [SpeakersController::class, 'create'])->name('speakers.create');
+        Route::post('/speakers/store', [SpeakersController::class, 'store'])->name('speakers.store');
+        Route::get('/speakers/show/{id}', [SpeakersController::class, 'show'])->name('speakers.show');
+        Route::get('/speakers/edit/{id}', [SpeakersController::class, 'edit'])->name('speakers.edit');
+        Route::post('/speakers/update/{id}', [SpeakersController::class, 'update'])->name('speakers.update');
+        Route::delete('/speakers/delete/{id}', [SpeakersController::class, 'delete'])->name('speakers.delete');
 
         // Marketing Route
         Route::get('/marketings', [MarketingController::class, 'index'])->name('marketings.index');
@@ -87,83 +120,81 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/roles/edit/{id}', [RoleController::class, 'edit'])->name('roles.edit');
         Route::post('/roles/update/{id}', [RoleController::class, 'update'])->name('roles.update');
         Route::delete('/roles/delete/{id}', [RoleController::class, 'delete'])->name('roles.delete');
-
-        //Settings Route
-        Route::get('/settings/edit', [SettingsController::class, 'edit'])->name('admin.settings.edit');
-        Route::post('/settings/update', [SettingsController::class, 'update'])->name('admin.settings.update');
-
-        //Auth Route
-        Route::get('/auth/edit', [AuthController::class, 'edit'])->name('admin.auth.edit');
-        Route::post('/auth/update', [AuthController::class, 'update'])->name('admin.auth.update');
-        //Roles Route
-        Route::get('/roles', [RoleController::class, 'index'])->name('admin.roles.index');
-        Route::get('/roles/create', [RoleController::class, 'create'])->name('admin.roles.create');
-        Route::post('/roles/store', [RoleController::class, 'store'])->name('admin.roles.store');
-        Route::get('/roles/show/{id}', [RoleController::class, 'show'])->name('admin.roles.show');
-        Route::get('/roles/edit/{id}', [RoleController::class, 'edit'])->name('admin.roles.edit');
-        Route::post('/roles/update/{id}', [RoleController::class, 'update'])->name('admin.roles.update');
-        Route::delete('/roles/delete/{id}', [RoleController::class, 'delete'])->name('admin.roles.delete');
-
-
-        //Sevay Routes
-        Route::get('/servay', [ServayController::class, 'index'])->name('admin.servay.index');
-        Route::get('/servay/create', [ServayController::class, 'create'])->name('admin.servay.create');
-        Route::post('/servay/store', [ServayController::class, 'store'])->name('admin.servay.store');
-        Route::get('/servay/show/{id}', [ServayController::class, 'show'])->name('admin.servay.show');
-        Route::get('/servay/edit/{id}', [ServayController::class, 'edit'])->name('admin.servay.edit');
-        Route::post('/servay/update/{id}', [ServayController::class, 'update'])->name('admin.servay.update');
-        Route::delete('/servay/delete/{id}', [ServayController::class, 'delete'])->name('admin.servay.delete');
-
-        //polices Route
-        Route::get('/polices', [PolicesController::class, 'index'])->name('admin.polices.index'); //
-        Route::post('/polices', [PolicesController::class, 'update'])->name('admin.polices.update'); //
-
+        Route::delete('/servay/delete/{id}', [ServayController::class, 'delete'])->name('servay.delete');
 
         //PackageFeature Route
-        Route::get('/packages_features', [PackageFeatureController::class, 'index'])->name('admin.packages_features.index');
-        Route::get('/packages_features/create', [PackageFeatureController::class, 'create'])->name('admin.packages_features.create');
-        Route::post('/packages_features/store', [PackageFeatureController::class, 'store'])->name('admin.packages_features.store');
-        Route::get('/packages_features/show/{id}', [PackageFeatureController::class, 'show'])->name('admin.packages_features.show');
-        Route::get('/packages_features/edit/{id}', [PackageFeatureController::class, 'edit'])->name('admin.packages_features.edit');
-        Route::post('/packages_features/update/{id}', [PackageFeatureController::class, 'update'])->name('admin.packages_features.update');
-        Route::delete('/packages_features/delete/{id}', [PackageFeatureController::class, 'delete'])->name('admin.packages_features.delete');
+        Route::get('/packages_features', [PackageFeatureController::class, 'index'])->name('packages_features.index');
+        Route::get('/packages_features/create', [PackageFeatureController::class, 'create'])->name('packages_features.create');
+        Route::post('/packages_features/store', [PackageFeatureController::class, 'store'])->name('packages_features.store');
+        Route::get('/packages_features/show/{id}', [PackageFeatureController::class, 'show'])->name('packages_features.show');
+        Route::get('/packages_features/edit/{id}', [PackageFeatureController::class, 'edit'])->name('packages_features.edit');
+        Route::post('/packages_features/update/{id}', [PackageFeatureController::class, 'update'])->name('packages_features.update');
+        Route::delete('/packages_features/delete/{id}', [PackageFeatureController::class, 'delete'])->name('packages_features.delete');
 
 
         //Pricing Route
-        Route::get('/pricing', [PricingController::class, 'index'])->name('admin.pricing.index');
-        Route::get('/pricing/create', [PricingController::class, 'create'])->name('admin.pricing.create');
-        Route::post('/pricing/store', [PricingController::class, 'store'])->name('admin.pricing.store');
-        Route::get('/pricing/show/{id}', [PricingController::class, 'show'])->name('admin.pricing.show');
-        Route::get('/pricing/edit/{id}', [PricingController::class, 'edit'])->name('admin.pricing.edit');
-        Route::post('/pricing/update/{id}', [PricingController::class, 'update'])->name('admin.pricing.update');
-        Route::delete('/pricing/delete/{id}', [PricingController::class, 'delete'])->name('admin.pricing.delete');
+        Route::get('/pricing', [PricingController::class, 'index'])->name('pricing.index');
+        Route::get('/pricing/create', [PricingController::class, 'create'])->name('pricing.create');
+        Route::post('/pricing/store', [PricingController::class, 'store'])->name('pricing.store');
+        Route::get('/pricing/show/{id}', [PricingController::class, 'show'])->name('pricing.show');
+        Route::get('/pricing/edit/{id}', [PricingController::class, 'edit'])->name('pricing.edit');
+        Route::post('/pricing/update/{id}', [PricingController::class, 'update'])->name('pricing.update');
+        Route::delete('/pricing/delete/{id}', [PricingController::class, 'delete'])->name('pricing.delete');
 
         //Sponser Route
-        Route::get('/sponsers', [SponserController::class, 'index'])->name('admin.sponsers.index');
-        Route::get('/sponsers/create', [SponserController::class, 'create'])->name('admin.sponsers.create');
-        Route::post('/sponsers/store', [SponserController::class, 'store'])->name('admin.sponsers.store');
-        Route::get('/sponsers/show/{id}', [SponserController::class, 'show'])->name('admin.sponsers.show');
-        Route::get('/sponsers/edit/{id}', [SponserController::class, 'edit'])->name('admin.sponsers.edit');
-        Route::post('/sponsers/update/{id}', [SponserController::class, 'update'])->name('admin.sponsers.update');
-        Route::delete('/sponsers/delete/{id}', [SponserController::class, 'delete'])->name('admin.sponsers.delete');
+        Route::get('/sponsers', [SponserController::class, 'index'])->name('sponsers.index');
+        Route::get('/sponsers/create', [SponserController::class, 'create'])->name('sponsers.create');
+        Route::post('/sponsers/store', [SponserController::class, 'store'])->name('sponsers.store');
+        Route::get('/sponsers/show/{id}', [SponserController::class, 'show'])->name('sponsers.show');
+        Route::get('/sponsers/edit/{id}', [SponserController::class, 'edit'])->name('sponsers.edit');
+        Route::post('/sponsers/update/{id}', [SponserController::class, 'update'])->name('sponsers.update');
+        Route::delete('/sponsers/delete/{id}', [SponserController::class, 'delete'])->name('sponsers.delete');
 
         //Features Route
-        Route::get('/features', [FeatureController::class, 'index'])->name('admin.features.index');
-        Route::post('/features', [FeatureController::class, 'update'])->name('admin.features.update');
+        Route::get('/features', [FeatureController::class, 'index'])->name('features.index');
+        Route::post('/features', [FeatureController::class, 'update'])->name('features.update');
 
         //Courses Route
-        Route::get('/courses', [CourseController::class, 'index'])->name('admin.courses.index');
-        Route::post('/courses', [CourseController::class, 'update'])->name('admin.courses.update');
-        Route::get('/courses/download/{id}', [CourseController::class, 'download'])->name('admin.courses.download');
+        Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
+        Route::post('/courses', [CourseController::class, 'update'])->name('courses.update');
+        Route::get('/courses/download/{id}', [CourseController::class, 'download'])->name('courses.download');
+        //Settings Route
+        Route::get('/settings/edit', [SettingsController::class, 'edit'])->name('settings.edit');
+        Route::post('/settings/update', [SettingsController::class, 'update'])->name('settings.update');
 
-        //Slider Route
-        Route::get('/sliders', [SliderController::class, 'index'])->name('admin.sliders.index');
-        Route::get('/sliders/create', [SliderController::class, 'create'])->name('admin.sliders.create');
-        Route::post('/sliders/store', [SliderController::class, 'store'])->name('admin.sliders.store');
-        Route::get('/sliders/show/{id}', [SliderController::class, 'show'])->name('admin.sliders.show');
-        Route::get('/sliders/edit/{id}', [SliderController::class, 'edit'])->name('admin.sliders.edit');
-        Route::post('/sliders/update/{id}', [SliderController::class, 'update'])->name('admin.sliders.update');
-        Route::delete('/sliders/delete/{id}', [SliderController::class, 'delete'])->name('admin.sliders.delete');
+        //Auth Route
+        Route::get('/auth/edit', [AuthController::class, 'edit'])->name('auth.edit');
+        Route::post('/auth/update', [AuthController::class, 'update'])->name('auth.update');
+        //Roles Route
+        Route::get('/roles', [RoleController::class, 'index'])->name('roles.index');
+        Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.create');
+        Route::post('/roles/store', [RoleController::class, 'store'])->name('roles.store');
+        Route::get('/roles/show/{id}', [RoleController::class, 'show'])->name('roles.show');
+        Route::get('/roles/edit/{id}', [RoleController::class, 'edit'])->name('roles.edit');
+        Route::post('/roles/update/{id}', [RoleController::class, 'update'])->name('roles.update');
+        Route::delete('/roles/delete/{id}', [RoleController::class, 'delete'])->name('roles.delete');
+
+        //Sevay Routes
+        Route::get('/servay', [ServayController::class, 'index'])->name('servay.index');
+        Route::get('/servay/create', [ServayController::class, 'create'])->name('servay.create');
+        Route::post('/servay/store', [ServayController::class, 'store'])->name('servay.store');
+        Route::get('/servay/show/{id}', [ServayController::class, 'show'])->name('servay.show');
+        Route::get('/servay/edit/{id}', [ServayController::class, 'edit'])->name('servay.edit');
+        Route::post('/servay/update/{id}', [ServayController::class, 'update'])->name('servay.update');
+        Route::delete('/servay/delete/{id}', [ServayController::class, 'delete'])->name('servay.delete');
+
+        //Slider Routes
+        Route::get('/sliders', [SliderController::class, 'index'])->name('sliders.index');
+        Route::get('/sliders/create', [SliderController::class, 'create'])->name('sliders.create');
+        Route::post('/sliders/store', [SliderController::class, 'store'])->name('sliders.store');
+        Route::get('/sliders/show/{id}', [SliderController::class, 'show'])->name('sliders.show');
+        Route::get('/sliders/edit/{id}', [SliderController::class, 'edit'])->name('sliders.edit');
+        Route::post('/sliders/update/{id}', [SliderController::class, 'update'])->name('sliders.update');
+        Route::delete('/sliders/delete/{id}', [SliderController::class, 'delete'])->name('sliders.delete');
+
+        //polices Route
+        Route::get('/polices', [PolicesController::class, 'index'])->name('polices.index'); //
+        Route::post('/polices', [PolicesController::class, 'update'])->name('polices.update'); //
 
     });
 });

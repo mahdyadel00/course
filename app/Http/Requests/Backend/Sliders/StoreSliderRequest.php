@@ -24,8 +24,8 @@ class StoreSliderRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'         => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'title'   => 'required|string',
+            'image'   => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
 
         ];
     }

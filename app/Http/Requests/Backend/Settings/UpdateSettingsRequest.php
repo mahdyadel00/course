@@ -24,21 +24,22 @@ class UpdateSettingsRequest extends FormRequest
     public function rules()
     {
         return [
-            'title_en'         => 'sometimes',
-            'title_ar'         => 'sometimes',
-            'description'   => 'sometimes',
-            'address'       => 'sometimes',
-            'phone'         => 'sometimes',
-            'email'         => 'sometimes',
-            'start_from'    => 'sometimes',
-            'end_at'        => 'sometimes',
-            'facebook_link'      => 'sometimes',
-            'twitter_link'       => 'sometimes',
-            'youtube_link'       => 'sometimes',
-            'linkedin_link'      => 'sometimes',
-            'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            'main_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            
+            'title_en'         => 'sometimes|string',
+            'title_ar'         => 'sometimes|string',
+            'description'      => 'sometimes|string',
+            'address'          => 'sometimes|string',
+            'phone'            => 'sometimes|string',
+            'email'            => 'sometimes|email',
+            'start_from'       => 'sometimes|date',
+            'end_at'           => 'sometimes|date',
+            'facebook_link'    => 'sometimes|string',
+            'twitter_link'     => 'sometimes|string',
+            'youtube_link'     => 'sometimes|string',
+            'linkedin_link'    => 'sometimes|string',
+            'logo'             => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'image'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'main_image'       => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp',
         ];
     }
 }

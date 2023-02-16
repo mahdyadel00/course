@@ -80,7 +80,6 @@
                     @endforeach
                 </div>
             </div>
-            <a href="">Diploma Pricing In Here</a>
         </div>
     </section>
     <!-- ===== Pricing Plan end here  ==== -->
@@ -126,7 +125,4 @@
         </div>
     </section> -->
     <!-- ===== Event Gift end here  ==== -->
-
-    <!-- ===== Pricing Plan end here  ==== -->
-    <!-- ===== Event Gift start here  ==== -->
 @endsection

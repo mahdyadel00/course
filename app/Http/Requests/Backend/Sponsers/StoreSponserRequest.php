@@ -24,9 +24,9 @@ class StoreSponserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'link'  => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'name'  => ["required" , "string" , "max:255"],
+            'link'  => ["required" , "string" , "max:255"],
+            'image' => ["required" , "image" , "mimes:jpeg,png,jpg,gif,svg,webp"],
         ];
     }
 }

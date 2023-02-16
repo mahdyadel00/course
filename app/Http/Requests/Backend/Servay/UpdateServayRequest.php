@@ -24,7 +24,7 @@ class UpdateServayRequest extends FormRequest
     public function rules()
     {
         return [
-            'faq' => 'required|string',
+            'faq' => 'sometimes|string',
         ];
     }
 }

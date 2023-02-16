@@ -17,7 +17,7 @@ $setting = App\Models\Settings::first();
                         <li><a href="{{ route('speakers.index') }}">Speakers</a></li>
                         <li><a href="{{ route('courses.index') }}">Diploma</a></li>
                         <li><a href="{{ route('pricing.index') }}">Pricing</a></li>
-                        <li><a href="{{ route('contacts') }}">Contact</a></li>
+                        <li><a href="{{ route('contacts.index') }}">Contact</a></li>
                     </ul>
                     <!-- toggle icons -->
                     <div class="header-bar d-lg-none">

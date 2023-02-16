@@ -24,9 +24,9 @@ class UpdateSponserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'link'  => 'required',
-            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'name'  => ["sometimes", "string", "max:255"],
+            'link'  => ["sometimes", "string", "max:255"],
+            'image' => ["sometimes", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
         ];
     }
 }

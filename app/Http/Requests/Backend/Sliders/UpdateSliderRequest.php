@@ -24,8 +24,8 @@ class UpdateSliderRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'         => 'required|string',
-            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'title'   => 'sometimes|string',
+            'image'   => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp',
         ];
     }
 }

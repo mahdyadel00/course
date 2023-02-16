@@ -75,7 +75,7 @@
                                         <li><Strong>Name:</Strong> {{ $user->first_name }} {{ $user->last_name }}</li>
                                         <li><Strong>Email:</Strong> {{ $user->email }}</li>
                                         <li><Strong>Phone:</Strong> {{ $user->phone }}</li>
-                                        <li><Strong>Country:</Strong> {{ $user->country }}</li>
+                                        <li><Strong>Country:</Strong> {{ $user->country ? $user->country->name :'' }}</li>
                                         <li><Strong>City:</Strong> {{ $user->city }}</li>
                                         <li><Strong>Address:</Strong> {{ $user->address }}</li>
                                         <li><Strong>Birth Date:</Strong> {{ $user->birthdate }}</li>

@@ -24,9 +24,9 @@ class UpdatePricingRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'         => 'required',
-            'price'         => 'required',
-            'description'   => 'required',
+            'title'         => 'sometimes|string',
+            'price'         => 'sometimes|string',
+            'description'   => 'sometimes|string',
         ];
     }
 }

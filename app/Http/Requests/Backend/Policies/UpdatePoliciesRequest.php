@@ -24,8 +24,8 @@ class UpdatePoliciesRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'         => 'required|string',
-            'description'   => 'required|string',
+            'title'         => 'sometimes|string',
+            'description'   => 'sometimes|string',
         ];
     }
 }

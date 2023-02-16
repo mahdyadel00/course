@@ -24,12 +24,12 @@ class UpdateFeatureRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'           => 'required',
-            'description'     => 'required',
-            'title_1'         => 'required',
-            'description_1'   => 'required',
-            'title_2'         => 'required',
-            'description_2'   => 'required',
+            'title'           => 'sometimes|string',
+            'description'     => 'sometimes|string',
+            'title_1'         => 'sometimes|string',
+            'description_1'   => 'sometimes|string',
+            'title_2'         => 'sometimes|string',
+            'description_2'   => 'sometimes|string',
         ];
     }
 }
