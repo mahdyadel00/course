@@ -57,7 +57,7 @@ $setting = App\Models\Settings::first();
                                             alt="Phone-icon">
                                     </div>
                                     <div class="lab-content">
-                                        <span>Phone Number : {{ $setting->phone }}</span>
+                                        <span>Phone Number : +2 0{{ $setting->phone }}</span>
                                     </div>
                                 </div>
                             </a>
