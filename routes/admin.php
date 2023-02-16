@@ -1,79 +1,92 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
-use  App\Http\Controllers\Admin\AdminLoginController;
-use  App\Http\Controllers\Admin\DashboardController;
-use  App\Http\Controllers\Admin\UserController;
-use  App\Http\Controllers\Admin\ContactController;
-use  App\Http\Controllers\Admin\BannerController;
-use  App\Http\Controllers\Admin\SpeakersController;
-use  App\Http\Controllers\Admin\SubscriptionsController;
-use  App\Http\Controllers\Admin\SettingsController;
-use  App\Http\Controllers\Admin\RoleController;
-use  App\Http\Controllers\Admin\AuthController;
-use  App\Http\Controllers\Admin\PolicesController;
-use  App\Http\Controllers\Admin\ServayController;
-use  App\Http\Controllers\Admin\PackageFeatureController;
-use  App\Http\Controllers\Admin\PricingController;
-use  App\Http\Controllers\Admin\FeatureController;
-use  App\Http\Controllers\Admin\CourseController;
-use  App\Http\Controllers\Admin\SponserController;
-use  App\Http\Controllers\Admin\MarketingController;
-use  App\Http\Controllers\Admin\SliderController;
-
-
+use Illuminate\Support\Facades\{Route, Auth};
+use  App\Http\Controllers\Admin\{
+    AdminLoginController,
+    DashboardController,
+    UserController,
+    ContactController,
+    BannerController,
+    SpeakersController,
+    SettingsController,
+    RoleController,
+    AuthController,
+    PolicesController,
+    ServayController,
+    PackageFeatureController,
+    PricingController,
+    FeatureController,
+    CourseController,
+    SponserController,
+    MarketingController,
+};
 
 Auth::routes(['except' => 'register']);
-// Route::name('admin.')->prefix('admin')->group(function () {
-Route::prefix('admin')->group(function () {
-    Route::get('login-show', [AdminLoginController::class, 'login'])->name('admin.login');
-    Route::post('login', [AdminLoginController::class, 'doLogin'])->name('admin.do.login');
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::get('login-show', [AdminLoginController::class, 'login'])->name('login');
+    Route::post('login', [AdminLoginController::class, 'doLogin'])->name('do.login');
+
     Route::group(['middleware' => ['auth:admin']], function () {
-        Route::get('/', [DashboardController::class, 'index'])->name('admin.home');
-        //Users Route
-        Route::get('/users', [UserController::class, 'index'])->name('admin.users.index');
-        Route::get('/users/create', [UserController::class, 'create'])->name('admin.users.create');
-        Route::post('/users/store', [UserController::class, 'store'])->name('admin.users.store');
-        Route::get('/users/show/{id}', [UserController::class, 'show'])->name('admin.users.show');
-        Route::get('/users/edit/{id}', [UserController::class, 'edit'])->name('admin.users.edit');
-        Route::post('/users/update/{id}', [UserController::class, 'update'])->name('admin.users.update');
-        Route::delete('/users/delete/{id}', [UserController::class, 'delete'])->name('admin.users.delete');
-        // dwonload cv
-        Route::get('/users/download/{id}', [UserController::class, 'download'])->name('admin.users.download');
+        Route::get('/', [DashboardController::class, 'index'])->name('home');
+
+        // Users Route
+        Route::get('/users', [UserController::class, 'index'])->name('users.index');
+        Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+        Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
+        Route::get('/users/show/{id}', [UserController::class, 'show'])->name('users.show');
+        Route::get('/users/edit/{id}', [UserController::class, 'edit'])->name('users.edit');
+        Route::post('/users/update/{id}', [UserController::class, 'update'])->name('users.update');
+        Route::delete('/users/delete/{id}', [UserController::class, 'delete'])->name('users.delete');
+
+        // Dwonload cv
+        Route::get('/users/download/{id}', [UserController::class, 'download'])->name('users.download');
         Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
-        //marketing Route
-        Route::get('/marketings', [MarketingController::class, 'index'])->name('admin.marketings.index');
-        Route::get('/marketings/create', [MarketingController::class, 'create'])->name('admin.marketings.create');
-        Route::post('/marketings/store', [MarketingController::class, 'store'])->name('admin.marketings.store');
-        Route::get('/marketings/show/{id}', [MarketingController::class, 'show'])->name('admin.marketings.show');
-        Route::get('/marketings/edit/{id}', [MarketingController::class, 'edit'])->name('admin.marketings.edit');
-        Route::post('/marketings/update/{id}', [MarketingController::class, 'update'])->name('admin.marketings.update');
-        Route::delete('/marketings/delete/{id}', [MarketingController::class, 'delete'])->name('admin.marketings.delete');
+        // Marketing Route
+        Route::get('/marketings', [MarketingController::class, 'index'])->name('marketings.index');
+        Route::get('/marketings/create', [MarketingController::class, 'create'])->name('marketings.create');
+        Route::post('/marketings/store', [MarketingController::class, 'store'])->name('marketings.store');
+        Route::get('/marketings/show/{id}', [MarketingController::class, 'show'])->name('marketings.show');
+        Route::get('/marketings/edit/{id}', [MarketingController::class, 'edit'])->name('marketings.edit');
+        Route::post('/marketings/update/{id}', [MarketingController::class, 'update'])->name('marketings.update');
+        Route::delete('/marketings/delete/{id}', [MarketingController::class, 'delete'])->name('marketings.delete');
 
-        //Contacts Route
-        Route::get('/contacts', [ContactController::class, 'index'])->name('admin.contacts.index');
+        // Contacts Route
+        Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
 
-        //Banners Route
-        Route::get('/banners', [BannerController::class, 'index'])->name('admin.banners.index');
-        Route::get('/banners/create', [BannerController::class, 'create'])->name('admin.banners.create');
-        Route::post('/banners/store', [BannerController::class, 'store'])->name('admin.banners.store');
-        Route::get('/banners/edit/{id}', [BannerController::class, 'edit'])->name('admin.banners.edit');
-        Route::post('/banners/update/{id}', [BannerController::class, 'update'])->name('admin.banners.update');
-        Route::delete('/banners/delete/{id}', [BannerController::class, 'delete'])->name('admin.banners.delete');
+        // Banners Route
+        Route::get('/banners', [BannerController::class, 'index'])->name('banners.index');
+        Route::get('/banners/create', [BannerController::class, 'create'])->name('banners.create');
+        Route::post('/banners/store', [BannerController::class, 'store'])->name('banners.store');
+        Route::get('/banners/edit/{id}', [BannerController::class, 'edit'])->name('banners.edit');
+        Route::post('/banners/update/{id}', [BannerController::class, 'update'])->name('banners.update');
+        Route::delete('/banners/delete/{id}', [BannerController::class, 'delete'])->name('banners.delete');
 
+        // Speakers Route
+        Route::get('/speakers', [SpeakersController::class, 'index'])->name('speakers.index');
+        Route::get('/speakers/create', [SpeakersController::class, 'create'])->name('speakers.create');
+        Route::post('/speakers/store', [SpeakersController::class, 'store'])->name('speakers.store');
+        Route::get('/speakers/show/{id}', [SpeakersController::class, 'show'])->name('speakers.show');
+        Route::get('/speakers/edit/{id}', [SpeakersController::class, 'edit'])->name('speakers.edit');
+        Route::post('/speakers/update/{id}', [SpeakersController::class, 'update'])->name('speakers.update');
+        Route::delete('/speakers/delete/{id}', [SpeakersController::class, 'delete'])->name('speakers.delete');
 
-        //Speakers Route
-        Route::get('/speakers', [SpeakersController::class, 'index'])->name('admin.speakers.index');
-        Route::get('/speakers/create', [SpeakersController::class, 'create'])->name('admin.speakers.create');
-        Route::post('/speakers/store', [SpeakersController::class, 'store'])->name('admin.speakers.store');
-        Route::get('/speakers/show/{id}', [SpeakersController::class, 'show'])->name('admin.speakers.show');
-        Route::get('/speakers/edit/{id}', [SpeakersController::class, 'edit'])->name('admin.speakers.edit');
-        Route::post('/speakers/update/{id}', [SpeakersController::class, 'update'])->name('admin.speakers.update');
-        Route::delete('/speakers/delete/{id}', [SpeakersController::class, 'delete'])->name('admin.speakers.delete');
+        // Settings Route
+        Route::get('/settings/edit', [SettingsController::class, 'edit'])->name('settings.edit');
+        Route::post('/settings/update', [SettingsController::class, 'update'])->name('settings.update');
 
+        // Auth Route
+        Route::get('/auth/edit', [AuthController::class, 'edit'])->name('auth.edit');
+        Route::post('/auth/update', [AuthController::class, 'update'])->name('auth.update');
 
+        // Roles Route
+        Route::get('/roles', [RoleController::class, 'index'])->name('roles.index');
+        Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.create');
+        Route::post('/roles/store', [RoleController::class, 'store'])->name('roles.store');
+        Route::get('/roles/show/{id}', [RoleController::class, 'show'])->name('roles.show');
+        Route::get('/roles/edit/{id}', [RoleController::class, 'edit'])->name('roles.edit');
+        Route::post('/roles/update/{id}', [RoleController::class, 'update'])->name('roles.update');
+        Route::delete('/roles/delete/{id}', [RoleController::class, 'delete'])->name('roles.delete');
 
         //Settings Route
         Route::get('/settings/edit', [SettingsController::class, 'edit'])->name('admin.settings.edit');

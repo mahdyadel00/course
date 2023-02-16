@@ -42,10 +42,5 @@ class UserSeeder extends Seeder
             'notes'             => "notes.pdf",
             'marketing_id'      => 1,
         ]);
-
-        $role = Role::create(['name' => 'owner']);
-        $permissions = Permission::pluck('id','id')->all();
-        $role->syncPermissions($permissions);
-        $user->assignRole([$role->id]);
     }
 }
