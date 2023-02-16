@@ -31,7 +31,7 @@ class PermissionTableSeeder extends Seeder
             })
             ->each(function ($route) {
                 Permission::create([
-                    'name' => implode('_', array_diff(explode("_", $route), [last(explode("_", $route))])),
+                    'name'       => implode('_', array_diff(explode("_", $route), [last(explode("_", $route))])),
                     'guard_name' => last(explode("_", $route)),
                 ]);
             });
