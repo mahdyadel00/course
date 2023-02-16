@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('instgram_id')->nullable();
             $table->string('marketing_id')->nullable();
             $table->string('country_id')->nullable();
+            // $table->foreignId('marketing_id')->unsigned()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            // $table->foreignId('country_id')->unsigned()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->text('address');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

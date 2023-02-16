@@ -75,7 +75,7 @@
                                         <li><Strong>Name:</Strong> {{ $user->first_name }} {{ $user->last_name }}</li>
                                         <li><Strong>Email:</Strong> {{ $user->email }}</li>
                                         <li><Strong>Phone:</Strong> {{ $user->phone }}</li>
-                                        <li><Strong>Country:</Strong> {{ $user->country ? $user->country->name :'' }}</li>
+                                        <li><Strong>Country:</Strong> {{ $user->country ? $user->country->name : '' }}</li>
                                         <li><Strong>City:</Strong> {{ $user->city }}</li>
                                         <li><Strong>Address:</Strong> {{ $user->address }}</li>
                                         <li><Strong>Birth Date:</Strong> {{ $user->birthdate }}</li>
@@ -87,7 +87,8 @@
                                     </ul>
                                     <button class="edit-btn lab-btn " id="btn">Edit</button>
                                 </div>
-                                <form id="user-form" action="{{ route('profile.update') }}" method="post" enctype="multipart/form-data">
+                                <form id="user-form" action="{{ route('profile.update') }}" method="post"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group">
                                         <label>First Name</label>
@@ -111,8 +112,14 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Country</label>
-                                        <input type="text" name="address" value="{{ $user->country }}"
-                                            class="form-control" placeholder="Country">
+                                        <select name="country_id" id="country_id" class="form-control fc-datepicker">
+                                            <option disabled value="0">Select Country Name</option>
+                                            @foreach ($countries as $country)
+                                                <option value="{{ $country->id }}"
+                                                    {{ $user->country_id == $country->id ? 'selected' : '' }}>
+                                                    {{ $country->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label>City</label>
@@ -135,17 +142,13 @@
                                             class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label>Marketing Fields</label>
-                                        <!-- <select name="marketing_id" id="marketing_id"
-                                            class="form-control fc-datepicker">
-                                            <option disabled value="0">Select Marketing Fields</option>
-                                            @foreach ($marketings as $marketing)
-                                                <option value="{{ $marketing->id }}"
-                                                    {{ $user->marketing_id == $marketing->id ? 'selected' : '' }}>
-                                                    {{ $marketing->title }}</option>
-                                            @endforeach
-                                        </select> -->
-                                        <div class="all-checkbox">
+                                        {{-- <label>Marketing Fields</label> --}}
+                                        @foreach ($marketings as $marketing)
+                                            <input class="form-check-input" type="checkbox" value="all"
+                                                {{ $user->marketing_id == $marketing->id ? 'checked' : '' }}>
+                                                {{ $user->marketing ?  $user->marketing->title : '' }}
+                                        @endforeach
+                                        {{-- <div class="all-checkbox">
                                             <div>
                                                 <div class="form-group">
                                                     <input type="checkbox" name="Marketing" id=""> Marketing
@@ -206,7 +209,7 @@
                                                     <input type="checkbox" name="Marketing" id=""> Marketing
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     <div class="form-group">
                                         <label>Other Fields</label>
@@ -214,7 +217,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Qulification</label>
-                                            <textarea class="form-control" value="{{ $user->qulification }}" name="" id=""></textarea>
+                                        <textarea class="form-control" value="{{ $user->qulification }}" name="" id=""></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>English</label>

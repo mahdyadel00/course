@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Country;
 use App\Models\Marketing;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -19,10 +20,11 @@ class ProfileController extends Controller
     {
         if (Auth::check()) {
 
-            $user = User::where('id', auth()->user()->id)->first();
             $marketings = Marketing::get();
+            $countries = Country::get();
+            $user = User::where('id', auth()->user()->id)->first();
 
-            return view('frontend.accounts.profile', compact('user', 'marketings'));
+            return view('frontend.accounts.profile', compact('user', 'marketings' , 'countries'));
         } else {
 
             return redirect()->route('login.show')->with('Un Authanticated!');
@@ -41,6 +43,7 @@ class ProfileController extends Controller
             'qulification'  => 'sometimes',
             'english'       => 'sometimes',
             'marketing_id'  => 'sometimes',
+            'country_id'    => 'sometimes',
         ]);
         $user = User::where('id', auth()->user()->id)->first();
         $image_in_db = NULL;
