@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\Pricing\StorePricingRequest;
+use App\Http\Requests\Backend\Pricing\UpdatePricingRequest;
 use App\Models\PackageFeature;
 use Illuminate\Http\Request;
 use App\Models\Pricing;
@@ -21,13 +23,8 @@ class PricingController extends Controller
     {
         return view('admin.pricing.create');
     }
-    public function store(Request $request)
+    public function store(StorePricingRequest $request)
     {
-        $request->validate([
-            'title'         => 'required',
-            'price'         => 'required',
-            'description'   => 'required',
-        ]);
         Pricing::create([
             'title'         => $request->title,
             'price'         => $request->price,
@@ -50,13 +47,9 @@ class PricingController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(UpdatePricingRequest $request, $id)
     {
-        $request->validate([
-            'title'         => 'required',
-            'price'         => 'required',
-            'description'   => 'required',
-        ]);
+
         $pricing = Pricing::find($id);
         $pricing->update([
             'title'         => $request->title,

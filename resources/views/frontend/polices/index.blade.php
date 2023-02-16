@@ -9,8 +9,8 @@
                 <h4 class="ph-title">{{ $polices->title }}</h4>
                 <ul class="lab-ul">
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="{{ route('polices.index') }}">Policies</a></li>
-                    <li><a class="active">Policies-Details</a></li>
+                    <li><a href="{{ route('polices.index') }}">Terms and Conditions</a></li>
+                    <li><a class="active">-Details</a></li>
                 </ul>
             </div>
         </div>

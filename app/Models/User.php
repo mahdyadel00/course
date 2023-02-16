@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+// use Laravel\Fortify\TwoFactorAuthenticatable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
@@ -22,7 +23,6 @@ class User extends Authenticatable implements MustVerifyEmail
         'first_name',
         'last_name',
         'name',
-        'marketing_fields',
         'roles_name',
         'birthdate',
         'address',
@@ -42,6 +42,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'notes',
         'phone',
         'marketing_id',
+        'google_id',
+        'facebook_id',
+        'instgram_id',
     ];
 
     /**
@@ -52,6 +55,8 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $hidden = [
         'password',
         'remember_token',
+        'two_factor_recovery_codes',
+        'two_factor_secret',
     ];
 
     /**
@@ -64,7 +69,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'roles_name'        => 'array',
     ];
 
-    public function marketing(){
+    public function marketing()
+    {
 
         return $this->belongsTo(Marketing::class);
     }

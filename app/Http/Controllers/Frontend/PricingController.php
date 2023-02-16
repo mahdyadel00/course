@@ -22,11 +22,8 @@ class PricingController extends Controller
     protected function index()
     {
         $pricing = Pricing::with('feature')->get();
-        foreach ($pricing as $price) {
 
-            $features = packageFeature::where('price_id' , $price->id)->get();
-        }
-        return view('frontend.pricing.index', compact('pricing' , 'features'));
+        return view('frontend.pricing.index', compact('pricing'));
     }
     protected function pricingDetails($id)
     {

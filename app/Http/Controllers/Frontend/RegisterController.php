@@ -2,19 +2,15 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\Auth\Register;
-use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\Frontend\Auth\RegisterRequest;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
 use Validator;
-use Stevebauman\Location\Facades\Location;
 
-
-
-use function GuzzleHttp\Promise\all;
 
 class RegisterController extends Controller
 {
@@ -33,15 +29,12 @@ class RegisterController extends Controller
         return view('frontend.register');
     }
 
-    protected function doRegister(Request $request)
+    protected function doRegister(RegisterRequest $request)
     {
+
         //upload cv
         $cv_in_db = NULL;
         if ($request->has('cv')) {
-            $request->validate([
-                "cv" => "required|mimes:pdf|max:10000"
-            ]);
-
             $path = public_path() . '/uploads/users';
             $cv = request('cv');
             $cv_name = time() . request('cv')->getClientOriginalName();
@@ -74,32 +67,31 @@ class RegisterController extends Controller
         }
     }
 
-    public function provider()
-    {
-        return Socialite::driver('google')->redirect();
-    }
+    // public function provider()
+    // {
+    //     return Socialite::driver('google')->redirect();
+    // }
 
-    public function callbackHandel()
-    {
-        $user =  Socialite::driver('google')->user();
+    // public function callbackHandel()
+    // {
+    //     $user =  Socialite::driver('google')->user();
 
-        // dd($user);
-        $data = User::updateOrCreate([
-            'id' => $user->id,
-        ], [
-            'name' => $user->name,
-            'email' => $user->email,
-            'token' => $user->token,
-            // 'google_refresh_token' => $user->refreshToken,
-        ]);
+    //     $data = User::updateOrCreate([
+    //         'google_id' => $user->id,
+    //     ], [
+    //         'name' => $user->name,
+    //         'email' => $user->email,
+    //         'token' => $user->token,
+    //     ]);
 
-        // dd($data);
-        Auth::login($user);
-        if ($data) {
-            // Auth::login($data);
-            return redirect()->route('home')->with('success', 'Login Successfully BY Google');
-        } else {
-            return redirect()->back()->with('error', 'Email or password is incorrect');
-        }
-    }
+    //     // dd(0);
+    //     Auth::login($user);
+    //     // dd(1);
+    //     if ($data) {
+    //         // Auth::login($data);
+    //         return redirect()->route('home')->with('success', 'Login Successfully BY Google');
+    //     } else {
+    //         return redirect()->back()->with('error', 'Email or password is incorrect');
+    //     }
+    // }
 }

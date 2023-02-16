@@ -137,5 +137,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
         Route::post('/courses', [CourseController::class, 'update'])->name('courses.update');
         Route::get('/courses/download/{id}', [CourseController::class, 'download'])->name('courses.download');
+
+        //Slider Route
+        Route::get('/sliders', [SliderController::class, 'index'])->name('sliders.index');
+        Route::get('/sliders/create', [SliderController::class, 'create'])->name('sliders.create');
+        Route::post('/sliders/store', [SliderController::class, 'store'])->name('sliders.store');
+        Route::get('/sliders/show/{id}', [SliderController::class, 'show'])->name('sliders.show');
+        Route::get('/sliders/edit/{id}', [SliderController::class, 'edit'])->name('sliders.edit');
+        Route::post('/sliders/update/{id}', [SliderController::class, 'update'])->name('sliders.update');
+        Route::delete('/sliders/delete/{id}', [SliderController::class, 'delete'])->name('sliders.delete');
+
     });
 });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\Courses\UpdateCourseRequest;
 use Illuminate\Http\Request;
 use App\Models\Course;
 
@@ -15,23 +16,13 @@ class CourseController extends Controller
         return view('admin.course.index', compact('course'));
     }
 
-    public function update(Request $request)
+    public function update(UpdateCourseRequest $request)
     {
-        $request->validate([
-            'title'             => 'required',
-            'description'       => 'required',
-            'title_1'           => 'required',
-            'description_1'     => 'required',
-            'title_2'           => 'required',
-            'description_2'     => 'required',
-        ]);
+
         $course = Course::first();
         //image upload
         $image_in_db = $course->image;
         if ($request->has('image')) {
-            $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            ]);
             $path = public_path() . '/uploads/courses';
             $image = request('image');
             $image_name = time() . request('image')->getClientOriginalName();
@@ -44,9 +35,6 @@ class CourseController extends Controller
         //image1 upload
         $image_in_db_1 = $course->image_1;
         if ($request->has('image_1')) {
-            $request->validate([
-                'image_1' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            ]);
             $path = public_path() . '/uploads/courses';
             $image_1 = request('image_1');
             $image_name_1 = time() . request('image_1')->getClientOriginalName();
@@ -58,9 +46,6 @@ class CourseController extends Controller
         //course_file upload
         $course_file_in_db = $course->course_file;
         if ($request->has('course_file')) {
-            $request->validate([
-                'course_file' => 'required|mimes:pdf,doc,docx,zip',
-            ]);
             $path = public_path() . '/uploads/courses';
             $course_file = request('course_file');
             $course_file_name = time() . request('course_file')->getClientOriginalName();

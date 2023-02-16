@@ -31,36 +31,14 @@
                                 <div class="pricing-inner">
                                     <div class="pricing-header" style="width:352px;height:207px">
                                         <h3>{{ $price->title }}</h3>
-                                        <p>{!! $price->description !!}</p>
                                     </div>
                                     <div class="pricing-content">
                                         <ul class="facilites">
-                                            @foreach ($features as $feature)
-                                                <li class="facility-item">
-                                                    <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                                    </span> {{ $feature->title }}
-                                                </li>
-                                                {{-- <li class="facility-item">
-                                                    <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                                    </span> Networking Area Access
-                                                </li>
-                                                <li class="facility-item">
-                                                    <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                                    </span> Tea And Coffee
-                                                </li>
-                                                <li class="facility-item">
-                                                    <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                                    </span> Lunch
-                                                </li>
-                                                <li class="facility-item">
-                                                    <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                                    </span> Free Wifi
-                                                </li>
-                                                <li class="facility-item">
-                                                    <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-                                                    </span> 3 Lottery Ticket
-                                                </li> --}}
-                                            @endforeach
+                                            <li class="facility-item">
+                                                <span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                </span>
+                                                {!! $price->description !!}
+                                            </li>
                                         </ul>
                                         @auth
                                             <div class="get-ticket">
@@ -102,11 +80,12 @@
                     @endforeach
                 </div>
             </div>
+            <a href="">Diploma Pricing In Here</a>
         </div>
     </section>
     <!-- ===== Pricing Plan end here  ==== -->
     <!-- ===== Event Gift start here  ==== -->
-    <section class="event-gift-section padding-tb padding-b bg-image">
+    <!-- <section class="event-gift-section padding-tb padding-b bg-image">
         <div class="container">
             <div class="row flex-lg-row-reverse">
             <div class="col-lg-6 col-12">
@@ -117,7 +96,7 @@
                 <div class="section-wrapper">
                     <div class="gift-content">
                         <p>
-                        In appreciation of your endeavor to develop yourself, ad to encourage you, GMC offers some valuable gifts such as:
+                        In appreciation of your endeavor to develop yourself, and to encourage you, GMC offers some valuable gifts such as:
                         </p>
                         <ul class="gift-list">
                             <li class="gift-item"><span><i class="fa fa-check-circle" aria-hidden="true"></i>
@@ -138,14 +117,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 col-12">
-                <div class="image-part">
-                    <img src="{{ asset('frontend') }}/assets/images/gift/gift.png" alt="gift-img">
+                <div class="col-lg-6 col-12">
+                    <div class="image-part">
+                        <img src="{{ asset('frontend') }}/assets/images/gift/gift.png" alt="gift-img">
+                    </div>
                 </div>
             </div>
-            </div>
         </div>
-    </section>
+    </section> -->
     <!-- ===== Event Gift end here  ==== -->
+
+    <!-- ===== Pricing Plan end here  ==== -->
+    <!-- ===== Event Gift start here  ==== -->
 @endsection

@@ -10,7 +10,7 @@
                 <ul class="lab-ul">
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('speakers.index') }}">Speakers</a></li>
-                    <li><a class="active">Speaker-Details</a></li>
+                    <li><a class="active">Speaker Details</a></li>
                 </ul>
             </div>
         </div>
@@ -30,7 +30,7 @@
                                         <img src="{{ asset($speaker->image) }}" alt="scholar" />
                                     </div>
                                     <div>
-                                        <span class="d-inline-block">Personal Statement`</span>
+                                        <span class="d-inline-block">Personal Statement</span>
                                         <p>{!! $speaker->personal_info !!}</p>
                                     </div>
                                     {{-- <div class="scholar-single-content">

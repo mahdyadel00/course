@@ -22,7 +22,6 @@ class UserSeeder extends Seeder
             'first_name'        => 'Mahdy',
             'last_name'         => 'Adel',
             'name'              => 'Mahdy Adel',
-            'marketing_fields'  => 'marketing fields',
             'roles_name'         => ['owner'],
             'birthdate'         => '2023-01-01',
             'address'           => 'Metghamer',

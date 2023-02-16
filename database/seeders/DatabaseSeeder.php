@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             CourseSeeder::class,
             SponserSeeder::class,
             MarketingSeeder::class,
+            SliderSeeder::class,
             RoleHasPermissionSeeder::class,
         ]);
     }

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\Backend\User\StoreUserRequest;
 use App\Models\User;
 use App\Models\Marketing;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Backend\User\UpdateUser;
+use App\Http\Requests\Backend\User\UpdateUserRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -21,9 +22,6 @@ use Stevebauman\Location\Facades\Location;
 class UserController extends Controller
 {
 
-    public function __construct()
-    {
-    }
     protected function index()
     {
 
@@ -37,28 +35,10 @@ class UserController extends Controller
         $roles = Role::pluck('name', 'name')->all();
         return view('admin.users.create', compact('roles', 'marketings'));
     }
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
-        $request->validate([
-            'first_name'    => 'sometimes',
-            'last_name'     => 'sometimes',
-            'email'         => 'sometimes|email|unique:users',
-            'name'          => 'sometimes',
-            'phone'         => 'sometimes',
-            'address'       => 'sometimes',
-            'birthdate'     => 'sometimes',
-            'education'     => 'sometimes',
-            'qulification'  => 'sometimes',
-            'english'       => 'sometimes',
-            'policies'      => 'sometimes',
-            'password'      => 'sometimes',
-            'marketing_id'  => 'sometimes',
-        ]);
         $image_in_db = NULL;
         if ($request->has('image')) {
-            $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            ]);
             $path = public_path() . '/uploads/users';
             $image = request('image');
             $image_name = time() . request('image')->getClientOriginalName();
@@ -68,9 +48,6 @@ class UserController extends Controller
         //identy
         $identy_in_db = NULL;
         if ($request->has('identy')) {
-            $request->validate([
-                'identy' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            ]);
             $path = public_path() . '/uploads/users';
             $identy = request('identy');
             $identy_name = time() . request('identy')->getClientOriginalName();
@@ -80,9 +57,6 @@ class UserController extends Controller
         //upload cv
         $cv_in_db = NULL;
         if ($request->has('cv')) {
-            $request->validate([
-                "cv" => "required|mimes:pdf|max:10000"
-            ]);
             $path = public_path() . '/uploads/users';
             $cv = request('cv');
             $cv_name = time() . request('cv')->getClientOriginalName();
@@ -134,27 +108,11 @@ class UserController extends Controller
     }
 
 
-    protected function update(Request $request, $id)
+    protected function update(UpdateUserRequest $request, $id)
     {
-        $request->validate([
-            'first_name'    => 'required',
-            'last_name'     => 'required',
-            'email'         => 'required',
-            'phone'         => 'required',
-            'address'       => 'required',
-            'birthdate'     => 'required',
-            'education'     => 'required',
-            'qulification'  => 'required',
-            'english'       => 'required',
-            'marketing_id'  => 'required',
-        ]);
         $user = User::where('id', $id)->first();
         $image_in_db = NULL;
         if ($request->has('image')) {
-            $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            ]);
-
             $path = public_path() . '/uploads/users';
             $image = request('image');
             $image_name = time() . request('image')->getClientOriginalName();
@@ -167,9 +125,6 @@ class UserController extends Controller
         //identy
         $identy_in_db = NULL;
         if ($request->has('identy')) {
-            $request->validate([
-                'identy' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            ]);
 
             $path = public_path() . '/uploads/users';
             $identy = request('identy');
@@ -183,9 +138,6 @@ class UserController extends Controller
         //upload cv
         $cv_in_db = NULL;
         if ($request->has('cv')) {
-            $request->validate([
-                "cv" => "required|mimes:pdf|max:10000"
-            ]);
 
             $path = public_path() . '/uploads/users';
             $cv = request('cv');

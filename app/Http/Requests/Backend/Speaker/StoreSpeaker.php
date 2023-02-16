@@ -24,10 +24,23 @@ class StoreSpeaker extends FormRequest
     public function rules()
     {
         return [
-
-            "name"              => ["required", "string"],
-            "image"             => ["sometimes", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
-
+            "name" => ["required", "string"],
+            "email" => ["required", "string", "email", "max:255", "unique:users,email"],
+            "phone" => ["nullable", "string", "max:255"],
+            "job_title" => ["nullable", "string", "max:255"],
+            "personal_info" => ["nullable", "string"],
+            "description" => ["nullable", "string"],
+            "address" => ["nullable", "string"],
+            "website" => ["nullable", "string"],
+            "facebook" => ["nullable", "string"],
+            "twitter" => ["nullable", "string"],
+            "linkedin" => ["nullable", "string"],
+            "instagram" => ["nullable", "string"],
+            "youtube" => ["nullable", "string"],
+            "behance" => ["nullable", "string"],
+            "tiktok" => ["nullable", "string"],
+            "vimeo" => ["nullable", "string"],
+            "image" => ["nullable", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
         ];
     }
 
@@ -39,8 +52,8 @@ class StoreSpeaker extends FormRequest
     public function messages()
     {
         return [
-            "name.required"             => "Name is required",
-            "image.sometimes"           => "Image is required",
+            "name.required" => "Name is required",
+            "image.sometimes" => "Image is required",
         ];
     }
 }

@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Frontend\Auth\LoginRequest;
 use App\Models\User;
+use Exception;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
-
-use function GuzzleHttp\Promise\all;
 
 class LoginController extends Controller
 {
@@ -18,13 +17,8 @@ class LoginController extends Controller
         return view('frontend.login');
     }
 
-    protected function doLogin(Request $request)
+    protected function doLogin(LoginRequest $request)
     {
-        $request->validate([
-
-            'email' => 'required',
-            'password' => 'required',
-        ]);
         $remember_me = request('remember_me') == 1 ? true : false;
 
         if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $remember_me)) {
@@ -42,16 +36,81 @@ class LoginController extends Controller
 
     public function callbackHandel()
     {
-        $user =  Socialite::driver('google')->user();
+        $user = Socialite::driver('google')->user();
 
         $data = User::where('email', $user->email)->first();
         if ($data) {
             Auth::login($data);
             return redirect()->route('home')->with('success', 'Login Successfully BY Google');
-        }else{
-            return redirect()->back()->with('error', 'Email or password is incorrect');
-        }
+        } else {
+            User::updateOrCreate([
+                'google_id' => $user->id,
+            ], [
+                'name'     => $user->name,
+                'email'    => $user->email,
+                'password' => $user->token,
+                'image'    => $user->user['picture'],
+            ]);
 
+            return redirect()->route('login.show')->with('success', 'Registration Successfully BY Google');
+        }
+        return redirect()->back()->with('error', 'Email or password is incorrect');
+    }
+
+    //login with Facebook
+
+    public function providerFacebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+    public function callbackHandelFacebook()
+    {
+        $user = Socialite::driver('facebook')->user();
+
+        $data = User::where('email', $user->email)->first();
+        if ($data) {
+            Auth::login($data);
+            return redirect()->route('home')->with('success', 'Login Successfully BY Facebook');
+        } else {
+            User::updateOrCreate([
+                'facebook_id' => $user->id,
+            ], [
+                'name'     => $user->name,
+                'password' => $user->token,
+                'image'    => $user->attributes['avatar_original'],
+            ]);
+
+            return redirect()->route('login.show')->with('success', 'Registration Successfully BY Facebook');
+        }
+        return redirect()->back()->with('error', 'Email or password is incorrect');
+    }
+    //login with Instgram
+
+    public function instgram()
+    {
+        return Socialite::driver(['instgram'])->redirect();
+    }
+    public function callbackHandelInstgram()
+    {
+        dd('her');
+        $user = Socialite::driver('instgram')->user();
+        dd($user);
+        $data = User::where('email', $user->email)->first();
+        if ($data) {
+            Auth::login($data);
+            return redirect()->route('home')->with('success', 'Login Successfully BY Instgram');
+        } else {
+            User::updateOrCreate([
+                'instgram_id' => $user->id,
+            ], [
+                'name'     => $user->name,
+                'password' => $user->token,
+                'image'    => $user->attributes['avatar_original'],
+            ]);
+
+            return redirect()->route('login.show')->with('success', 'Registration Successfully BY Facebook');
+        }
+        return redirect()->back()->with('error', 'Email or password is incorrect');
     }
 
     protected function logout()

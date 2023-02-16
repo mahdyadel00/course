@@ -70,7 +70,24 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="scholar-right">
-                                <form action="{{ route('profile.update') }}" method="post" enctype="multipart/form-data">
+                                <div>
+                                    <ul class="user-info" id="info">
+                                        <li><Strong>Name:</Strong> {{ $user->first_name }} {{ $user->last_name }}</li>
+                                        <li><Strong>Email:</Strong> {{ $user->email }}</li>
+                                        <li><Strong>Phone:</Strong> {{ $user->phone }}</li>
+                                        <li><Strong>Country:</Strong> {{ $user->country }}</li>
+                                        <li><Strong>City:</Strong> {{ $user->city }}</li>
+                                        <li><Strong>Address:</Strong> {{ $user->address }}</li>
+                                        <li><Strong>Birth Date:</Strong> {{ $user->birthdate }}</li>
+                                        <li><Strong>Education:</Strong> {{ $user->education }}</li>
+                                        <li><Strong>Marketing Fields:</Strong> {{ $user->education }}</li>
+                                        <li><Strong>Qulification:</Strong> {{ $user->qulification }}</li>
+                                        <li><Strong>English:</Strong> {{ $user->first_name }} {{ $user->last_name }}</li>
+                                        <li><Strong>Name:</Strong> {{ $user->first_name }} {{ $user->last_name }}</li>
+                                    </ul>
+                                    <button class="edit-btn lab-btn " id="btn">Edit</button>
+                                </div>
+                                <form id="user-form" action="{{ route('profile.update') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group">
                                         <label>First Name</label>
@@ -90,7 +107,17 @@
                                     <div class="form-group">
                                         <label>Phone</label>
                                         <input type="text" name="phone" value="{{ $user->phone }}"
-                                            class="form-control" placeholder="address">
+                                            class="form-control" placeholder="Phone">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Country</label>
+                                        <input type="text" name="address" value="{{ $user->country }}"
+                                            class="form-control" placeholder="Country">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input type="text" name="address" value="{{ $user->city }}"
+                                            class="form-control" placeholder="City">
                                     </div>
                                     <div class="form-group">
                                         <label>Address</label>
@@ -109,23 +136,85 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Marketing Fields</label>
-                                        <div class="col">
-                                            <label>Marketing Fields</label>
-                                            <select name="marketing_id" id="marketing_id"
-                                                class="form-control fc-datepicker">
-                                                <option disabled value="0">Select Marketing Fields</option>
-                                                @foreach ($marketings as $marketing)
-                                                    <option value="{{ $marketing->id }}"
-                                                        {{ $user->marketing_id == $marketing->id ? 'selected' : '' }}>
-                                                        {{ $marketing->title }}</option>
-                                                @endforeach
-                                            </select>
+                                        <!-- <select name="marketing_id" id="marketing_id"
+                                            class="form-control fc-datepicker">
+                                            <option disabled value="0">Select Marketing Fields</option>
+                                            @foreach ($marketings as $marketing)
+                                                <option value="{{ $marketing->id }}"
+                                                    {{ $user->marketing_id == $marketing->id ? 'selected' : '' }}>
+                                                    {{ $marketing->title }}</option>
+                                            @endforeach
+                                        </select> -->
+                                        <div class="all-checkbox">
+                                            <div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="Marketing" id=""> Marketing
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                        <label>Other Fields</label>
+                                        <textarea class="form-control" name="" id=""></textarea>
+                                    </div>
+                                    <div class="form-group">
                                         <label>Qulification</label>
-                                        <input type="text" name="qulification" value="{{ $user->qulification }}"
-                                            class="form-control">
+                                            <textarea class="form-control" value="{{ $user->qulification }}" name="" id=""></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>English</label>
@@ -182,9 +271,12 @@
                                         <label>Confirm New Password</label>
                                         <input type="text" class="form-control" placeholder="Confirm New Password">
                                     </div> --}}
-                                    <div class="form-group" style="text-align: center;margin-top: 20px;">
+                                    <div class="form-group" style="margin-top: 20px;">
                                         <button type="submit" class="lab-btn">
                                             <span>Update Profile</span>
+                                        </button>
+                                        <button id="close-btn" class="lab-btn">
+                                            <span>Close</span>
                                         </button>
                                     </div>
                                 </form>

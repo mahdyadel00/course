@@ -46,6 +46,14 @@
                                                                src="{{ asset('frontend') }}/assets/images/tik.png"
                                                                alt=""></a></li>
                                                @endif
+                                               @if ($speaker->youtube)
+                                                   <li><a target="_blank" href="{{ $speaker->youtube }}"><i
+                                                    class="icofont-youtube"></i></a></li>
+                                               @endif
+                                               @if ($speaker->vimeo)
+                                                   <li><a target="_blank" href="{{ $speaker->vimeo }}"><i
+                                                    class="icofont-vimeo"></i></a></li>
+                                               @endif
                                            </ul>
                                        </div>
                                    </div>

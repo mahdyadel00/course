@@ -50,7 +50,7 @@
                         {{-- <p>About "GMC" Conference courses</p> --}}
 
                     </div>
-                    <div class="section-wrapper text-center">
+                    <div class="section-wrapper">
                         <p>{!! $course->description_1 !!}</p>
                         <div class="about-btn-grp">
                             <a href="{{ route('home') }}" class="lab-btn "><span>Booking Now</span> </a>

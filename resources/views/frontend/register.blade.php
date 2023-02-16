@@ -82,13 +82,13 @@
                             <a href="{{ route('facebook.login') }}" class="facebook"><i class="fab fa-facebook"></i></a>
                         </li>
                         <li>
-                            <a href="{{ route('google.register') }}" class="google"><i class="fab fa-google"></i></a>
+                            <a href="{{ route('google.login') }}" class="google"><i class="fab fa-google"></i></a>
+                        </li>
+                        <li>
+                            <a href="{{ route('instgram.login') }}" class="instagram"><i class="fab fa-instagram"></i></a>
                         </li>
                         <li>
                             <a href="http://linkedin.com/h" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-                        </li>
-                        <li>
-                            <a href="http://instgram.com/h" class="instagram"><i class="fab fa-instagram"></i></a>
                         </li>
                         <li>
                             <a href="http://pinterest.com/h" class="pinterest"><i class="fab fa-pinterest"></i></a>

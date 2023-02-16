@@ -19,6 +19,12 @@ $setting = App\Models\Settings::first();
                         <li><a href="{{ route('pricing.index') }}">Pricing</a></li>
                         <li><a href="{{ route('contacts.index') }}">Contact</a></li>
                     </ul>
+                    <!-- toggle icons -->
+                    <div class="header-bar d-lg-none">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     @auth
                         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                             <div class="btn-group btn-profile" role="group">

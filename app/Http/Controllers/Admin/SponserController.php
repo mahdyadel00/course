@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\Sponsers\StoreSponserRequest;
+use App\Http\Requests\Backend\Sponsers\UpdateSponserRequest;
 use Illuminate\Http\Request;
 use App\Models\Sponser;
 
@@ -21,20 +23,11 @@ class SponserController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreSponserRequest $request)
     {
-        $request->validate([
-
-            'name' => 'required',
-            'link'  => 'required',
-        ]);
         //image
         $image_in_db = NULL;
         if ($request->has('image')) {
-            $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            ]);
-
             $path = public_path() . '/uploads/sponsers';
             $image = request('image');
             $image_name = time() . request('image')->getClientOriginalName();
@@ -68,21 +61,12 @@ class SponserController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(UpdateSponserRequest $request, $id)
     {
-
-        $request->validate([
-
-            'name'  => 'required|string',
-            'link'   => 'required',
-        ]);
 
         $sponser = Sponser::find($id);
         $image_in_db = NULL;
         if ($request->has('image')) {
-            $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
-            ]);
 
             $path = public_path() . '/uploads/sponser';
             $image = request('image');

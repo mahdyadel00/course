@@ -2,8 +2,7 @@
  <section class="section section-lg bg-default text-center">
      <div class="container">
          <div class="section-header text-center">
-             <h2>Event Schedule plan</h2>
-             <p>Conference Schedule.</p>
+             <h2>Conference Schedule</h2>
          </div>
          <div class="tabs-custom tabs-horizontal tabs-corporate" id="tabs-1">
              <!--Nav tabs-->
@@ -11,14 +10,14 @@
                  <li class="nav-item" role="presentation"><a class="nav-link nav-link nav-link-secondary-darker"
                          href="#tabs-1-1" data-toggle="tab" data-triangle=".nav-link-overlay"><span
                              class="nav-link-overlay"></span><span class="nav-link-cite">First Day</span><span
-                             class="nav-link-title">February 23, 2023</span></a></li>
+                             class="nav-link-title">March 02, 2023</span></a></li>
                  <li class="nav-item" role="presentation"><a class="nav-link nav-link-purple-heart" href="#tabs-1-2"
                          data-toggle="tab" data-triangle=".nav-link-overlay"><span class="nav-link-overlay"></span><span
-                             class="nav-link-cite">Second Day</span><span class="nav-link-title">February 24,
+                             class="nav-link-cite">Second Day</span><span class="nav-link-title">March 03,
                              2023</span></a></li>
                  <li class="nav-item" role="presentation"><a class="nav-link nav-link-primary" href="#tabs-1-3"
                          data-toggle="tab" data-triangle=".nav-link-overlay"><span class="nav-link-overlay"></span><span
-                             class="nav-link-cite">Third Day</span><span class="nav-link-title">February 25,
+                             class="nav-link-cite">Third Day</span><span class="nav-link-title">March 04,
                              2023</span></a></li>
              </ul>
              <!--Tab panes-->
@@ -698,13 +697,11 @@
                                                              alt="" width="122"
                                                              height="122" /></span></span><span
                                                      class="unit-body"><span class="schedule-classic-content"><span
-                                                             class="schedule-classic-time">11:00 am to 12:00
-                                                             pm</span><span
-                                                             class="schedule-classic-title heading-4">Evolution of
-                                                             user interface in 2019</span><span
+                                                             class="schedule-classic-time">11:00 am to 11:30
+                                                             am</span><span
+                                                             class="schedule-classic-title heading-4">......</span><span
                                                              class="schedule-classic-author">by <span
-                                                                 class="schedule-classic-author-name">Sara De
-                                                                 Oliveira.</span>
+                                                                 class="schedule-classic-author-name">Nour Yanam </span>
                                                              - Co Founder</span></span></span></span></span></a>
                                  </div>
                              </div>
@@ -746,13 +743,11 @@
                                                              alt="" width="122"
                                                              height="122" /></span></span><span
                                                      class="unit-body"><span class="schedule-classic-content"><span
-                                                             class="schedule-classic-time">10:00 am to 11:00
-                                                             am</span><span
-                                                             class="schedule-classic-title heading-4">English
-                                                             Concepts in Marketing.</span><span
+                                                             class="schedule-classic-time">11:30 am to 12:00
+                                                             pm</span><span
+                                                             class="schedule-classic-title heading-4">.......</span><span
                                                              class="schedule-classic-author">by <span
-                                                                 class="schedule-classic-author-name">Mohamed
-                                                                 Gomaa.</span> - Lead
+                                                                 class="schedule-classic-author-name">Purna Virji</span> - Lead
                                                              Developer</span></span></span></span></span></a></div>
                              </div>
                              <div class="collapse" id="accordion2-card-body-shdhqwhj"
@@ -793,12 +788,10 @@
                                                              alt="" width="122"
                                                              height="122" /></span></span><span
                                                      class="unit-body"><span class="schedule-classic-content"><span
-                                                             class="schedule-classic-time">9:00 am to 10:00
-                                                             am</span><span
-                                                             class="schedule-classic-title heading-4">Social Media
-                                                             Influence Medical Field.</span><span
+                                                             class="schedule-classic-time">12:00 pm to 12:30 pm</span><span
+                                                             class="schedule-classic-title heading-4">journey of digital marketing from zero to future</span><span
                                                              class="schedule-classic-author">by <span
-                                                                 class="schedule-classic-author-name">Speaker</span> - Co
+                                                                 class="schedule-classic-author-name">Mostafa kotb</span> - Co
                                                              Founder</span></span></span></span></span></a></div>
                              </div>
                              <div class="collapse" id="accordion2-card-body-eqwqapab"
@@ -825,6 +818,16 @@
                                  </div>
                              </div>
                          </article>
+                         <div class="schedule-classic schedule-classic-simple">
+                                <div class="schedule-classic-content">
+                                    <div class="schedule-classic-img">
+                                        <svg class="svg-icon-md svg-icon-primary" role="img">
+                                            <use xlink:href="images/svg/sprite.svg#clock"></use>
+                                        </svg>
+                                    </div><span class="schedule-classic-time">12:30 pm to 01:00 pm</span><span
+                                        class="schedule-classic-title heading-4">activity time</span>
+                                </div>
+                            </div>
                          <!--Bootstrap card-->
                          <article class="card card-custom card-corporate">
                              <div class="card-header" role="tab">
@@ -838,11 +841,9 @@
                                                              alt="" width="122"
                                                              height="122" /></span></span><span
                                                      class="unit-body"><span class="schedule-classic-content"><span
-                                                             class="schedule-classic-time">9:00 am to 10:00
-                                                             am</span><span
-                                                             class="schedule-classic-title heading-4">Ads
-                                                             Songs.</span><span class="schedule-classic-author">by
-                                                             <span class="schedule-classic-author-name">Speaker</span> - Co
+                                                             class="schedule-classic-time">01:00 pm to 01:30 pm</span><span
+                                                             class="schedule-classic-title heading-4">......</span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">Haris Mumtaz </span> - Co
                                                              Founder</span></span></span></span></span></a></div>
                              </div>
                              <div class="collapse" id="NasrEldin" aria-labelledby="accordion2-card-head-vrmbocua"
@@ -881,13 +882,10 @@
                                                              alt="" width="122"
                                                              height="122" /></span></span><span
                                                      class="unit-body"><span class="schedule-classic-content"><span
-                                                             class="schedule-classic-time">9:00 am to 10:00
-                                                             am</span><span
-                                                             class="schedule-classic-title heading-4">Customer
-                                                             Relationship.</span><span
+                                                             class="schedule-classic-time">01:30 pm to 02:00 pm</span><span
+                                                             class="schedule-classic-title heading-4">.....</span><span
                                                              class="schedule-classic-author">by <span
-                                                                 class="schedule-classic-author-name">Ramy
-                                                                 Yaseen.</span> - Co
+                                                                 class="schedule-classic-author-name">Kostia Pertsovskyi</span> - Co
                                                              Founder</span></span></span></span></span></a></div>
                              </div>
                              <div class="collapse" id="Ramy" aria-labelledby="accordion2-card-head-vrmbocua"
@@ -926,15 +924,64 @@
                                                              alt="" width="122"
                                                              height="122" /></span></span><span
                                                      class="unit-body"><span class="schedule-classic-content"><span
-                                                             class="schedule-classic-time">9:00 am to 10:00
-                                                             am</span><span
-                                                             class="schedule-classic-title heading-4">Media
-                                                             Buying.</span><span class="schedule-classic-author">by
-                                                             <span class="schedule-classic-author-name">Eslam
-                                                                 Salah.</span> - Co
+                                                             class="schedule-classic-time">02:00 pm to 02:30 pm</span><span
+                                                             class="schedule-classic-title heading-4">.....</span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">Ahmed Abd rabo </span> - Co
                                                              Founder</span></span></span></span></span></a></div>
                              </div>
                              <div class="collapse" id="Eslam" aria-labelledby="accordion2-card-head-vrmbocua"
+                                 data-parent="#accordion2" role="tabpanel">
+                                 <div class="card-body">
+                                     <p>Ubi est nobilis cobaltum? Domesticus capios ducunt ad demissio. Torquiss
+                                         favere, tanquam bassus glos. Vae, hippotoxota! Superbus, mirabilis poetas
+                                         vix aperto de teres, germanus amicitia. Vae. Fortis nixs ducunt ad
+                                         acipenser. A falsis, musa nobilis gabalium. Cum decor ire, omnes
+                                         fraticinidaes.</p>
+                                     <div class="unit unit-spacing-xxs">
+                                         <div class="unit-left">
+                                             <svg class="svg-icon-sm svg-icon-primary" role="img">
+                                                 <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
+                                             </svg>
+                                         </div>
+                                         <div class="unit-body">
+                                             <h5>Where</h5>
+                                             <p class="font-secondary">Hall 22, Building 2, New York, United States
+                                                 of America</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </article>
+                         <!-- Schedule Simple-->
+                         <div class="schedule-classic schedule-classic-simple">
+                             <div class="schedule-classic-content">
+                                 <div class="schedule-classic-img">
+                                     <svg class="svg-icon-md svg-icon-primary" role="img">
+                                         <use xlink:href="images/svg/sprite.svg#clock"></use>
+                                     </svg>
+                                 </div><span class="schedule-classic-time">02:30 pm to 03:00 pm</span><span
+                                     class="schedule-classic-title heading-4">break time</span>
+                             </div>
+                         </div>
+                         <!--Bootstrap card-->
+                         <article class="card card-custom card-corporate">
+                             <div class="card-header" role="tab">
+                                 <div class="card-title"><a class="collapsed" id="accordion2-card-head-vrmbocua"
+                                         data-toggle="collapse" data-parent="#accordion2" href="#Abdelwahed"
+                                         aria-controls="Abdelwahed" aria-expanded="false" role="button"><span
+                                             class="schedule-classic"><span
+                                                 class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
+                                                     class="unit-left"><span class="schedule-classic-img"><img
+                                                             src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg"
+                                                             alt="" width="122"
+                                                             height="122" /></span></span><span
+                                                     class="unit-body"><span class="schedule-classic-content"><span
+                                                             class="schedule-classic-time">03:00 pm to 03:30 pm</span><span
+                                                             class="schedule-classic-title heading-4">.......</span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">Andrew Ashraf</span> - Co
+                                                             Founder</span></span></span></span></span></a></div>
+                             </div>
+                             <div class="collapse" id="Abdelwahed" aria-labelledby="accordion2-card-head-vrmbocua"
                                  data-parent="#accordion2" role="tabpanel">
                                  <div class="card-body">
                                      <p>Ubi est nobilis cobaltum? Domesticus capios ducunt ad demissio. Torquiss
@@ -970,11 +1017,9 @@
                                                              alt="" width="122"
                                                              height="122" /></span></span><span
                                                      class="unit-body"><span class="schedule-classic-content"><span
-                                                             class="schedule-classic-time">9:00 am to 10:00
-                                                             am</span><span
-                                                             class="schedule-classic-title heading-4">How to Make a
-                                                             Trend.</span><span class="schedule-classic-author">by
-                                                             <span class="schedule-classic-author-name">Speaker</span> - Co
+                                                             class="schedule-classic-time">03:30 pm to 04:00 pm</span><span
+                                                             class="schedule-classic-title heading-4">.......</span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">Hatem Abu elezz</span> - Co
                                                              Founder</span></span></span></span></span></a></div>
                              </div>
                              <div class="collapse" id="Abdelwahed" aria-labelledby="accordion2-card-head-vrmbocua"
@@ -1000,6 +1045,48 @@
                                  </div>
                              </div>
                          </article>
+                         <!--Bootstrap card-->
+                         <article class="card card-custom card-corporate">
+                             <div class="card-header" role="tab">
+                                 <div class="card-title"><a class="collapsed" id="accordion2-card-head-vrmbocua"
+                                         data-toggle="collapse" data-parent="#accordion2" href="#Abdelwahed"
+                                         aria-controls="Abdelwahed" aria-expanded="false" role="button"><span
+                                             class="schedule-classic"><span
+                                                 class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
+                                                     class="unit-left"><span class="schedule-classic-img"><img
+                                                             src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg"
+                                                             alt="" width="122"
+                                                             height="122" /></span></span><span
+                                                     class="unit-body"><span class="schedule-classic-content"><span
+                                                             class="schedule-classic-time">04:00 pm to 04:30 pm</span><span
+                                                             class="schedule-classic-title heading-4">.......</span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">Mohammed Abd elmaksod</span> - Co
+                                                             Founder</span></span></span></span></span></a></div>
+                             </div>
+                             <div class="collapse" id="Abdelwahed" aria-labelledby="accordion2-card-head-vrmbocua"
+                                 data-parent="#accordion2" role="tabpanel">
+                                 <div class="card-body">
+                                     <p>Ubi est nobilis cobaltum? Domesticus capios ducunt ad demissio. Torquiss
+                                         favere, tanquam bassus glos. Vae, hippotoxota! Superbus, mirabilis poetas
+                                         vix aperto de teres, germanus amicitia. Vae. Fortis nixs ducunt ad
+                                         acipenser. A falsis, musa nobilis gabalium. Cum decor ire, omnes
+                                         fraticinidaes.</p>
+                                     <div class="unit unit-spacing-xxs">
+                                         <div class="unit-left">
+                                             <svg class="svg-icon-sm svg-icon-primary" role="img">
+                                                 <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
+                                             </svg>
+                                         </div>
+                                         <div class="unit-body">
+                                             <h5>Where</h5>
+                                             <p class="font-secondary">Hall 22, Building 2, New York, United States
+                                                 of America</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </article>
+
                          <!-- Schedule Simple-->
                          <div class="schedule-classic schedule-classic-simple">
                              <div class="schedule-classic-content">
@@ -1007,10 +1094,133 @@
                                      <svg class="svg-icon-md svg-icon-primary" role="img">
                                          <use xlink:href="images/svg/sprite.svg#clock"></use>
                                      </svg>
-                                 </div><span class="schedule-classic-time">11:00 am to 12:00 pm</span><span
-                                     class="schedule-classic-title heading-4">Enjoy the coffee break</span>
+                                 </div><span class="schedule-classic-time"> 04:30 pm to  05:00 pm</span><span
+                                     class="schedule-classic-title heading-4">activity time</span>
                              </div>
                          </div>
+                         <!--Bootstrap card-->
+                         <article class="card card-custom card-corporate">
+                             <div class="card-header" role="tab">
+                                 <div class="card-title"><a class="collapsed" id="accordion2-card-head-vrmbocua"
+                                         data-toggle="collapse" data-parent="#accordion2" href="#Abdelwahed"
+                                         aria-controls="Abdelwahed" aria-expanded="false" role="button"><span
+                                             class="schedule-classic"><span
+                                                 class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
+                                                     class="unit-left"><span class="schedule-classic-img"><img
+                                                             src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg"
+                                                             alt="" width="122"
+                                                             height="122" /></span></span><span
+                                                     class="unit-body"><span class="schedule-classic-content"><span
+                                                             class="schedule-classic-time">05:00 pm to 05:30 pm</span><span
+                                                             class="schedule-classic-title heading-4">.......</span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">Ahmed Khalifa</span> - Co
+                                                             Founder</span></span></span></span></span></a></div>
+                             </div>
+                             <div class="collapse" id="Abdelwahed" aria-labelledby="accordion2-card-head-vrmbocua"
+                                 data-parent="#accordion2" role="tabpanel">
+                                 <div class="card-body">
+                                     <p>Ubi est nobilis cobaltum? Domesticus capios ducunt ad demissio. Torquiss
+                                         favere, tanquam bassus glos. Vae, hippotoxota! Superbus, mirabilis poetas
+                                         vix aperto de teres, germanus amicitia. Vae. Fortis nixs ducunt ad
+                                         acipenser. A falsis, musa nobilis gabalium. Cum decor ire, omnes
+                                         fraticinidaes.</p>
+                                     <div class="unit unit-spacing-xxs">
+                                         <div class="unit-left">
+                                             <svg class="svg-icon-sm svg-icon-primary" role="img">
+                                                 <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
+                                             </svg>
+                                         </div>
+                                         <div class="unit-body">
+                                             <h5>Where</h5>
+                                             <p class="font-secondary">Hall 22, Building 2, New York, United States
+                                                 of America</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </article>
+                         <!--Bootstrap card-->
+                         <article class="card card-custom card-corporate">
+                             <div class="card-header" role="tab">
+                                 <div class="card-title"><a class="collapsed" id="accordion2-card-head-vrmbocua"
+                                         data-toggle="collapse" data-parent="#accordion2" href="#Abdelwahed"
+                                         aria-controls="Abdelwahed" aria-expanded="false" role="button"><span
+                                             class="schedule-classic"><span
+                                                 class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
+                                                     class="unit-left"><span class="schedule-classic-img"><img
+                                                             src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg"
+                                                             alt="" width="122"
+                                                             height="122" /></span></span><span
+                                                     class="unit-body"><span class="schedule-classic-content"><span
+                                                             class="schedule-classic-time">05:30 pm to 06:00 pm</span><span
+                                                             class="schedule-classic-title heading-4">.......</span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">Sponser</span> - Co
+                                                             Founder</span></span></span></span></span></a></div>
+                             </div>
+                             <div class="collapse" id="Abdelwahed" aria-labelledby="accordion2-card-head-vrmbocua"
+                                 data-parent="#accordion2" role="tabpanel">
+                                 <div class="card-body">
+                                     <p>Ubi est nobilis cobaltum? Domesticus capios ducunt ad demissio. Torquiss
+                                         favere, tanquam bassus glos. Vae, hippotoxota! Superbus, mirabilis poetas
+                                         vix aperto de teres, germanus amicitia. Vae. Fortis nixs ducunt ad
+                                         acipenser. A falsis, musa nobilis gabalium. Cum decor ire, omnes
+                                         fraticinidaes.</p>
+                                     <div class="unit unit-spacing-xxs">
+                                         <div class="unit-left">
+                                             <svg class="svg-icon-sm svg-icon-primary" role="img">
+                                                 <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
+                                             </svg>
+                                         </div>
+                                         <div class="unit-body">
+                                             <h5>Where</h5>
+                                             <p class="font-secondary">Hall 22, Building 2, New York, United States
+                                                 of America</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </article>
+                         <!--Bootstrap card-->
+                         <article class="card card-custom card-corporate">
+                             <div class="card-header" role="tab">
+                                 <div class="card-title"><a class="collapsed" id="accordion2-card-head-vrmbocua"
+                                         data-toggle="collapse" data-parent="#accordion2" href="#Abdelwahed"
+                                         aria-controls="Abdelwahed" aria-expanded="false" role="button"><span
+                                             class="schedule-classic"><span
+                                                 class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
+                                                     class="unit-left"><span class="schedule-classic-img"><img
+                                                             src="{{ asset('frontend') }}/assets/images/schedule-01-122x122.jpg"
+                                                             alt="" width="122"
+                                                             height="122" /></span></span><span
+                                                     class="unit-body"><span class="schedule-classic-content"><span
+                                                             class="schedule-classic-time">06:00 pm to 07:00 pm</span><span
+                                                             class="schedule-classic-title heading-4">.......</span><span class="schedule-classic-author">by
+                                                             <span class="schedule-classic-author-name">giveaway</span> - Co
+                                                             Founder</span></span></span></span></span></a></div>
+                             </div>
+                             <div class="collapse" id="Abdelwahed" aria-labelledby="accordion2-card-head-vrmbocua"
+                                 data-parent="#accordion2" role="tabpanel">
+                                 <div class="card-body">
+                                     <p>Ubi est nobilis cobaltum? Domesticus capios ducunt ad demissio. Torquiss
+                                         favere, tanquam bassus glos. Vae, hippotoxota! Superbus, mirabilis poetas
+                                         vix aperto de teres, germanus amicitia. Vae. Fortis nixs ducunt ad
+                                         acipenser. A falsis, musa nobilis gabalium. Cum decor ire, omnes
+                                         fraticinidaes.</p>
+                                     <div class="unit unit-spacing-xxs">
+                                         <div class="unit-left">
+                                             <svg class="svg-icon-sm svg-icon-primary" role="img">
+                                                 <use xlink:href="images/svg/sprite.svg#earth-globe"></use>
+                                             </svg>
+                                         </div>
+                                         <div class="unit-body">
+                                             <h5>Where</h5>
+                                             <p class="font-secondary">Hall 22, Building 2, New York, United States
+                                                 of America</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </article>
                          <!--Bootstrap card-->
                          <article class="card card-custom card-corporate">
                              <div class="card-header" role="tab">
@@ -1504,7 +1714,7 @@
          </div>
      </div>
  </section>
- <section class="schedule-section padding-tb padding-b bg-image">
+ <!-- <section class="schedule-section padding-tb padding-b bg-image">
      <div class="container">
          <div class="section-header">
              <h2>Days Details</h2>
@@ -2423,5 +2633,5 @@
              </div>
          </div>
      </div>
- </section>
+ </section> -->
  <!-- ==========schedule Section end Here========== -->

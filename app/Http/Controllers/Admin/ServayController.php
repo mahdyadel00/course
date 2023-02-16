@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\Servay\StoreServayRequest;
+use App\Http\Requests\Backend\Servay\UpdateServayRequest;
 use Illuminate\Http\Request;
 use App\Models\EmailSubscription;
 use App\Models\FillServy;
@@ -24,13 +26,8 @@ class ServayController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreServayRequest $request)
     {
-        $request->validate([
-
-            'faq' => 'required',
-        ]);
-
         FillServy::create([
 
             'faq'  => $request->faq,
@@ -54,13 +51,9 @@ class ServayController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(UpdateServayRequest $request, $id)
     {
 
-        $request->validate([
-
-            'faq'  => 'required|string',
-        ]);
 
         $servay = FillServy::find($id);
 

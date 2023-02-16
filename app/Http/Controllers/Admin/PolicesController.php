@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\Policies\UpdatePoliciesRequest;
 use Illuminate\Http\Request;
 use App\Models\Polices;
 
@@ -17,17 +18,13 @@ class PolicesController extends Controller
         return view('admin.polices.index', compact('polices'));
     }
 
-    public function update(Request $request)
+    public function update(UpdatePoliciesRequest $request)
     {
-        $request->validate([
-            'title'         => 'required|string',
-            'description'   => 'required|string',
-        ]);
+
 
         $polices = Polices::first();
 
         $polices->update([
-
             'title'         => $request->title,
             'description'   => $request->description
         ]);

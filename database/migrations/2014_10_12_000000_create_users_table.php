@@ -14,11 +14,13 @@ class CreateUsersTable extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('name');
-            $table->string('marketing_fields');
             $table->text('roles_name')->nullable();
             $table->date('birthdate');
+            $table->string('google_id')->nullable();
+            $table->string('facebook_id')->nullable();
+            $table->string('instgram_id')->nullable();
+            $table->string('marketing_id')->nullable();
             $table->text('address');
-            $table->string('marketing_id');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

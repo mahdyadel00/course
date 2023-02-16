@@ -57,7 +57,7 @@ $setting = App\Models\Settings::first();
                                             alt="Phone-icon">
                                     </div>
                                     <div class="lab-content">
-                                        <span>Phone Number : {{ $setting->phone }}</span>
+                                        <span>Phone Number : +20 {{ $setting->phone }}</span>
                                     </div>
                                 </div>
                             </a>
@@ -87,7 +87,7 @@ $setting = App\Models\Settings::first();
                                             alt="location-icon">
                                     </div>
                                     <div class="lab-content">
-                                        <span>Address : Alhawwar club, Mansoura</span>
+                                        <span>Address : {{ $setting->address }}</span>
                                     </div>
                                 </div>
                             </a>
@@ -96,7 +96,77 @@ $setting = App\Models\Settings::first();
                 </div>
             </div>
         </div>
+        <div class="footer-middle padding-tb">
+            <div class="container">
+                <div class="row shape-c">
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="footer-middle-item-wrapper">
+                            <div class="footer-middle-item mb-5 mb-lg-0">
+                                <div class="fm-item-title">
+                                <div class="col-md custom-img">
+                                    <!-- <img src="{{ $setting->logo }}" alt=""> -->
+                                    <img src="{{ asset('frontend') }}/assets/images/logo/logo-white.png" alt="">
+                                </div>
+                                </div>
+                                <div class="fm-item-content">
+                                    <p class="mb-30">Energistica coordinate highly eficient procesr
+                                        improvement viaing awesome</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="footer-middle-item-wrapper">
+                            <div class="footer-middle-item mb-5 mb-lg-0">
+                                <div class="fm-item-title">
+                                    <h5>Important links</h5>
+                                </div>
+                                <div>
+                                <ul class="">
+                                    <li><a href="{{ route('home') }}">Home</a></li>
+                                    <li><a href="{{ route('features.index') }}">Features</a></li>
+                                    <li><a href="{{ route('speakers.index') }}">Speakers</a></li>
+                                    <li><a href="{{ route('courses.index') }}">Diploma</a></li>
+                                    <li><a href="{{ route('pricing.index') }}">Pricing</a></li>
+                                    <li><a href="{{ route('contacts') }}">Contact</a></li>
+                                </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="footer-middle-item-wrapper">
+                            <div class="footer-middle-item-3 mb-5 mb-lg-0">
+                                <div class="fm-item-title">
+                                    <h5>Follow us</h5>
+                                </div>
+                                    <ul class="social-icons">
+                                        <li><a href="#"><i class="icofont-facebook"></i></a></li>
+                                        <li><a href="#"><i class="icofont-twitter"></i></a></li>
+                                        <li><a href="#"><i class="icofont-instagram"></i></a></li>
+                                        <li><a href="#"><i class="icofont-dribble"></i></a></li>
+                                        <li><a href="#"><i class="icofont-vimeo"></i></a></li>
+                                        <li><a href="#"><i class="icofont-behance"></i></a></li>
+                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="footer-bottom-content text-center">
+                        <p>&copy;2023 Powered By: <a target="_blank"
+                                    href="https://geexar.com/">{{ $setting->title_en }}</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="footer-bottom">
             <div class="container">
                 <div class="row text-center">
                     <div class="col-md custom-img custom-logo">
@@ -115,7 +185,7 @@ $setting = App\Models\Settings::first();
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </footer>
     <!-- Footer Section end here -->
     <!-- scrollToTop start here -->
