@@ -587,3 +587,21 @@ $('.addClass').hover(function () {
     element.addClass('show');
   }
 })
+
+const btn = document.getElementById("btn")
+const info = document.getElementById("info")
+const form = document.getElementById("user-form")
+const close = document.getElementById("close-btn")
+
+btn.addEventListener('click', ()=>{
+  btn.style.display = "none"
+  info.style.display = "none"
+  form.style.display = "block"
+});
+
+close.addEventListener('click', (event)=>{
+  event.preventDefault()
+  btn.style.display = "block"
+  info.style.display = "block"
+  form.style.display = "none"
+});

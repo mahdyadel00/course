@@ -7012,6 +7012,22 @@ footer .custom-img img {
 .social-media li a{
 	color: #fff !important;
 }
+.scholar-right .form-group{
+	margin-bottom: 15px;
+}
+.scholar-right textarea{
+	height: 150px;
+}
+.all-checkbox{
+	display: flex;
+	justify-content: space-between;
+}
+.user-info li{
+	margin-bottom: 15px;
+}
+#user-form{
+	display: none;
+}
 @media (min-width: 576px){
 	.speaker-item-2 .speaker-inner .speaker-content .speaker-content-inner {
 		height: 184px;

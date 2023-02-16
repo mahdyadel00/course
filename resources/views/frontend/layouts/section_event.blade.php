@@ -25,6 +25,10 @@
                                 </span> 10 opportunities to attend the first week of the diploma for FREE.</li>
                             <li class="gift-item"><span><i class="fa fa-check-circle" aria-hidden="true"></i>
                                 </span> Other special and worthy gifts are waiting for you during the conference.</li>
+                                <li class="gift-item"><span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                </span> Coffee break.</li>
+                                <li class="gift-item"><span><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                </span> A special bag.</li>
                         </ul>
                         <div class="register-button">
                             <a href="{{ route('register.show') }}" class="lab-btn"><span>Register Now</span> </a>
