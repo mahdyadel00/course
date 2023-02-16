@@ -21,6 +21,6 @@ class RoleHasPermissionSeeder extends Seeder
         $user = \App\Models\User::find(1);
         $user->assignRole($role);
 
-        $user->syncPermissions(Permission::where('guard_name', 'admin')->get());
+        $user->syncPermissions(Permission::where('guard_name', 'web')->get());
     }
 }
