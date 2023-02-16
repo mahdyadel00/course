@@ -1,6 +1,5 @@
 <?php
 
-<<<<<<< Updated upstream
 use Illuminate\Support\Facades\{Route, Auth};
 use  App\Http\Controllers\Admin\{
     AdminLoginController,
@@ -26,63 +25,6 @@ Auth::routes(['except' => 'register']);
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('login-show', [AdminLoginController::class, 'login'])->name('login');
     Route::post('login', [AdminLoginController::class, 'doLogin'])->name('do.login');
-=======
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
-use  App\Http\Controllers\Admin\AdminLoginController;
-use  App\Http\Controllers\Admin\DashboardController;
-use  App\Http\Controllers\Admin\UserController;
-use  App\Http\Controllers\Admin\ContactController;
-use  App\Http\Controllers\Admin\BannerController;
-use  App\Http\Controllers\Admin\SpeakersController;
-use  App\Http\Controllers\Admin\SettingsController;
-use  App\Http\Controllers\Admin\RoleController;
-use  App\Http\Controllers\Admin\AuthController;
-use  App\Http\Controllers\Admin\PolicesController;
-use  App\Http\Controllers\Admin\ServayController;
-use  App\Http\Controllers\Admin\PackageFeatureController;
-use  App\Http\Controllers\Admin\PricingController;
-use  App\Http\Controllers\Admin\FeatureController;
-use  App\Http\Controllers\Admin\CourseController;
-use  App\Http\Controllers\Admin\SponserController;
-use  App\Http\Controllers\Admin\MarketingController;
-use Spatie\Permission\Models\Permission;
-
-
-Auth::routes(['except' => 'register']);
-// Route::name('admin.')->prefix('admin')->group(function () {
-Route::prefix('admin')->group(function () {
-    Route::get('/test', function () {
-        // Get all routes with guard name
-        $routes = collect(Route::getRoutes()->getRoutesByName())
-            ->keys()
-            ->map(function ($route) {
-                $guard = Route::getRoutes()->getRoutesByName()[$route]->getAction()['middleware'];
-                dd(in_array('auth:admin', $guard, true) ? 'admin' : 'web');
-                $guard = in_array('auth:admin', $guard, true) ? 'admin' : 'web';
-                return str_replace(array('admin.', '.'), array('', '_'), $route) . "_$guard";
-            })
-            ->filter(function ($route) {
-                return !in_array(
-                    explode("_", $route)[0],
-                    [
-                        'sanctum', 'ignition', 'verification', 'chatify', 'pusher', 'do', 'auth',
-                        'debugbar', 'facebook', 'google', 'password', 'register', 'login', 'logout',
-                        'two-factor', 'email', 'confirm', 'verification', 'verification-notification',
-                        'forgot-password', 'reset-password'
-                    ]
-                );
-            })
-            ->each(function ($route) {
-                Permission::create([
-                    'name'       => implode('_', array_diff(explode("_", $route), [last(explode("_", $route))])),
-                    'guard_name' => last(explode("_", $route)),
-                ]);
-            });
-
-        dd($routes);
-    });
->>>>>>> Stashed changes
 
     Route::group(['middleware' => ['auth:admin']], function () {
         Route::get('/', [DashboardController::class, 'index'])->name('home');
@@ -146,56 +88,6 @@ Route::prefix('admin')->group(function () {
         Route::post('/roles/update/{id}', [RoleController::class, 'update'])->name('roles.update');
         Route::delete('/roles/delete/{id}', [RoleController::class, 'delete'])->name('roles.delete');
 
-<<<<<<< Updated upstream
-        // Servay Routes
-        Route::get('/servay', [ServayController::class, 'index'])->name('servay.index');
-        Route::get('/servay/create', [ServayController::class, 'create'])->name('servay.create');
-        Route::post('/servay/store', [ServayController::class, 'store'])->name('servay.store');
-        Route::get('/servay/show/{id}', [ServayController::class, 'show'])->name('servay.show');
-        Route::get('/servay/edit/{id}', [ServayController::class, 'edit'])->name('servay.edit');
-        Route::post('/servay/update/{id}', [ServayController::class, 'update'])->name('servay.update');
-        Route::delete('/servay/delete/{id}', [ServayController::class, 'delete'])->name('servay.delete');
-
-        // Polices Route
-        Route::get('/polices', [PolicesController::class, 'index'])->name('polices.index'); //
-        Route::post('/polices', [PolicesController::class, 'update'])->name('polices.update'); //
-
-        // PackageFeature Route
-        Route::get('/packages_features', [PackageFeatureController::class, 'index'])->name('packages_features.index');
-        Route::get('/packages_features/create', [PackageFeatureController::class, 'create'])->name('packages_features.create');
-        Route::post('/packages_features/store', [PackageFeatureController::class, 'store'])->name('packages_features.store');
-        Route::get('/packages_features/show/{id}', [PackageFeatureController::class, 'show'])->name('packages_features.show');
-        Route::get('/packages_features/edit/{id}', [PackageFeatureController::class, 'edit'])->name('packages_features.edit');
-        Route::post('/packages_features/update/{id}', [PackageFeatureController::class, 'update'])->name('packages_features.update');
-        Route::delete('/packages_features/delete/{id}', [PackageFeatureController::class, 'delete'])->name('packages_features.delete');
-
-        // Pricing Route
-        Route::get('/pricing', [PricingController::class, 'index'])->name('pricing.index');
-        Route::get('/pricing/create', [PricingController::class, 'create'])->name('pricing.create');
-        Route::post('/pricing/store', [PricingController::class, 'store'])->name('pricing.store');
-        Route::get('/pricing/show/{id}', [PricingController::class, 'show'])->name('pricing.show');
-        Route::get('/pricing/edit/{id}', [PricingController::class, 'edit'])->name('pricing.edit');
-        Route::post('/pricing/update/{id}', [PricingController::class, 'update'])->name('pricing.update');
-        Route::delete('/pricing/delete/{id}', [PricingController::class, 'delete'])->name('pricing.delete');
-
-        // Sponser Route
-        Route::get('/sponsers', [SponserController::class, 'index'])->name('sponsers.index');
-        Route::get('/sponsers/create', [SponserController::class, 'create'])->name('sponsers.create');
-        Route::post('/sponsers/store', [SponserController::class, 'store'])->name('sponsers.store');
-        Route::get('/sponsers/show/{id}', [SponserController::class, 'show'])->name('sponsers.show');
-        Route::get('/sponsers/edit/{id}', [SponserController::class, 'edit'])->name('sponsers.edit');
-        Route::post('/sponsers/update/{id}', [SponserController::class, 'update'])->name('sponsers.update');
-        Route::delete('/sponsers/delete/{id}', [SponserController::class, 'delete'])->name('sponsers.delete');
-
-        // Features Route
-        Route::get('/features', [FeatureController::class, 'index'])->name('features.index');
-        Route::post('/features', [FeatureController::class, 'update'])->name('features.update');
-
-        // Courses Route
-        Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
-        Route::post('/courses', [CourseController::class, 'update'])->name('courses.update');
-        Route::get('/courses/download/{id}', [CourseController::class, 'download'])->name('courses.download');
-=======
         //Settings Route
         Route::get('/settings/edit', [SettingsController::class, 'edit'])->name('admin.settings.edit');
         Route::post('/settings/update', [SettingsController::class, 'update'])->name('admin.settings.update');
@@ -263,6 +155,5 @@ Route::prefix('admin')->group(function () {
         Route::get('/courses', [CourseController::class, 'index'])->name('admin.courses.index');
         Route::post('/courses', [CourseController::class, 'update'])->name('admin.courses.update');
         Route::get('/courses/download/{id}', [CourseController::class, 'download'])->name('admin.courses.download');
->>>>>>> Stashed changes
     });
 });
