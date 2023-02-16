@@ -18,7 +18,7 @@ class PermissionTableSeeder extends Seeder
         collect(Route::getRoutes()->getRoutesByName())
             ->keys()
             ->map(function ($route) {
-                $guard = Route::getRoutes()->getRoutesByName()[$route]->getAction()['middleware'];
+                $guard = Route::getRoutes()->getRoutesByName()[$route]->getAction()['middleware'] ?? [];
                 $guard = in_array('auth:admin', $guard, true) ? 'admin' : 'web';
                 return str_replace(array('admin.', '.'), array('', '_'), $route) . "_$guard";
             })
