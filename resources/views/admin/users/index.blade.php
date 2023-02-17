@@ -18,97 +18,100 @@
                     <div class="table-responsive p-0">
                         <table class="table align-items-center mb-0">
                             <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Marketing</th>
-                                <th>Country Name</th>
-                                <th>City Name</th>
-                                <th>Roles</th>
-                                <th>Status</th>
-                                <th>Creaed At</th>
-                                <th>Action</th>
-                                <th class="text-secondary opacity-7"></th>
-                            </tr>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    {{-- <th>Marketing</th> --}}
+                                    <th>Country Name</th>
+                                    <th>City Name</th>
+                                    <th>Roles</th>
+                                    <th>Status</th>
+                                    <th>Creaed At</th>
+                                    <th>Action</th>
+                                    <th class="text-secondary opacity-7"></th>
+                                </tr>
                             </thead>
                             <tbody>
-                            @foreach ($users as $user)
-                                <tr>
-                                    <td>{{ $user->id }}</td>
-                                    <td>
-                                        <img src="{{ $user->image }}" width="100px" height="100px" alt="">
-                                    </td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $user->email }}</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $user->phone }}</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $user->marketing ? $user->marketing->title : '' }}</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $user->country ? $user->country->name : '' }}</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{ $user->city ? $user->city->name : '' }}</p>
-                                    </td>
-                                    <td>
-                                        @if (!empty($user->getRoleNames()))
-                                            @foreach ($user->getRoleNames() as $role)
-                                                <span>{{ $role }}</span>
-                                            @endforeach
-                                        @endif
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        @if ($user->id === auth()->user()->id)
-                                            <span class="badge badge-sm bg-gradient-success">Online</span>
-                                        @else
-                                            <span class="badge badge-sm bg-gradient-danger">Offline</span>
-                                        @endif
-                                    </td>
-                                    <td class="align-middle text-center">
+                                @foreach ($users as $user)
+                                    <tr>
+                                        <td>{{ $user->id }}</td>
+                                        <td>
+                                            <img src="{{ $user->image }}" width="100px" height="100px" alt="">
+                                        </td>
+                                        <td>{{ $user->name }}</td>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">{{ $user->email }}</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">{{ $user->phone }}</p>
+                                        </td>
+                                        {{-- <td>
+                                            <p class="text-xs font-weight-bold mb-0">
+                                                {{ $user->marketing ? $user->marketing->title : '' }}</p>
+                                        </td> --}}
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">
+                                                {{ $user->country ? $user->country->name : '' }}</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">
+                                                {{ $user->city ? $user->city->name : '' }}</p>
+                                        </td>
+                                        <td>
+                                            @if (!empty($user->getRoleNames()))
+                                                @foreach ($user->getRoleNames() as $role)
+                                                    <span>{{ $role }}</span>
+                                                @endforeach
+                                            @endif
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            @if ($user->id === auth()->user()->id)
+                                                <span class="badge badge-sm bg-gradient-success">Online</span>
+                                            @else
+                                                <span class="badge badge-sm bg-gradient-danger">Offline</span>
+                                            @endif
+                                        </td>
+                                        <td class="align-middle text-center">
                                             <span
-                                                class="text-secondary text-xs font-weight-bold">{{  date('d-m-Y', strtotime($user->created_at)) }}</span>
-                                    </td>
-                                    <td class="align-middle">
-                                        @can('users_show')
-                                            <button class="btn btn-success">
-                                                <a href="{{ route('admin.users.show', [$user->id]) }}"
-                                                   class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
-                                                   data-original-title="Show user">
-                                                    <i class="fa fa-eye"></i>
-                                                </a>
-                                            </button>
-                                        @endcan
-                                        @can('users_edit')
-                                            <button class="btn btn-info">
-                                                <a href="{{ route('admin.users.edit', [$user->id]) }}"
-                                                   class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
-                                                   data-original-title="Edit user">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>
-                                            </button>
-                                        @endcan
-                                        @can('users_delete')
-                                            <form action="{{ route('admin.users.delete', [$user->id]) }}" method="post"
-                                                  style="display: inline-block">
-                                                @csrf
-                                                @method('delete')
-                                                <button class="btn btn-danger" type="submit">
-                                                    <a href="#" class="text-secondary font-weight-bold text-xs"
-                                                       data-toggle="tooltip" data-original-title="Delete user">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a></button>
-                                            </form>
-                                        @endcan
-                                    </td>
-                                </tr>
-                            @endforeach
+                                                class="text-secondary text-xs font-weight-bold">{{ date('d-m-Y', strtotime($user->created_at)) }}</span>
+                                        </td>
+                                        <td class="align-middle">
+                                            @can('users_show')
+                                                <button class="btn btn-success">
+                                                    <a href="{{ route('admin.users.show', [$user->id]) }}"
+                                                        class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+                                                        data-original-title="Show user">
+                                                        <i class="fa fa-eye"></i>
+                                                    </a>
+                                                </button>
+                                            @endcan
+                                            @can('users_edit')
+                                                <button class="btn btn-info">
+                                                    <a href="{{ route('admin.users.edit', [$user->id]) }}"
+                                                        class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+                                                        data-original-title="Edit user">
+                                                        <i class="fa fa-edit"></i>
+                                                    </a>
+                                                </button>
+                                            @endcan
+                                            @can('users_delete')
+                                                <form action="{{ route('admin.users.delete', [$user->id]) }}" method="post"
+                                                    style="display: inline-block">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button class="btn btn-danger" type="submit">
+                                                        <a href="#" class="text-secondary font-weight-bold text-xs"
+                                                            data-toggle="tooltip" data-original-title="Delete user">
+                                                            <i class="fa fa-trash"></i>
+                                                        </a></button>
+                                                </form>
+                                            @endcan
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

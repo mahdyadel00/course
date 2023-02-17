@@ -10,7 +10,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('name');
@@ -18,7 +18,6 @@ class CreateUsersTable extends Migration
             $table->date('birthdate');
             $table->string('google_id')->nullable();
             $table->string('facebook_id')->nullable();
-            $table->string('instgram_id')->nullable();
             $table->string('marketing_id')->nullable();
             $table->string('country_id')->nullable();
             $table->string('city_id')->nullable();

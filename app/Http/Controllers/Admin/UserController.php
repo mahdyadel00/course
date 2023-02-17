@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\User\UpdateUserRequest;
 use App\Models\City;
 use App\Models\Country;
+use App\Models\UserMarketing;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -23,7 +24,7 @@ class UserController extends Controller
     protected function index()
     {
 
-        $users = User::with(['marketing' , 'country' , 'city'])->get();
+        $users = User::with(['marketing', 'country', 'city'])->get();
         return view('admin.users.index', compact('users'));
     } // end of index
 
@@ -33,7 +34,7 @@ class UserController extends Controller
         $countries = Country::get();
         $cities = City::get();
         $roles = Role::pluck('name', 'name')->all();
-        return view('admin.users.create', compact('roles', 'marketings' , 'countries' , 'cities'));
+        return view('admin.users.create', compact('roles', 'marketings', 'countries', 'cities'));
     }
     public function store(StoreUserRequest $request)
     {
@@ -74,7 +75,6 @@ class UserController extends Controller
             'education'     => $request->education,
             'qulification'  => $request->qulification,
             'english'       => $request->english,
-            'marketing_id'  => $request->marketing_id,
             'country_id'    => $request->country_id,
             'city_id'       => $request->city_id,
             'policies'      => $request->policies,
@@ -86,6 +86,12 @@ class UserController extends Controller
         // $user->assignRole($request->input('roles_name'));
 
         if ($user) {
+            foreach ($request->marketing_id as $key => $value) {
+                UserMarketing::create([
+                    'user_id' => $user->id,
+                    'marketing_id' => $value,
+                ]);
+            }
             $user->assignRole($request->input('roles_name'));
             return redirect()->route('admin.users.index')->with('success', 'User created successfully.');
         } else {
@@ -95,7 +101,7 @@ class UserController extends Controller
 
     public function show($id)
     {
-        $user = User::with(['marketing' , 'country' , 'city'])->where('id', $id)->first();
+        $user = User::with(['marketing', 'country', 'city'])->where('id', $id)->first();
         return view('admin.users.show', compact('user'));
     }
 
@@ -103,12 +109,13 @@ class UserController extends Controller
     protected function edit($id)
     {
         $marketings = Marketing::get();
+        $user_marketings = UserMarketing::where('user_id', $id)->pluck('marketing_id')->toArray();
         $countries = Country::get();
         $cities = City::get();
-        $user = User::where('id', $id)->first();
+        $user = User::with('marketing')->where('id', $id)->first();
         $roles = Role::pluck('name', 'name')->all();
         $userRole = $user->roles->pluck('name', 'name')->all();
-        return view('admin.users.edit', compact('user', 'roles', 'userRole', 'marketings' , 'countries' , 'cities'));
+        return view('admin.users.edit', compact('user', 'roles', 'userRole', 'marketings', 'countries', 'cities', 'user_marketings'));
     }
 
 
@@ -164,7 +171,6 @@ class UserController extends Controller
             'education'     => $request->education,
             'qulification'  => $request->qulification,
             'english'       => $request->english,
-            'marketing_id'  => $request->marketing_id,
             'country_id'    => $request->country_id,
             'city_id'       => $request->city_id,
             'task'          => $request->task,
@@ -176,15 +182,22 @@ class UserController extends Controller
             'identy'        => $identy_in_db,
             'cv'            => $cv_in_db,
         ]);
-        // DB::table('model_has_roles')->where('model_id', $id)->delete();
-        // $user->assignRole($request->input('roles'));
-        return redirect()->route('admin.users.index')->with('success', 'User Updated successfully !');
+        if ($user) {
+            // DB::table('model_has_roles')->where('model_id', $id)->delete();
+            // $user->assignRole($request->input('roles'));
+            $user->marketing()->sync($request->marketing_id);
+
+            return redirect()->route('admin.users.index')->with('success', 'User Updated successfully !');
+        } else {
+            return redirect()->route('admin.users.index')->with('error', 'User created failed.');
+        } // end of if
     }
 
     public function delete($id)
     {
         $user = User::where('id', $id)->first();
         $user->delete();
+        UserMarketing::where('user_id', $user->id)->delete();
 
         return back()->with('error', "User deleted successfully");
     }

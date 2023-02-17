@@ -23,29 +23,28 @@ class StoreUserRequest extends FormRequest
      */
     public function rules()
     {
-        // dd($this->all());
         return [
-            'first_name'    => ["nullable" , "string" , "max:255"],
-            'last_name'     => ["nullable" , "string" , "max:255"],
-            'name'          => ["required" , "string" , "max:255"],
-            'email'         => ["required" , "email" , "unique:users"],
-            'password'      => ["required" , "min:8"],
-            'phone'         => ["nullable" , "string" , "max:255"],
-            'birthdate'     => ["nullable" , "date" , "max:255"],
+            'first_name'    => ["nullable", "string", "max:255"],
+            'last_name'     => ["nullable", "string", "max:255"],
+            'name'          => ["required", "string", "max:255"],
+            'email'         => ["required", "email", "unique:users"],
+            'password'      => ["required", "min:8"],
+            'phone'         => ["nullable", "string", "max:255"],
+            'birthdate'     => ["nullable", "date", "max:255"],
             'address'       => ["nullable"],
-            'education'     => ["nullable" , "string" , "max:255"],
-            'qulification'  => ["nullable" , "string" , "max:255"],
+            'education'     => ["nullable", "string", "max:255"],
+            'qulification'  => ["nullable", "string", "max:255"],
             'task'          => ["nullable"],
             'notes'         => ["nullable"],
-            'marketing_id'  => ["nullable"],
+            'marketing_id[]' => ["nullable"],
             'country_id'    => ["nullable"],
             'city_id'       => ["nullable"],
             'english'       => ["nullable"],
             'status'        => ["nullable"],
             'policies'      => ["nullable"],
             'fill_survy'    => ["nullable"],
-            'image'         => ["required" , "image" , "mimes:jpeg,png,jpg,gif,svg,webp"],
-            'identy'        => ["required" , "image" , "mimes:jpeg,png,jpg,gif,svg,webp"],
+            'image'         => ["required", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
+            'identy'        => ["required", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
             'cv'            => ["required"],
         ];
     }

@@ -113,11 +113,10 @@
                                         @enderror
                                     </div>
                                     <div class="col">
-                                        <label>Marketing Fields</label>
-                                        <select name="marketing_id" id="marketing_id" class="form-control fc-datepicker">
-                                            <option disabled value="0">Select Marketing Fields</option>
+                                        <label>Marketing Fields</label><br>
                                             @foreach ($marketings as $marketing)
-                                                <option value="{{ $marketing->id }}">{{ $marketing->title }}</option>
+                                                <input class="fc-datepicker" type="checkbox" name="marketing_id[]" value="{{ $marketing->id }}">{{ $marketing->title }}
+                                                <br>
                                             @endforeach
                                         </select>
                                         @error('marketing_id')

@@ -10,6 +10,7 @@ use App\Models\Country;
 use App\Models\Marketing;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\UserMarketing;
 
 class ProfileController extends Controller
 {
@@ -23,11 +24,12 @@ class ProfileController extends Controller
         if (Auth::check()) {
 
             $marketings = Marketing::get();
+            $user_marketings = UserMarketing::where('user_id', Auth::user()->id)->pluck('marketing_id')->toArray();
             $countries = Country::get();
             $cities = City::get();
-            $user = User::where('id', auth()->user()->id)->first();
+            $user = User::with('marketing')->where('id', auth()->user()->id)->first();
 
-            return view('frontend.accounts.profile', compact('user', 'marketings', 'countries', 'cities'));
+            return view('frontend.accounts.profile', compact('user', 'marketings', 'countries', 'cities', 'user_marketings'));
         } else {
 
             return redirect()->route('login.show')->with('Un Authanticated!');
@@ -96,7 +98,6 @@ class ProfileController extends Controller
             'english'             => $request->english,
             'country_id'          => $request->country_id,
             'city_id'             => $request->city_id,
-            'marketing_fields'    => $request->marketing_fields,
             'image'               => $image_in_db,
             'identy'              => $identy_in_db,
             'cv'                  => $cv_in_db,
@@ -104,6 +105,7 @@ class ProfileController extends Controller
         ]);
 
         if ($user) {
+            $user->marketing()->sync($request->marketing_id);
             return redirect()->back()->with('success', 'Profile Updated Successfully');
         } else {
             return redirect()->back()->with('error', 'Something went wrong');

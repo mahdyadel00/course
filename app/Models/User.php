@@ -71,12 +71,6 @@ class User extends Authenticatable implements MustVerifyEmail
         'roles_name'        => 'array',
     ];
 
-    public function marketing()
-    {
-
-        return $this->belongsTo(Marketing::class);
-    }
-
     public function country(){
 
         return $this->belongsTo(Country::class);
@@ -84,5 +78,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function city(){
 
         return $this->belongsTo(City::class);
+    }
+
+    public function marketing()
+    {
+        return $this->belongsToMany(Marketing::class , 'user_marketings', 'user_id', 'marketing_id');
     }
 }

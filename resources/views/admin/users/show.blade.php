@@ -42,8 +42,12 @@
                                     <td>{{ $user->phone }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Marketing</th>
-                                    <td>{{ $user->marketing ? $user->marketing->title : '' }}</td>
+                                    <th>Marketing Fields</th>
+                                    <td>
+                                        @foreach ($user->marketing as $marketing)
+                                            {{ $marketing->title }} <br>
+                                        @endforeach
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>Country Name</th>

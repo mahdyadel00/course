@@ -40,7 +40,7 @@ class UserSeeder extends Seeder
             'key_api'           => "key Api.pdf",
             'task'              => "task.pdf",
             'notes'             => "notes.pdf",
-            'marketing_id'      => 1,
+            // 'marketing_id'      => 1,
             'country_id'        => 1,
             'city_id'           => 1,
         ]);

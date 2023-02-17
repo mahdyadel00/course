@@ -35,7 +35,7 @@ class UpdateUserRequest extends FormRequest
             'qulification' => ["nullable"],
             'task'         => ["nullable"],
             'notes'        => ["nullable"],
-            'marketing_id' => ["nullable"],
+            'marketing_id[]' => ["nullable"],
             'country_id'   => ["nullable"],
             'city_id'      => ["nullable"],
             'english'      => ["nullable"],

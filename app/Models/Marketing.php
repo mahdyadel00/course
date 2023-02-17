@@ -12,8 +12,8 @@ class Marketing extends Model
     protected $fillable = ['title' , 'description'];
 
 
-    public function user(){
-
-        return $this->hasMany(User::class);
+    public function users()
+    {
+        return $this->belongsToMany(User::class , 'user_marketings', 'marketing_id', 'user_id');
     }
 }

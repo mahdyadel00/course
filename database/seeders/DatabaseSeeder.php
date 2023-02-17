@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             RoleHasPermissionSeeder::class,
             CountrySeeder::class,
             CitySeeder::class,
+            UserMarketingSeeder::class,
         ]);
     }
 }

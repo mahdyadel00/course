@@ -64,24 +64,33 @@
                                             value="{{ $user->qulification }}" type="text">
                                     </div>
                                     <div class="col">
-                                        <label>Marketing Fields</label>
-                                        <select name="marketing_id" id="marketing_id" class="form-control fc-datepicker">
-                                            <option disabled value="0">Select Marketing Fields</option>
-                                            @foreach ($marketings as $marketing)
-                                            <option value="{{ $marketing->id }}"
-                                                {{ $user->marketing_id == $marketing->id ? 'selected' : '' }}>
-                                                {{ $marketing->title }}</option>
-                                            @endforeach
+                                        <label>Marketing Fields</label><br>
+                                        @foreach ($marketings as $marketing)
+                                            @php
+                                                if (in_array($marketing->id, $user_marketings)) {
+                                                    $marketing_checked = true;
+                                                } else {
+                                                    $marketing_checked = false;
+                                                }
+                                            @endphp
+                                            <input class="fc-datepicker" type="checkbox" name="marketing_id[]"
+                                                value="{{ $marketing->id }}"
+                                                {{ $marketing_checked == true ? 'checked' : '' }}>{{ $marketing->title }}
+                                            <br>
+                                        @endforeach
                                         </select>
+                                        @error('marketing_id')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Country Name</label>
                                         <select name="country_id" id="country_id" class="form-control fc-datepicker">
                                             <option disabled value="0">Select Country Name</option>
                                             @foreach ($countries as $country)
-                                            <option value="{{ $country->id }}"
-                                                {{ $user->country_id == $country->id ? 'selected' : '' }}>
-                                                {{ $country->name }}</option>
+                                                <option value="{{ $country->id }}"
+                                                    {{ $user->country_id == $country->id ? 'selected' : '' }}>
+                                                    {{ $country->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -90,9 +99,9 @@
                                         <select name="city_id" id="city_id" class="form-control fc-datepicker">
                                             <option disabled value="0">Select City Name</option>
                                             @foreach ($cities as $city)
-                                            <option value="{{ $city->id }}"
-                                                {{ $user->city_id == $city->id ? 'selected' : '' }}>
-                                                {{ $city->name }}</option>
+                                                <option value="{{ $city->id }}"
+                                                    {{ $user->city_id == $city->id ? 'selected' : '' }}>
+                                                    {{ $city->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
