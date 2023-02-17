@@ -137,6 +137,18 @@
                                         </select>
                                     </div>
                                     <div class="col">
+                                        <label>City Name</label>
+                                        <select name="city_id" id="city_id" class="form-control fc-datepicker">
+                                            <option disabled value="0">Select City Name</option>
+                                            @foreach ($cities as $city)
+                                                <option value="{{ $city->id }}">{{ $city->name }}</option>
+                                            @endforeach
+                                            @error('city_id')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
+                                        </select>
+                                    </div>
+                                    <div class="col">
                                         <label>English</label>
                                         <select name="english" id="english" class="form-control fc-datepicker">
                                             <option disabled value="0">Select Level Language</option>

@@ -26,6 +26,7 @@
                                 <th>Phone</th>
                                 <th>Marketing</th>
                                 <th>Country Name</th>
+                                <th>City Name</th>
                                 <th>Roles</th>
                                 <th>Status</th>
                                 <th>Creaed At</th>
@@ -52,6 +53,9 @@
                                     </td>
                                     <td>
                                         <p class="text-xs font-weight-bold mb-0">{{ $user->country ? $user->country->name : '' }}</p>
+                                    </td>
+                                    <td>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $user->city ? $user->city->name : '' }}</p>
                                     </td>
                                     <td>
                                         @if (!empty($user->getRoleNames()))

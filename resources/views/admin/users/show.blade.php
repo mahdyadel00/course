@@ -50,6 +50,10 @@
                                     <td>{{ $user->country ? $user->country->name : '' }}</td>
                                 </tr>
                                 <tr>
+                                    <th>City Name</th>
+                                    <td>{{ $user->city ? $user->city->name : '' }}</td>
+                                </tr>
+                                <tr>
                                     <th>Address</th>
                                     <td>{{ $user->address }}</td>
                                 </tr>

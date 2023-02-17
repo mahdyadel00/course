@@ -39,6 +39,7 @@ class StoreUserRequest extends FormRequest
             'notes'         => ["nullable"],
             'marketing_id'  => ["nullable"],
             'country_id'    => ["nullable"],
+            'city_id'       => ["nullable"],
             'english'       => ["nullable"],
             'status'        => ["nullable"],
             'policies'      => ["nullable"],

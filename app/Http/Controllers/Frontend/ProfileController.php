@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Frontend\Profile\UpdateProfileRequest;
+use App\Models\City;
 use App\Models\Country;
 use App\Models\Marketing;
 use Illuminate\Support\Facades\Auth;
@@ -22,29 +24,17 @@ class ProfileController extends Controller
 
             $marketings = Marketing::get();
             $countries = Country::get();
+            $cities = City::get();
             $user = User::where('id', auth()->user()->id)->first();
 
-            return view('frontend.accounts.profile', compact('user', 'marketings' , 'countries'));
+            return view('frontend.accounts.profile', compact('user', 'marketings', 'countries', 'cities'));
         } else {
 
             return redirect()->route('login.show')->with('Un Authanticated!');
         }
     }
-    protected function update(Request $request)
+    protected function update(UpdateProfileRequest $request)
     {
-        $request->validate([
-            'first_name'    => 'sometimes',
-            'last_name'     => 'sometimes',
-            'email'         => 'sometimes',
-            'phone'         => 'sometimes',
-            'address'       => 'sometimes',
-            'birthdate'     => 'sometimes',
-            'education'     => 'sometimes',
-            'qulification'  => 'sometimes',
-            'english'       => 'sometimes',
-            'marketing_id'  => 'sometimes',
-            'country_id'    => 'sometimes',
-        ]);
         $user = User::where('id', auth()->user()->id)->first();
         $image_in_db = NULL;
         if ($request->has('image')) {
@@ -104,6 +94,8 @@ class ProfileController extends Controller
             'education'           => $request->education,
             'qulification'        => $request->qulification,
             'english'             => $request->english,
+            'country_id'          => $request->country_id,
+            'city_id'             => $request->city_id,
             'marketing_fields'    => $request->marketing_fields,
             'image'               => $image_in_db,
             'identy'              => $identy_in_db,

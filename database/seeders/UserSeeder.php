@@ -42,6 +42,7 @@ class UserSeeder extends Seeder
             'notes'             => "notes.pdf",
             'marketing_id'      => 1,
             'country_id'        => 1,
+            'city_id'           => 1,
         ]);
     }
 }

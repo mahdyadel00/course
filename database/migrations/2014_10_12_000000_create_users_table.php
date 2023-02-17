@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('instgram_id')->nullable();
             $table->string('marketing_id')->nullable();
             $table->string('country_id')->nullable();
+            $table->string('city_id')->nullable();
             // $table->foreignId('marketing_id')->unsigned()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             // $table->foreignId('country_id')->unsigned()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->text('address');

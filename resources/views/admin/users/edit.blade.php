@@ -86,6 +86,17 @@
                                         </select>
                                     </div>
                                     <div class="col">
+                                        <label>City Name</label>
+                                        <select name="city_id" id="city_id" class="form-control fc-datepicker">
+                                            <option disabled value="0">Select City Name</option>
+                                            @foreach ($cities as $city)
+                                            <option value="{{ $city->id }}"
+                                                {{ $user->city_id == $city->id ? 'selected' : '' }}>
+                                                {{ $city->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col">
                                         <label>English</label>
                                         <select class="form-control" name="english">
                                             <option value="1" {{ $user->english == 1 ? 'selected' : '' }}>Elementary

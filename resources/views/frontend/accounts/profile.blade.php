@@ -76,7 +76,7 @@
                                         <li><Strong>Email:</Strong> {{ $user->email }}</li>
                                         <li><Strong>Phone:</Strong> {{ $user->phone }}</li>
                                         <li><Strong>Country:</Strong> {{ $user->country ? $user->country->name : '' }}</li>
-                                        <li><Strong>City:</Strong> {{ $user->city }}</li>
+                                        <li><Strong>City:</Strong> {{ $user->city ? $user->city->name : '' }}</li>
                                         <li><Strong>Address:</Strong> {{ $user->address }}</li>
                                         <li><Strong>Birth Date:</Strong> {{ $user->birthdate }}</li>
                                         <li><Strong>Education:</Strong> {{ $user->education }}</li>
@@ -123,8 +123,13 @@
                                     </div>
                                     <div class="form-group">
                                         <label>City</label>
-                                        <input type="text" name="address" value="{{ $user->city }}"
-                                            class="form-control" placeholder="City">
+                                        <select name="city_id" id="city_id" class="form-control fc-datepicker">
+                                            <option disabled selected value="">Select City Name</option>
+                                            @foreach ($cities as $city)
+                                                <option value="{{ $city->id }}"
+                                                    {{ $user->city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Address</label>

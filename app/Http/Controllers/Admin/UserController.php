@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\User\UpdateUserRequest;
+use App\Models\City;
 use App\Models\Country;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -22,7 +23,7 @@ class UserController extends Controller
     protected function index()
     {
 
-        $users = User::with(['marketing' , 'country'])->get();
+        $users = User::with(['marketing' , 'country' , 'city'])->get();
         return view('admin.users.index', compact('users'));
     } // end of index
 
@@ -30,8 +31,9 @@ class UserController extends Controller
     {
         $marketings = Marketing::get();
         $countries = Country::get();
+        $cities = City::get();
         $roles = Role::pluck('name', 'name')->all();
-        return view('admin.users.create', compact('roles', 'marketings' , 'countries'));
+        return view('admin.users.create', compact('roles', 'marketings' , 'countries' , 'cities'));
     }
     public function store(StoreUserRequest $request)
     {
@@ -74,6 +76,7 @@ class UserController extends Controller
             'english'       => $request->english,
             'marketing_id'  => $request->marketing_id,
             'country_id'    => $request->country_id,
+            'city_id'       => $request->city_id,
             'policies'      => $request->policies,
             'image'         => $image_in_db,
             'identy'        => $identy_in_db,
@@ -92,7 +95,7 @@ class UserController extends Controller
 
     public function show($id)
     {
-        $user = User::with(['marketing' , 'country'])->where('id', $id)->first();
+        $user = User::with(['marketing' , 'country' , 'city'])->where('id', $id)->first();
         return view('admin.users.show', compact('user'));
     }
 
@@ -101,10 +104,11 @@ class UserController extends Controller
     {
         $marketings = Marketing::get();
         $countries = Country::get();
+        $cities = City::get();
         $user = User::where('id', $id)->first();
         $roles = Role::pluck('name', 'name')->all();
         $userRole = $user->roles->pluck('name', 'name')->all();
-        return view('admin.users.edit', compact('user', 'roles', 'userRole', 'marketings' , 'countries'));
+        return view('admin.users.edit', compact('user', 'roles', 'userRole', 'marketings' , 'countries' , 'cities'));
     }
 
 
@@ -161,7 +165,8 @@ class UserController extends Controller
             'qulification'  => $request->qulification,
             'english'       => $request->english,
             'marketing_id'  => $request->marketing_id,
-            'country_id'  => $request->country_id,
+            'country_id'    => $request->country_id,
+            'city_id'       => $request->city_id,
             'task'          => $request->task,
             'notes'         => $request->notes,
             'status'        => $request->status ? 1 : 0,
