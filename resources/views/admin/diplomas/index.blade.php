@@ -4,10 +4,10 @@
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
-                    <h6>Packages Features</h6>
+                    <h6>Diploma</h6>
                     <button class="btn btn-primary">
-                        <a href="{{ route('admin.packages_features.create') }}">
-                            <i class="fa fa-plus">Create Package Features</i>
+                        <a href="{{ route('admin.diplomas.create') }}">
+                            <i class="fa fa-plus">Create Diploma</i>
                         </a></button>
                 </div>
                 @include('layouts.admin._partials._session')
@@ -18,38 +18,40 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Title</th>
+                                    <th>Price</th>
                                     <th>Description</th>
                                     <th>Created At</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($packages_features as $feature)
+                                @foreach ($diplomas as $diploma)
                                     <tr>
-                                        <td>{{ $feature->id }}</td>
-                                        <td>{{ $feature->title }}</td>
-                                        <td>{!! $feature->description !!}</td>
-                                        <td>{{ date('d-m-Y', strtotime($feature->created_at)) }}</td>
+                                        <td>{{ $diploma->id }}</td>
+                                        <td>{{ $diploma->title }}</td>
+                                        <td>{{ $diploma->price }}</td>
+                                        <td>{!! $diploma->description !!}</td>
+                                        <td>{{ date('d-m-Y', strtotime($diploma->created_at)) }}</td>
                                         <td class="align-middle">
                                             <button class="btn btn-success">
-                                                <a href="{{ route('admin.packages_features.show', [$feature->id]) }}"
+                                                <a href="{{ route('admin.diplomas.show', [$diploma->id]) }}"
                                                     class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
-                                                    data-original-title="Show feature">
+                                                    data-original-title="Show diploma">
                                                     <i class="fa fa-eye"></i>
                                                 </a></button>
                                             <button class="btn btn-info">
-                                                <a href="{{ route('admin.packages_features.edit', [$feature->id]) }}"
+                                                <a href="{{ route('admin.diplomas.edit', [$diploma->id]) }}"
                                                     class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
-                                                    data-original-title="Edit feature">
+                                                    data-original-title="Edit diploma">
                                                     <i class="fa fa-edit"></i>
                                                 </a></button>
-                                            <form action="{{ route('admin.packages_features.delete', [$feature->id]) }}"
+                                            <form action="{{ route('admin.diplomas.delete', [$diploma->id]) }}"
                                                 method="post" style="display: inline-block">
                                                 {{ csrf_field() }}
                                                 {{ method_field('delete') }}
                                                 <button class="btn btn-danger" type="submit">
                                                     <a href="#" class="text-secondary font-weight-bold text-xs"
-                                                        data-toggle="tooltip" data-original-title="Delete feature">
+                                                        data-toggle="tooltip" data-original-title="Delete diploma">
                                                         <i class="fa fa-trash"></i>
                                                     </a></button>
                                             </form><!-- end of form -->

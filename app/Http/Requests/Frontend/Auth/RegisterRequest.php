@@ -24,13 +24,13 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'                   => 'required|string|max:255',
-            'email'                  => 'required|string|email|max:255|unique:users',
-            'password'               => 'required|confirmed|min:6',
-            'password_confirmation'  => 'required|min:6',
-            'birthdate'              => 'required|date',
-            'address'                => 'required|string',
-            'cv'                     => 'nullable|file|mimes:pdf,doc,docx',
+            'name'                   => ["required", "string", "max:255"],
+            'email'                  => ["required", "string", "email", "max:255", "unique:users"],
+            'password'               => ["required", "confirmed", "min:6"],
+            'password_confirmation'  => ["required", "min:6"],
+            'birthdate'              => ["required", "date"],
+            'address'                => ["required", "string"],
+            'cv'                     => ["nullable", "file", "mimes:pdf,doc,docx"],
         ];
     }
 }

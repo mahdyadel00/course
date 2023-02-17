@@ -13,7 +13,7 @@ use  App\Http\Controllers\Admin\{
     AuthController,
     PolicesController,
     ServayController,
-    PackageFeatureController,
+    DiplomaController,
     PricingController,
     FeatureController,
     CourseController,
@@ -87,14 +87,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         // Contacts Route
         Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
 
-        // Banners Route
-        Route::get('/banners', [BannerController::class, 'index'])->name('banners.index');
-        Route::get('/banners/create', [BannerController::class, 'create'])->name('banners.create');
-        Route::post('/banners/store', [BannerController::class, 'store'])->name('banners.store');
-        Route::get('/banners/edit/{id}', [BannerController::class, 'edit'])->name('banners.edit');
-        Route::post('/banners/update/{id}', [BannerController::class, 'update'])->name('banners.update');
-        Route::delete('/banners/delete/{id}', [BannerController::class, 'delete'])->name('banners.delete');
-
         // Speakers Route
         Route::get('/speakers', [SpeakersController::class, 'index'])->name('speakers.index');
         Route::get('/speakers/create', [SpeakersController::class, 'create'])->name('speakers.create');
@@ -122,14 +114,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::delete('/roles/delete/{id}', [RoleController::class, 'delete'])->name('roles.delete');
         Route::delete('/servay/delete/{id}', [ServayController::class, 'delete'])->name('servay.delete');
 
-        //PackageFeature Route
-        Route::get('/packages_features', [PackageFeatureController::class, 'index'])->name('packages_features.index');
-        Route::get('/packages_features/create', [PackageFeatureController::class, 'create'])->name('packages_features.create');
-        Route::post('/packages_features/store', [PackageFeatureController::class, 'store'])->name('packages_features.store');
-        Route::get('/packages_features/show/{id}', [PackageFeatureController::class, 'show'])->name('packages_features.show');
-        Route::get('/packages_features/edit/{id}', [PackageFeatureController::class, 'edit'])->name('packages_features.edit');
-        Route::post('/packages_features/update/{id}', [PackageFeatureController::class, 'update'])->name('packages_features.update');
-        Route::delete('/packages_features/delete/{id}', [PackageFeatureController::class, 'delete'])->name('packages_features.delete');
+        //Diploma Route
+        Route::get('/diplomas', [DiplomaController::class, 'index'])->name('diplomas.index');
+        Route::get('/diplomas/create', [DiplomaController::class, 'create'])->name('diplomas.create');
+        Route::post('/diplomas/store', [DiplomaController::class, 'store'])->name('diplomas.store');
+        Route::get('/diplomas/show/{id}', [DiplomaController::class, 'show'])->name('diplomas.show');
+        Route::get('/diplomas/edit/{id}', [DiplomaController::class, 'edit'])->name('diplomas.edit');
+        Route::post('/diplomas/update/{id}', [DiplomaController::class, 'update'])->name('diplomas.update');
+        Route::delete('/diplomas/delete/{id}', [DiplomaController::class, 'delete'])->name('diplomas.delete');
 
 
         //Pricing Route

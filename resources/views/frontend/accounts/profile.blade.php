@@ -9,7 +9,6 @@
                 <h4 class="ph-title">{{ $user->name }}</h4>
                 <ul class="lab-ul">
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    {{-- <li><a href="{{ route('speakers.index') }}">Profile</a></li> --}}
                     <li><a class="active">Profile Details</a></li>
                 </ul>
             </div>
@@ -34,9 +33,10 @@
                                             <img src="{{ asset($user->image) }}" alt="scholar" />
                                         @endif
                                     </div>
-                                    {{-- <div>
-                                        <span class="d-inline-block">Change Password</span>
-                                    </div> --}}
+                                    <div>
+                                        <h3 class="d-inline-block">Change Password</h3><br>
+                                        {!! QrCode::size(200)->generate($user->email) !!}
+                                    </div>
                                 </div>
                             </div>
                         </div>

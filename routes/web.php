@@ -12,7 +12,8 @@ use App\Http\Controllers\Frontend\{
     PricingController,
     PolicesController,
     FeatureController,
-    CourseController
+    CourseController,
+    DiplomaController
 };
 
 Auth::routes();
@@ -58,6 +59,10 @@ Route::get('/profile/download/{id}', [ProfileController::class, 'download'])->na
 // Pricing Route
 Route::get('/pricing', [PricingController::class, 'index'])->name('pricing.index');
 Route::get('/pricing/{id}', [PricingController::class, 'pricingDetails'])->name('pricing.details');
+
+// Diploma Route
+Route::get('/diplomas', [DiplomaController::class, 'index'])->name('diplomas.index');
+// Route::get('/diplomas/{id}', [DiplomaController::class, 'pricingDetails'])->name('diplomas.details');
 
 // Polices Route
 Route::get('polices', [PolicesController::class, 'index'])->name('polices.index');

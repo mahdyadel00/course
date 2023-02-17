@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Pricing;
+use App\Models\Diploma;
 
-class PricingController extends Controller
+class DiplomaController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -20,13 +20,8 @@ class PricingController extends Controller
      */
     protected function index()
     {
-        $pricing = Pricing::get();
+        $diplomas = Diploma::get();
 
-        return view('frontend.pricing.index', compact('pricing'));
-    }
-    protected function pricingDetails($id)
-    {
-        $pricing = Pricing::where('id', $id)->first();
-        return view('frontend.pricing.single', compact('pricing'));
+        return view('frontend.diplomas.index', compact('diplomas'));
     }
 }
