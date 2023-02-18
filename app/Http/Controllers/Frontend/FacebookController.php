@@ -18,7 +18,7 @@ class FacebookController extends Controller
     public function callbackHandelFacebook()
     {
         $user = Socialite::driver('facebook')->user();
-
+        dd  ($user);
         $data = User::where('facebook_id', $user->id)->first();
         if ($data != null) {
             Auth::login($data);
