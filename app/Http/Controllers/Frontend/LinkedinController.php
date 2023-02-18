@@ -20,8 +20,8 @@ class LinkedinController extends Controller
         $user = Socialite::driver('linkedin')->user();
         // dd($user);
         $data = User::where('linkedin_id', $user->id)->first();
-        dd($data);
-        if ($data) {
+        // dd($data);
+        if ($data != null) {
             Auth::login($data);
             return redirect()->route('home')->with('success', 'Login Successfully BY Linkedin');
         } else {
