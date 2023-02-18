@@ -66,6 +66,7 @@ class LoginController extends Controller
     public function callbackHandelFacebook()
     {
         $user = Socialite::driver('facebook')->user();
+        dd($user);
 
         $data = User::where('email', $user->email)->first();
         if ($data) {
