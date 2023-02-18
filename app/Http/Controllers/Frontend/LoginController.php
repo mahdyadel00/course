@@ -94,8 +94,8 @@ class LoginController extends Controller
     public function callbackHandelLinkedin()
     {
         $user = Socialite::driver('linkedin')->user();
-        dd($user);
-        $data = User::where('name', $user->name)->first();
+        // dd($user);
+        $data = User::where('email', $user->email)->first();
         if ($data) {
             Auth::login($data);
             return redirect()->route('home')->with('success', 'Login Successfully BY Linkedin');
@@ -104,8 +104,9 @@ class LoginController extends Controller
                 'linkedin_id' => $user->id,
             ], [
                 'name'     => $user->name,
+                'email'    => $user->email,
                 'password' => $user->token,
-                'image'    => $user->attributes['avatar_original'],
+                'image'    => $user->attributes['avatar'],
             ]);
 
             return redirect()->route('login.show')->with('success', 'Registration Successfully BY Linkedin');
