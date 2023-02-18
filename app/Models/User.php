@@ -45,6 +45,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'google_id',
         'facebook_id',
         'instgram_id',
+        'linkedin_id',
         'country_id',
         'city_id',
     ];
@@ -67,7 +68,7 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
         'roles_name'        => 'array',
-        
+
     ];
 
     public function country(){
