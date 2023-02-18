@@ -18,8 +18,8 @@ class LinkedinController extends Controller
     public function callbackHandelLinkedin()
     {
         $user = Socialite::driver('linkedin')->user();
-        dd($user);
-        $data = User::where('email', $user->email)->first();
+        // dd($user);
+        $data = User::where('linkedin_id', $user->id)->first();
         if ($data) {
             Auth::login($data);
             return redirect()->route('home')->with('success', 'Login Successfully BY Linkedin');
