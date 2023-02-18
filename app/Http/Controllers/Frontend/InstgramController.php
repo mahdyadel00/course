@@ -10,7 +10,7 @@ use Laravel\Socialite\Facades\Socialite;
 class InstgramController extends Controller
 {
     //login with Instgram
-    public function instgram()
+    public function provider()
     {
         return Socialite::driver('instgram')->redirect();
     }
