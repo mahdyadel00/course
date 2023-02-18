@@ -11,7 +11,7 @@ return [
     | as Mailgun, Postmark, AWS and more. This file provides the de facto
     | location for this type of information, allowing packages to have
     | a conventional file to locate the various service credentials.
-    |
+    |https://grow.geexar.dev/linkedin/callback
     */
 
     'google' => [
@@ -28,6 +28,11 @@ return [
         'client_id' => '540013058117269', //USE FROM FACEBOOK DEVELOPER ACCOUNT
         'client_secret' => 'a415628cb151bf9348027f05f16ecc2b', //USE FROM FACEBOOK DEVELOPER ACCOUNT
         'redirect' => 'https://grow.geexar.dev/instgram/callback'
+    ],
+    'linkedin' => [
+        'client_id' => '77dujhyvku6hbc', //USE FROM FACEBOOK DEVELOPER ACCOUNT
+        'client_secret' => 'LpWYyljS8CDNGXIt', //USE FROM FACEBOOK DEVELOPER ACCOUNT
+        'redirect' => 'https://grow.geexar.dev/linkedin/callback'
     ],
 
     'mailgun' => [

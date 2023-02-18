@@ -88,7 +88,7 @@
                             <a href="{{ route('instgram.login') }}" class="instagram"><i class="fab fa-instagram"></i></a>
                         </li>
                         <li>
-                            <a href="http://linkedin.com/h" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="{{ route('linkedin.login') }}" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
                         </li>
                         <li>
                             <a href="http://pinterest.com/h" class="pinterest"><i class="fab fa-pinterest"></i></a>

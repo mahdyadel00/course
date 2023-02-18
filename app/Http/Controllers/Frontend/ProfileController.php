@@ -108,7 +108,7 @@ class ProfileController extends Controller
 
         if ($user) {
             $user->marketing()->sync($request->marketing_id);
-            
+
             return redirect()->back()->with('success', 'Profile Updated Successfully');
         } else {
             return redirect()->back()->with('error', 'Something went wrong');
