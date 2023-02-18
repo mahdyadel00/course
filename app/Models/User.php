@@ -57,8 +57,6 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $hidden = [
         'password',
         'remember_token',
-        'two_factor_recovery_codes',
-        'two_factor_secret',
     ];
 
     /**
@@ -69,6 +67,7 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
         'roles_name'        => 'array',
+        
     ];
 
     public function country(){

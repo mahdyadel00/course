@@ -11,6 +11,7 @@ use App\Models\Marketing;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\UserMarketing;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -37,6 +38,7 @@ class ProfileController extends Controller
     }
     protected function update(UpdateProfileRequest $request)
     {
+        // dd($request->all());
         $user = User::where('id', auth()->user()->id)->first();
         $image_in_db = NULL;
         if ($request->has('image')) {
@@ -91,6 +93,7 @@ class ProfileController extends Controller
             'last_name'           => $request->last_name,
             'email'               => $request->email,
             'phone'               => $request->phone,
+            'password'            => Hash::make($request->password),
             'address'             => $request->address,
             'birthdate'           => $request->birthdate,
             'education'           => $request->education,
@@ -101,11 +104,11 @@ class ProfileController extends Controller
             'image'               => $image_in_db,
             'identy'              => $identy_in_db,
             'cv'                  => $cv_in_db,
-
         ]);
 
         if ($user) {
             $user->marketing()->sync($request->marketing_id);
+            
             return redirect()->back()->with('success', 'Profile Updated Successfully');
         } else {
             return redirect()->back()->with('error', 'Something went wrong');

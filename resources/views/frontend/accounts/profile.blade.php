@@ -66,21 +66,51 @@
                                         <label>First Name</label>
                                         <input type="text" name="first_name" value="{{ $user->first_name }}"
                                             class="form-control" placeholder="first name">
+                                        @error('first_name')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label>Last Name</label>
                                         <input type="text" name="last_name" value="{{ $user->last_name }}"
                                             class="form-control" placeholder="last name">
+                                        @error('last_name')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label>Email</label>
                                         <input type="email" name="email" value="{{ $user->email }}"
                                             class="form-control" placeholder="Email">
+                                        @error('email')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    {{-- new password --}}
+                                    <div class="form-group">
+                                        <label>New Password</label>
+                                        <input type="password" name="password" class="form-control" placeholder="password"
+                                            value="{{ $user->password }}">
+                                        @error('password')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    {{-- confirm password --}}
+                                    <div class="form-group">
+                                        <label>Confirmation Password</label>
+                                        <input type="password" name="password_confirmation" class="form-control"
+                                            placeholder="password" value="{{ $user->password }}">
+                                        @error('password_confirmation')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label>Phone</label>
                                         <input type="text" name="phone" value="{{ $user->phone }}"
                                             class="form-control" placeholder="Phone">
+                                        @error('phone')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label>Country</label>
@@ -108,16 +138,33 @@
                                         <label>Address</label>
                                         <input type="text" name="address" value="{{ $user->address }}"
                                             class="form-control" placeholder="address">
+                                        @error('address')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label>Birth Date</label>
                                         <input type="date" name="birthdate" value="{{ $user->birthdate }}"
                                             class="form-control">
+                                        @error('birthdate')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label>Education</label>
                                         <input type="text" name="education" value="{{ $user->education }}"
                                             class="form-control">
+                                        @error('education')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Qulification</label>
+                                        <input class="form-control" value="{{ $user->qulification }}"
+                                            name="qulification">
+                                        @error('qulification')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         @foreach ($marketings as $marketing)
@@ -139,14 +186,6 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label>Other Fields</label>
-                                        <textarea class="form-control" name="" id=""></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Qulification</label>
-                                        <textarea class="form-control" value="{{ $user->qulification }}" name="" id=""></textarea>
-                                    </div>
-                                    <div class="form-group">
                                         <label>English</label>
                                         <select class="form-control modal-title" name="english">
                                             <option value="1" {{ $user->english == 1 ? 'selected' : '' }}>Elementary
@@ -157,6 +196,9 @@
                                             <option value="3" {{ $user->english == 3 ? 'selected' : '' }}>Advanced
                                             </option>
                                         </select>
+                                        @error('english')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label>Image</label>
@@ -169,6 +211,9 @@
                                             <img src="{{ asset($user->image) }}" alt="scholar" height="100px"
                                                 width="100px" />
                                         @endif
+                                        @error('image')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label>ID</label>
@@ -181,6 +226,9 @@
                                             <img src="{{ asset($user->identy) }}" alt="scholar" height="100px"
                                                 width="100px" />
                                         @endif
+                                        @error('identy')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label>CV</label>
@@ -191,16 +239,11 @@
                                                 <i class="fas fa-download">Dwonload CV</i>
                                             @endif
                                         </a>
+                                        @error('cv')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <hr>
-                                    {{-- <div class="form-group">
-                                        <label>New Password</label>
-                                        <input type="text" class="form-control" placeholder="new password">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Confirm New Password</label>
-                                        <input type="text" class="form-control" placeholder="Confirm New Password">
-                                    </div> --}}
                                     <div class="form-group" style="margin-top: 20px;">
                                         <button type="submit" class="lab-btn">
                                             <span>Update Profile</span>
