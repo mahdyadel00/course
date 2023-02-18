@@ -19,7 +19,7 @@ class FacebookController extends Controller
     {
         $user = Socialite::driver('facebook')->user();
 
-        $data = User::where('name', $user->name)->first();
+        $data = User::where('facebook_id', $user->id)->first();
         if ($data != null) {
             Auth::login($data);
             return redirect()->route('home')->with('success', 'Login Successfully BY Facebook');
