@@ -87,7 +87,7 @@ class LoginController extends Controller
     //login with Instgram
 
     public function instgram()
-    {   
+    {
         return Socialite::driver('instgram')->redirect();
     }
     public function callbackHandelInstgram()

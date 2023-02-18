@@ -13,7 +13,8 @@ use App\Http\Controllers\Frontend\{
     PolicesController,
     FeatureController,
     CourseController,
-    DiplomaController
+    DiplomaController,
+    InstgramController
 };
 
 Auth::routes();
@@ -25,7 +26,7 @@ Route::post('login/post', [LoginController::class, 'doLogin'])->name('login.do')
 Route::get('logout', [LoginController::class, 'logout'])->name('logout.front');
 
 // Facebook login Route
-Route::get('login/facebook', [LoginController::class, 'provider'])->name('facebook.login');
+Route::get('login/facebook', [LoginController::class, 'providerFacebook'])->name('facebook.login');
 Route::get('facebook/callback', [LoginController::class, 'handleCallback'])->name('facebook.callback');
 
 // Google login Route
@@ -33,8 +34,8 @@ Route::get('google/login', [LoginController::class, 'Provider'])->name('google.l
 Route::get('google/callback', [LoginController::class, 'callbackHandel'])->name('google.login.callback');
 
 //instgram login
-Route::get('instgram/login', [LoginController::class, 'instgram'])->name('instgram.login');
-Route::any('instgram/callback', [LoginController::class, 'callbackHandelInstgram'])->name('instgram.login.callback');
+Route::get('instgram/login', [InstgramController::class, 'provider'])->name('instgram.login');
+Route::any('instgram/callback', [InstgramController::class, 'callbackHandelInstgram'])->name('instgram.login.callback');
 
 // Register Route
 Route::get('register/show', [RegisterController::class, 'register'])->name('register.show');
