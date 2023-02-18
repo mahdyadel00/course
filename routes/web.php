@@ -27,7 +27,7 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout.front');
 
 // Facebook login Route
 Route::get('login/facebook', [LoginController::class, 'providerFacebook'])->name('facebook.login');
-Route::get('facebook/callback', [LoginController::class, 'handleCallback'])->name('facebook.callback');
+Route::get('facebook/callback', [LoginController::class, 'callbackHandelFacebook'])->name('facebook.callback');
 
 // Google login Route
 Route::get('google/login', [LoginController::class, 'Provider'])->name('google.login');
