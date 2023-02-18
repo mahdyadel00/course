@@ -66,9 +66,8 @@ class LoginController extends Controller
     public function callbackHandelFacebook()
     {
         $user = Socialite::driver('facebook')->user();
-        dd($user);
 
-        $data = User::where('email', $user->email)->first();
+        $data = User::where('name', $user->name)->first();
         if ($data) {
             Auth::login($data);
             return redirect()->route('home')->with('success', 'Login Successfully BY Facebook');
@@ -83,7 +82,7 @@ class LoginController extends Controller
 
             return redirect()->route('login.show')->with('success', 'Registration Successfully BY Facebook');
         }
-        return redirect()->back()->with('error', 'Email or password is incorrect');
+        return redirect()->back()->with('error', 'Name or password is incorrect');
     }
 
     protected function logout()
