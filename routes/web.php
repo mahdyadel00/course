@@ -14,7 +14,8 @@ use App\Http\Controllers\Frontend\{
     FeatureController,
     CourseController,
     DiplomaController,
-    InstgramController
+    InstgramController,
+    LinkedinController,
 };
 
 Auth::routes();
@@ -30,8 +31,8 @@ Route::get('login/facebook', [LoginController::class, 'providerFacebook'])->name
 Route::get('facebook/callback', [LoginController::class, 'callbackHandelFacebook'])->name('facebook.callback');
 
 // Linkedin login Route
-Route::get('login/linkedin', [LoginController::class, 'providerLinkedin'])->name('linkedin.login');
-Route::any('linkedin/callback', [LoginController::class, 'callbackHandelLinkedin'])->name('linkedin.login.callback');
+Route::get('login/linkedin', [LinkedinController::class, 'providerLinkedin'])->name('linkedin.login');
+Route::any('linkedin/callback', [LinkedinController::class, 'callbackHandelLinkedin'])->name('linkedin.login.callback');
 
 // Google login Route
 Route::get('google/login', [LoginController::class, 'Provider'])->name('google.login');

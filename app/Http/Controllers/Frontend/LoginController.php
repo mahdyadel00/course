@@ -85,35 +85,6 @@ class LoginController extends Controller
         return redirect()->back()->with('error', 'Name or password is incorrect');
     }
 
-    //login with Linkedin
-    public function providerLinkedin()
-    {
-        return Socialite::driver('linkedin')->redirect();
-    }
-
-    public function callbackHandelLinkedin()
-    {
-        $user = Socialite::driver('linkedin')->user();
-        // dd($user);
-        $data = User::where('email', $user->email)->first();
-        if ($data) {
-            Auth::login($data);
-            return redirect()->route('home')->with('success', 'Login Successfully BY Linkedin');
-        } else {
-            User::updateOrCreate([
-                'linkedin_id' => $user->id,
-            ], [
-                'name'     => $user->name,
-                'email'    => $user->email,
-                'password' => $user->token,
-                'image'    => $user->attributes['avatar'],
-            ]);
-
-            return redirect()->route('login.show')->with('success', 'Registration Successfully BY Linkedin');
-        }
-        return redirect()->back()->with('error', 'Name or password is incorrect');
-    }
-
     protected function logout()
     {
         Auth::guard('web')->logout();
