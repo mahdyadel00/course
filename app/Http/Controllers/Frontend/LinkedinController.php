@@ -18,7 +18,7 @@ class LinkedinController extends Controller
     public function callbackHandelLinkedin()
     {
         $user = Socialite::driver('linkedin')->user();
-        dd($user);
+        dd($user->token);
         $data = User::where('linkedin_id', $user->id)->first();
         // dd($data);
         if ($data != null) {
