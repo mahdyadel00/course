@@ -31,7 +31,7 @@ Route::get('facebook/callback', [LoginController::class, 'callbackHandelFacebook
 
 // Linkedin login Route
 Route::get('login/linkedin', [LoginController::class, 'providerLinkedin'])->name('linkedin.login');
-Route::get('linkedin/callback', [LoginController::class, 'callbackHandelLinkedin'])->name('linkedin.callback');
+Route::any('linkedin/callback', [LoginController::class, 'callbackHandelLinkedin'])->name('linkedin.login.callback');
 
 // Google login Route
 Route::get('google/login', [LoginController::class, 'Provider'])->name('google.login');

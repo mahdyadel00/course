@@ -30,8 +30,8 @@ return [
         'redirect' => 'https://grow.geexar.dev/instgram/callback'
     ],
     'linkedin' => [
-        'client_id' => '77dujhyvku6hbc', //USE FROM FACEBOOK DEVELOPER ACCOUNT
-        'client_secret' => 'LpWYyljS8CDNGXIt', //USE FROM FACEBOOK DEVELOPER ACCOUNT
+        'client_id' => '77amo4gk3d7vrd', //USE FROM FACEBOOK DEVELOPER ACCOUNT
+        'client_secret' => 'GzJmBHV0znViz1iN', //USE FROM FACEBOOK DEVELOPER ACCOUNT
         'redirect' => 'https://grow.geexar.dev/linkedin/callback'
     ],
 
