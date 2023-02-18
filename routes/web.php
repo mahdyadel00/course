@@ -16,6 +16,8 @@ use App\Http\Controllers\Frontend\{
     DiplomaController,
     InstgramController,
     LinkedinController,
+    LoginGoogleController,
+    FacebookController,
 };
 
 Auth::routes();
@@ -27,16 +29,16 @@ Route::post('login/post', [LoginController::class, 'doLogin'])->name('login.do')
 Route::get('logout', [LoginController::class, 'logout'])->name('logout.front');
 
 // Facebook login Route
-Route::get('login/facebook', [LoginController::class, 'providerFacebook'])->name('facebook.login');
-Route::get('facebook/callback', [LoginController::class, 'callbackHandelFacebook'])->name('facebook.callback');
+Route::get('login/facebook', [FacebookController::class, 'providerFacebook'])->name('facebook.login');
+Route::get('facebook/callback', [FacebookController::class, 'callbackHandelFacebook'])->name('facebook.callback');
 
 // Linkedin login Route
 Route::get('login/linkedin', [LinkedinController::class, 'providerLinkedin'])->name('linkedin.login');
 Route::any('linkedin/callback', [LinkedinController::class, 'callbackHandelLinkedin'])->name('linkedin.login.callback');
 
 // Google login Route
-Route::get('google/login', [LoginController::class, 'Provider'])->name('google.login');
-Route::get('google/callback', [LoginController::class, 'callbackHandel'])->name('google.login.callback');
+Route::get('google/login', [LoginGoogleController::class, 'Provider'])->name('google.login');
+Route::get('google/callback', [LoginGoogleController::class, 'callbackHandel'])->name('google.login.callback');
 
 //instgram login
 Route::get('instgram/login', [InstgramController::class, 'provider'])->name('instgram.login');
