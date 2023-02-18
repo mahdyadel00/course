@@ -24,11 +24,27 @@ class ContactRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255'],
-            'number' => ['required', 'string', 'max:255'],
-            'subject' => ['required', 'string', 'max:255'],
-            'message' => ['required', 'string', 'max:255'],
+            'name'      => ['required', 'string', 'max:255'],
+            'email'     => ['required', 'string', 'email', 'max:255'],
+            'number'    => ['required', 'string', 'max:255'],
+            'subject'   => ['required', 'string', 'max:255'],
+            'message'   => ['required', 'string', 'max:255'],
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+
+    public function messages(){
+        return [
+            'name.required'     => __('admin.required', ['attribute' => __('attributes.name')]),
+            'email.required'    => __('admin.required', ['attribute' => __('attributes.email')]),
+            'number.required'   => __('admin.required', ['attribute' => __('attributes.number')]),
+            'subject.required'  => __('admin.required', ['attribute' => __('attributes.subject')]),
+            'message.required'  => __('admin.required', ['attribute' => __('attributes.message')]),
         ];
     }
 }
