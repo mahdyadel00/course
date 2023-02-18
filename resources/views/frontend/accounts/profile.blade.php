@@ -34,8 +34,8 @@
                                         @endif
                                     </div>
                                     <div>
-                                        <h3 class="d-inline-block">Change Password</h3><br>
-                                        {!! QrCode::size(200)->generate($user->email) !!}
+                                        <h3 class="d-inline-block">Qr Code</h3><br><br><br>
+                                        {!! QrCode::size(200)->generate($user->name) !!}
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +131,7 @@
                                             <input class="fc-datepicker" type="checkbox" name="marketing_id[]"
                                                 value="{{ $marketing->id }}"
                                                 {{ $marketing_checked == true ? 'checked' : '' }}>{{ $marketing->title }}
-                                                <br>
+                                            <br>
                                         @endforeach
                                         </select>
                                         @error('marketing_id')
