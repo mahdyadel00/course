@@ -24,12 +24,12 @@ class UpdateFeatureRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'           => 'sometimes|string',
-            'description'     => 'sometimes|string',
-            'title_1'         => 'sometimes|string',
-            'description_1'   => 'sometimes|string',
-            'title_2'         => 'sometimes|string',
-            'description_2'   => 'sometimes|string',
+            'title'           => ['sometimes', 'string', 'max:255'],
+            'description'     => ['sometimes', 'string', 'max:255'],
+            'title_1'         => ['sometimes', 'string', 'max:255'],
+            'description_1'   => ['sometimes', 'string', 'max:255'],
+            'title_2'         => ['sometimes', 'string', 'max:255'],
+            'description_2'   => ['sometimes', 'string', 'max:255'],
         ];
     }
 }

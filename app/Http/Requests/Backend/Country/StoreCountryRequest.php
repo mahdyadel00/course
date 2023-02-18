@@ -24,10 +24,25 @@ class StoreCountryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'    => 'required|string',
-            'code'    => 'required|unique:countries',
-            'flag'    => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'name'    => ['required', 'string', 'max:255'],
+            'code'    => ['required', 'string', 'max:255'],
+            'flag'    => ["required" , "image" , "mimes:jpeg,png,jpg,gif,svg,webp"],
+        ];
+    }
 
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+
+    public function messages(){
+        return [
+            'name.required'       => __('admin.required', ['attribute' => __('attributes.name')]),
+            'code.required'       => __('admin.required', ['attribute' => __('attributes.code')]),
+            'flag.required'       => __('admin.required', ['attribute' => __('attributes.flag')]),
+            'flag.image'          => __('admin.image', ['attribute' => __('attributes.flag')]),
+            'flag.mimes'          => __('admin.mimes', ['attribute' => __('attributes.flag')]),
         ];
     }
 }

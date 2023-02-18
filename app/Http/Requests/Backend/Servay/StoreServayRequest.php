@@ -24,7 +24,19 @@ class StoreServayRequest extends FormRequest
     public function rules()
     {
         return [
-            'faq' => 'required|string',
+            'faq' => ['required', 'string', 'max:255'],
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+
+    public function messages(){
+        return [
+            'faq.required' => __('admin.required', ['attribute' => __('attributes.faq')]),
         ];
     }
 }

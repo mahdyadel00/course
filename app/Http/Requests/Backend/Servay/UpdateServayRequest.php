@@ -24,7 +24,19 @@ class UpdateServayRequest extends FormRequest
     public function rules()
     {
         return [
-            'faq' => 'sometimes|string',
+            'faq' => ['sometimes', 'string', 'max:255'],
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+
+    public function messages(){
+        return [
+            'faq.required' => __('admin.required', ['attribute' => __('attributes.faq')]),
         ];
     }
 }

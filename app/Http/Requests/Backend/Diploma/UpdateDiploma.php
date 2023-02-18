@@ -25,8 +25,23 @@ class UpdateDiploma extends FormRequest
     {
         return [
             'title'         => ['sometimes', 'string', 'max:255'],
-            'price'         => ['sometimes', 'string', 'max:255'],
+            'price'         => ['sometimes', 'integer'],
             'description'   => ['sometimes', 'string', 'max:255'],
         ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+
+    public function messages(){
+        return [
+            'title.required'       => __('admin.required', ['attribute' => __('attributes.title')]),
+            'price.required'       => __('admin.required', ['attribute' => __('attributes.price')]),
+            'description.required' => __('admin.required', ['attribute' => __('attributes.description')]),
+        ];
+
     }
 }

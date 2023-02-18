@@ -52,8 +52,23 @@ class StoreSpeaker extends FormRequest
     public function messages()
     {
         return [
-            "name.required" => "Name is required",
-            "image.sometimes" => "Image is required",
+            'name.required'          => __('admin.required', ['attribute' => __('attributes.name')]),
+            'email.required'         => __('admin.required', ['attribute' => __('attributes.email')]),
+            'phone.required'         => __('admin.required', ['attribute' => __('attributes.phone')]),
+            'job_title.required'     => __('admin.required', ['attribute' => __('attributes.job_title')]),
+            'personal_info.required' => __('admin.required', ['attribute' => __('attributes.personal_info')]),
+            'description.required'   => __('admin.required', ['attribute' => __('attributes.description')]),
+            'address.required'       => __('admin.required', ['attribute' => __('attributes.address')]),
+            'website.required'       => __('admin.required', ['attribute' => __('attributes.website')]),
+            'facebook.required'      => __('admin.required', ['attribute' => __('attributes.facebook')]),
+            'twitter.required'       => __('admin.required', ['attribute' => __('attributes.twitter')]),
+            'linkedin.required'      => __('admin.required', ['attribute' => __('attributes.linkedin')]),
+            'instagram.required'     => __('admin.required', ['attribute' => __('attributes.instagram')]),
+            'youtube.required'       => __('admin.required', ['attribute' => __('attributes.youtube')]),
+            'behance.required'       => __('admin.required', ['attribute' => __('attributes.behance')]),
+            'tiktok.required'        => __('admin.required', ['attribute' => __('attributes.tiktok')]),
+            'vimeo.required'         => __('admin.required', ['attribute' => __('attributes.vimeo')]),
+            'image.required'         => __('admin.required', ['attribute' => __('attributes.image')]),
         ];
     }
 }

@@ -24,12 +24,12 @@ class UpdateUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'first_name'   => ["nullable" , "string" , "max:255"],
-            'last_name'    => ["nullable" , "string" , "max:255"],
-            'name'         => ["nullable" , "string" , "max:255"],
+            'first_name'   => ["nullable", "string", "max:255"],
+            'last_name'    => ["nullable", "string", "max:255"],
+            'name'         => ["nullable", "string", "max:255"],
             'email'        => ["sometimes", "email"],
-            'phone'        => ["nullable" , "string" , "max:255"],
-            'birthdate'    => ["nullable" , "date" , "max:255"],
+            'phone'        => ["nullable", "string", "max:255"],
+            'birthdate'    => ["nullable", "date", "max:255"],
             'address'      => ["nullable"],
             'education'    => ["nullable"],
             'qulification' => ["nullable"],
@@ -42,8 +42,8 @@ class UpdateUserRequest extends FormRequest
             'status'       => ["nullable"],
             'policies'     => ["nullable"],
             'fill_survy'   => ["nullable"],
-            'image'        => ["sometimes" , "image" , "mimes:jpeg,png,jpg,gif,svg,webp"],
-            'identy'       => ["sometimes" , "image" , "mimes:jpeg,png,jpg,gif,svg,webp"],
+            'image'        => ["sometimes", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
+            'identy'       => ["sometimes", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
             "cv"           => ["sometimes"],
         ];
     }
@@ -53,28 +53,31 @@ class UpdateUserRequest extends FormRequest
      *
      * @return array
      */
-    public function messages(){
+    public function messages()
+    {
+
         return [
-            'first_name.required'       => 'First Name is required',
-            'last_name.required'        => 'Last Name is required',
-            'name.required'             => 'Name is required',
-            'birthdate.required'        => 'Birthdate is required',
-            'address.required'          => 'Address is required',
-            'email.required'            => 'Email is required',
-            'password.required'         => 'Password is required',
-            'education.required'        => 'Education is required',
-            'qulification.required'     => 'Qulification is required',
-            'english.required'          => 'English is required',
-            'fill_survy.required'       => 'Fill Survy is required',
-            'policies.required'         => 'Policies is required',
-            'image.required'            => 'Image is required',
-            'qr_code.required'          => 'Qr Code is required',
-            'cv.required'               => 'Cv is required',
-            'identy.required'           => 'Identy is required',
-            'key_api.required'          => 'Key Api is required',
-            'task.required'             => 'Task is required',
-            'notes.required'            => 'Notes is required',
-            'phone.required'            => 'Phone is required',
+            'first_name.required'       => __('admin.required', ['attribute' => __('attributes.first_name')]),
+            'last_name.required'        => __('admin.required', ['attribute' => __('attributes.last_name')]),
+            'name.required'             => __('admin.required', ['attribute' => __('attributes.name')]),
+            'email.required'            => __('admin.required', ['attribute' => __('attributes.email')]),
+            'phone.required'            => __('admin.required', ['attribute' => __('attributes.phone')]),
+            'birthdate.required'        => __('admin.required', ['attribute' => __('attributes.birthdate')]),
+            'address.required'          => __('admin.required', ['attribute' => __('attributes.address')]),
+            'education.required'        => __('admin.required', ['attribute' => __('attributes.education')]),
+            'qulification.required'     => __('admin.required', ['attribute' => __('attributes.qulification')]),
+            'task.required'             => __('admin.required', ['attribute' => __('attributes.task')]),
+            'notes.required'            => __('admin.required', ['attribute' => __('attributes.notes')]),
+            'marketing_id[].required'   => __('admin.required', ['attribute' => __('attributes.marketing_id')]),
+            'country_id.required'       => __('admin.required', ['attribute' => __('attributes.country_id')]),
+            'city_id.required'          => __('admin.required', ['attribute' => __('attributes.city_id')]),
+            'english.required'          => __('admin.required', ['attribute' => __('attributes.english')]),
+            'status.required'           => __('admin.required', ['attribute' => __('attributes.status')]),
+            'policies.required'         => __('admin.required', ['attribute' => __('attributes.policies')]),
+            'fill_survy.required'       => __('admin.required', ['attribute' => __('attributes.fill_survy')]),
+            'image.required'            => __('admin.required', ['attribute' => __('attributes.image')]),
+            'identy.required'           => __('admin.required', ['attribute' => __('attributes.identy')]),
+            'cv.required'               => __('admin.required', ['attribute' => __('attributes.cv')]),
         ];
     }
 }

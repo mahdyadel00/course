@@ -29,4 +29,20 @@ class UpdateSponserRequest extends FormRequest
             'image' => ["sometimes", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
         ];
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+
+    public function messages(){
+        return [
+            'name.required'       => __('admin.required', ['attribute' => __('attributes.name')]),
+            'link.required'       => __('admin.required', ['attribute' => __('attributes.link')]),
+            'image.required'      => __('admin.required', ['attribute' => __('attributes.image')]),
+            'image.image'         => __('admin.image', ['attribute' => __('attributes.image')]),
+            'image.mimes'         => __('admin.mimes', ['attribute' => __('attributes.image')]),
+        ];
+    }
 }

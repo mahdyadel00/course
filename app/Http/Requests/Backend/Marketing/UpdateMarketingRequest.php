@@ -24,8 +24,21 @@ class UpdateMarketingRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'       => 'sometimes|string',
-            'description' => 'sometimes|string',
+            'title'       => ['sometimes', 'string', 'max:255'],
+            'description' => ['sometimes', 'string', 'max:255'],
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+
+    public function messages(){
+        return [
+            'title.required'       => __('admin.required', ['attribute' => __('attributes.title')]),
+            'description.required' => __('admin.required', ['attribute' => __('attributes.description')]),
         ];
     }
 }

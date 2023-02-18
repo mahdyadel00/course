@@ -24,8 +24,23 @@ class UpdateSliderRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'   => 'sometimes|string',
-            'image'   => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp',
+            'title'   => ['sometimes', 'string', 'max:255'],
+            'image'   => ["sometimes" , "image" , "mimes:jpeg,png,jpg,gif,svg,webp"],
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+
+    public function messages(){
+        return [
+            'title.required'       => __('admin.required', ['attribute' => __('attributes.title')]),
+            'image.required'       => __('admin.required', ['attribute' => __('attributes.image')]),
+            'image.image'          => __('admin.image', ['attribute' => __('attributes.image')]),
+            'image.mimes'          => __('admin.mimes', ['attribute' => __('attributes.image')]),
         ];
     }
 }
