@@ -44,7 +44,7 @@
                             <div class="scholar-right">
                                 <div>
                                     <ul class="user-info" id="info">
-                                        <li><Strong>Name:</Strong> {{ $user->first_name }} {{ $user->last_name }}</li>
+                                        <li><Strong>Name:</Strong> {{ $user->name }} {{ $user->name }}</li>
                                         <li><Strong>Email:</Strong> {{ $user->email }}</li>
                                         <li><Strong>Phone:</Strong> {{ $user->phone }}</li>
                                         <li><Strong>Country:</Strong> {{ $user->country ? $user->country->name : '' }}</li>
