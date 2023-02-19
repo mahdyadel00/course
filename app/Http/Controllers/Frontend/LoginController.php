@@ -23,7 +23,7 @@ class LoginController extends Controller
 
         if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $remember_me)) {
 
-            return redirect()->route('home')->with('success', 'Login Successfully');
+            return redirect()->route('profile')->with('success', 'Login Successfully');
         } else {
             return redirect()->back()->with('error', 'Email or password is incorrect');
         }

@@ -38,6 +38,7 @@ class ProfileController extends Controller
     }
     protected function update(UpdateProfileRequest $request)
     {
+        // dd($request->all());
         $user = User::where('id', auth()->user()->id)->first();
         $image_in_db = NULL;
         if ($request->has('image')) {
@@ -92,7 +93,7 @@ class ProfileController extends Controller
             'last_name'           => $request->last_name,
             'email'               => $request->email,
             'phone'               => $request->phone,
-            'password'            => Hash::make($request->password),
+            // 'password'            => Hash::make($request->password),
             'address'             => $request->address,
             'birthdate'           => $request->birthdate,
             'education'           => $request->education,

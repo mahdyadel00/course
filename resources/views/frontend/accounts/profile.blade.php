@@ -34,9 +34,9 @@
                                         @endif
                                     </div>
                                     <div>
-                                        @if($user->name)
-                                        <h3 class="d-inline-block">Qr Code</h3><br><br><br>
-                                        {!! QrCode::size(200)->generate($user->name) !!}
+                                        @if ($user->name)
+                                            <h3 class="d-inline-block">Qr Code</h3><br><br><br>
+                                            {!! QrCode::size(200)->generate($user->name) !!}
                                         @endif
                                     </div>
                                 </div>
@@ -78,8 +78,7 @@
                                             <li><Strong>Qulification:</Strong> {{ $user->qulification }}</li>
                                         @endif
                                         @if ($user->english)
-                                            <li><Strong>English:</Strong> {{ $user->first_name }} {{ $user->last_name }}
-                                            </li>
+                                            <li><Strong>English:</Strong> {{ $user->english }}</li>
                                         @endif
                                     </ul>
                                     <button class="edit-btn lab-btn " id="btn">Edit</button>
@@ -112,23 +111,23 @@
                                         @enderror
                                     </div>
                                     {{-- new password --}}
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label>New Password</label>
                                         <input type="password" name="password" class="form-control" placeholder="password"
                                             value="{{ $user->password }}">
                                         @error('password')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
-                                    </div>
+                                    </div> --}}
                                     {{-- confirm password --}}
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label>Confirmation Password</label>
                                         <input type="password" name="password_confirmation" class="form-control"
                                             placeholder="password" value="{{ $user->password }}">
                                         @error('password_confirmation')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
-                                    </div>
+                                    </div> --}}
                                     <div class="form-group">
                                         <label>Phone</label>
                                         <input type="text" name="phone" value="{{ $user->phone }}"
@@ -213,12 +212,16 @@
                                     <div class="form-group">
                                         <label>English</label>
                                         <select class="form-control modal-title" name="english">
-                                            <option value="1" {{ $user->english == 1 ? 'selected' : '' }}>Elementary
+                                            <option disabled selected value="">Select English Level</option>
+                                            <option value="1" {{ $user->english == 'Elementary' ? 'selected' : '' }}>
+                                                Elementary
                                             </option>
-                                            <option value="2" {{ $user->english == 2 ? 'selected' : '' }}>
+                                            <option value="2"
+                                                {{ $user->english == 'Intermediate' ? 'selected' : '' }}>
                                                 Intermediate
                                             </option>
-                                            <option value="3" {{ $user->english == 3 ? 'selected' : '' }}>Advanced
+                                            <option value="3" {{ $user->english == 'Advanced' ? 'selected' : '' }}>
+                                                Advanced
                                             </option>
                                         </select>
                                         @error('english')
