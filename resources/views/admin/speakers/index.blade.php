@@ -18,6 +18,7 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
+                                    <th>#</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
@@ -30,6 +31,7 @@
                             <tbody>
                                 @foreach ($speakers as $speaker)
                                     <tr>
+                                        <td>{{ $speaker->id }}</td>
                                         <td>{{ $speaker->name }}</td>
                                         <td>{{ $speaker->email }}</td>
                                         <td>{{ $speaker->phone }}</td>
