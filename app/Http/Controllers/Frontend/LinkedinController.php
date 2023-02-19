@@ -19,7 +19,7 @@ class LinkedinController extends Controller
     {
         $user = Socialite::driver('linkedin')->user();
 
-        $data = User::where('linkedin_id', $user->id)->first();
+        $data = User::where('email', $user->email)->first();
 
         if ($data != null) {
             Auth::login($data);
