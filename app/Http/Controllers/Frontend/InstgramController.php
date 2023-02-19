@@ -16,7 +16,6 @@ class InstgramController extends Controller
     {
         $appId = '540013058117269';
         $redirectUri = urlencode('https://grow.geexar.dev/instgram/callback');
-        dd($redirectUri);
         return redirect()->to("https://api.instagram.com/oauth/authorize?app_id={$appId}&redirect_uri={$redirectUri}&scope=user_profile,user_media&response_type=code");
     }
     public function callbackHandelInstgram(Request $request)
