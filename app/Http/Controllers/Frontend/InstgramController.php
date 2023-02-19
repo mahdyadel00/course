@@ -9,31 +9,31 @@ use Laravel\Socialite\Facades\Socialite;
 
 class InstgramController extends Controller
 {
-    //login with Instgram
+    //login with Instgram //login with Facebook
+
     public function providerInstgram()
     {
         return Socialite::driver('instgram')->redirect();
     }
     public function callbackHandelInstgram()
     {
-        dd('her');
+        dd('ok');
         $user = Socialite::driver('instgram')->user();
-        dd($user);
-        $data = User::where('email', $user->email)->first();
-        if ($data) {
+        $data = User::where('instgram_id', $user->id)->first();
+        if ($data != null) {
             Auth::login($data);
-            return redirect()->route('home')->with('success', 'Login Successfully BY Instgram');
+            return redirect()->route('home')->with('success', 'Login Successfully BY instgram');
         } else {
             User::updateOrCreate([
                 'instgram_id' => $user->id,
             ], [
                 'name'     => $user->name,
                 'password' => $user->token,
-                'image'    => $user->attributes['avatar_original'],
+                'image'    => $user->attributes['avatar'],
             ]);
 
-            return redirect()->route('login.show')->with('success', 'Registration Successfully BY Facebook');
+            return redirect()->route('login.show')->with('success', 'Registration Successfully BY instgram');
         }
-        return redirect()->back()->with('error', 'Email or password is incorrect');
+        return redirect()->back()->with('error', 'Name or password is incorrect');
     }
 }
