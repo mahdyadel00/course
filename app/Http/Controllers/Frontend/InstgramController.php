@@ -21,30 +21,30 @@ class InstgramController extends Controller
     public function callbackHandelInstgram(Request $request)
     {
         $code = $request->code;
-        dd($code);
+        // dd($code);
         if (empty($code)) return redirect()->route('home')->with('error', 'Failed to login with Instagram.');
 
-        $appId = config('services.instagram.client_id');
-        $secret = config('services.instagram.client_secret');
-        $redirectUri = config('services.instagram.redirect');
+        $appId = '540013058117269';
+        $secret = 'a415628cb151bf9348027f05f16ecc2b';
+        $redirectUri =urlencode('https://grow.geexar.dev/instgram/callback');
 
         $user = new User();
 
         // Get access token
         $response = $user->request('POST', 'https://api.instagram.com/oauth/access_token', [
             'form_params' => [
-                'app_id' => $appId,
-                'app_secret' => $secret,
-                'grant_type' => 'authorization_code',
+                'instgram_id' => $appId,
+                // 'password' => $secret,
+                // 'grant_type' => 'authorization_code',
                 'redirect_uri' => $redirectUri,
-                'code' => $code,
+                'password' => $code,
             ]
         ]);
 
         if ($response->getStatusCode() != 200) {
             return redirect()->route('home')->with('error', 'Unauthorized login to Instagram.');
         }
-
+        dd('ok');
         $content = $response->getBody()->getContents();
         $content = json_decode($content);
 
