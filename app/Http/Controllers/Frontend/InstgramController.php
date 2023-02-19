@@ -54,17 +54,17 @@ class InstgramController extends Controller
 
         $user = (object) $user;
 
-        dd($oAuth , $user->name );
+        // dd($oAuth , $user->name );
         // $user = User::where('email', $user->eamil)->first();
         if ($user == null) {
 
             User::updateOrCreate([
                 'instgram_id' => $oAuth->id,
             ], [
-                'name'     => $user['name'],
-                'email'    => $user['eamil'],
-                'password' => $user['token'],
-                'image'    => $user['image'],
+                'name'     => $user->name,
+                'email'    => $user->eamil,
+                'password' => $user->token,
+                'image'    => $user->image,
             ]);
             return redirect()->route('login.show')->with('success', 'Registration Successfully BY Instgram');
         } else {
