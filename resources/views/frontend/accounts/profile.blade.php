@@ -34,8 +34,10 @@
                                         @endif
                                     </div>
                                     <div>
+                                        @if($user->name)
                                         <h3 class="d-inline-block">Qr Code</h3><br><br><br>
                                         {!! QrCode::size(200)->generate($user->name) !!}
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -44,17 +46,41 @@
                             <div class="scholar-right">
                                 <div>
                                     <ul class="user-info" id="info">
-                                        <li><Strong>Name:</Strong> {{ $user->name }}</li>
-                                        <li><Strong>Email:</Strong> {{ $user->email }}</li>
-                                        <li><Strong>Phone:</Strong> {{ $user->phone }}</li>
-                                        <li><Strong>Country:</Strong> {{ $user->country ? $user->country->name : '' }}</li>
-                                        <li><Strong>City:</Strong> {{ $user->city ? $user->city->name : '' }}</li>
-                                        <li><Strong>Address:</Strong> {{ $user->address }}</li>
-                                        <li><Strong>Birth Date:</Strong> {{ $user->birthdate }}</li>
-                                        <li><Strong>Education:</Strong> {{ $user->education }}</li>
-                                        <li><Strong>Marketing Fields:</Strong> {{ $user->education }}</li>
-                                        <li><Strong>Qulification:</Strong> {{ $user->qulification }}</li>
-                                        <li><Strong>English:</Strong> {{ $user->first_name }} {{ $user->last_name }}</li>
+                                        @if ($user->name)
+                                            <li><Strong>Name:</Strong> {{ $user->name }}</li>
+                                        @endif
+                                        @if ($user->email)
+                                            <li><Strong>Email:</Strong> {{ $user->email }}</li>
+                                        @endif
+                                        @if ($user->phone)
+                                            <li><Strong>Phone:</Strong> {{ $user->phone }}</li>
+                                        @endif
+                                        @if ($user->country)
+                                            <li><Strong>Country:</Strong> {{ $user->country ? $user->country->name : '' }}
+                                            </li>
+                                        @endif
+                                        @if ($user->city)
+                                            <li><Strong>City:</Strong> {{ $user->city ? $user->city->name : '' }}</li>
+                                        @endif
+                                        @if ($user->address)
+                                            <li><Strong>Address:</Strong> {{ $user->address }}</li>
+                                        @endif
+                                        @if ($user->birthdate)
+                                            <li><Strong>Birth Date:</Strong> {{ $user->birthdate }}</li>
+                                        @endif
+                                        @if ($user->education)
+                                            <li><Strong>Education:</Strong> {{ $user->education }}</li>
+                                        @endif
+                                        @if ($user->qulification)
+                                            <li><Strong>Marketing Fields:</Strong> {{ $user->education }}</li>
+                                        @endif
+                                        @if ($user->qulification)
+                                            <li><Strong>Qulification:</Strong> {{ $user->qulification }}</li>
+                                        @endif
+                                        @if ($user->english)
+                                            <li><Strong>English:</Strong> {{ $user->first_name }} {{ $user->last_name }}
+                                            </li>
+                                        @endif
                                     </ul>
                                     <button class="edit-btn lab-btn " id="btn">Edit</button>
                                 </div>
