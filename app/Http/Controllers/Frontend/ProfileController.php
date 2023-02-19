@@ -38,7 +38,6 @@ class ProfileController extends Controller
     }
     protected function update(UpdateProfileRequest $request)
     {
-        // dd($request->all());
         $user = User::where('id', auth()->user()->id)->first();
         $image_in_db = NULL;
         if ($request->has('image')) {
