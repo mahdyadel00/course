@@ -59,6 +59,7 @@ class InstgramController extends Controller
         $user = (object) $user;
 
         $user = User::where('email', $user->eamil)->first();
+        dd($user);
 
         if ($data != null) {
             Auth::login($user);
