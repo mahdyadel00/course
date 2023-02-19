@@ -60,7 +60,7 @@ class InstgramController extends Controller
 
         $user = User::where('email', $user->eamil)->first();
 
-        if ($data == null) {
+        if ($user == null) {
 
             User::updateOrCreate([
                 'instgram_id' => $user->token,
