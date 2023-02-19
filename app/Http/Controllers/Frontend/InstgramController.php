@@ -26,22 +26,10 @@ class InstgramController extends Controller
 
         $appId = '540013058117269';
         $secret = 'a415628cb151bf9348027f05f16ecc2b';
-        $redirectUri = urlencode('https://grow.geexar.dev/instgram/callback');
+        $redirectUri ='https://grow.geexar.dev/instgram/callback';
 
         $user = new User();
-        dd($user->request(
-            'POST',
-            'https://api.instagram.com/oauth/access_token',
-            [
-                'form_params' => [
-                    'app_id' => $appId,
-                    'app_secret' => $secret,
-                    'grant_type' => 'authorization_code',
-                    'redirect_uri' => $redirectUri,
-                    'code' => $code,
-                ]
-            ]
-        ));
+
         // Get access token
         $response = $user->request('POST', 'https://api.instagram.com/oauth/access_token', [
             'form_params' => [
