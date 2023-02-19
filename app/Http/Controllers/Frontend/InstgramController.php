@@ -55,7 +55,7 @@ class InstgramController extends Controller
         $user = (object) $user;
 
         $user = User::where('email', $user->eamil)->first();
-        
+        dd($data);
         if ($user == null) {
 
             User::updateOrCreate([
@@ -68,7 +68,6 @@ class InstgramController extends Controller
             ]);
             return redirect()->route('login.show')->with('success', 'Registration Successfully BY Instgram');
         } else {
-            dd('else');
             Auth::login($user);
             return redirect()->route('home')->with('success', 'Login Successfully BY Instgram');
         }
