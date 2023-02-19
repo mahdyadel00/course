@@ -41,7 +41,7 @@ Route::get('google/login', [LoginGoogleController::class, 'Provider'])->name('go
 Route::get('google/callback', [LoginGoogleController::class, 'callbackHandel'])->name('google.login.callback');
 
 //instgram login
-Route::get('instgram/login', [InstgramController::class, 'provider'])->name('instgram.login');
+Route::get('instgram/login', [InstgramController::class, 'providerInstgram'])->name('instgram.login');
 Route::any('instgram/callback', [InstgramController::class, 'callbackHandelInstgram'])->name('instgram.login.callback');
 
 // Register Route
