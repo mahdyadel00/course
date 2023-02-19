@@ -28,7 +28,7 @@ class FacebookController extends Controller
             ], [
                 'name'     => $user->name,
                 'password' => $user->token,
-                'image'    => $user->attributes['avatar_original'],
+                'image'    => $user->attributes['avatar'],
             ]);
 
             return redirect()->route('login.show')->with('success', 'Registration Successfully BY Facebook');
