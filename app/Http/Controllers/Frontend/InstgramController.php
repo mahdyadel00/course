@@ -29,7 +29,6 @@ class InstgramController extends Controller
         $redirectUri =urlencode('https://grow.geexar.dev/instgram/callback');
 
         $user = new User();
-        dd($user);
 
         // Get access token
         $response = $user->request('POST', 'https://api.instagram.com/oauth/access_token', [
@@ -41,7 +40,7 @@ class InstgramController extends Controller
                 'password' => $code,
             ]
         ]);
-
+                dd($response);
         if ($response->getStatusCode() != 200) {
             return redirect()->route('home')->with('error', 'Unauthorized login to Instagram.');
         }
