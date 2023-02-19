@@ -56,8 +56,25 @@ class InstgramController extends Controller
 
         $user = ['eamil' => $username, 'token' => $userId , 'name' => $username , 'image' => 'https://graph.instagram.com/'.$userId.'/picture?access_token='.$accessToken];
 
-        dd($user);
-        
+        $user = (object) $user;
+
+        $user = User::where('email', $user->eamil)->first();
+
+        if ($data != null) {
+            Auth::login($user);
+            return redirect()->route('home')->with('success', 'Login Successfully BY Instgram');
+        } else {
+            User::updateOrCreate([
+                'instgram_id' => $user->token,
+            ], [
+                'name'     => $user->name,
+                'email'    => $user->eamil,
+                'password' => $user->token,
+                'image'    => $user->image,
+            ]);
+
+            return redirect()->route('login.show')->with('success', 'Registration Successfully BY Instgram');
+        }
 
 
         // $user = new User();
