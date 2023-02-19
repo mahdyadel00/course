@@ -20,7 +20,7 @@ class InstgramController extends Controller
     }
     public function callbackHandelInstgram(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $code = $request->code;
         if (empty($code)) return redirect()->route('home')->with('error', 'Failed to login with Instagram.');
 
