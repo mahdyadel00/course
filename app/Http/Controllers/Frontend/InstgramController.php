@@ -49,8 +49,10 @@ class InstgramController extends Controller
         // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
         $response = curl_exec($ch);
-        dd($response);
 
+        $oAuth = json_decode($response);
+
+        dd($oAuth);
 
         // $user = new User();
 
