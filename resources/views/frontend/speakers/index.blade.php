@@ -37,7 +37,7 @@ If you are still hesitating about participation, then you should definitely meet
                                     <div class="speaker-content">
                                         <div class="speaker-content-inner">
                                             <h6><a
-                                                    href="{{ route('speakers.details', $speaker->id) }}">{!! $speaker->job_title !!}</a>
+                                                    href="{{ route('speakers.details', $speaker->id) }}">{{ $speaker->job_title }}</a>
                                             </h6>
                                         </div>
                                         <ul class="speaker-shape">

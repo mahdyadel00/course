@@ -32,7 +32,7 @@
                                     </div>
                                     <div class="col">
                                         <label>Job Title</label>
-                                        <textarea class="form-control ckeditor" name="job_title"></textarea>
+                                        <input class="form-control" name="job_title">
                                     </div>
                                     <div class="col">
                                         <label>Personal Statment</label>

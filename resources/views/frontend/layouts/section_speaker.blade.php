@@ -22,7 +22,7 @@
                                                 href="{{ route('speakers.details', $speaker->id) }}">{{ $speaker->name }}</a>
                                         </h5>
                                         @if ($speaker->job_title)
-                                            <p>{!! $speaker->job_title !!}</p>
+                                            <p>{{ $speaker->job_title }}</p>
                                         @endif
                                     </div>
                                     <div class="spkr-content-details">

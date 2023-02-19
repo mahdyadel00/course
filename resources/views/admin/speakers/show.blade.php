@@ -30,7 +30,7 @@
                                 </tr>
                                 <tr>
                                     <th>Job Title</th>
-                                    <td>{!! $speaker->job_title !!}</td>
+                                    <td>{{ $speaker->job_title }}</td>
                                 </tr>
                                 <tr>
                                     <th>Personal Statment</th>
