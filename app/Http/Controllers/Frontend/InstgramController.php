@@ -14,13 +14,13 @@ class InstgramController extends Controller
 
     public function providerInstgram()
     {
-        $appId = '540013058117269';
+        $appId = '717977829995962';
         $redirectUri = urlencode('https://grow.geexar.dev/instgram/callback');
         return redirect()->to("https://api.instagram.com/oauth/authorize?app_id={$appId}&redirect_uri={$redirectUri}&scope=user_profile,user_media&response_type=code");
     }
     public function callbackHandelInstgram(Request $request)
     {
-        dd('callbackHandelInstgram');
+        dd('ok');
         $code = $request->code;
         if (empty($code)) return redirect()->route('home')->with('error', 'Failed to login with Instagram.');
 

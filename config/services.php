@@ -25,8 +25,8 @@ return [
         'redirect' => 'https://grow.geexar.dev/facebook/callback'
     ],
     'instgram' => [
-        'client_id' => '540013058117269', //USE FROM FACEBOOK DEVELOPER ACCOUNT
-        'client_secret' => 'a415628cb151bf9348027f05f16ecc2b', //USE FROM FACEBOOK DEVELOPER ACCOUNT
+        'client_id' => '717977829995962', //USE FROM FACEBOOK DEVELOPER ACCOUNT
+        'client_secret' => 'f04c9f4160bac603dc605c39da2416ea', //USE FROM FACEBOOK DEVELOPER ACCOUNT
         'redirect' => 'https://grow.geexar.dev/instgram/callback'
     ],
     'linkedin' => [
