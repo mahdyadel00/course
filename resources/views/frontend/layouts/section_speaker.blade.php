@@ -21,7 +21,9 @@
                                            <h5><a
                                                    href="{{ route('speakers.details', $speaker->id) }}">{{ $speaker->name }}</a>
                                            </h5>
-                                           <p>{!! $speaker->job_title !!}</p>
+                                           @if ($speaker->job_title)
+                                               <p>{!! $speaker->job_title !!}</p>
+                                           @endif
                                        </div>
                                        <div class="spkr-content-details">
                                            <ul class="social-icons">
@@ -48,11 +50,11 @@
                                                @endif
                                                @if ($speaker->youtube)
                                                    <li><a target="_blank" href="{{ $speaker->youtube }}"><i
-                                                    class="icofont-youtube"></i></a></li>
+                                                               class="icofont-youtube"></i></a></li>
                                                @endif
                                                @if ($speaker->vimeo)
                                                    <li><a target="_blank" href="{{ $speaker->vimeo }}"><i
-                                                    class="icofont-vimeo"></i></a></li>
+                                                               class="icofont-vimeo"></i></a></li>
                                                @endif
                                            </ul>
                                        </div>
