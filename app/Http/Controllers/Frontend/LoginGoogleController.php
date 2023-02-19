@@ -19,7 +19,7 @@ class LoginGoogleController extends Controller
     {
         $user = Socialite::driver('google')->user();
 
-        $data = User::where('email', $user->email)->first();
+        $data = User::where('google_id', $user->id)->first();
         if ($data != null) {
             Auth::login($data);
             return redirect()->route('home')->with('success', 'Login Successfully BY Google');
