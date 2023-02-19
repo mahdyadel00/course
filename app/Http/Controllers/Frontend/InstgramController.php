@@ -54,8 +54,8 @@ class InstgramController extends Controller
 
         $user = (object) $user;
 
+        dd($oAuth , $user , $response);
         $user = User::where('email', $user->eamil)->first();
-        dd($oAuth , $user);
         if ($user == null) {
 
             User::updateOrCreate([
