@@ -33,18 +33,18 @@ class InstgramController extends Controller
         // Get access token
         $response = $user->request('POST', 'https://api.instagram.com/oauth/access_token', [
             'form_params' => [
-                'instgram_id' => $appId,
-                // 'password' => $secret,
-                // 'grant_type' => 'authorization_code',
+                'app_id' => $appId,
+                'app_secret' => $secret,
+                'grant_type' => 'authorization_code',
                 'redirect_uri' => $redirectUri,
-                'password' => $code,
+                'code' => $code,
             ]
         ]);
-                dd($response);
+
         if ($response->getStatusCode() != 200) {
             return redirect()->route('home')->with('error', 'Unauthorized login to Instagram.');
         }
-        dd('ok');
+
         $content = $response->getBody()->getContents();
         $content = json_decode($content);
 
