@@ -28,62 +28,62 @@ class InstgramController extends Controller
         $secret = 'a415628cb151bf9348027f05f16ecc2b';
         $redirectUri = 'https://grow.geexar.dev/instgram/callback';
 
-        // $ch = curl_init();
-        // curl_setopt($ch, CURLOPT_URL, "https://api.instagram.com/oauth/access_token");
-        // // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        // // curl_setopt($ch, CURLOPT_POST, 1);
-        // curl_setopt($ch, CURLOPT_POSTFIELDS, "app_id={$appId}&app_secret={$secret}&grant_type=authorization_code&redirect_uri={$redirectUri}&code={$code}");
-        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        // $data = curl_exec($ch);
-        // $accessToken = json_decode($data)->access_token;
-        // $userId = json_decode($data)->user_id;
-
-
-        // $ch = curl_init();
-        // curl_setopt($ch, CURLOPT_URL, "https://graph.instagram.com/me?fields=id,username&access_token={$accessToken}");
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://api.instagram.com/oauth/access_token");
         // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         // curl_setopt($ch, CURLOPT_POST, 1);
-        // curl_setopt($ch, CURLOPT_POSTFIELDS, "app_id={$appId}&app_secret={$secret}&grant_type=authorization_code&redirect_uri={$redirectUri}&code={$code}");
-        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        // $data = curl_exec($ch);
-        // $user = json_decode($data);
-        // $username = $user->username;
+        curl_setopt($ch, CURLOPT_POSTFIELDS, "app_id={$appId}&app_secret={$secret}&grant_type=authorization_code&redirect_uri={$redirectUri}&code={$code}");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $data = curl_exec($ch);
+        $accessToken = json_decode($data)->access_token;
+        $userId = json_decode($data)->user_id;
+        dd($accessToken , $userId , $data);
 
-        $user = new User();
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://graph.instagram.com/me?fields=id,username&access_token={$accessToken}");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, "app_id={$appId}&app_secret={$secret}&grant_type=authorization_code&redirect_uri={$redirectUri}&code={$code}");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $data = curl_exec($ch);
+        $user = json_decode($data);
+        $username = $user->username;
 
-        // Get access token
-        $response = $user->request('POST', 'https://api.instagram.com/oauth/access_token', [
-            'form_params' => [
-                'app_id' => $appId,
-                'app_secret' => $secret,
-                'grant_type' => 'authorization_code',
-                'redirect_uri' => $redirectUri,
-                'code' => $code,
-            ]
-        ]);
+        // $user = new User();
 
-        if ($response->getStatusCode() != 200) {
-            return redirect()->route('home')->with('error', 'Unauthorized login to Instagram.');
-        }
+        // // Get access token
+        // $response = $user->request('POST', 'https://api.instagram.com/oauth/access_token', [
+        //     'form_params' => [
+        //         'app_id' => $appId,
+        //         'app_secret' => $secret,
+        //         'grant_type' => 'authorization_code',
+        //         'redirect_uri' => $redirectUri,
+        //         'code' => $code,
+        //     ]
+        // ]);
 
-        $content = $response->getBody()->getContents();
-        $content = json_decode($content);
+        // if ($response->getStatusCode() != 200) {
+        //     return redirect()->route('home')->with('error', 'Unauthorized login to Instagram.');
+        // }
 
-        $accessToken = $content->access_token;
-        $userId = $content->user_id;
+        // $content = $response->getBody()->getContents();
+        // $content = json_decode($content);
 
-        // Get user info
-        $response = $user->request('GET', "https://graph.instagram.com/me?fields=id,username,account_type&access_token={$accessToken}");
+        // $accessToken = $content->access_token;
+        // $userId = $content->user_id;
 
-        $content = $response->getBody()->getContents();
-        $oAuth = json_decode($content);
+        // // Get user info
+        // $response = $user->request('GET', "https://graph.instagram.com/me?fields=id,username,account_type&access_token={$accessToken}");
 
-        // Get instagram user name
-        $username = $oAuth->username;
+        // $content = $response->getBody()->getContents();
+        // $oAuth = json_decode($content);
 
-        // do your code here
+        // // Get instagram user name
+        // $username = $oAuth->username;
+
+        // // do your code here
 
     }
 }
