@@ -59,12 +59,13 @@ class InstgramController extends Controller
         $user = (object) $user;
 
         $user = User::where('email', $user->eamil)->first();
-        dd($user);
 
         if ($data != null) {
+            dd($user);
             Auth::login($user);
             return redirect()->route('home')->with('success', 'Login Successfully BY Instgram');
         } else {
+            dd('else');
             User::updateOrCreate([
                 'instgram_id' => $user->token,
             ], [
