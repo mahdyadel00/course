@@ -52,7 +52,13 @@ class InstgramController extends Controller
 
         $oAuth = json_decode($response);
 
-        dd($oAuth);
+        $username = $oAuth->username;
+
+        $user = ['eamil' => $username, 'token' => $userId , 'name' => $username , 'image' => 'https://graph.instagram.com/'.$userId.'/picture?access_token='.$accessToken];
+
+        dd($user);
+        
+
 
         // $user = new User();
 
