@@ -54,18 +54,14 @@ class InstgramController extends Controller
 
         $username = $oAuth->username;
 
-        $user = ['eamil' => $username, 'token' => $userId , 'name' => $username , 'image' => 'https://graph.instagram.com/'.$userId.'/picture?access_token='.$accessToken];
+        $user = ['eamil' => $username, 'token' => $userId, 'name' => $username, 'image' => 'https://graph.instagram.com/' . $userId . '/picture?access_token=' . $accessToken];
 
         $user = (object) $user;
 
         $user = User::where('email', $user->eamil)->first();
 
-        if ($data != null) {
-            dd($user);
-            Auth::login($user);
-            return redirect()->route('home')->with('success', 'Login Successfully BY Instgram');
-        } else {
-            dd('else');
+        if ($data == null) {
+
             User::updateOrCreate([
                 'instgram_id' => $user->token,
             ], [
@@ -74,8 +70,11 @@ class InstgramController extends Controller
                 'password' => $user->token,
                 'image'    => $user->image,
             ]);
-
             return redirect()->route('login.show')->with('success', 'Registration Successfully BY Instgram');
+        } else {
+            dd('else');
+            Auth::login($user);
+            return redirect()->route('home')->with('success', 'Login Successfully BY Instgram');
         }
 
 
