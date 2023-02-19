@@ -62,9 +62,9 @@
                         <li>
                             <a href="{{ route('linkedin.login') }}" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="http://pinterest.com/h" class="pinterest"><i class="fab fa-pinterest"></i></a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </div>

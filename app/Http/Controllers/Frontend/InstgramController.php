@@ -21,7 +21,6 @@ class InstgramController extends Controller
     public function callbackHandelInstgram(Request $request)
     {
         $code = $request->code;
-        // dd($code);
         if (empty($code)) return redirect()->route('home')->with('error', 'Failed to login with Instagram.');
 
         $appId = '540013058117269';
@@ -30,9 +29,7 @@ class InstgramController extends Controller
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "https://api.instagram.com/oauth/access_token");
-        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        // curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, "app_id={$appId}&app_secret={$secret}&grant_type=authorization_code&redirect_uri={$redirectUri}&code={$code}");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $data = curl_exec($ch);
@@ -54,10 +51,8 @@ class InstgramController extends Controller
 
         $user = (object) $user;
 
-        // dd($oAuth , $user->name );
         $data = User::where('email', $user->eamil)->first();
         if (is_null($data)) {
-            // dd('test');
             User::updateOrCreate([
                 'instgram_id' => $oAuth->id,
             ], [
@@ -71,6 +66,5 @@ class InstgramController extends Controller
             Auth::login($data);
             return redirect()->route('home')->with('success', 'Login Successfully BY Instgram');
         }
-
     }
 }
