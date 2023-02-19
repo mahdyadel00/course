@@ -38,15 +38,11 @@ class InstgramController extends Controller
         $data = curl_exec($ch);
         $accessToken = json_decode($data)->access_token;
         $userId = json_decode($data)->user_id;
-        // dd($accessToken , $userId , $data);
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "https://graph.instagram.com/me?fields=id,username&access_token={$accessToken}");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        // curl_setopt($ch, CURLOPT_POST, 1);
-        // curl_setopt($ch, CURLOPT_POSTFIELDS, "app_id={$appId}&app_secret={$secret}&grant_type=authorization_code&redirect_uri={$redirectUri}&code={$code}");
-        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
         $response = curl_exec($ch);
 
@@ -59,7 +55,7 @@ class InstgramController extends Controller
         $user = (object) $user;
 
         $user = User::where('email', $user->eamil)->first();
-
+        dd($data);
         if ($user == null) {
 
             User::updateOrCreate([
