@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
-
+use ESolution\DBEncryption\Traits\EncryptedAttribute;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasFactory, Notifiable, HasRoles;
+    use HasFactory, Notifiable, HasRoles, EncryptedAttribute;
 
     /**
      * The attributes that are mass assignable.
@@ -70,17 +70,23 @@ class User extends Authenticatable implements MustVerifyEmail
 
     ];
 
-    public function country(){
+    protected $encryptable = [
+        'password',
+    ];
+
+    public function country()
+    {
 
         return $this->belongsTo(Country::class);
     }
-    public function city(){
+    public function city()
+    {
 
         return $this->belongsTo(City::class);
     }
 
     public function marketing()
     {
-        return $this->belongsToMany(Marketing::class , 'user_marketings', 'user_id', 'marketing_id');
+        return $this->belongsToMany(Marketing::class, 'user_marketings', 'user_id', 'marketing_id');
     }
 }

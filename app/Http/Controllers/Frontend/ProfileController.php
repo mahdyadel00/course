@@ -8,6 +8,7 @@ use App\Http\Requests\Frontend\Profile\UpdateProfileRequest;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\Marketing;
+use App\Models\Settings;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\UserMarketing;
@@ -29,8 +30,9 @@ class ProfileController extends Controller
             $countries = Country::get();
             $cities = City::get();
             $user = User::with('marketing')->where('id', auth()->user()->id)->first();
+            $settings = Settings::first();
 
-            return view('frontend.accounts.profile', compact('user', 'marketings', 'countries', 'cities', 'user_marketings'));
+            return view('frontend.accounts.profile', compact('user', 'marketings', 'countries', 'cities', 'user_marketings' , 'settings'));
         } else {
 
             return redirect()->route('login.show')->with('Un Authanticated!');
