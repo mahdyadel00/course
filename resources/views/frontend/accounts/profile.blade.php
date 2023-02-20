@@ -37,6 +37,7 @@
                                         @if ($user->name)
                                             <h3 class="d-inline-block">Qr Code</h3><br><br><br>
                                             {!! QrCode::size(200)->generate($user->name) !!}
+                                            {{-- <img src="data:image/png;base64,{{ base64_encode(SimpleSoftwareIO\QrCode\Facades\QrCode::size(300)->format('png')->merge(public_path('frontend/assets/images/logo.png'),.3, true)->generate('Make me into a QrCode!') ) }}"> --}}
                                         @endif
                                     </div>
                                 </div>
@@ -184,8 +185,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Qulification</label>
-                                        <input class="form-control" value="{{ $user->qulification }}"
-                                            name="qulification">
+                                        <input class="form-control" value="{{ $user->qulification }}" name="qulification">
                                         @error('qulification')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror

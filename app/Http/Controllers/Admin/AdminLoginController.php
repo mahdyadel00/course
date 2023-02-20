@@ -11,11 +11,6 @@ use App\Http\Controllers\Controller;
 class AdminLoginController extends Controller
 {
 
-    public function __construct()
-    {
-        //		$this->middleware('guest')->except('logout');
-        // $this->middleware('permission:admin')->except('logout');
-    }
     protected function login()
     {
         return view('admin.login');

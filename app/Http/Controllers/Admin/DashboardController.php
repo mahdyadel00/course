@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Models\Speaker;
+use App\Models\Sponser;
 use App\Models\User;
 
 class DashboardController extends Controller
@@ -22,7 +23,8 @@ class DashboardController extends Controller
         $users = User::all();
         $speakers = Speaker::all();
         $contacts = Contact::all();
-        return view('admin.dashboard' , compact('users', 'speakers' , 'contacts'));
+        $sponser = Sponser::all();
+        return view('admin.dashboard' , compact('users', 'speakers' , 'contacts' , 'sponser'));
 
     }// end of index
 

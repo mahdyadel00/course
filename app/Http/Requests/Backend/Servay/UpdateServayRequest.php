@@ -37,6 +37,8 @@ class UpdateServayRequest extends FormRequest
     public function messages(){
         return [
             'faq.required' => __('admin.required', ['attribute' => __('attributes.faq')]),
+            'faq.max'      => __('admin.max.string', ['attribute' => __('attributes.faq'), 'max' => 255]),
+            'faq.string'   => __('admin.string', ['attribute' => __('attributes.faq')]),
         ];
     }
 }

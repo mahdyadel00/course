@@ -22,13 +22,13 @@ class HomeController extends Controller
     {
         $sliders = Slider::get();
         $setting = Settings::first();
-       $speakers = Speaker::get();
-       $sponser_one = Sponser::take(2)->get();
-       $sponser_two = Sponser::skip(2)->take(4)->get();
-       $sponser_three = Sponser::skip(6)->take(100)->get();
-    //    dd($sponser_three);
-    //    $sponser_four = Sponser::skip(11)->take(4)->get();
+        $speakers = Speaker::get();
+        $sponser_one = Sponser::take(2)->get();
+        $sponser_two = Sponser::skip(2)->take(4)->get();
+        $sponser_three = Sponser::skip(6)->take(100)->get();
+        //    dd($sponser_three);
+        //    $sponser_four = Sponser::skip(11)->take(4)->get();
 
-        return view('frontend.layouts.index', compact('sliders' , 'setting' , 'speakers' , 'sponser_one' , 'sponser_two' , 'sponser_three'));
+        return view('frontend.layouts.index', compact('sliders', 'setting', 'speakers', 'sponser_one', 'sponser_two', 'sponser_three'));
     }
 }
