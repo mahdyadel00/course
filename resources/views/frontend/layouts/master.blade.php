@@ -130,7 +130,7 @@ $setting = App\Models\Settings::first();
                                     <li><a href="{{ route('speakers.index') }}">Speakers</a></li>
                                     <li><a href="{{ route('courses.index') }}">Diploma</a></li>
                                     <li><a href="{{ route('pricing.index') }}">Pricing</a></li>
-                                    <li><a href="{{ route('contacts') }}">Contact</a></li>
+                                    <li><a href="{{ route('contacts.index') }}">Contact</a></li>
                                 </ul>
                                 </div>
                             </div>
@@ -140,7 +140,7 @@ $setting = App\Models\Settings::first();
                         <div class="footer-middle-item-wrapper">
                             <div class="footer-middle-item-3 mb-5 mb-lg-0">
                                 <div class="fm-item-title">
-                                    <h5>Follow us</h5>
+                                    <h5 class="mb-4">Follow us</h5>
                                 </div>
                                     <ul class="social-icons">
                                         <li><a href="#"><i class="icofont-facebook"></i></a></li>
