@@ -27,7 +27,7 @@ class StoreDiploma extends FormRequest
 
             'title'         => ['required', 'string', 'max:255'],
             'price'         => ['required', 'integer'],
-            'description'   => ['required', 'string', 'max:255'],
+            'description'   => ['required', 'string'],
 
 
         ];
@@ -41,9 +41,9 @@ class StoreDiploma extends FormRequest
 
     public function messages(){
         return [
-            'title.required'       => __('admin.required', ['attribute' => __('attributes.title')]),
-            'price.required'       => __('admin.required', ['attribute' => __('attributes.price')]),
-            'description.required' => __('admin.required', ['attribute' => __('attributes.description')]),
+            'title.required'       => __('validation.required', ['attribute' => __('attributes.title')]),
+            'price.required'       => __('validation.required', ['attribute' => __('attributes.price')]),
+            'description.required' => __('validation.required', ['attribute' => __('attributes.description')]),
 
         ];
     }

@@ -36,7 +36,9 @@ class StoreServayRequest extends FormRequest
 
     public function messages(){
         return [
-            'faq.required' => __('admin.required', ['attribute' => __('attributes.faq')]),
+            'faq.required' => __('validation.required', ['attribute' => __('attributes.faq')]),
+            'faq.max'      => __('validation.max.string', ['attribute' => __('attributes.faq'), 'max' => 255]),
+            'faq.string'   => __('validation.string', ['attribute' => __('attributes.faq')]),
         ];
     }
 }

@@ -26,7 +26,7 @@ class StorePricingRequest extends FormRequest
         return [
             'title'         => ['required', 'string', 'max:255'],
             'price'         => ['required', 'integer'],
-            'description'   => ['required', 'string', 'max:255'],
+            'description'   => ['required', 'string'],
         ];
     }
 
@@ -38,9 +38,13 @@ class StorePricingRequest extends FormRequest
 
     public function messages(){
         return [
-            'title.required'       => __('admin.required', ['attribute' => __('attributes.title')]),
-            'price.required'       => __('admin.required', ['attribute' => __('attributes.price')]),
-            'description.required' => __('admin.required', ['attribute' => __('attributes.description')]),
+            'title.required'       => __('validation.required', ['attribute' => __('attributes.title')]),
+            'price.required'       => __('validation.required', ['attribute' => __('attributes.price')]),
+            'description.required' => __('validation.required', ['attribute' => __('attributes.description')]),
+            'title.max'            => __('validation.max.string', ['attribute' => __('attributes.title'), 'max' => 255]),
+            'price.integer'        => __('validation.integer', ['attribute' => __('attributes.price')]),
+            'description.string'   => __('validation.string', ['attribute' => __('attributes.description')]),
+            'title.string'         => __('validation.string', ['attribute' => __('attributes.title')]),
         ];
     }
 }
