@@ -21,15 +21,24 @@
                                     <div class="col">
                                         <label> Title</label>
                                         <input class="form-control fc-datepicker" name="title" required>
+                                        @error('title')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label> Price</label>
                                         <input class="form-control fc-datepicker" name="price" required>
+                                        @error('price')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     </div>
                                     <div class="col">
                                         <label> Description</label>
                                         <textarea class="form-control fc-datepicker ckeditor" name="description" id="description" cols="30" rows="10" required></textarea>
+                                        @error('description')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="d-flex justify-content-center col">
                                         <button type="submit" class="btn btn-primary"

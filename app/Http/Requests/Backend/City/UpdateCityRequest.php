@@ -37,10 +37,10 @@ class UpdateCityRequest extends FormRequest
 
     public function messages(){
         return [
-            'name.required'       => __('admin.required', ['attribute' => __('attributes.name')]),
-            'country_id.required' => __('admin.required', ['attribute' => __('attributes.country_id')]),
-            'country_id.integer'  => __('admin.integer', ['attribute' => __('attributes.country_id')]),
-            'country_id.exists'   => __('admin.exists', ['attribute' => __('attributes.country_id')]),
+            'name.required'       => __('validation.required', ['attribute' => __('attributes.name')]),
+            'country_id.required' => __('validation.required', ['attribute' => __('attributes.country_id')]),
+            'country_id.integer'  => __('validation.integer', ['attribute' => __('attributes.country_id')]),
+            'country_id.exists'   => __('validation.exists', ['attribute' => __('attributes.country_id')]),
         ];
     }
 }

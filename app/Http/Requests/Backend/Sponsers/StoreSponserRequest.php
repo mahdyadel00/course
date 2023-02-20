@@ -38,11 +38,11 @@ class StoreSponserRequest extends FormRequest
 
     public function messages(){
         return [
-            'name.required'       => __('admin.required', ['attribute' => __('attributes.name')]),
-            'link.required'       => __('admin.required', ['attribute' => __('attributes.link')]),
-            'image.required'      => __('admin.required', ['attribute' => __('attributes.image')]),
-            'image.image'         => __('admin.image', ['attribute' => __('attributes.image')]),
-            'image.mimes'         => __('admin.mimes', ['attribute' => __('attributes.image')]),
+            'name.required'       => __('validation.required', ['attribute' => __('attributes.name')]),
+            'link.required'       => __('validation.required', ['attribute' => __('attributes.link')]),
+            'image.required'      => __('validation.required', ['attribute' => __('attributes.image')]),
+            'image.image'         => __('validation.image', ['attribute' => __('attributes.image')]),
+            'image.mimes'         => __('validation.mimes', ['attribute' => __('attributes.image')]),
         ];
     }
 }

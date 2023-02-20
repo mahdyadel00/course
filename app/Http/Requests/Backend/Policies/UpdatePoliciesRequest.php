@@ -25,7 +25,7 @@ class UpdatePoliciesRequest extends FormRequest
     {
         return [
             'title'         =>  ['sometimes', 'string', 'max:255'],
-            'description'   => ['sometimes', 'string', 'max:255'],
+            'description'   => ['sometimes', 'string'],
         ];
     }
 
@@ -37,8 +37,12 @@ class UpdatePoliciesRequest extends FormRequest
 
     public function messages(){
         return [
-            'title.required'         => __('admin.required', ['attribute' => __('attributes.title')]),
-            'description.required'   => __('admin.required', ['attribute' => __('attributes.description')]),
+            'title.required'         => __('validation.required', ['attribute' => __('attributes.title')]),
+            'description.required'   => __('validation.required', ['attribute' => __('attributes.description')]),
+            'title.max'              => __('validation.max.string', ['attribute' => __('attributes.title'), 'max' => 255]),
+            'description.max'        => __('validation.max.string', ['attribute' => __('attributes.description'), 'max' => 255]),
+            'title.string'           => __('validation.string', ['attribute' => __('attributes.title')]),
+            'description.string'     => __('validation.string', ['attribute' => __('attributes.description')]),
         ];
     }
 }

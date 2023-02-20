@@ -38,11 +38,11 @@ class StoreCountryRequest extends FormRequest
 
     public function messages(){
         return [
-            'name.required'       => __('admin.required', ['attribute' => __('attributes.name')]),
-            'code.required'       => __('admin.required', ['attribute' => __('attributes.code')]),
-            'flag.required'       => __('admin.required', ['attribute' => __('attributes.flag')]),
-            'flag.image'          => __('admin.image', ['attribute' => __('attributes.flag')]),
-            'flag.mimes'          => __('admin.mimes', ['attribute' => __('attributes.flag')]),
+            'name.required'       => __('validation.required', ['attribute' => __('attributes.name')]),
+            'code.required'       => __('validation.required', ['attribute' => __('attributes.code')]),
+            'flag.required'       => __('validation.required', ['attribute' => __('attributes.flag')]),
+            'flag.image'          => __('validation.image', ['attribute' => __('attributes.flag')]),
+            'flag.mimes'          => __('validation.mimes', ['attribute' => __('attributes.flag')]),
         ];
     }
 }
