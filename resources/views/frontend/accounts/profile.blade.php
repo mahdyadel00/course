@@ -83,7 +83,26 @@
                                         @endif
                                     </ul>
                                     <button class="edit-btn lab-btn " id="btn">Edit</button>
+                                    <button class="edit-btn lab-btn " id="btn-pass">Change Password</button>
                                 </div>
+                                <form id="change-password-form" class="mt-5">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" name="email"
+                                            class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>New Password</label>
+                                        <input type="password" name="New Password"
+                                            class="form-control" placeholder="New Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Confirm New Password</label>
+                                        <input type="password" name="Confirm New Password"
+                                            class="form-control" placeholder="Confirm New Password">
+                                    </div>
+                                    <button type="submit" class="edit-btn lab-btn">Update</button>
+                                </form>
                                 <form id="user-form" action="{{ route('profile.update') }}" method="post"
                                     enctype="multipart/form-data">
                                     @csrf

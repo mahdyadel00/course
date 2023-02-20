@@ -605,3 +605,13 @@ close.addEventListener('click', (event)=>{
   info.style.display = "block"
   form.style.display = "none"
 });
+
+
+const btn_pass = document.getElementById("btn-pass")
+const change_password_form = document.getElementById("change-password-form")
+
+btn_pass.addEventListener('click', ()=>{
+  btn_pass.style.display = "none"
+  change_password_form.style.display = "block"
+});
+
