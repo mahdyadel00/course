@@ -40,11 +40,11 @@ class ContactRequest extends FormRequest
 
     public function messages(){
         return [
-            'name.required'     => __('admin.required', ['attribute' => __('attributes.name')]),
-            'email.required'    => __('admin.required', ['attribute' => __('attributes.email')]),
-            'number.required'   => __('admin.required', ['attribute' => __('attributes.number')]),
-            'subject.required'  => __('admin.required', ['attribute' => __('attributes.subject')]),
-            'message.required'  => __('admin.required', ['attribute' => __('attributes.message')]),
+            'name.required'     => __('validation.required', ['attribute' => __('attributes.name')]),
+            'email.required'    => __('validation.required', ['attribute' => __('attributes.email')]),
+            'number.required'   => __('validation.required', ['attribute' => __('attributes.number')]),
+            'subject.required'  => __('validation.required', ['attribute' => __('attributes.subject')]),
+            'message.required'  => __('validation.required', ['attribute' => __('attributes.message')]),
         ];
     }
 }

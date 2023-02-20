@@ -38,10 +38,10 @@ class StoreSliderRequest extends FormRequest
 
     public function messages(){
         return [
-            'title.required'       => __('admin.required', ['attribute' => __('attributes.title')]),
-            'image.required'       => __('admin.required', ['attribute' => __('attributes.image')]),
-            'image.image'          => __('admin.image', ['attribute' => __('attributes.image')]),
-            'image.mimes'          => __('admin.mimes', ['attribute' => __('attributes.image')]),
+            'title.required'       => __('validation.required', ['attribute' => __('attributes.title')]),
+            'image.required'       => __('validation.required', ['attribute' => __('attributes.image')]),
+            'image.image'          => __('validation.image', ['attribute' => __('attributes.image')]),
+            'image.mimes'          => __('validation.mimes', ['attribute' => __('attributes.image')]),
         ];
     }
 }
