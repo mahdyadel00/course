@@ -63,6 +63,7 @@ Route::get('/speakers/details/{id}', [SpeakersController::class, 'details'])->na
 // Profile Route
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+Route::post('/profile/change/password', [ProfileController::class, 'changePassword'])->name('profile.change_password');
 // Dwonload cv
 Route::get('/profile/download/{id}', [ProfileController::class, 'download'])->name('profile.download');
 

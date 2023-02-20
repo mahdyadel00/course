@@ -85,21 +85,23 @@
                                     <button class="edit-btn lab-btn " id="btn">Edit</button>
                                     <button class="edit-btn lab-btn " id="btn-pass">Change Password</button>
                                 </div>
-                                <form id="change-password-form" class="mt-5">
+                                <form id="change-password-form" class="mt-5" method="post"
+                                    action="{{ route('profile.change_password') }}">
+                                    @csrf
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input type="email" name="email"
+                                        <input type="email" name="email" value="{{ $user->email }}"
                                             class="form-control" placeholder="Email">
                                     </div>
                                     <div class="form-group">
                                         <label>New Password</label>
-                                        <input type="password" name="New Password"
-                                            class="form-control" placeholder="New Password">
+                                        <input type="password" name="password" class="form-control"
+                                            placeholder="New Password">
                                     </div>
                                     <div class="form-group">
                                         <label>Confirm New Password</label>
-                                        <input type="password" name="Confirm New Password"
-                                            class="form-control" placeholder="Confirm New Password">
+                                        <input type="password" name="password_confirmation" class="form-control"
+                                            placeholder="Confirm New Password">
                                     </div>
                                     <button type="submit" class="edit-btn lab-btn">Update</button>
                                 </form>
@@ -130,24 +132,6 @@
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    {{-- new password --}}
-                                    {{-- <div class="form-group">
-                                        <label>New Password</label>
-                                        <input type="password" name="password" class="form-control" placeholder="password"
-                                            value="{{ $user->password }}">
-                                        @error('password')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div> --}}
-                                    {{-- confirm password --}}
-                                    {{-- <div class="form-group">
-                                        <label>Confirmation Password</label>
-                                        <input type="password" name="password_confirmation" class="form-control"
-                                            placeholder="password" value="{{ $user->password }}">
-                                        @error('password_confirmation')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div> --}}
                                     <div class="form-group">
                                         <label>Phone</label>
                                         <input type="text" name="phone" value="{{ $user->phone }}"
@@ -204,7 +188,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Qulification</label>
-                                        <input class="form-control" value="{{ $user->qulification }}" name="qulification">
+                                        <input class="form-control" value="{{ $user->qulification }}"
+                                            name="qulification">
                                         @error('qulification')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror

@@ -16,18 +16,17 @@
                                     enctype="multipart/form-data" autocomplete="off">
                                     {{ csrf_field() }}
                                     <div class="col">
-                                        <label>English Name </label>
-                                        <input class="form-control fc-datepicker" type="text" name="title_en"
-                                            value="{{ $setting->title_en }}">
-                                        @error('title_en')
+                                        <label>Title  </label>
+                                        <input class="form-control fc-datepicker" type="text" name="title"
+                                            value="{{ $setting->title }}">
+                                        @error('title')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col">
-                                        <label> Arabic Name</label>
-                                        <input class="form-control fc-datepicker" name="title_ar"
-                                            value="{{ $setting ? $setting->title_ar : '' }}" type="text">
-                                        @error('title_ar')
+                                        <label> Description</label>
+                                        <textarea name="description" class="form-control fc-datepicker ckeditor" id="description" cols="30" rows="10">{{ $setting ? $setting->description : '' }}</textarea>
+                                        @error('description')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -88,18 +87,34 @@
                                         @enderror
                                     </div>
                                     <div class="col">
-                                        <label>YouTube</label>
-                                        <input class="form-control fc-datepicker" name="youtube_link"
-                                            value="{{ $setting ? $setting->youtube_link : '' }}" type="text">
-                                        @error('youtube_link')
+                                        <label>Dirbble</label>
+                                        <input class="form-control fc-datepicker" name="dribble_link"
+                                            value="{{ $setting ? $setting->dribble_link : '' }}" type="text">
+                                        @error('dribble_link')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="col">
+                                        <label>Vimo</label>
+                                        <input class="form-control fc-datepicker" name="vimeo_link"
+                                            value="{{ $setting ? $setting->vimeo_link : '' }}" type="text">
+                                        @error('vimeo_link')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="col">
+                                        <label>Behance</label>
+                                        <input class="form-control fc-datepicker" name="behance_link"
+                                            value="{{ $setting ? $setting->behance_link : '' }}" type="text">
+                                        @error('behance_link')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col">
                                         <label>Linkedin</label>
-                                        <input class="form-control fc-datepicker" name="linkedin_link"
-                                            value="{{ $setting ? $setting->linkedin_link : '' }}" type="text">
-                                        @error('linkedin_link')
+                                        <input class="form-control fc-datepicker" name="instagram_link"
+                                            value="{{ $setting ? $setting->instagram_link : '' }}" type="text">
+                                        @error('instagram_link')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>

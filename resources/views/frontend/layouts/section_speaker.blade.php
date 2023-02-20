@@ -52,6 +52,10 @@
                                                 <li><a target="_blank" href="{{ $speaker->youtube }}"><i
                                                             class="icofont-youtube"></i></a></li>
                                             @endif
+                                            @if ($speaker->behance)
+                                                <li><a target="_blank" href="{{ $speaker->behance }}"><i
+                                                            class="icofont-behance"></i></a></li>
+                                            @endif
                                             @if ($speaker->vimeo)
                                                 <li><a target="_blank" href="{{ $speaker->vimeo }}"><i
                                                             class="icofont-vimeo"></i></a></li>

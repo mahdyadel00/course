@@ -39,34 +39,60 @@
                     @csrf
                     <div class="form-group">
                         <input type="text" placeholder="User Name" name="name" required>
+                        @error('name')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <input type="date" placeholder="Date Of Birth" name="birthdate">
+                        @error('birthdate')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <input type="text" placeholder="Email" name="email" required>
+                        @error('email')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <input type="password" placeholder="Password" name="password" required>
+                        @error('password')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <input type="password" placeholder="Confirm Password" name="password_confirmation" required>
+                        @error('password_confirmation')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <input type="text" placeholder="Address" name="address">
+                        @error('address')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="cv">Upload CV (Optional)</label>
                         <input type="file" name="cv" placeholder="Enter Your CV">
+                        @error('cv')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="text-start">
-                        {{-- <label for="policies"></label> --}}
                         <input type="checkbox" name="fill_survy">Fill Survey <span>(Git 1 ticket free from the same type
                             when booking)</span>
+                        @error('fill_survy')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="text-start">
                         <input type="checkbox" name="policies" required>I Accept <a
                             href="{{ route('polices.index') }}">Terms and Conditions</a>
+                        @error('policies')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <button type="submit" class="d-block lab-btn"><span>Get Started Now</span></button>

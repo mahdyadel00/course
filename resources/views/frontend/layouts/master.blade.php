@@ -105,18 +105,18 @@ $setting = App\Models\Settings::first();
                         <div class="footer-middle-item-wrapper">
                             <div class="footer-middle-item mb-5 mb-lg-0">
                                 <div class="fm-item-title">
-                                <img src="{{ asset('frontend') }}/assets/images/logo/logo-white.png" alt="">
+                                    <img src="{{ asset('frontend') }}/assets/images/logo/logo-white.png"
+                                        alt="">
                                 </div>
                                 <div class="fm-item-content">
-                                    <p class="mb-30">Energistica coordinate highly eficient procesr
-                                        improvement viaing awesome</p>
-                                        <ul class="social-icons">
-                                        <li><a href="#"><i class="icofont-facebook"></i></a></li>
-                                        <li><a href="#"><i class="icofont-twitter"></i></a></li>
-                                        <li><a href="#"><i class="icofont-instagram"></i></a></li>
-                                        <li><a href="#"><i class="icofont-dribble"></i></a></li>
-                                        <li><a href="#"><i class="icofont-vimeo"></i></a></li>
-                                        <li><a href="#"><i class="icofont-behance"></i></a></li>
+                                    <p class="mb-30">{!! $setting->description !!}</p>
+                                    <ul class="social-icons">
+                                        <li><a href="{{ $setting->facebook_link }}"><i class="icofont-facebook"></i></a></li>
+                                        <li><a href="{{ $setting->twitter_link }}"><i class="icofont-twitter"></i></a></li>
+                                        <li><a href="{{ $setting->instgram_link }}"><i class="icofont-instagram"></i></a></li>
+                                        <li><a href="{{ $setting->dirbble_link }}"><i class="icofont-dribble"></i></a></li>
+                                        <li><a href="{{ $setting->vimo_link }}"><i class="icofont-vimeo"></i></a></li>
+                                        <li><a href="{{ $setting->behance_link }}"><i class="icofont-behance"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -129,14 +129,14 @@ $setting = App\Models\Settings::first();
                                     <h5>Links</h5>
                                 </div>
                                 <div class="fm-item-content">
-                                <ul>
-                                    <li><a href="{{ route('home') }}">Home</a></li>
-                                    <li><a href="{{ route('features.index') }}">Features</a></li>
-                                    <li><a href="{{ route('speakers.index') }}">Speakers</a></li>
-                                    <li><a href="{{ route('courses.index') }}">Diploma</a></li>
-                                    <li><a href="{{ route('pricing.index') }}">Pricing</a></li>
-                                    <li><a href="{{ route('contacts.index') }}">Contact</a></li>
-                                </ul>
+                                    <ul>
+                                        <li><a href="{{ route('home') }}">Home</a></li>
+                                        <li><a href="{{ route('features.index') }}">Features</a></li>
+                                        <li><a href="{{ route('speakers.index') }}">Speakers</a></li>
+                                        <li><a href="{{ route('courses.index') }}">Diploma</a></li>
+                                        <li><a href="{{ route('pricing.index') }}">Pricing</a></li>
+                                        <li><a href="{{ route('contacts.index') }}">Contact</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -149,23 +149,12 @@ $setting = App\Models\Settings::first();
                                 </div>
                                 <div class="fm-item-content">
                                     <div class="row">
+                                        @foreach ($sponsers as $sponser)
                                             <div class="col-sm-2 mb-3">
-                                            <img src="{{ asset('frontend') }}/assets/images/sponsor/bayro.png"
-                                        alt="Phone-icon">
+                                                <img src="{{ asset($sponser->image) }}" alt="Phone-icon">
                                             </div>
-                                            <div class="col-sm-2">
-                                            <img src="{{ asset('frontend') }}/assets/images/sponsor/bayro.png"
-                                        alt="Phone-icon">
-                                            </div>
-                                            <div class="col-sm-2">
-                                            <img src="{{ asset('frontend') }}/assets/images/sponsor/bayro.png"
-                                        alt="Phone-icon">
-                                            </div>
-                                            <div class="col-sm-2">
-                                            <img src="{{ asset('frontend') }}/assets/images/sponsor/bayro.png"
-                                        alt="Phone-icon">
-                                            </div>
-                                        </div>
+                                        @endforeach
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -178,8 +167,8 @@ $setting = App\Models\Settings::first();
                 <div class="row">
                     <div class="col-12">
                         <div class="footer-bottom-content text-center">
-                        <p>&copy;2023 Powered By: <a target="_blank"
-                                    href="https://geexar.com/">{{ $setting->title_en }}</a></p>
+                            <p>&copy;2023 Powered By: <a target="_blank"
+                                    href="https://geexar.com/">{{ $setting->title }}</a></p>
                         </div>
                     </div>
                 </div>
@@ -194,7 +183,8 @@ $setting = App\Models\Settings::first();
     <div class="block-with-svg-gradients">
         <svg xmlns="http://www.w3.org/2000/svg">
             <defs>
-                <lineargradient id="svg-gradient-primary" x1="0%" y1="100%" x2="100%" y2="0%">
+                <lineargradient id="svg-gradient-primary" x1="0%" y1="100%" x2="100%"
+                    y2="0%">
                     <stop offset="0%" style="stop-color:rgb(130,46,168);stop-opacity:1"></stop>
                     <stop offset="100%" style="stop-color:rgb(217,14,144);stop-opacity:1"></stop>
                 </lineargradient>

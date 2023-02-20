@@ -96,12 +96,27 @@
                                                                     class="instagram"><i class="icofont-instagram"></i></a>
                                                             </li>
                                                         @endif
-                                                        @if ($speaker->youtube)
+                                                        @if ($speaker->tiktok)
                                                             <li> <a target="_blank" href="{{ $speaker->tiktok }}"
                                                                     class="tiktok">
                                                                     <img src="{{ asset('frontend') }}/assets/images/tik.png"
                                                                         alt="">
                                                                 </a>
+                                                            </li>
+                                                        @endif
+                                                        @if ($speaker->youtube)
+                                                            <li><a target="_blank" href="{{ $speaker->youtube }}"
+                                                                    class="youtube"><i class="icofont-youtube"></i></a>
+                                                            </li>
+                                                        @endif
+                                                        @if ($speaker->behance)
+                                                            <li><a target="_blank" href="{{ $speaker->behance }}"
+                                                                    class="behance"><i class="icofont-behance"></i></a>
+                                                            </li>
+                                                        @endif
+                                                        @if ($speaker->vimeo)
+                                                            <li><a target="_blank" href="{{ $speaker->vimeo }}"
+                                                                    class="vimeo"><i class="icofont-vimeo"></i></a>
                                                             </li>
                                                         @endif
                                                         @if ($speaker->linkedin)

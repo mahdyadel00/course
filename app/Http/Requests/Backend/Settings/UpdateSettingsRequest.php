@@ -25,8 +25,7 @@ class UpdateSettingsRequest extends FormRequest
     {
         return [
 
-            'title_en'         => ["sometimes", "string"],
-            'title_ar'         => ["sometimes", "string"],
+            'title'            => ["sometimes", "string"],
             'description'      => ["sometimes", "string"],
             'address'          => ["sometimes", "string"],
             'phone'            => ["sometimes", "string"],
@@ -35,8 +34,10 @@ class UpdateSettingsRequest extends FormRequest
             'end_at'           => ["sometimes"],
             'facebook_link'    => ["sometimes", "string"],
             'twitter_link'     => ["sometimes", "string"],
-            'youtube_link'     => ["sometimes", "string"],
-            'linkedin_link'    => ["sometimes", "string"],
+            'dribble_link'     => ["sometimes", "string"],
+            'vimeo_link'       => ["sometimes", "string"],
+            'behance_link'     => ["sometimes", "string"],
+            'instagram_link'   => ["sometimes", "string"],
             'logo'             => ["sometimes", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
             'image'            => ["sometimes", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
             'main_image'       => ["sometimes", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
@@ -51,8 +52,7 @@ class UpdateSettingsRequest extends FormRequest
 
     public function messages(){
         return [
-            'title_en.required'       => __('validation.required', ['attribute' => __('attributes.title_en')]),
-            'title_ar.required'       => __('validation.required', ['attribute' => __('attributes.title_ar')]),
+            'title.required'          => __('validation.required', ['attribute' => __('attributes.title')]),
             'description.required'    => __('validation.required', ['attribute' => __('attributes.description')]),
             'address.required'        => __('validation.required', ['attribute' => __('attributes.address')]),
             'phone.required'          => __('validation.required', ['attribute' => __('attributes.phone')]),
@@ -61,8 +61,10 @@ class UpdateSettingsRequest extends FormRequest
             'end_at.required'         => __('validation.required', ['attribute' => __('attributes.end_at')]),
             'facebook_link.required'  => __('validation.required', ['attribute' => __('attributes.facebook_link')]),
             'twitter_link.required'   => __('validation.required', ['attribute' => __('attributes.twitter_link')]),
-            'youtube_link.required'   => __('validation.required', ['attribute' => __('attributes.youtube_link')]),
-            'linkedin_link.required'  => __('validation.required', ['attribute' => __('attributes.linkedin_link')]),
+            'dribble_link.required'   => __('validation.required', ['attribute' => __('attributes.dribble_link')]),
+            'behance_link.required'   => __('validation.required', ['attribute' => __('attributes.behance_link')]),
+            'vimeo_link.required'   => __('validation.required', ['attribute' => __('attributes.vimeo_link')]),
+            'instagram_link.required'  => __('validation.required', ['attribute' => __('attributes.instagram_link')]),
             'logo.required'           => __('validation.required', ['attribute' => __('attributes.logo')]),
             'image.required'          => __('validation.required', ['attribute' => __('attributes.image')]),
             'main_image.required'     => __('validation.required', ['attribute' => __('attributes.main_image')]),

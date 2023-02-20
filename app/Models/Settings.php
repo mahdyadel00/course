@@ -8,7 +8,7 @@ class Settings extends Model
     use HasFactory;
 
     protected $guarded = [];
-    protected $fillable = array('title_en','title_ar','logo' ,'image' , 'main_image' ,'address','email','phone','start_from', 'end_at','facebook_link','twitter_link','linkedin_link','youtube_link');
+    protected $fillable = array('title','description','logo' ,'image' , 'main_image' ,'address','email','phone','start_from', 'end_at','facebook_link','twitter_link','instagram_link','dribble_link' , 'vimeo_link' , 'behance_link');
 
 
 }

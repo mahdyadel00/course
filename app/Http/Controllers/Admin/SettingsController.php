@@ -59,8 +59,8 @@ class SettingsController extends Controller
         }
 
 
-        $setting->title_en      =   $request->title_en;
-        $setting->title_ar      =   $request->title_ar;
+        $setting->title         =   $request->title;
+        $setting->description   =   $request->description;
         $setting->email         =   $request->email;
         $setting->phone         =   $request->phone;
         $setting->address       =   $request->address;
@@ -68,8 +68,10 @@ class SettingsController extends Controller
         $setting->end_at        =   $request->end_at;
         $setting->facebook_link =   $request->facebook_link;
         $setting->twitter_link  =   $request->twitter_link;
-        $setting->youtube_link  =   $request->youtube_link;
-        $setting->linkedin_link =   $request->linkedin_link;
+        $setting->dribble_link  =   $request->dribble_link;
+        $setting->vimeo_link    =   $request->vimeo_link;
+        $setting->behance_link  =   $request->behance_link;
+        $setting->instagram_link =   $request->instagram_link;
         $setting->logo          =   $logo_in_db;
         $setting->image         =   $image_in_db;
         $setting->main_image    =   $main_image_in_db;

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\Profile\UpdateProfileRequest;
+use App\Http\Requests\Frontend\Profile\ChangePassword;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\Marketing;
@@ -32,7 +33,7 @@ class ProfileController extends Controller
             $user = User::with('marketing')->where('id', auth()->user()->id)->first();
             $settings = Settings::first();
 
-            return view('frontend.accounts.profile', compact('user', 'marketings', 'countries', 'cities', 'user_marketings' , 'settings'));
+            return view('frontend.accounts.profile', compact('user', 'marketings', 'countries', 'cities', 'user_marketings', 'settings'));
         } else {
 
             return redirect()->route('login.show')->with('Un Authanticated!');
@@ -40,7 +41,6 @@ class ProfileController extends Controller
     }
     protected function update(UpdateProfileRequest $request)
     {
-        // dd($request->all());
         $user = User::where('id', auth()->user()->id)->first();
         $image_in_db = NULL;
         if ($request->has('image')) {
@@ -117,6 +117,25 @@ class ProfileController extends Controller
         }
     }
 
+    public function changePassword(Request $request)
+    {
+
+        $user = User::where('id', auth()->user()->id)->first();
+
+        $user->update([
+
+            'email'  => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        if ($user) {
+            $user->marketing()->sync($request->marketing_id);
+
+            return redirect()->back()->with('success', 'Profile Updated Successfully');
+        } else {
+            return redirect()->back()->with('error', 'Something went wrong');
+        }
+    }
     public function download($id)
     {
         $user = User::where('id', $id)->first();
