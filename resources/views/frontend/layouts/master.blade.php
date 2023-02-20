@@ -2,6 +2,8 @@
 <html lang="en">
 <?php
 $setting = App\Models\Settings::first();
+$gifit = App\Models\Gifit::first();
+$sponsers = App\Models\Sponser::get();
 ?>
 
 <head>
@@ -26,8 +28,6 @@ $setting = App\Models\Settings::first();
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/swiper.min.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/custom-style.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/style.css">
-    {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/> --}}
 </head>
 
 <body>
@@ -111,12 +111,17 @@ $setting = App\Models\Settings::first();
                                 <div class="fm-item-content">
                                     <p class="mb-30">{!! $setting->description !!}</p>
                                     <ul class="social-icons">
-                                        <li><a href="{{ $setting->facebook_link }}"><i class="icofont-facebook"></i></a></li>
-                                        <li><a href="{{ $setting->twitter_link }}"><i class="icofont-twitter"></i></a></li>
-                                        <li><a href="{{ $setting->instgram_link }}"><i class="icofont-instagram"></i></a></li>
-                                        <li><a href="{{ $setting->dirbble_link }}"><i class="icofont-dribble"></i></a></li>
+                                        <li><a href="{{ $setting->facebook_link }}"><i
+                                                    class="icofont-facebook"></i></a></li>
+                                        <li><a href="{{ $setting->twitter_link }}"><i class="icofont-twitter"></i></a>
+                                        </li>
+                                        <li><a href="{{ $setting->instgram_link }}"><i
+                                                    class="icofont-instagram"></i></a></li>
+                                        <li><a href="{{ $setting->dirbble_link }}"><i class="icofont-dribble"></i></a>
+                                        </li>
                                         <li><a href="{{ $setting->vimo_link }}"><i class="icofont-vimeo"></i></a></li>
-                                        <li><a href="{{ $setting->behance_link }}"><i class="icofont-behance"></i></a></li>
+                                        <li><a href="{{ $setting->behance_link }}"><i class="icofont-behance"></i></a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -151,7 +156,9 @@ $setting = App\Models\Settings::first();
                                     <div class="row">
                                         @foreach ($sponsers as $sponser)
                                             <div class="col-sm-2 mb-3">
-                                                <img src="{{ asset($sponser->image) }}" alt="Phone-icon">
+                                                <a href="{{ $sponser->link }}">
+                                                    <img src="{{ asset($sponser->image) }}" alt="Phone-icon">
+                                                </a>
                                             </div>
                                         @endforeach
                                     </div>

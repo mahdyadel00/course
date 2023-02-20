@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
             SpeakerSeeder::class,
             UserSeeder::class,
             PolicesSeeder::class,
-            FiillServySeeder::class,
             PricingSeeder::class,
             FeatureSeeder::class,
             CourseSeeder::class,
@@ -29,6 +28,8 @@ class DatabaseSeeder extends Seeder
             CitySeeder::class,
             UserMarketingSeeder::class,
             DiplomaSeeder::class,
+            GifitSeeder::class,
+            LucturerSeeder::class,
         ]);
     }
 }

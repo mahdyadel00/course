@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFillServiesTable extends Migration
+class CreateGifitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateFillServiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('fill_servies', function (Blueprint $table) {
+        Schema::create('gifits', function (Blueprint $table) {
             $table->id();
-            $table->text('faq');
-            $table->boolean('answer');
+            $table->text('description');
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateFillServiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fill_servies');
+        Schema::dropIfExists('gifits');
     }
 }

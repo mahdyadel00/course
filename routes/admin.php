@@ -11,7 +11,7 @@ use  App\Http\Controllers\Admin\{
     RoleController,
     AuthController,
     PolicesController,
-    ServayController,
+    LucturerController,
     DiplomaController,
     PricingController,
     FeatureController,
@@ -21,6 +21,7 @@ use  App\Http\Controllers\Admin\{
     SliderController,
     CountryController,
     CityController,
+    GifitController
 };
 
 
@@ -128,7 +129,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/roles/edit/{id}', [RoleController::class, 'edit'])->name('roles.edit');
         Route::post('/roles/update/{id}', [RoleController::class, 'update'])->name('roles.update');
         Route::delete('/roles/delete/{id}', [RoleController::class, 'delete'])->name('roles.delete');
-        Route::delete('/servay/delete/{id}', [ServayController::class, 'delete'])->name('servay.delete');
 
         //Diploma Route
         Route::get('/diplomas', [DiplomaController::class, 'index'])->name('diplomas.index');
@@ -158,6 +158,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::post('/sponsers/update/{id}', [SponserController::class, 'update'])->name('sponsers.update');
         Route::delete('/sponsers/delete/{id}', [SponserController::class, 'delete'])->name('sponsers.delete');
 
+        //Gifit Route
+        Route::get('/gifits', [GifitController::class, 'index'])->name('gifits.index');
+        Route::post('/gifits/update', [GifitController::class, 'update'])->name('gifits.update');
+
         //Features Route
         Route::get('/features', [FeatureController::class, 'index'])->name('features.index');
         Route::post('/features', [FeatureController::class, 'update'])->name('features.update');
@@ -183,13 +187,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::delete('/roles/delete/{id}', [RoleController::class, 'delete'])->name('roles.delete');
 
         //Sevay Routes
-        Route::get('/servay', [ServayController::class, 'index'])->name('servay.index');
-        Route::get('/servay/create', [ServayController::class, 'create'])->name('servay.create');
-        Route::post('/servay/store', [ServayController::class, 'store'])->name('servay.store');
-        Route::get('/servay/show/{id}', [ServayController::class, 'show'])->name('servay.show');
-        Route::get('/servay/edit/{id}', [ServayController::class, 'edit'])->name('servay.edit');
-        Route::post('/servay/update/{id}', [ServayController::class, 'update'])->name('servay.update');
-        Route::delete('/servay/delete/{id}', [ServayController::class, 'delete'])->name('servay.delete');
+        Route::get('/lucturers', [LucturerController::class, 'index'])->name('lucturers.index');
+        Route::get('/lucturers/create', [LucturerController::class, 'create'])->name('lucturers.create');
+        Route::post('/lucturers/store', [LucturerController::class, 'store'])->name('lucturers.store');
+        Route::get('/lucturers/show/{id}', [LucturerController::class, 'show'])->name('lucturers.show');
+        Route::get('/lucturers/edit/{id}', [LucturerController::class, 'edit'])->name('lucturers.edit');
+        Route::post('/lucturers/update/{id}', [LucturerController::class, 'update'])->name('lucturers.update');
+        Route::delete('/lucturers/delete/{id}', [LucturerController::class, 'delete'])->name('lucturers.delete');
 
         //Slider Routes
         Route::get('/sliders', [SliderController::class, 'index'])->name('sliders.index');

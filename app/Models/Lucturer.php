@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FillServy extends Model
+class Lucturer extends Model
 {
     use HasFactory;
 
-    protected $fillable  = ['faq' , 'answer'];
+    protected $guarded  = [];
 }

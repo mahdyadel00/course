@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Gifit;
 use App\Models\Speaker;
 use App\Models\Settings;
 use App\Models\Slider;
@@ -17,6 +18,7 @@ class HomeController extends Controller
     {
         $sliders = Slider::get();
         $setting = Settings::first();
+        $gifit = Gifit::first();
         $speakers = Speaker::get();
         $sponsers = Sponser::get();
         $sponser_one = Sponser::take(2)->get();
@@ -25,6 +27,6 @@ class HomeController extends Controller
         //    dd($sponser_three);
         //    $sponser_four = Sponser::skip(11)->take(4)->get();
 
-        return view('frontend.layouts.index', compact('sliders', 'setting', 'speakers', 'sponser_one', 'sponser_two', 'sponser_three' , 'sponsers'));
+        return view('frontend.layouts.index', compact('sliders', 'setting' , 'gifit' , 'speakers', 'sponser_one', 'sponser_two', 'sponser_three' , 'sponsers'));
     }
 }
