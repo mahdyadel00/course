@@ -25,7 +25,7 @@ class LoginRequest extends FormRequest
     {
         return [
             'email'     => ['required', 'string', 'email', 'max:255'],
-            'password'  => ['required', 'string', 'min:8'],
+            'password'  => ['required', 'string', 'min:8', 'max:255'],
         ];
     }
 
@@ -37,8 +37,13 @@ class LoginRequest extends FormRequest
 
     public function messages(){
         return [
-            'email.required'    => __('admin.required', ['attribute' => __('attributes.email')]),
-            'password.required' => __('admin.required', ['attribute' => __('attributes.password')]),
+            'email.required'    => __('validation.required', ['attribute' => __('attributes.email')]),
+            'password.required' => __('validation.required', ['attribute' => __('attributes.password')]),
+            'email.email'       => __('validation.email', ['attribute' => __('attributes.email')]),
+            'email.max'         => __('validation.max', ['attribute' => __('attributes.email')]),
+            'password.max'      => __('validation.max', ['attribute' => __('attributes.password')]),
+            'password.string'   => __('validation.string', ['attribute' => __('attributes.password')]),
+            'email.string'      => __('validation.string', ['attribute' => __('attributes.email')]),
         ];
     }
 }
