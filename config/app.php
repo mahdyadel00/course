@@ -73,6 +73,8 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+
+        \ESolution\DBEncryption\Providers\DBEncryptionServiceProvider::class,
     ],
 
     /*
