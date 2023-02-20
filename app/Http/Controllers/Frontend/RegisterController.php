@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use Illuminate\Auth\Events\Registered;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\Auth\Register;
 use App\Http\Requests\Frontend\Auth\RegisterRequest;
@@ -42,9 +43,7 @@ class RegisterController extends Controller
             $cv_in_db = '/uploads/users/' . $cv_name;
         }
 
-
-
-        $users = User::query()->create([
+        $user = User::query()->create([
 
             'name'          => $request->name,
             'guard'         => "web",
@@ -59,8 +58,8 @@ class RegisterController extends Controller
 
         ]);
 
-        if ($users) {
-
+        if ($user) {
+            // event(new Registered($user));
             return redirect()->route('login.show')->with('success', 'Register Successfully');
         } else {
             return redirect()->route('register')->with('error', 'Register Failed');

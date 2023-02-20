@@ -27,7 +27,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('login/show', [LoginController::class, 'login'])->name('login.show');
 Route::post('login/post', [LoginController::class, 'doLogin'])->name('login.do');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout.front');
-
+// Verify email
+Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
+    ->middleware(['signed', 'throttle:6,1'])
+    ->name('verification.verify');
 // Facebook login Route
 Route::get('login/facebook', [FacebookController::class, 'providerFacebook'])->name('facebook.login');
 Route::get('facebook/callback', [FacebookController::class, 'callbackHandelFacebook'])->name('facebook.callback');
