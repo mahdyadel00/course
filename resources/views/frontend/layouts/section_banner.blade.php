@@ -33,7 +33,7 @@
                                 <p class="count-text">Sec</p>
                             </li>
                         </ul>
-                        <h1>The Biggest Marketing Conference <br /> In DELTA 2023 </h1>
+                        <h1>The Biggest Marketing Conference <br /> In Egypt 2023 </h1>
                         <p>Join Our International Conference Today! Please
                             Call us For More info.</p>
                         <a href="{{ route('register.show') }}" class="lab-btn"><span>Register Now</span> </a>

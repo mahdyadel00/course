@@ -20,7 +20,7 @@
                     <h4 class="wow fadeInUp text-spacing-200" data-wow-delay=".8s" data-caption-animate="fadeInUp"
                         data-caption-delay="300" data-caption-duration="900">Hurryup! Don’t waste time</h4>
                     <h1 class="wow fadeScale" data-caption-animate="fadeInUp" data-caption-delay="100"
-                        data-caption-duration="900">biggest marketing conference <br /> in Delta</h1>
+                        data-caption-duration="900">biggest marketing conference <br /> in Egypt</h1>
                     <!-- List Inline-->
                     <ul class="list-inline list-inline-md wow" data-splitting data-wow-delay="1.5s">
                         <li>

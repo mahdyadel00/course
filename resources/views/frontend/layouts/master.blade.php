@@ -22,7 +22,7 @@ $sponsers = App\Models\Sponser::get();
     <!-- Open Graph Meta Tags -->
     <meta property="og:url" content="https://gmc.geexar.com" />
     <meta property="og:title" content="GMC" />
-    <meta property="og:description" content="Biggest marketing conference in Delta" />
+    <meta property="og:description" content="Biggest marketing conference in Egypyt" />
     <meta property="og:image" content="{{ asset('frontend') }}/assets/images/logo/sub-image.png" />
 
     <!-- favicon -->
