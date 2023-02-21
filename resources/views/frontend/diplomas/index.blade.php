@@ -45,7 +45,7 @@
                                                 <a href="#">
                                                     <ul>
                                                         <li class="vat">
-                                                            <h4>${{ $diploma->price }}</h4>
+                                                            <h4>{{ $diploma->price }}</h4>
                                                             {{-- <p>ex. VAT</p> --}}
                                                         </li>
                                                         <li class="icon">
