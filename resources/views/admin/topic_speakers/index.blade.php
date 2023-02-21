@@ -4,10 +4,10 @@
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
-                    <h6>Sponsers</h6>
+                    <h6>Topic Speakers</h6>
                     <button class="btn btn-primary">
-                        <a href="{{ route('admin.sponsers.create') }}">
-                            <i class="fa fa-plus">Create</i>
+                        <a href="{{ route('admin.topicSpeakers.create') }}">
+                            <i class="fa fa-plus">Create Topic Speakers</i>
                         </a></button>
                 </div>
                 @include('layouts.admin._partials._session')
@@ -17,48 +17,52 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Image</th>
-                                    <th>Name</th>
+                                    <th>Title</th>
+                                    <th>Speaker Name</th>
+                                    <th>Start Time</th>
+                                    <th>End Time</th>
                                     <th>Link</th>
-                                    <th>Type</th>
+                                    <th>Days</th>
                                     <th>Created At</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($sponsers as $sponser)
+                                @foreach ($topics as $topic)
                                     <tr>
-                                        <td>{{ $sponser->id }}</td>
+                                        <td>{{ $topic->id }}</td>
+                                        <td>{{ $topic->title }}</td>
+                                        <td>{{ $topic->speaker ? $topic->speaker->name : '' }}</td>
+                                        <td>{{ $topic->start_time }}</td>
+                                        <td>{{ $topic->end_time }}</td>
                                         <td>
-                                            <img src="{{ $sponser->image }}" width="100px" height="100px" alt="">
+                                            <a href="{{ $topic->link }}" class="btn btn-primary" target="_blank">Go To Link</a>
                                         </td>
-                                        <td>{{ $sponser->name }}</td>
-                                        <td>{{ $sponser->link }}</td>
-                                        <td>{{ $sponser->type }}</td>
+                                        <td>{{ $topic->days }}</td>
                                         <td class="align-middle text-center">
                                             <span
-                                                class="text-secondary text-xs font-weight-bold">{{ date('d-m-Y', strtotime($sponser->created_at)) }}</span>
+                                                class="text-secondary text-xs font-weight-bold">{{ date('d-m-Y', strtotime($topic->created_at)) }}</span>
                                         </td>
                                         <td class="align-middle">
                                             <button class="btn btn-success">
-                                                <a href="{{ route('admin.sponsers.show', [$sponser->id]) }}"
+                                                <a href="{{ route('admin.topicSpeakers.show', [$topic->id]) }}"
                                                     class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
-                                                    data-original-title="Show sponser">
+                                                    data-original-title="Show topic">
                                                     <i class="fa fa-eye"></i>
                                                 </a></button>
                                             <button class="btn btn-info">
-                                                <a href="{{ route('admin.sponsers.edit', [$sponser->id]) }}"
+                                                <a href="{{ route('admin.topicSpeakers.edit', [$topic->id]) }}"
                                                     class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
-                                                    data-original-title="Edit sponser">
+                                                    data-original-title="Edit topic">
                                                     <i class="fa fa-edit"></i>
                                                 </a></button>
-                                            <form action="{{ route('admin.sponsers.delete', [$sponser->id]) }}"
+                                            <form action="{{ route('admin.topicSpeakers.delete', [$topic->id]) }}"
                                                 method="post" style="display: inline-block">
                                                 {{ csrf_field() }}
                                                 {{ method_field('delete') }}
                                                 <button class="btn btn-danger" type="submit">
                                                     <a href="#" class="text-secondary font-weight-bold text-xs"
-                                                        data-toggle="tooltip" data-original-title="Delete sponser">
+                                                        data-toggle="tooltip" data-original-title="Delete topic">
                                                         <i class="fa fa-trash"></i>
                                                     </a></button>
                                             </form><!-- end of form -->

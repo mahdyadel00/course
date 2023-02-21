@@ -14,5 +14,6 @@ class Sponser extends Model
         'name',
         'image',
         'link',
+        'type',
     ]; //
 }

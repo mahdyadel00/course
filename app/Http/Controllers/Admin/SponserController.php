@@ -37,21 +37,20 @@ class SponserController extends Controller
 
         Sponser::create([
 
-            'name'  => $request->name,
-            'link'  => $request->link,
+            'name'   => $request->name,
+            'link'   => $request->link,
             'image'  => $image_in_db,
+            'type'   => $request->type,
         ]);
 
         return redirect()->route('admin.sponsers.index')->with('success', 'Sponsers Create Successfully');
     }
 
-
     public function show($id)
     {
         $sponser = Sponser::find($id);
-        return view('admin.sponsers.show' , compact('sponser'));
+        return view('admin.sponsers.show', compact('sponser'));
     }
-
 
     public function edit($id)
     {
@@ -63,7 +62,6 @@ class SponserController extends Controller
 
     public function update(UpdateSponserRequest $request, $id)
     {
-
         $sponser = Sponser::find($id);
         $image_in_db = NULL;
         if ($request->has('image')) {
@@ -81,13 +79,14 @@ class SponserController extends Controller
         $sponser->update([
 
             'name'    => $request->name,
-            'link'     => $request->link,
-            'image'    => $image_in_db ,
+            'link'    => $request->link,
+            'image'   => $image_in_db,
+            'type'    => $request->type,
         ]);
 
         if ($sponser) {
 
-            return redirect()->route('admin.sponsers.index')->with('success' , 'Successfully Updated Sponser'); //
+            return redirect()->route('admin.sponsers.index')->with('success', 'Successfully Updated Sponser'); //
         }
     }
 
@@ -99,7 +98,7 @@ class SponserController extends Controller
         if ($sponser) {
             $sponser->delete();
 
-            return redirect()->route('admin.sponsers.index')->with('error' , 'Successfully Deleted Sponser');
+            return redirect()->route('admin.sponsers.index')->with('error', 'Successfully Deleted Sponser');
         }
     }
 }

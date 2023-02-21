@@ -18,6 +18,7 @@ class CreateSponsersTable extends Migration
             $table->string('name');
             $table->string('image');
             $table->string('link');
+            $table->enum('type' , ['Main' , 'Others']);
             $table->timestamps();
         });
     }

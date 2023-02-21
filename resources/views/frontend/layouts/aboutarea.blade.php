@@ -1,53 +1,53 @@
- <!-- ==========About Section start Here========== -->
- <section class="about-section padding-tb padding-b" id="section-video">
-     <div class="container">
-         <div class="row justify-content-center">
-             <div class="col-lg-10 d-none">
-                 <div class="about-image">
-                     <img src="{{ asset('frontend') }}/assets/images/about/01.jpg" alt="about image">
-                     <a href="https://www.youtube.com/embed/SP3yyrboTno" class="play-btn" data-rel="lightcase">
-                         <i class="icofont-ui-play"></i>
-                         <span class="pluse_2"></span>
-                     </a>
-                 </div>
-             </div>
-             <div class="col-lg-10">
-                 <div class="section-header text-center">
-                     <h2>Big Marketing Meetup</h2>
-                     <p>About "GMC" Conference 2023</p>
-                 </div>
-                 <div class="section-wrapper text-center">
-                     <p>The Conference aims to gather pioneers of marketing and entrepreneurs in Egypt and some
-                         countries
-                         of the world to transfer their marketing experiences, and to follow up on the most important
-                         new marketing methods after the presence of artificial intelligence and technological
-                         change.
-                         <br>
-                         <br>
-                         Knowing the importance of marketing in the development of companies and countries, helping
-                         youth in obtaining jobs in the field of marketing and freelancing, spreading awareness that
-                         marketing is a science that should be studied and not just propaganda stations or social
-                         media tools.
-                         <br>
-                         <br>
-                         Providing training opportunities and workshops to qualify youth for the market labor.
-                         <br>
-                         <br>
-                         Knowing how does the power of marketing affect the success of companies and individuals.
-                         <br>
-                         <br>
-                         Helping entrepreneurs follow the recent marketing methods in the largest companies, and how
-                         successful companies can effect on the economic conditions of the country.
-                     </p>
-                     <div class="about-btn-grp">
-                         <a href="{{ route('register.show') }}" class="lab-btn "><span>Register Now</span> </a>
-                     </div>
-                 </div>
-                 <br>
-                 <br><br>
-                 <br><br>
-                 <br>
-                 {{-- <div class="section-header text-center" id="benefits">
+<!-- ==========About Section start Here========== -->
+<section class="about-section padding-tb padding-b" id="section-video">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 d-none">
+                <div class="about-image">
+                    <img src="{{ asset('frontend') }}/assets/images/about/01.jpg" alt="about image">
+                    <a href="https://www.youtube.com/embed/SP3yyrboTno" class="play-btn" data-rel="lightcase">
+                        <i class="icofont-ui-play"></i>
+                        <span class="pluse_2"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-10">
+                <div class="section-header text-center">
+                    <h2>Big Marketing Meetup</h2>
+                    <p>About "GMC" Conference 2023</p>
+                </div>
+                <div class="section-wrapper text-center">
+                    <p>The Conference aims to gather pioneers of marketing and entrepreneurs in Egypt and some
+                        countries
+                        of the world to transfer their marketing experiences, and to follow up on the most important
+                        new marketing methods after the presence of artificial intelligence and technological
+                        change.
+                        <br>
+                        <br>
+                        Knowing the importance of marketing in the development of companies and countries, helping
+                        youth in obtaining jobs in the field of marketing and freelancing, spreading awareness that
+                        marketing is a science that should be studied and not just propaganda stations or social
+                        media tools.
+                        <br>
+                        <br>
+                        Providing training opportunities and workshops to qualify youth for the market labor.
+                        <br>
+                        <br>
+                        Knowing how does the power of marketing affect the success of companies and individuals.
+                        <br>
+                        <br>
+                        Helping entrepreneurs follow the recent marketing methods in the largest companies, and how
+                        successful companies can effect on the economic conditions of the country.
+                    </p>
+                    <div class="about-btn-grp">
+                        <a href="{{ route('register.show') }}" class="lab-btn "><span>Register Now</span> </a>
+                    </div>
+                </div>
+                <br>
+                <br><br>
+                <br><br>
+                <br>
+                {{-- <div class="section-header text-center" id="benefits">
                      <h2>Event Key Benefits</h2>
                      <p>About "GMC" Conference Features</p>
                  </div>
@@ -74,7 +74,7 @@
                          <a href="course.html" class="lab-btn "><span>Course Details</span> </a>
                      </div>
                  </div> --}}
-                 {{-- <br>
+                {{-- <br>
                  <br>
                  <br>
                  <br>
@@ -116,7 +116,7 @@
 
                      </p>
                  </div> --}}
-             </div>
-         </div>
- </section>
- <!-- ==========About Section end Here========== -->
+            </div>
+        </div>
+</section>
+<!-- ==========About Section end Here========== -->

@@ -22,17 +22,39 @@
                                         <label> Name </label>
                                         <input class="form-control fc-datepicker" name="name"
                                             value="{{ $sponser->name }}" type="text">
+                                        @error('name')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label> Link </label>
                                         <input class="form-control fc-datepicker" name="link"
                                             value="{{ $sponser->link }}" type="text">
+                                        @error('link')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="col">
+                                        <label> Type Sponser </label>
+                                        <select class="form-control" name="type">
+                                            <option disabled selected value="">Select Type Sponser</option>
+                                            <option value="Main" {{ $sponser->type == 'Main' ? 'selected' : '' }}>
+                                                Main Sponser</option>
+                                            <option value="Others" {{ $sponser->type == 'Others' ? 'selected' : '' }}>
+                                                Others Sponser</option>
+                                        </select>
+                                        @error('type')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Image</label>
                                         <input type="file" class="form-control modal-title" name='image'
                                             accept="image/jpeg,image/jpg,image/png">
                                         <img src="{{ asset($sponser->image) }}" height="100px" width="100px" />
+                                        @error('image')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="d-flex justify-content-center col">
                                         <button type="submit" class="btn btn-primary"

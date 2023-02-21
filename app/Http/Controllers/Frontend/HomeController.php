@@ -9,6 +9,7 @@ use App\Models\Speaker;
 use App\Models\Settings;
 use App\Models\Slider;
 use App\Models\Sponser;
+use App\Models\TopicSpeaker;
 
 class HomeController extends Controller
 {
@@ -20,13 +21,12 @@ class HomeController extends Controller
         $setting = Settings::first();
         $gifit = Gifit::first();
         $speakers = Speaker::get();
-        $sponsers = Sponser::get();
-        $sponser_one = Sponser::take(2)->get();
-        $sponser_two = Sponser::skip(2)->take(3)->get();
-        $sponser_three = Sponser::skip(5)->take(100)->get();
-        //    dd($sponser_three);
-        //    $sponser_four = Sponser::skip(11)->take(4)->get();
+        $main_sponsers = Sponser::where('type' , 'Main')->get();
+        $others_sponsers = Sponser::where('type' , 'Others')->get();
+        $topic_firstDay = TopicSpeaker::with('speaker')->where('days' , 'First Day')->get();
+        $topic_secondDay = TopicSpeaker::with('speaker')->where('days' , 'Second Day')->get();
+        $topic_thirdDay = TopicSpeaker::with('speaker')->where('days' , 'Third Day')->get();
 
-        return view('frontend.layouts.index', compact('sliders', 'setting' , 'gifit' , 'speakers', 'sponser_one', 'sponser_two', 'sponser_three' , 'sponsers'));
+        return view('frontend.layouts.index', compact('sliders', 'setting' , 'gifit' , 'speakers', 'main_sponsers', 'others_sponsers' , 'topic_firstDay' , 'topic_secondDay' , 'topic_thirdDay'));
     }
 }

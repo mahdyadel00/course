@@ -4,6 +4,15 @@
 $setting = App\Models\Settings::first();
 $gifit = App\Models\Gifit::first();
 $sponsers = App\Models\Sponser::get();
+// $topic_firstDay = App\Models\TopicSpeaker::with('speaker')
+//     ->where('days', 'First Day')
+//     ->get();
+// $topic_secondDay = App\Models\TopicSpeaker::with('speaker')
+//     ->where('days', 'Second Day')
+//     ->get();
+// $topic_thirdDay = App\Models\TopicSpeaker::with('speaker')
+//     ->where('days', 'Third Day')
+//     ->get();
 ?>
 
 <head>

@@ -21,7 +21,8 @@ use  App\Http\Controllers\Admin\{
     SliderController,
     CountryController,
     CityController,
-    GifitController
+    GifitController,
+    TopicSpeakerController
 };
 
 
@@ -112,6 +113,16 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/speakers/edit/{id}', [SpeakersController::class, 'edit'])->name('speakers.edit');
         Route::post('/speakers/update/{id}', [SpeakersController::class, 'update'])->name('speakers.update');
         Route::delete('/speakers/delete/{id}', [SpeakersController::class, 'delete'])->name('speakers.delete');
+
+        //topicSpeakers Route
+        Route::get('/topicSpeakers', [TopicSpeakerController::class, 'index'])->name('topicSpeakers.index');
+        Route::get('/topicSpeakers/create', [TopicSpeakerController::class, 'create'])->name('topicSpeakers.create');
+        Route::post('/topicSpeakers/store', [TopicSpeakerController::class, 'store'])->name('topicSpeakers.store');
+        Route::get('/topicSpeakers/show/{id}', [TopicSpeakerController::class, 'show'])->name('topicSpeakers.show');
+        Route::get('/topicSpeakers/edit/{id}', [TopicSpeakerController::class, 'edit'])->name('topicSpeakers.edit');
+        Route::post('/topicSpeakers/update/{id}', [TopicSpeakerController::class, 'update'])->name('topicSpeakers.update');
+        Route::delete('/topicSpeakers/delete/{id}', [TopicSpeakerController::class, 'delete'])->name('topicSpeakers.delete');
+
 
         // Settings Route
         Route::get('/settings/edit', [SettingsController::class, 'edit'])->name('settings.edit');

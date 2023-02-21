@@ -22,15 +22,36 @@
                                     <div class="col">
                                         <label> Name</label>
                                         <input class="form-control fc-datepicker" name="name">
+                                        @error('name')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label> Link</label>
                                         <input class="form-control fc-datepicker" name="link">
+                                        @error('link')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    {{-- //type --}}
+                                    <div class="col">
+                                        <label> Type Sponser</label>
+                                        <select class="form-control" name="type">
+                                            <option disabled selected value="">Select Type Sponser</option>
+                                            <option value="Main">Main Sponser</option>
+                                            <option value="Others">Others Sponser</option>
+                                        </select>
+                                        @error('type')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Image</label>
                                         <input type="file" class="form-control modal-title" name='image'
                                             accept="image/jpeg,image/jpg,image/png">
+                                        @error('image')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="d-flex justify-content-center col">
                                         <button type="submit" class="btn btn-primary"

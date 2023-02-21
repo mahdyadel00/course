@@ -26,6 +26,7 @@ class StoreSponserRequest extends FormRequest
         return [
             'name'  => ["required" , "string" , "max:255"],
             'link'  => ["required" , "string" , "max:255"],
+            'type'  => ["required" , "string" , "max:255"],
             'image' => ["required" , "image" , "mimes:jpeg,png,jpg,gif,svg,webp"],
         ];
     }
@@ -40,6 +41,7 @@ class StoreSponserRequest extends FormRequest
         return [
             'name.required'       => __('validation.required', ['attribute' => __('attributes.name')]),
             'link.required'       => __('validation.required', ['attribute' => __('attributes.link')]),
+            'type.required'       => __('validation.required', ['attribute' => __('attributes.type')]),
             'image.required'      => __('validation.required', ['attribute' => __('attributes.image')]),
             'image.image'         => __('validation.image', ['attribute' => __('attributes.image')]),
             'image.mimes'         => __('validation.mimes', ['attribute' => __('attributes.image')]),

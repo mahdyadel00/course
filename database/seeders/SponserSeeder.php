@@ -18,6 +18,7 @@ class SponserSeeder extends Seeder
             'name' => 'Sponser',
             'image' => 'sponserimage.png',
             'link' => 'linkelinke.png',
+            'type' => 'Main',
 
         ]);
     }

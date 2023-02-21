@@ -26,6 +26,7 @@ class UpdateSponserRequest extends FormRequest
         return [
             'name'  => ["sometimes", "string", "max:255"],
             'link'  => ["sometimes", "string", "max:255"],
+            'type'  => ["sometimes", "string", "max:255"],
             'image' => ["sometimes", "image", "mimes:jpeg,png,jpg,gif,svg,webp"],
         ];
     }
@@ -40,6 +41,7 @@ class UpdateSponserRequest extends FormRequest
         return [
             'name.required'       => __('validation.required', ['attribute' => __('attributes.name')]),
             'link.required'       => __('validation.required', ['attribute' => __('attributes.link')]),
+            'type.required'       => __('validation.required', ['attribute' => __('attributes.type')]),
             'image.required'      => __('validation.required', ['attribute' => __('attributes.image')]),
             'image.image'         => __('validation.image', ['attribute' => __('attributes.image')]),
             'image.mimes'         => __('validation.mimes', ['attribute' => __('attributes.image')]),

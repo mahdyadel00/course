@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             DiplomaSeeder::class,
             GifitSeeder::class,
             instructorseeder::class,
+            TopicSpeakerSeeder::class,
         ]);
     }
 }

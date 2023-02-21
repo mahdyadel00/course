@@ -15,27 +15,27 @@
                 </div>
             </div>
             <div class="col-12"> <strong class="sponsor-title">Main sponsors</strong> </div>
-            @foreach ($sponser_one as $s_one)
+            @foreach ($main_sponsers as $main)
                 <div class="col-lg-2 col-md-3 col-6">
                     <div data-scroll data-scroll-speed="0.5">
-                        <figure class="sponsor-logo"> <img src="{{ asset($s_one->image) }}" alt="Image">
-                            <figcaption><a href="{{ $s_one->link }}">{{ $s_one->name }}</a></figcaption>
+                        <figure class="sponsor-logo"> <img src="{{ asset($main->image) }}" alt="Image">
+                            <figcaption><a href="{{ $main->link }}">{{ $main->name }}</a></figcaption>
                         </figure>
                     </div>
                 </div>
             @endforeach
             <div class="clearfix spacing-50"></div>
             <div class="col-12"> <strong class="sponsor-title">Other sponsors</strong> </div>
-            @foreach ($sponser_two as $s_two)
+            @foreach ($others_sponsers as $other)
                 <div class="col-lg-2 col-md-3 col-6">
                     <div data-scroll data-scroll-speed="0.5">
-                        <figure class="sponsor-logo"> <img src="{{ asset($s_two->image) }}" alt="Image">
-                            <figcaption><a href="{{ $s_two->link }}">{{ $s_two->name }}</a></figcaption>
+                        <figure class="sponsor-logo"> <img src="{{ asset($other->image) }}" alt="Image">
+                            <figcaption><a href="{{ $other->link }}">{{ $other->name }}</a></figcaption>
                         </figure>
                     </div>
                 </div>
             @endforeach
-            <div class="clearfix spacing-50"></div>
+            {{-- <div class="clearfix spacing-50"></div>
             <div class="col-12"> <strong class="sponsor-title">Speakers From</strong> </div>
             @foreach ($sponser_three as $s_three)
                 <div class="col-lg-2 col-md-3 col-6">
@@ -45,7 +45,7 @@
                         </figure>
                     </div>
                 </div>
-            @endforeach
+            @endforeach --}}
             <div class="clearfix"></div>
             <!-- end col-2 -->
         </div>
