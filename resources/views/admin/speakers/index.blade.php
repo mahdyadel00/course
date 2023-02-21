@@ -21,6 +21,7 @@
                                     <th>#</th>
                                     <th>Name</th>
                                     <th>Email</th>
+                                    <th>Company Name</th>
                                     <th>Phone</th>
                                     <th>Image</th>
                                     <th>Created At</th>
@@ -34,6 +35,7 @@
                                         <td>{{ $speaker->id }}</td>
                                         <td>{{ $speaker->name }}</td>
                                         <td>{{ $speaker->email }}</td>
+                                        <td>{{ $speaker->company ? $speaker->company->name : '' }}</td>
                                         <td>{{ $speaker->phone }}</td>
                                         <td><img src="{{ $speaker->image }}" width="100px" height="100px" alt="">
                                         </td>

@@ -25,6 +25,10 @@
                                     <td>{{ $speaker->email }}</td>
                                 </tr>
                                 <tr>
+                                    <th>Company Name</th>
+                                    <td>{{ $speaker->company ? $speaker->company->name : '' }}</td>
+                                </tr>
+                                <tr>
                                     <th>Phone</th>
                                     <td>{{ $speaker->phone }}</td>
                                 </tr>
