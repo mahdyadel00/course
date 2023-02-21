@@ -68,7 +68,7 @@
                     </div>
                 @endforeach
             </div>
-            <div class="download-button text-center mt-5">
+            <!-- <div class="download-button text-center mt-5">
                 <div class="clearfix spacing-50"></div>
                 <div class="col-12"> <strong class="sponsor-title">Speakers From</strong> </div>
                 @foreach ($company_speakers as $company)
@@ -81,8 +81,33 @@
                     </div>
                 @endforeach
                 <div class="clearfix"></div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
 <!-- Speakers section end here -->
+
+<!-- ======= Sponsor sectin start here ======== -->
+<section class="content-section no-bottom-spacing pt-0">
+    <!-- end section-bg -->
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="clearfix spacing-50"></div>
+            <div class="col-12"> <strong class="sponsor-title">Speakers From</strong> </div>
+            @foreach ($company_speakers as $company)
+                <div class="col-lg-2 col-md-3 col-6">
+                    <div data-scroll data-scroll-speed="0.5">
+                        <figure class="sponsor-logo"> <img src="{{ asset($company->image) }}" alt="Image">
+                        <figcaption><a href="{{ $company->link }}">{{ $company->name }}</a></figcaption>
+                        </figure>
+                    </div>
+                </div>
+            @endforeach
+            <div class="clearfix"></div>
+            <!-- end col-2 -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</section>
+<!-- ======= Sponsor sectin end here ======== -->
