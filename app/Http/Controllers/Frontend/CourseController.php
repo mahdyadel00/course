@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use App\Models\Speaker;
 
 class CourseController extends Controller
 {
@@ -20,7 +21,9 @@ class CourseController extends Controller
     protected function index()
     {
         $course = Course::first();
-        return view('frontend.courses.index', compact('course'));
+        $speakers = Speaker::take(4)->get();
+        
+        return view('frontend.courses.index', compact('course' , 'speakers'));
     }
 
     //dwonload
