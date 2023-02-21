@@ -56,7 +56,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="collapse" id="SS" aria-labelledby="accordion1-card-head-hpaxeker"
+                                <div class="collapse" id="AhmedEmad" aria-labelledby="accordion1-card-head-hpaxeker"
                                     data-parent="#accordion1" role="tabpanel">
                                     <div class="card-body">
                                         <p>{{ $topic_fday->title }}</p>
