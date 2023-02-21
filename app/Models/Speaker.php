@@ -15,4 +15,9 @@ class Speaker extends Model
     {
         return $this->hasMany(TopicSpeaker::class);
     }
+
+    public function company()
+    {
+        return $this->belongsTo(CompanySpeaker::class);
+    }
 }

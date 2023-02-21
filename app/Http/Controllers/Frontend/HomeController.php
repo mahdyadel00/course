@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\CompanySpeaker;
 use App\Models\Gifit;
 use App\Models\Speaker;
 use App\Models\Settings;
@@ -26,7 +27,8 @@ class HomeController extends Controller
         $topic_firstDay = TopicSpeaker::with('speaker')->where('days' , 'First Day')->get();
         $topic_secondDay = TopicSpeaker::with('speaker')->where('days' , 'Second Day')->get();
         $topic_thirdDay = TopicSpeaker::with('speaker')->where('days' , 'Third Day')->get();
+        $company_speakers = CompanySpeaker::get();
 
-        return view('frontend.layouts.index', compact('sliders', 'setting' , 'gifit' , 'speakers', 'main_sponsers', 'others_sponsers' , 'topic_firstDay' , 'topic_secondDay' , 'topic_thirdDay'));
+        return view('frontend.layouts.index', compact('sliders', 'setting' , 'gifit' , 'speakers', 'main_sponsers', 'others_sponsers' , 'topic_firstDay' , 'topic_secondDay' , 'topic_thirdDay' , 'company_speakers'));
     }
 }

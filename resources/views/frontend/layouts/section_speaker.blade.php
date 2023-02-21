@@ -69,6 +69,18 @@
                 @endforeach
             </div>
             <div class="download-button text-center mt-5">
+                <div class="clearfix spacing-50"></div>
+                <div class="col-12"> <strong class="sponsor-title">Speakers From</strong> </div>
+                @foreach ($company_speakers as $company)
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <div data-scroll data-scroll-speed="0.5">
+                            <figure class="sponsor-logo"> <img src="{{ asset($company->image) }}" alt="Image">
+                                <figcaption><a href="{{ $company->link }}">{{ $company->name }}</a></figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                @endforeach
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>

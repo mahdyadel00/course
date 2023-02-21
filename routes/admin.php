@@ -22,7 +22,8 @@ use  App\Http\Controllers\Admin\{
     CountryController,
     CityController,
     GifitController,
-    TopicSpeakerController
+    TopicSpeakerController,
+    CompanySpeakerController
 };
 
 
@@ -113,6 +114,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/speakers/edit/{id}', [SpeakersController::class, 'edit'])->name('speakers.edit');
         Route::post('/speakers/update/{id}', [SpeakersController::class, 'update'])->name('speakers.update');
         Route::delete('/speakers/delete/{id}', [SpeakersController::class, 'delete'])->name('speakers.delete');
+
+        //companyspeakers Route
+        Route::get('/companyspeakers', [CompanySpeakerController::class, 'index'])->name('companyspeakers.index');
+        Route::get('/companyspeakers/create', [CompanySpeakerController::class, 'create'])->name('companyspeakers.create');
+        Route::post('/companyspeakers/store', [CompanySpeakerController::class, 'store'])->name('companyspeakers.store');
+        Route::get('/companyspeakers/show/{id}', [CompanySpeakerController::class, 'show'])->name('companyspeakers.show');
+        Route::get('/companyspeakers/edit/{id}', [CompanySpeakerController::class, 'edit'])->name('companyspeakers.edit');
+        Route::post('/companyspeakers/update/{id}', [CompanySpeakerController::class, 'update'])->name('companyspeakers.update');
+        Route::delete('/companyspeakers/delete/{id}', [CompanySpeakerController::class, 'delete'])->name('companyspeakers.delete');
 
         //topicSpeakers Route
         Route::get('/topicSpeakers', [TopicSpeakerController::class, 'index'])->name('topicSpeakers.index');
