@@ -31,7 +31,7 @@
                                 <div class="card-header" role="tab">
                                     <div class="card-title">
                                         <a class="collapsed" id="accordion1-card-head-hpaxeker"
-                                            data-toggle="collapse" data-parent="#accordion1" href="{{ route('speakers.details' , $topic_fday->speaker->id) }}"
+                                            data-toggle="collapse" data-parent="#accordion1" href="#SS"
                                             aria-controls="AhmedEmad" aria-expanded="false" role="button"><span
                                                 class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
@@ -55,7 +55,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="collapse" id="AhmedEmad" aria-labelledby="accordion1-card-head-hpaxeker"
+                                <div class="collapse" id="SS" aria-labelledby="accordion1-card-head-hpaxeker"
                                     data-parent="#accordion1" role="tabpanel">
                                     <div class="card-body">
                                         <p>{{ $topic_fday->title }}</p>
