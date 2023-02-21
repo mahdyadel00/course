@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PermissionTableSeeder::class,
             SettingsSeeder::class,
+            CompanySpeakerSeeder::class,
             SpeakerSeeder::class,
             UserSeeder::class,
             PolicesSeeder::class,
@@ -31,7 +32,6 @@ class DatabaseSeeder extends Seeder
             GifitSeeder::class,
             instructorseeder::class,
             TopicSpeakerSeeder::class,
-            CompanySpeakerSeeder::class,
         ]);
     }
 }
