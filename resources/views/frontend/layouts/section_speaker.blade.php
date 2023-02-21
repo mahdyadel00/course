@@ -92,7 +92,6 @@
     <!-- end section-bg -->
     <div class="container">
         <div class="row justify-content-center text-center">
-            <div class="clearfix spacing-50"></div>
             <div class="col-12"> <strong class="sponsor-title">Speakers From</strong> </div>
             @foreach ($company_speakers as $company)
                 <div class="col-lg-2 col-md-3 col-6">
