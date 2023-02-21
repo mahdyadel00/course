@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Backend\Lucturer;
+namespace App\Http\Requests\Backend\Instructor;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateLucturerRequest extends FormRequest
+class UpdateInstructorRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

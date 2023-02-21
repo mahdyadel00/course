@@ -3,40 +3,40 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Backend\Lucturer\StoreLucturerRequest;
-use App\Http\Requests\Backend\Lucturer\UpdateLucturerRequest;
+use App\Http\Requests\Backend\Instructor\StoreInstructorRequest;
+use App\Http\Requests\Backend\Instructor\UpdateInstructorRequest;
 use Illuminate\Http\Request;
-use App\Models\Lucturer;
+use App\Models\Instructor;
 
-class LucturerController extends Controller
+class InstructorController extends Controller
 {
 
     public function index()
     {
-        $lucturers = Lucturer::get();
+        $instructors = Instructor::get();
 
-        return view('admin.lucturers.index', compact('lucturers'));
+        return view('admin.instructors.index', compact('instructors'));
     }
 
 
     public function create()
     {
-        return view('admin.lucturers.create');
+        return view('admin.instructors.create');
     }
 
 
-    public function store(StoreLucturerRequest $request)
+    public function store(StoreInstructorRequest $request)
     {
         $image_in_db = NULL;
         if ($request->has('image')) {
-            $path = public_path() . '/uploads/lucturers';
+            $path = public_path() . '/uploads/instructors';
             $image = request('image');
             $image_name = time() . request('image')->getClientOriginalName();
             $image->move($path, $image_name);
-            $image_in_db = '/uploads/lucturers/' . $image_name;
+            $image_in_db = '/uploads/instructors/' . $image_name;
         }
 
-        Lucturer::create([
+        Instructor::create([
 
             'name'           => $request->name,
             'email'          => $request->email,
@@ -60,44 +60,44 @@ class LucturerController extends Controller
 
 
 
-        return redirect()->route('admin.lucturers.index')->with('success', 'Lucturer Created successfully');
+        return redirect()->route('admin.instructors.index')->with('success', 'Instructor Created successfully');
     }
 
 
     public function show($id)
     {
-        $lucturer = Lucturer::find($id);
+        $Instructor = Instructor::find($id);
 
-        return view('admin.lucturers.show', compact('lucturer'));
+        return view('admin.instructors.show', compact('Instructor'));
     }
 
 
     public function edit($id)
     {
-        $lucturer = Lucturer::find($id);
+        $Instructor = Instructor::find($id);
 
-        return view('admin.lucturers.edit', compact('lucturer'));
+        return view('admin.instructors.edit', compact('Instructor'));
     }
 
 
-    public function update(UpdateLucturerRequest $request, $id)
+    public function update(UpdateInstructorRequest $request, $id)
     {
 
-        $lucturer = Lucturer::findOrFail($id);
+        $Instructor = Instructor::findOrFail($id);
 
         $image_in_db = NULL;
         if ($request->has('image')) {
-            $path = public_path() . '/uploads/lucturers';
+            $path = public_path() . '/uploads/instructors';
             $image = request('image');
             $image_name = time() . request('image')->getClientOriginalName();
             $image->move($path, $image_name);
-            $image_in_db = '/uploads/lucturers/' . $image_name;
+            $image_in_db = '/uploads/instructors/' . $image_name;
         } else {
 
-            $image_in_db = $lucturer->image;
+            $image_in_db = $Instructor->image;
         }
 
-        $lucturer->update([
+        $Instructor->update([
 
             'name'           => $request->name,
             'email'          => $request->email,
@@ -119,20 +119,20 @@ class LucturerController extends Controller
 
         ]);
 
-        return redirect()->route('admin.lucturers.index')->with('success', 'lucturer updated successfully');
+        return redirect()->route('admin.instructors.index')->with('success', 'Instructor updated successfully');
     }
 
 
     public function delete($id)
     {
-        $lucturer = Lucturer::find($id);
+        $Instructor = Instructor::find($id);
 
-        if ($lucturer) {
+        if ($Instructor) {
 
-            $lucturer->delete();
-            return redirect()->route('admin.lucturers.index')->with('error', 'Lucturer Deleted Successfully');
+            $Instructor->delete();
+            return redirect()->route('admin.instructors.index')->with('error', 'Instructor Deleted Successfully');
 
-            return redirect()->route('admin.lucturers.index')->with('error', 'lucturer Not Found!');
+            return redirect()->route('admin.instructors.index')->with('error', 'Instructor Not Found!');
         }
     }
 }

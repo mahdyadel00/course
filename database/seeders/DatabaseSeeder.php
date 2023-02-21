@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             UserMarketingSeeder::class,
             DiplomaSeeder::class,
             GifitSeeder::class,
-            LucturerSeeder::class,
+            instructorseeder::class,
         ]);
     }
 }

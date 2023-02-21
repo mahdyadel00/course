@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Lucturer;
+use App\Models\Instructor;
 use Illuminate\Database\Seeder;
 
-class LucturerSeeder extends Seeder
+class instructorseeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class LucturerSeeder extends Seeder
      */
     public function run()
     {
-        Lucturer::create([
+        Instructor::create([
             'name'        => 'Mahdy',
             'description' => 'Mahdy is a web developer',
             'address'     => 'Egypt',

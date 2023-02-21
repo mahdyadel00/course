@@ -6,9 +6,9 @@
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
-                    <h6>Lucturers</h6>
+                    <h6>instructors</h6>
                     <button class="btn btn-primary">
-                        <a href="{{ route('admin.lucturers.create') }}">
+                        <a href="{{ route('admin.instructors.create') }}">
                             <i class="fa fa-plus">Create</i>
                         </a></button>
                 </div>
@@ -29,31 +29,31 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($lucturers as $lucturer)
+                                @foreach ($instructors as $Instructor)
                                     <tr>
-                                        <td>{{ $lucturer->id }}</td>
-                                        <td>{{ $lucturer->name }}</td>
-                                        <td>{{ $lucturer->email }}</td>
-                                        <td>{{ $lucturer->phone }}</td>
-                                        <td><img src="{{ $lucturer->image }}" width="100px" height="100px" alt="">
+                                        <td>{{ $Instructor->id }}</td>
+                                        <td>{{ $Instructor->name }}</td>
+                                        <td>{{ $Instructor->email }}</td>
+                                        <td>{{ $Instructor->phone }}</td>
+                                        <td><img src="{{ $Instructor->image }}" width="100px" height="100px" alt="">
                                         </td>
-                                        <td>{{ date('d-m-Y', strtotime($lucturer->created_at)) }}</td>
+                                        <td>{{ date('d-m-Y', strtotime($Instructor->created_at)) }}</td>
                                         <td class="align-middle">
-                                            <a href="{{ route('admin.lucturers.show', $lucturer->id) }}"
+                                            <a href="{{ route('admin.instructors.show', $Instructor->id) }}"
                                                 class="btn btn-info"><i class="fa fa-eye"></i></a>
                                             <button class="btn btn-primary">
-                                                <a href="{{ route('admin.lucturers.edit', [$lucturer->id]) }}"
+                                                <a href="{{ route('admin.instructors.edit', [$Instructor->id]) }}"
                                                     class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
-                                                    data-original-title="Edit lucturer">
+                                                    data-original-title="Edit Instructor">
                                                     <i class="fa fa-edit"></i>
                                                 </a></button>
-                                            <form action="{{ route('admin.lucturers.delete', [$lucturer->id]) }}"
+                                            <form action="{{ route('admin.instructors.delete', [$Instructor->id]) }}"
                                                 method="post" style="display: inline-block">
                                                 {{ csrf_field() }}
                                                 {{ method_field('delete') }}
                                                 <button class="btn btn-danger" type="submit">
                                                     <a href="#" class="text-secondary font-weight-bold text-xs"
-                                                        data-toggle="tooltip" data-original-title="Delete lucturer">
+                                                        data-toggle="tooltip" data-original-title="Delete Instructor">
                                                         <i class="fa fa-trash"></i>
                                                     </a></button>
                                             </form><!-- end of form -->

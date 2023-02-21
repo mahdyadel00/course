@@ -11,7 +11,7 @@ use  App\Http\Controllers\Admin\{
     RoleController,
     AuthController,
     PolicesController,
-    LucturerController,
+    InstructorController,
     DiplomaController,
     PricingController,
     FeatureController,
@@ -187,13 +187,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::delete('/roles/delete/{id}', [RoleController::class, 'delete'])->name('roles.delete');
 
         //Sevay Routes
-        Route::get('/lucturers', [LucturerController::class, 'index'])->name('lucturers.index');
-        Route::get('/lucturers/create', [LucturerController::class, 'create'])->name('lucturers.create');
-        Route::post('/lucturers/store', [LucturerController::class, 'store'])->name('lucturers.store');
-        Route::get('/lucturers/show/{id}', [LucturerController::class, 'show'])->name('lucturers.show');
-        Route::get('/lucturers/edit/{id}', [LucturerController::class, 'edit'])->name('lucturers.edit');
-        Route::post('/lucturers/update/{id}', [LucturerController::class, 'update'])->name('lucturers.update');
-        Route::delete('/lucturers/delete/{id}', [LucturerController::class, 'delete'])->name('lucturers.delete');
+        Route::get('/instructors', [InstructorController::class, 'index'])->name('instructors.index');
+        Route::get('/instructors/create', [InstructorController::class, 'create'])->name('instructors.create');
+        Route::post('/instructors/store', [InstructorController::class, 'store'])->name('instructors.store');
+        Route::get('/instructors/show/{id}', [InstructorController::class, 'show'])->name('instructors.show');
+        Route::get('/instructors/edit/{id}', [InstructorController::class, 'edit'])->name('instructors.edit');
+        Route::post('/instructors/update/{id}', [InstructorController::class, 'update'])->name('instructors.update');
+        Route::delete('/instructors/delete/{id}', [InstructorController::class, 'delete'])->name('instructors.delete');
 
         //Slider Routes
         Route::get('/sliders', [SliderController::class, 'index'])->name('sliders.index');
