@@ -35,9 +35,11 @@
                                         <td>{{ $topic->speaker ? $topic->speaker->name : '' }}</td>
                                         <td>{{ $topic->start_time }}</td>
                                         <td>{{ $topic->end_time }}</td>
+                                        @if($topic->link)
                                         <td>
                                             <a href="{{ $topic->link }}" class="btn btn-primary" target="_blank">Go To Link</a>
                                         </td>
+                                        @endif
                                         <td>{{ $topic->days }}</td>
                                         <td class="align-middle text-center">
                                             <span

@@ -25,13 +25,13 @@ class StoreTopicSpeaker extends FormRequest
     {
         return [
 
-            "title"        => ["required", "string", "max:255"],
-            "description"  => ["required", "string"],
-            "speaker_id"   => ["required", "integer", "max:255"],
-            "start_time"   => ["required", "max:255"],
-            "end_time"     => ["required", "max:255"],
-            "link"         => ["nullable", "string"],
-            "days"         => ["nullable", "string"],
+            "title"        => ["sometimes", "string", "max:255"],
+            "description"  => ["sometimes", "string"],
+            "speaker_id"   => ["sometimes", "integer", "max:255"],
+            "start_time"   => ["sometimes", "max:255"],
+            "end_time"     => ["sometimes", "max:255"],
+            "link"         => ["sometimes", "string"],
+            "days"         => ["sometimes", "string"],
 
         ];
     }

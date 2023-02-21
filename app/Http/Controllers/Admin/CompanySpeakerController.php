@@ -82,6 +82,11 @@ class CompanySpeakerController extends Controller
     {
         $company = CompanySpeaker::findOrFail($id);
         $company->delete();
+        //delete all speakers of this company
+        // $speakers = Speaker::where('company_id', $id)->get();
+        // foreach ($speakers as $speaker) {
+        //     $speaker->delete();
+        // }
         return redirect()->route('admin.companyspeakers.index')->with('error', 'Company Speaker deleted successfully');
     }
 }
