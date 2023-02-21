@@ -15,13 +15,13 @@ class CreateTopicSpeakersTable extends Migration
     {
         Schema::create('topic_speakers', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->foreignId('speaker_id')->unsigned()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->time('start_time');
-            $table->time('end_time');
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->foreignId('speaker_id')->unsigned()->constrained()->cascadeOnUpdate()->cascadeOnDelete()->nullable();
+            $table->time('start_time')->nullable();
+            $table->time('end_time')->nullable();
             $table->string('link')->nullable();
-            $table->enum('days', ['First Day', 'Second Day' , 'Third Day']);
+            $table->enum('days', ['First Day', 'Second Day' , 'Third Day'])->nullable();
             $table->timestamps();
         });
     }

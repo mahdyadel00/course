@@ -30,8 +30,9 @@
                             <article class="card card-custom card-corporate">
                                 <div class="card-header" role="tab">
                                     <div class="card-title">
+                                        {{-- @php` --}}
                                         <a class="collapsed" id="accordion1-card-head-hpaxeker"
-                                            data-toggle="collapse" data-parent="#accordion1" href="{{ route('speakers.details' , $topic_fday->speaker->id) }}"
+                                            data-toggle="collapse" data-parent="#accordion1" href="#AhmedEmad"
                                             aria-controls="AhmedEmad" aria-expanded="false" role="button"><span
                                                 class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span

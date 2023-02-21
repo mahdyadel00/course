@@ -68,7 +68,8 @@ class SpeakersController extends Controller
     public function edit($id)
     {
         $speaker = Speaker::with('company')->findOrFail($id);
-        return view('admin.speakers.edit', compact('speaker'));
+        $companies = CompanySpeaker::get();
+        return view('admin.speakers.edit', compact('speaker' , 'companies'));
     }
 
 
