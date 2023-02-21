@@ -22,76 +22,140 @@
                                         <label> Name</label>
                                         <input class="form-control fc-datepicker" name="name" required
                                             value="{{ $speaker->name }}">
+                                        @error('name')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label> Email </label>
                                         <input class="form-control fc-datepicker" name="email" type="email"
                                             value="{{ $speaker->email }}">
+                                        @error('email')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    {{-- //company name --}}
+                                    <div class="col">
+                                        <label>Company Name</label>
+                                        <select class="form-control" name="company_id">
+                                            <option disabled selected value="">Select Company Name</option>
+                                            @foreach ($companies as $company)
+                                                <option value="{{ $company->id }}"
+                                                    {{ $company->id == $speaker->company_id ? 'selected' : '' }}>
+                                                    {{ $company->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('company_id')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Phone</label>
                                         <input class="form-control fc-datepicker" name="phone" type="number"
                                             value="{{ $speaker->phone }}">
+                                        @error('phone')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Job Title</label>
-                                        <input class="form-control" name="job_title" required value="{{ $speaker->job_title }}">
+                                        <input class="form-control" name="job_title" required
+                                            value="{{ $speaker->job_title }}">
+                                        @error('job_title')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Personal Statment</label>
                                         <textarea class="form-control ckeditor" name="personal_info" required>{{ $speaker->personal_info }}</textarea>
+                                        @error('personal_info')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Description</label>
                                         <textarea class="form-control ckeditor" name="description" required>{{ $speaker->description }}</textarea>
+                                        @error('description')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Address</label>
                                         <textarea class="form-control" name="address">{{ $speaker->address }}</textarea>
+                                        @error('address')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Website</label>
                                         <input type="text" name="website" class="form-control"
                                             value="{{ $speaker->website }}">
+                                        @error('website')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Facebook</label>
                                         <input class="form-control" name="facebook" value="{{ $speaker->facebook }}">
+                                        @error('facebook')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Twitter</label>
                                         <input type="text" name="twitter" class="form-control"
                                             value="{{ $speaker->twitter }}">
+                                        @error('twitter')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Youtube</label>
                                         <input type="text" name="youtube" class="form-control"
                                             value="{{ $speaker->youtube }}">
+                                        @error('youtube')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Behance</label>
                                         <input type="text" name="behance" class="form-control"
                                             value="{{ $speaker->behance }}">
+                                        @error('behance')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Linkedin</label>
                                         <input type="text" name="linkedin" class="form-control"
                                             value="{{ $speaker->linkedin }}">
+                                        @error('linkedin')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Tiktok</label>
                                         <input type="text" name="tiktok" class="form-control"
                                             value="{{ $speaker->tiktok }}">
+                                        @error('tiktok')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Vimeo</label>
                                         <input type="text" name="vimeo" class="form-control"
                                             value="{{ $speaker->vimeo }}">
+                                        @error('vimeo')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Instgram</label>
                                         <input type="text" name="instagram" class="form-control"
                                             value="{{ $speaker->instagram }}">
+                                        @error('instagram')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label>Image</label>
@@ -99,6 +163,9 @@
                                             accept="image/jpeg,image/jpg,image/png">
                                         <img src="{{ asset($speaker->image) }}" alt="image" width="100px"
                                             height="100px">
+                                        @error('image')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                             </div>
                             <div class="d-flex justify-content-center col">

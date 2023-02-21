@@ -32,6 +32,7 @@ class CreateSpeakersTable extends Migration
             $table->string('tiktok')->nullable();
             $table->string('instagram')->nullable();
             $table->string('job_title')->nullable();
+            $table->foreignId('company_id')->nullable()->constrained('company_speakers')->onDelete('cascade');
             $table->timestamps();
         });
     }

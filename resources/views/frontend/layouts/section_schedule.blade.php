@@ -29,8 +29,9 @@
                         @foreach ($topic_firstDay as $topic_fday)
                             <article class="card card-custom card-corporate">
                                 <div class="card-header" role="tab">
-                                    <div class="card-title"><a class="collapsed" id="accordion1-card-head-hpaxeker"
-                                            data-toggle="collapse" data-parent="#accordion1" href="#AhmedEmad"
+                                    <div class="card-title">
+                                        <a class="collapsed" id="accordion1-card-head-hpaxeker"
+                                            data-toggle="collapse" data-parent="#accordion1" href="{{ route('speakers.details' , $topic_fday->speaker->id) }}"
                                             aria-controls="AhmedEmad" aria-expanded="false" role="button"><span
                                                 class="schedule-classic"><span
                                                     class="unit unit-spacing-md align-items-center d-block d-md-flex"><span
@@ -41,7 +42,7 @@
                                                         class="unit-body"><span class="schedule-classic-content"><span
                                                                 class="schedule-classic-time">{{ $topic_fday->start_time }}
                                                                 To {{ $topic_fday->end_time }}</span>
-                                                            {{-- <span class="schedule-classic-title heading-4">........</span> --}}
+                                                            <span class="schedule-classic-title heading-4">{{ $topic_fday->title }}</span>
                                                             <span class="schedule-classic-author">by
                                                                 <span
                                                                     class="schedule-classic-author-name">{{ $topic_fday->speaker ? $topic_fday->speaker->name : '' }}

@@ -27,6 +27,7 @@ class UpdateSpeaker extends FormRequest
 
             "name"          => ["required", "string"],
             "email"         => ["nullable", "string", "email", "max:255", "unique:users"],
+            "company_id"    => ["required", "integer", "exists:company_speakers,id"],
             "phone"         => ["nullable", "string", "max:255"],
             "job_title"     => ["nullable", "string", "max:255"],
             "personal_info" => ["nullable", "string"],
@@ -56,6 +57,7 @@ class UpdateSpeaker extends FormRequest
         return [
             'name.required'          => __('validation.required', ['attribute' => __('attributes.name')]),
             'email.required'         => __('validation.required', ['attribute' => __('attributes.email')]),
+            'company_id.required'    => __('validation.required', ['attribute' => __('attributes.company_id')]),
             'phone.required'         => __('validation.required', ['attribute' => __('attributes.phone')]),
             'job_title.required'     => __('validation.required', ['attribute' => __('attributes.job_title')]),
             'personal_info.required' => __('validation.required', ['attribute' => __('attributes.personal_info')]),
