@@ -1596,4 +1596,63 @@
         </div>
     </section>
     <!-- ==========Images Section end Here========== -->
+
+
+    <!-- Speakers section start here -->
+<section class="speakers-section padding-tb padding-b">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Speakers</h2>
+            <p>Meet Our World’s Leading Speakers</p>
+        </div>
+        <div class="section-wrapper shape-b">
+            <div class="row g-5">
+                    <div class="col-lg-6 col-12">
+                        <div class="speaker-item">
+                            <div class="speaker-inner">
+                                <div class="speaker-thumb">
+                                    <a href="#">
+                                        <img src="#" alt="speaker">
+                                    </a>
+                                </div>
+                                <div class="speaker-content">
+                                    <div class="spkr-content-title">
+                                        <h5><a
+                                                href="#">test........</a>
+                                        </h5>
+                                            <p>test........</p>
+                                    </div>
+                                    <div class="spkr-content-details">
+                                        <ul class="social-icons">
+                                                <li><a target="_blank" href="#"><i
+                                                            class="icofont-facebook"></i></a></li>
+                                                <li><a target="_blank" href="#"><i
+                                                            class="icofont-twitter"></i></a></li>
+                                                <li><a target="_blank" href="#"><i
+                                                            class="icofont-instagram"></i></a></li>
+                                                <li><a target="_blank" href="#"><i
+                                                            class="icofont-linkedin"></i></a></li>
+                                                <li><a target="_blank" href="#"><img
+                                                            src=""
+                                                            alt=""></a></li>
+                                                <li><a target="_blank" href="#"><i
+                                                            class="icofont-youtube"></i></a></li>
+                                                <li><a target="_blank" href="#"><i
+                                                            class="icofont-behance"></i></a></li>
+                                                <li><a target="_blank" href="#"><i
+                                                            class="icofont-vimeo"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="download-button text-center mt-5">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Speakers section end here -->
+
 @endsection
