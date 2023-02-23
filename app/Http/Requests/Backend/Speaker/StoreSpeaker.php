@@ -24,9 +24,9 @@ class StoreSpeaker extends FormRequest
     public function rules()
     {
         return [
-            "name"          => ["required", "string" , "max:255"],
-            "email"         => ["required", "string", "email", "max:255", "unique:users,email"],
-            "company_id"    => ["required", "integer", "exists:company_speakers,id"],
+            "name"          => ["nullable", "string" , "max:255"],
+            "email"         => ["nullable", "string", "email", "max:255", "unique:users,email"],
+            "company_id"    => ["nullable", "integer", "exists:company_speakers,id"],
             "phone"         => ["nullable", "string", "max:255"],
             "job_title"     => ["nullable", "string", "max:255"],
             "personal_info" => ["nullable", "string"],

@@ -20,7 +20,7 @@
                                     {{ csrf_field() }}
                                     <div class="col">
                                         <label> Name</label>
-                                        <input class="form-control fc-datepicker" name="name" required>
+                                        <input class="form-control fc-datepicker" name="name">
                                         @error('name')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -146,7 +146,7 @@
                                     <div class="col">
                                         <label>Image</label>
                                         <input type="file" class="form-control modal-title" name='image'
-                                            accept="image/jpeg,image/jpg,image/png" required>
+                                            accept="image/jpeg,image/jpg,image/png">
                                         @error('image')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror

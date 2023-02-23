@@ -25,9 +25,9 @@ class UpdateSpeaker extends FormRequest
     {
         return [
 
-            "name"          => ["required", "string"],
+            "name"          => ["nullable", "string"],
             "email"         => ["nullable", "string", "email", "max:255", "unique:users"],
-            "company_id"    => ["required", "integer", "exists:company_speakers,id"],
+            "company_id"    => ["nullable", "integer", "exists:company_speakers,id"],
             "phone"         => ["nullable", "string", "max:255"],
             "job_title"     => ["nullable", "string", "max:255"],
             "personal_info" => ["nullable", "string"],
