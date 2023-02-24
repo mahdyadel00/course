@@ -21,7 +21,8 @@
         <div class="container">
             <div class="section-header">
                 <h2>Our Pricing Plan</h2>
-                <p>Choose Your Plan That Fits You Best</p>
+                <p>GMC Tickets</p>
+                {{-- <p>Choose Your Plan That Fits You Best</p> --}}
             </div>
             <div class="section-wrapper">
                 <div class="row g-4 justify-content-center">

@@ -73,10 +73,15 @@
                                             <li><Strong>Education:</Strong> {{ $user->education }}</li>
                                         @endif
                                         @if ($user->qulification)
-                                            <li><Strong>Marketing Fields:</Strong> {{ $user->education }}</li>
-                                        @endif
-                                        @if ($user->qulification)
                                             <li><Strong>Qulification:</Strong> {{ $user->qulification }}</li>
+                                        @endif
+                                        @if ($user->marketing)
+                                            <li><Strong>Fields You're Interested in:</Strong><br>
+                                                @foreach ($user->marketing as $marketing)
+                                                    <i class="fa fa-check-circle" aria-hidden="true">
+                                                        {{ $marketing->title }}
+                                                    </i><br>
+                                                @endforeach
                                         @endif
                                         @if ($user->english)
                                             <li><Strong>English:</Strong> {{ $user->english }}</li>
@@ -195,6 +200,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
+                                        <label for="">Fields You're Interested in</label><br><br>
                                         @foreach ($marketings as $marketing)
                                             @php
                                                 if (in_array($marketing->id, $user_marketings)) {
@@ -208,7 +214,6 @@
                                                 {{ $marketing_checked == true ? 'checked' : '' }}>{{ $marketing->title }}
                                             <br>
                                         @endforeach
-                                        </select>
                                         @error('marketing_id')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror

@@ -30,7 +30,14 @@
                             <article class="card card-custom card-corporate">
                                 <div class="card-header" role="tab">
                                     <div class="card-title">
-                                        {{-- @php` --}}
+                                        {{-- @php
+                                         $now = Carbon\Carbon::now();
+                                                    $startDate = Carbon\Carbon::createFromFormat($topic_fday);
+                                                    dd($startDate);
+                                                    $endDate = Carbon\Carbon::createFromFormat('Y-m-d', '2021-06-30');
+
+                                                    $posts = Post::whereBetween('created_at', [$startDate, $endDate])->get();
+                                        @endphp --}}
                                         <a class="collapsed" id="accordion1-card-head-hpaxeker"
                                             data-toggle="collapse" data-parent="#accordion1" href="#AhmedEmad"
                                             aria-controls="AhmedEmad" aria-expanded="false" role="button"><span
@@ -56,7 +63,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="collapse" id="AhmedEmad" aria-labelledby="accordion1-card-head-hpaxeker"
+                                <div class="collapse" id="SS" aria-labelledby="accordion1-card-head-hpaxeker"
                                     data-parent="#accordion1" role="tabpanel">
                                     <div class="card-body">
                                         <p>{{ $topic_fday->title }}</p>

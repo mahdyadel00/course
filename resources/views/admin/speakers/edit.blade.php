@@ -20,7 +20,7 @@
                                     {{ csrf_field() }}
                                     <div class="col">
                                         <label> Name</label>
-                                        <input class="form-control fc-datepicker" name="name" required
+                                        <input class="form-control fc-datepicker" name="name"
                                             value="{{ $speaker->name }}">
                                         @error('name')
                                             <div class="alert alert-danger">{{ $message }}</div>
@@ -59,7 +59,7 @@
                                     </div>
                                     <div class="col">
                                         <label>Job Title</label>
-                                        <input class="form-control" name="job_title" required
+                                        <input class="form-control" name="job_title"
                                             value="{{ $speaker->job_title }}">
                                         @error('job_title')
                                             <div class="alert alert-danger">{{ $message }}</div>
@@ -67,14 +67,14 @@
                                     </div>
                                     <div class="col">
                                         <label>Personal Statment</label>
-                                        <textarea class="form-control ckeditor" name="personal_info" required>{{ $speaker->personal_info }}</textarea>
+                                        <textarea class="form-control ckeditor" name="personal_info">{{ $speaker->personal_info }}</textarea>
                                         @error('personal_info')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col">
                                         <label>Description</label>
-                                        <textarea class="form-control ckeditor" name="description" required>{{ $speaker->description }}</textarea>
+                                        <textarea class="form-control ckeditor" name="description">{{ $speaker->description }}</textarea>
                                         @error('description')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror

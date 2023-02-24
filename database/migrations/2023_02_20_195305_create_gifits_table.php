@@ -15,8 +15,8 @@ class CreateGifitsTable extends Migration
     {
         Schema::create('gifits', function (Blueprint $table) {
             $table->id();
-            $table->text('description');
-            $table->string('image');
+            $table->text('description')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

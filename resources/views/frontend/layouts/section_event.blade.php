@@ -13,7 +13,7 @@
                         In appreciation of your endeavor to develop yourself, and to encourage you, GMC offers some valuable gifts such as:
                         </p>
                         <ul class="gift-list">
-                            <li class="gift-item">{!! $gifit->description !!}</li>
+                            <li class="gift-item">{!! $gifit->description ? $gifit->first()->description : '' !!}</li>
                         </ul>
                         <div class="register-button">
                             <a href="{{ route('register.show') }}" class="lab-btn"><span>Register Now</span> </a>
@@ -23,7 +23,7 @@
             </div>
             <div class="col-lg-6 col-12">
                 <div class="image-part">
-                    <img src="{{ asset($gifit->image) }}" alt="gift-img">
+                    <img src="{{ asset($gifit->image ? $gifit->image : '') }}" alt="gift-img">
                 </div>
             </div>
         </div>

@@ -7050,6 +7050,12 @@ footer .footer-top .footer-top-item .lab-inner .lab-content span{
 	font-size: 14px;
 }
 
+.speaker-item-2 .speaker-inner .speaker-content .speaker-content-inner h6 {
+    font-size: 13px !important;
+}
+.pricing-item .pricing-inner .pricing-content .facilites {
+    height: 500px;
+}
 
 @media (min-width: 576px) {
 	.speaker-item .speaker-inner {
