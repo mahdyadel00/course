@@ -62,7 +62,7 @@
                                                 <a href="{{ route('login.show') }}">
                                                     <ul>
                                                         <li class="vat">
-                                                            <h4>${{ $diploma->diploma }}</h4>
+                                                            <h4>{{ $diploma->diploma }}</h4>
                                                         </li>
                                                         <li class="icon"><i class="fa fa-arrow-right" aria-hidden="true"></i>
                                                         </li>

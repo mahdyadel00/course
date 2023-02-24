@@ -42,7 +42,7 @@
                                         </ul>
                                         @auth
                                             <div class="get-ticket">
-                                                <a href="#">
+                                                <a href="{{ route('payment') }}">
                                                     <ul>
                                                         <li class="vat">
                                                             <h4>{{ $price->price }}</h4>
