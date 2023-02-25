@@ -47,6 +47,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'linkedin_id',
         'country_id',
         'city_id',
+        'pin_code',
     ];
 
     /**

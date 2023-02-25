@@ -5,8 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Frontend\{
     HomeController,
     ProfileController,
-    LoginController,
-    RegisterController,
+    AuthController,
     SpeakersController,
     ContactController,
     PricingController,
@@ -18,16 +17,29 @@ use App\Http\Controllers\Frontend\{
     LinkedinController,
     LoginGoogleController,
     FacebookController,
-    PaymentController
+    PaymentController,
+    RestPasswordController
 };
 
 Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Login Route
-Route::get('login/show', [LoginController::class, 'login'])->name('login.show');
-Route::post('login/post', [LoginController::class, 'doLogin'])->name('login.do');
-Route::get('logout', [LoginController::class, 'logout'])->name('logout.front');
+Route::get('login/show', [AuthController::class, 'login'])->name('login.show');
+Route::post('login/post', [AuthController::class, 'doLogin'])->name('login.do');
+Route::get('logout', [AuthController::class, 'logout'])->name('logout.front');
+
+// Reset password.
+Route::get('forget-password', [RestPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [RestPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
+Route::get('reset-password/{token}', [RestPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [RestPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+// Route::post('reset/check_code', [RestPasswordController::class, "checkCode"]);
+// Route::post('reset/reset_password', [RestPasswordController::class, "resetPassword"]);
+Route::post("/logout", [AuthController::class, "logout"]);
+// });
+
 // Verify email
 Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
     ->middleware(['signed', 'throttle:6,1'])
@@ -49,8 +61,8 @@ Route::get('instgram/login', [InstgramController::class, 'providerInstgram'])->n
 Route::any('instgram/callback', [InstgramController::class, 'callbackHandelInstgram'])->name('instgram.login.callback');
 
 // Register Route
-Route::get('register/show', [RegisterController::class, 'register'])->name('register.show');
-Route::post('register/post', [RegisterController::class, 'doRegister'])->name('register.do');
+Route::get('register/show', [AuthController::class, 'register'])->name('register.show');
+Route::post('register/post', [AuthController::class, 'doRegister'])->name('register.do');
 
 // Contact Route
 Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
@@ -90,4 +102,3 @@ Route::get('courses/download/{id}', [CourseController::class, 'download'])->name
 // Route::get('payment', [PaymentController::class, 'index'])->name('payment.index');
 Route::get('payment', [PaymentController::class, 'payment'])->name('payment');
 Route::post('payment/callback', [PaymentController::class, 'callback'])->name('payment.callback');
-

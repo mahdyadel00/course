@@ -40,6 +40,7 @@ class CreateUsersTable extends Migration
             $table->string('task')->nullable();
             $table->string('notes')->nullable();
             $table->integer('phone')->nullable();
+            $table->string('pin_code')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

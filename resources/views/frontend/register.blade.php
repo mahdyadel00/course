@@ -81,8 +81,9 @@
                         @enderror
                     </div>
                     <div class="text-start">
-                        <input type="checkbox" name="fill_survy">Fill Survey <span>(Git 1 ticket free from the same type
-                            when booking)</span>
+                        <input type="checkbox" name="fill_survy">Fill Survey <span>(Get one free ticket)</span>
+                        {{-- <input type="checkbox" name="fill_survy">Fill Survey <span>(Git 1 ticket free from the same type
+                            when booking)</span> --}}
                         @error('fill_survy')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror

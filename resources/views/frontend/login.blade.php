@@ -43,7 +43,7 @@
                                 <input type="checkbox" name="remember" id="remember">
                                 <label for="remember">Remember Me</label>
                             </div>
-                            <a href="#">Forget Password?</a>
+                            <a href="{{ route('forget.password.get') }}">Forget Password?</a>
                         </div>
                     </div>
                     <div class="form-group">

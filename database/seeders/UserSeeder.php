@@ -42,6 +42,7 @@ class UserSeeder extends Seeder
             'notes'             => "notes.pdf",
             'country_id'        => 1,
             'city_id'           => 1,
+            'pin_code'          => random_int(111111, 999999),
         ]);
     }
 }
