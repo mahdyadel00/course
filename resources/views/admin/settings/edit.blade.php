@@ -81,8 +81,16 @@
                                     <div class="col">
                                         <label>Twitter</label>
                                         <input class="form-control fc-datepicker" name="twitter_link"
-                                            value="{{ $setting->twitter_link }}" type="text">
+                                            value="{{ $setting?->twitter_link }}" type="text">
                                         @error('twitter_link')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="col">
+                                        <label>Youtube</label>
+                                        <input class="form-control fc-datepicker" name="youtube_link"
+                                            value="{{ $setting?->youtube_link }}" type="text">
+                                        @error('youtube_link')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>

@@ -68,6 +68,7 @@ class SettingsController extends Controller
         $setting->end_at        =   $request->end_at;
         $setting->facebook_link =   $request->facebook_link;
         $setting->twitter_link  =   $request->twitter_link;
+        $setting->youtube_link  =   $request->youtube_link;
         $setting->dribble_link  =   $request->dribble_link;
         $setting->vimeo_link    =   $request->vimeo_link;
         $setting->behance_link  =   $request->behance_link;
