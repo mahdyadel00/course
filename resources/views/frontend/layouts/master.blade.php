@@ -124,6 +124,8 @@ $sponsers = App\Models\Sponser::get();
                                                     class="icofont-facebook"></i></a></li>
                                         <li><a href="{{ $setting->twitter_link }}"><i class="icofont-twitter"></i></a>
                                         </li>
+                                        <li><a href="{{ $setting->linkedin_link }}"><i class="icofont-linkedin"></i></a>
+                                        </li>
                                         <li><a href="{{ $setting->instgram_link }}"><i
                                                     class="icofont-instagram"></i></a></li>
                                         <li><a href="{{ $setting->dirbble_link }}"><i class="icofont-dribble"></i></a>
