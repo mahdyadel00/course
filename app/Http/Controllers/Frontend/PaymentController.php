@@ -13,23 +13,6 @@ class PaymentController extends Controller
 
     public function payment(Request $request)
     {
-        // {
-        //     "amount": 10,
-        //     "currency": "EGP",
-        //     "paymentOptions": [
-        //         2,
-        //         3,
-        //         4,
-        //         5,
-        //         6
-        //     ],
-        //     "cashExpiry": 3,
-        //     "name": "Omar Ayman",
-        //     "email": "omar@ayman.com",
-        //     "mobile": "01011111111111",
-        //     "redirectUrl": "https://www.google.com/",
-        //     "customerReference": 111
-        // }
 
         $data['amount'] = 2;
         $data['currency'] = 'EGP';
@@ -56,7 +39,7 @@ class PaymentController extends Controller
         $output = curl_exec($ch);
         curl_close($ch);
         $response = json_decode($output, true);
-        foreach($response as $key => $value){
+        foreach ($response as $key => $value) {
             // dd($key, $value);
             return redirect($value);
         }
@@ -81,6 +64,6 @@ class PaymentController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $output = curl_exec($ch);
         curl_close($ch);
-        dd(json_decode($output));//https://easykash.gitbook.io/easykash-apis-documentation/callback-service
+        dd(json_decode($output)); //https://easykash.gitbook.io/easykash-apis-documentation/callback-service
     }
 }
