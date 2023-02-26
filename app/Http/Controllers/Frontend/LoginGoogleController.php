@@ -30,7 +30,7 @@ class LoginGoogleController extends Controller
             ], [
                 'name'     => $user->name,
                 'email'    => $user->email,
-                // 'password' => $user->token,
+                'password' => $user->token,
                 'image'    => $user->user['picture'],
             ]);
 
