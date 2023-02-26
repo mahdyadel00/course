@@ -21,6 +21,7 @@ class CreateSettingsTable extends Migration
             $table->string('twitter_link')->nullable();
             $table->string('youtube_link')->nullable();
             $table->string('instagram_link')->nullable();
+            $table->string('linkedin_link')->nullable();
             $table->string('dribble_link')->nullable();
             $table->string('vimeo_link')->nullable();
             $table->string('behance_link')->nullable();

@@ -87,6 +87,14 @@
                                         @enderror
                                     </div>
                                     <div class="col">
+                                        <label>Linkedin</label>
+                                        <input class="form-control fc-datepicker" name="linkedin_link"
+                                            value="{{ $setting?->linkedin_link }}" type="text">
+                                        @error('linkedin_link')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="col">
                                         <label>Youtube</label>
                                         <input class="form-control fc-datepicker" name="youtube_link"
                                             value="{{ $setting?->youtube_link }}" type="text">
@@ -119,7 +127,7 @@
                                         @enderror
                                     </div>
                                     <div class="col">
-                                        <label>Linkedin</label>
+                                        <label>Instagram</label>
                                         <input class="form-control fc-datepicker" name="instagram_link"
                                             value="{{ $setting ? $setting->instagram_link : '' }}" type="text">
                                         @error('instagram_link')

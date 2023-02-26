@@ -28,6 +28,7 @@ class SettingsSeeder extends Seeder
             'twitter_link'      => 'twitter_link',
             'youtube_link'      => 'youtube_link',
             'instagram_link'    => 'instagram_link',
+            'linkedin_link'     => 'linkedin_link',
             'dribble_link'      => 'dribble_link',
             'behance_link'      => 'behance_link',
             'vimeo_link'        => 'vimeo_link',
