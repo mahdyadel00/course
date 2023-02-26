@@ -120,41 +120,15 @@ $sponsers = App\Models\Sponser::get();
                             <div class="fm-item-content">
                                 <p class="mb-30">{!! $setting->description !!}</p>
                                 <ul class="social-icons">
-                                    @if($setting->facebook_link != null)
-                                        <li><a href="{{ $setting->facebook_link }}"><i
-                                                    class="icofont-facebook"></i></a></li>
-
-                                    @endif
-                                    @if($setting->twitter_link != null)
-                                        <li><a href="{{ $setting->twitter_link }}"><i class="icofont-twitter"></i></a>
-                                        </li>
-                                    @endif
-                                    @if($setting->linkedin_link != null)
-                                        <li><a href="{{ $setting->linkedin_link }}"><i class="icofont-linkedin"></i></a>
-                                        </li>
-                                    @endif
-                                    @if($setting->youtube_link != null)
-                                        <li><a href="{{ $setting->youtube_link }}"><i class="icofont-youtube"></i></a>
-                                        </li>
-                                    @endif
-                                    @if($setting->instagram_link != null)
-                                        <li><a href="{{ $setting->instagram_link }}"><i
-                                                    class="icofont-instagram"></i></a></li>
-                                    @endif
-                                    @if($setting->dribble_link != null)
-                                        <li><a href="{{ $setting->dribble_link }}"><i
-                                                    class="icofont-dribble"></i></a>
-                                        </li>
-                                    @endif
-
-                                    @if($setting->vimo_link != null)
-                                        <li><a href="{{ $setting->vimo_link }}"><i class="icofont-vimeo"></i></a></li>
-
-                                    @endif
-                                    @if($setting->behance_link != null)
-                                        <li><a href="{{ $setting->behance_link }}"><i class="icofont-behance"></i></a>
-                                        </li>
-                                    @endif
+                                    @php
+                                        $links = collect($setting->only('facebook_link','twitter_link','linkedin_link','youtube_link','instagram_link', 'dribble_link','behance_link','instagram_link','vimeo_link'));
+                                        $links->each(function ($item, $key) {
+                                            if ($item != null)
+                                            {
+                                                echo '<li><a href="'. $item .'"><i class="icofont-'.strtok($key, '_').'"></i></a></li>';
+                                            }
+                                        });
+                                    @endphp
                                 </ul>
                             </div>
                         </div>
