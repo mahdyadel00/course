@@ -60,5 +60,6 @@ class PaymentController extends Controller
         $input = $request->all();
         dd($input);
 
+
     }
 }

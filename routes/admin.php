@@ -23,7 +23,8 @@ use  App\Http\Controllers\Admin\{
     CityController,
     GifitController,
     TopicSpeakerController,
-    CompanySpeakerController
+    CompanySpeakerController,
+    OrderController,
 };
 
 
@@ -212,6 +213,14 @@ Route::prefix('admin')
             //polices Route
             Route::get('/polices', [PolicesController::class, 'index'])->name('polices.index'); //
             Route::post('/polices', [PolicesController::class, 'update'])->name('polices.update'); //
+
+            //orders Route
+            Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+            Route::get('/orders/show/{id}', [OrderController::class, 'show'])->name('orders.show');
+            // Route::get('/orders/edit/{id}', [OrderController::class, 'edit'])->name('orders.edit');
+            // Route::post('/orders/update/{id}', [OrderController::class, 'update'])->name('orders.update');
+            Route::delete('/orders/delete/{id}', [OrderController::class, 'delete'])->name('orders.delete');
+
 
         });
     });
