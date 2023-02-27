@@ -70,7 +70,7 @@ class PaymentController extends Controller
 
         if($order->status == "FAILED"){
 
-            return redirect()->back()->with("error" , "Status Faild");
+            return redirect()->route('pricing.index')->with("error" , "Status Faild");
         }else{
             return redirect()->route('profile.index')->with('success' , 'success payment');
         }
