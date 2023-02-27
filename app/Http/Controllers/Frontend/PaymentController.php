@@ -27,7 +27,7 @@ class PaymentController extends Controller
         //create order
         $order = Order::create($data);
         // dd($order);
-        $data['paymentOptions'] = [2];
+        $data['paymentOptions'] = [2 , 3 , 4 , 5 , 6];
         $data['name'] = Auth::user()->name;
         $data['email'] = Auth::user()->email;
         $data['mobile'] = Auth::user()->phone;
