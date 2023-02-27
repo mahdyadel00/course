@@ -59,9 +59,21 @@ class PaymentController extends Controller
 
     public function callback(Request $request)
     {
-        // dd('test', 'callback');
         $input = $request->all();
-        dd($input);
+
+        $order = Order::where('customerReference' , $request->customerReference)->first();
+
+        $order->update([
+
+            'status'  => $request->status,
+        ]);
+
+        if($order->status == "FAILED"){
+
+            return redirect()->back()->with("error" , "Status Faild");
+        }else{
+            return redirect()->route('profile.index')->with('success' , 'success payment');
+        }
 
 
     }
