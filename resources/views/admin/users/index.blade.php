@@ -24,7 +24,6 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
-                                    {{-- <th>Marketing</th> --}}
                                     <th>Country Name</th>
                                     <th>City Name</th>
                                     <th>Roles</th>
@@ -48,10 +47,6 @@
                                         <td>
                                             <p class="text-xs font-weight-bold mb-0">{{ $user->phone }}</p>
                                         </td>
-                                        {{-- <td>
-                                            <p class="text-xs font-weight-bold mb-0">
-                                                {{ $user->marketing ? $user->marketing->title : '' }}</p>
-                                        </td> --}}
                                         <td>
                                             <p class="text-xs font-weight-bold mb-0">
                                                 {{ $user->country ? $user->country->name : '' }}</p>

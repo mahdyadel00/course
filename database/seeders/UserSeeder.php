@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
             'birthdate'         => '2023-01-01',
             'address'           => 'Metghamer',
             'email'             => 'admin@email.com',
-            'password'          => Hash::make("password"),
+            'password'          => Hash::make("admin@123"),
             'phone'             => "01122907742",
             'education'         => "Fucaility of information systeam",
             'qulification'      => "test",
