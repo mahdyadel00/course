@@ -100,4 +100,4 @@ Route::get('courses/download/{id}', [CourseController::class, 'download'])->name
 
 //payment Route
 Route::get('payment', [PaymentController::class, 'payment'])->name('payment');
-Route::post('callback-service', [PaymentController::class, 'callback'])->name('callback.service');
+Route::get('callback-service', [PaymentController::class, 'callback'])->name('callback.service');
