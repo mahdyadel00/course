@@ -21,8 +21,9 @@ class PaymentController extends Controller
         $data['paymentOptions'] = 2;
         $data['user_id'] = Auth::user()->id;
         $data['pricing_id'] = 1;
-        // $data['redirectUrl'] = 'https://grow.geexar.dev/payment/callback';
-        $data['redirectUrl'] = route('payment.callback');
+        $data['redirectUrl'] = 'https://grow.geexar.dev/callback-service';
+        // $data['redirectUrl'] = 'https://easykash.gitbook.io/easykash-apis-documentation/callback-service';
+        // $data['redirectUrl'] = route('payment.callback');
         $data['customerReference'] = time() . rand(1000, 9999);
         $data['status'] = 'pending';
         //create order
