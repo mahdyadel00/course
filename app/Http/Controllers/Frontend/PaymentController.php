@@ -58,6 +58,7 @@ class PaymentController extends Controller
 
     public function callback(Request $request)
     {
+        dd('test', 'callback');
         $input = $request->all();
         dd($input);
 
