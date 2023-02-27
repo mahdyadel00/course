@@ -32,10 +32,8 @@ class ProfileController extends Controller
             $cities = City::get();
             $user = User::with('marketing')->where('id', auth()->user()->id)->first();
             $settings = Settings::first();
-
             return view('frontend.accounts.profile', compact('user', 'marketings', 'countries', 'cities', 'user_marketings', 'settings'));
         } else {
-
             return redirect()->route('login.show')->with('Un Authanticated!');
         }
     }
