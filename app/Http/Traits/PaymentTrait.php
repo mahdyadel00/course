@@ -1,35 +1,28 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Traits;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Frontend\Order\OrderPayment;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class PaymentController extends Controller
+trait PaymentTrait
 {
 
-    public function payment(Request $request)
-    {
-
-        // $route  = route('payment.callback');
+    public function payment(Request $request){
         $data['amount'] = 2;
         $data['currency'] = 'EGP';
         $data['paymentOptions'] = 2;
         $data['user_id'] = Auth::user()->id;
         $data['pricing_id'] = 1;
-        $data['redirectUrl'] = 'https://google.com';
-        // $data['redirectUrl'] = 'https://easykash.gitbook.io/easykash-apis-documentation/callback-service';
-        // $data['redirectUrl'] = route('callback.service');
+        $data['redirectUrl'] = route('callback.service');
         $data['customerReference'] = time() . rand(1000, 9999);
         $data['status'] = 'pending';
         //create order
         $order = Order::create($data);
-        // dd($order);
-        $data['paymentOptions'] = [2 , 3 , 4 , 5 , 6];
+
+        $data['paymentOptions'] = [2, 3, 4, 5, 6];
         $data['name'] = Auth::user()->name;
         $data['email'] = Auth::user()->email;
         $data['mobile'] = Auth::user()->phone;
@@ -48,33 +41,10 @@ class PaymentController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         $output = curl_exec($ch);
-        // dd($output);
         curl_close($ch);
         $response = json_decode($output, true);
-        // dd($response);
         foreach ($response as  $value) {
             return redirect($value);
         }
-    }
-
-    public function callback(Request $request)
-    {
-        $input = $request->all();
-
-        $order = Order::where('customerReference' , $request->customerReference)->first();
-
-        $order->update([
-
-            'status'  => $request->status,
-        ]);
-
-        if($order->status == "FAILED"){
-
-            return redirect()->route('pricing.index')->with("error" , "Status Faild");
-        }else{
-            return redirect()->route('profile.index')->with('success' , 'success payment');
-        }
-
-
     }
 }

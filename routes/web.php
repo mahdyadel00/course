@@ -17,7 +17,7 @@ use App\Http\Controllers\Frontend\{
     LinkedinController,
     LoginGoogleController,
     FacebookController,
-    PaymentController,
+    OrderController,
     RestPasswordController
 };
 
@@ -99,5 +99,5 @@ Route::get('courses', [CourseController::class, 'index'])->name('courses.index')
 Route::get('courses/download/{id}', [CourseController::class, 'download'])->name('courses.download');
 
 //payment Route
-Route::get('payment', [PaymentController::class, 'payment'])->name('payment');
-Route::get('callback-service', [PaymentController::class, 'callback'])->name('callback.service');
+Route::get('orders/create', [OrderController::class, 'create'])->name('orders.create');
+Route::get('callback-service', [OrderController::class, 'callback'])->name('callback.service');
