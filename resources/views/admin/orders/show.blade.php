@@ -46,7 +46,7 @@
                                     <th>Created At</th>
                                     <td>
                                         <span
-                                            class="text-secondary text-xs font-weight-bold">{{ date('d-m-Y', strtotime($order->created_at)) }}</span>
+                                            class="text-secondary text-xs font-weight-bold">{{ $order->created_at }}</span>
                                     </td>
                                 </tr>
                                 <tr>
