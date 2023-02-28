@@ -19,6 +19,7 @@ class CreateOrdersTable extends Migration
             $table->string('currency');
             $table->string('paymentOptions');
             $table->string('customerReference');
+            $table->string('providerReferenceNumber')->nullable();
             $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('pricing_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('status');

@@ -17,6 +17,7 @@ class Order extends Model
         'pricing_id',
         'status',
         'customerReference',
+        'providerReferenceNumber',
     ];
 
     public function user()
