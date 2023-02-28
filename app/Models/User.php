@@ -90,5 +90,10 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->belongsToMany(Marketing::class, 'user_marketings', 'user_id', 'marketing_id');
     }
+    //order
+    public function order()
+    {
+        return $this->hasMany(Order::class);
+    }
 
 }

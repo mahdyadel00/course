@@ -19,10 +19,10 @@ class PricingSeeder extends Seeder
      */
     public function run()
     {
-         Pricing::create([
-                'title'           => 'title',
-                'price'           => 'price',
-                'description'     => 'description',
-          ]);
+        Pricing::create([
+            'title'           => 'title',
+            'price'           => 2,
+            'description'     => 'description',
+        ]);
     }
 }

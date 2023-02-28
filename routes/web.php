@@ -99,6 +99,5 @@ Route::get('courses', [CourseController::class, 'index'])->name('courses.index')
 Route::get('courses/download/{id}', [CourseController::class, 'download'])->name('courses.download');
 
 //payment Route
-// Route::get('payment', [PaymentController::class, 'index'])->name('payment.index');
 Route::get('payment', [PaymentController::class, 'payment'])->name('payment');
-Route::post('payment/callback', [PaymentController::class, 'callback'])->name('payment.callback');
+Route::get('callback-service', [PaymentController::class, 'callback'])->name('callback.service');

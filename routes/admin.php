@@ -23,7 +23,8 @@ use  App\Http\Controllers\Admin\{
     CityController,
     GifitController,
     TopicSpeakerController,
-    CompanySpeakerController
+    CompanySpeakerController,
+    OrderController,
 };
 
 
@@ -218,26 +219,15 @@ Route::prefix('admin')
             Route::get('/polices', [PolicesController::class, 'index'])->name('polices.index'); //
             Route::post('/polices', [PolicesController::class, 'update'])->name('polices.update'); //
 
+            //orders Route
+            Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+            Route::get('/orders/show/{id}', [OrderController::class, 'show'])->name('orders.show');
+            // Route::get('/orders/edit/{id}', [OrderController::class, 'edit'])->name('orders.edit');
+            // Route::post('/orders/update/{id}', [OrderController::class, 'update'])->name('orders.update');
+            Route::delete('/orders/delete/{id}', [OrderController::class, 'delete'])->name('orders.delete');
+
+
         });
     });
-
-
-// Route::get('test', function () {
-//     $routes = collect(Route::getRoutes()->getRoutesByName())
-//     ->keys()
-//     ->map(function ($route) {
-//         $guard = Route::getRoutes()->getRoutesByName()[$route]->getAction()['middleware'] ?? [];
-//         $guard = in_array('auth:admin', $guard, true) ? 'admin' : 'web';
-//         return str_replace(array('admin.', '.'), array('', '_'), $route) . "_$guard";
-//     })
-//     ->filter(function ($route) {
-//         return !in_array(explode("_", $route)[0],
-//             ['sanctum', 'ignition', 'verification', 'chatify', 'pusher', 'do', 'auth',
-//                 'debugbar', 'facebook', 'google', 'password', 'register', 'login', 'logout',
-//                 'two-factor', 'email', 'confirm', 'verification', 'verification-notification',
-//                 'forgot-password', 'reset-password']);
-//     });
-//     dd($routes  );
-// });
 
 

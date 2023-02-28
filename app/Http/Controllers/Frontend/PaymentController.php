@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Frontend\Order\OrderPayment;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Laravel\Socialite\Facades\Socialite;
 
 class PaymentController extends Controller
 {
@@ -14,15 +15,25 @@ class PaymentController extends Controller
     public function payment(Request $request)
     {
 
+        // $route  = route('payment.callback');
         $data['amount'] = 2;
         $data['currency'] = 'EGP';
-        $data['paymentOptions'] = [2, 3, 4, 5, 6];
-        $data['cashExpiry'] = 3;
-        $data['name'] = 'Mahdy Adel';
-        $data['email'] = 'mahdyadel@geexar.dev';
-        $data['mobile'] = '01122907742';
-        $data['redirectUrl'] = 'https://www.google.com/';
-        $data['customerReference'] = 121;
+        $data['paymentOptions'] = 2;
+        $data['user_id'] = Auth::user()->id;
+        $data['pricing_id'] = 1;
+        // $data['redirectUrl'] = 'https://grow.geexar.dev/callback-service';
+        // $data['redirectUrl'] = 'https://easykash.gitbook.io/easykash-apis-documentation/callback-service';
+        $data['redirectUrl'] = route('callback.service');
+        $data['customerReference'] = time() . rand(1000, 9999);
+        $data['status'] = 'pending';
+        //create order
+        $order = Order::create($data);
+        // dd($order);
+        $data['paymentOptions'] = [2 , 3 , 4 , 5 , 6];
+        $data['name'] = Auth::user()->name;
+        $data['email'] = Auth::user()->email;
+        $data['mobile'] = Auth::user()->phone;
+
 
         $headers = [
             "Content-Type: application/json",
@@ -37,33 +48,33 @@ class PaymentController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         $output = curl_exec($ch);
+        // dd($output);
         curl_close($ch);
         $response = json_decode($output, true);
-        foreach ($response as $key => $value) {
-            // dd($key, $value);
+        // dd($response);
+        foreach ($response as  $value) {
             return redirect($value);
         }
     }
 
     public function callback(Request $request)
     {
-        $data = $request->all();
-        // dd($data);
+        $input = $request->all();
 
-        $headers = [
-            "Content-Type: application/json",
-            "Authorization: f04661u04gk3qdjk"
-        ];
+        $order = Order::where('customerReference' , $request->customerReference)->first();
 
-        $ch = curl_init();
-        $url = 'http://127.0.0.1:5000';
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        // curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $output = curl_exec($ch);
-        curl_close($ch);
-        dd(json_decode($output)); //https://easykash.gitbook.io/easykash-apis-documentation/callback-service
+        $order->update([
+
+            'status'  => $request->status,
+        ]);
+
+        if($order->status == "FAILED"){
+
+            return redirect()->route('pricing.index')->with("error" , "Status Faild");
+        }else{
+            return redirect()->route('profile.index')->with('success' , 'success payment');
+        }
+
+
     }
 }

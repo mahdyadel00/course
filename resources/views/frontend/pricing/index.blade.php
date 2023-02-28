@@ -16,6 +16,7 @@
         </div>
     </section>
     <!-- Page Header Section Ending Here -->
+    @include('frontend.layouts.session')
     <!-- ===== Pricing Plan Start here  ==== -->
     <section class="pricing-plan-section padding-tb padding-b">
         <div class="container">
