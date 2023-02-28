@@ -17,7 +17,7 @@ class PreventUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->roles_name == 'user') {
+        if (Auth::user()?->roles_name == 'user' || Auth::user()?->roles_name == null) {
             return redirect()->route('home');
         }
         return $next($request);
