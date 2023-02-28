@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\City;
+use App\Models\Country;
 use Illuminate\Auth\Events\Registered;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\Auth\LoginRequest;
@@ -28,7 +30,9 @@ class AuthController extends Controller
      */
     protected function register()
     {
-        return view('frontend.register');
+        $countries = Country::get();
+        $cities = City::get();
+        return view('frontend.register', compact(['countries', 'cities']));
     }
 
     protected function doRegister(RegisterRequest $request)

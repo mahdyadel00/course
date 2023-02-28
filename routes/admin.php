@@ -27,7 +27,6 @@ use  App\Http\Controllers\Admin\{
     OrderController,
 };
 
-
 Auth::routes(['except' => 'register']);
 Route::prefix('admin')
     ->middleware('prevent-user')
@@ -41,30 +40,26 @@ Route::prefix('admin')
             Route::get('/', [DashboardController::class, 'index'])->name('home');
 
             // Users Route
-            Route::group(['middleware' => ['users']], function () {
-                Route::get('/users', [UserController::class, 'index'])->name('users.index');
-                Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
-                Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
-                Route::get('/users/show/{id}', [UserController::class, 'show'])->name('users.show');
-                Route::get('/users/edit/{id}', [UserController::class, 'edit'])->name('users.edit');
-                Route::post('/users/update/{id}', [UserController::class, 'update'])->name('users.update');
-                Route::delete('/users/delete/{id}', [UserController::class, 'delete'])->name('users.delete');
+            Route::get('/users', [UserController::class, 'index'])->name('users.index');
+            Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+            Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
+            Route::get('/users/show/{id}', [UserController::class, 'show'])->name('users.show');
+            Route::get('/users/edit/{id}', [UserController::class, 'edit'])->name('users.edit');
+            Route::post('/users/update/{id}', [UserController::class, 'update'])->name('users.update');
+            Route::delete('/users/delete/{id}', [UserController::class, 'delete'])->name('users.delete');
             // Dwonload cv
-                Route::get('/users/download/{id}', [UserController::class, 'download'])->name('users.download');
-                Route::get('logout', [UserController::class, 'logout'])->name('logout');
-            });
+            Route::get('/users/download/{id}', [UserController::class, 'download'])->name('users.download');
+            Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
 
             // Country Route
-            Route::group(['middleware' => ['countries']], function () {
-                Route::get('/countries', [CountryController::class, 'index'])->name('countries.index');
-                Route::get('/countries/create', [CountryController::class, 'create'])->name('countries.create');
-                Route::post('/countries/store', [CountryController::class, 'store'])->name('countries.store');
-                Route::get('/countries/show/{id}', [CountryController::class, 'show'])->name('countries.show');
-                Route::get('/countries/edit/{id}', [CountryController::class, 'edit'])->name('countries.edit');
-                Route::post('/countries/update/{id}', [CountryController::class, 'update'])->name('countries.update');
-                Route::delete('/countries/delete/{id}', [CountryController::class, 'delete'])->name('countries.delete');
-            });
+            Route::get('/countries', [CountryController::class, 'index'])->name('countries.index');
+            Route::get('/countries/create', [CountryController::class, 'create'])->name('countries.create');
+            Route::post('/countries/store', [CountryController::class, 'store'])->name('countries.store');
+            Route::get('/countries/show/{id}', [CountryController::class, 'show'])->name('countries.show');
+            Route::get('/countries/edit/{id}', [CountryController::class, 'edit'])->name('countries.edit');
+            Route::post('/countries/update/{id}', [CountryController::class, 'update'])->name('countries.update');
+            Route::delete('/countries/delete/{id}', [CountryController::class, 'delete'])->name('countries.delete');
 
             // City Route
             Route::get('/cities', [CityController::class, 'index'])->name('cities.index');

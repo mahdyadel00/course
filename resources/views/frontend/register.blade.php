@@ -35,49 +35,76 @@
             <div class="account-wrapper">
 
                 <h3 class="title">Register Now</h3>
-                <form class="account-form" action="{{ route('register.do') }}" method="post" enctype="multipart/form-data">
+                <form class="account-form" action="{{ route('register.do') }}" method="post"
+                      enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <input type="text" placeholder="User Name" name="name" required>
                         @error('name')
-                            <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <input type="date" placeholder="Date Of Birth" name="birthdate">
                         @error('birthdate')
-                            <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <input type="text" placeholder="Email" name="email" required>
                         @error('email')
-                            <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <input type="password" placeholder="Password" name="password" required>
                         @error('password')
-                            <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <input type="password" placeholder="Confirm Password" name="password_confirmation" required>
                         @error('password_confirmation')
-                            <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <select name="country" class="form-control m-bot15" required>
+                            @if($countries->count() > 0)
+                                <option disabled selected value="">Select Country</option>
+                                @foreach($countries as $country)
+                                    <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                @endforeach
+                            @endif
+                        </select>
+                        @error('country')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <select name="city" class="form-control m-bot15" required>
+                            @if($cities->count() > 0)
+                                <option disabled selected value="">Select City</option>
+                                @foreach($cities as $city)
+                                    <option value="{{ $city->id }}">{{ $city->name }}</option>
+                                @endforeach
+                            @endif
+                        </select>
+                        @error('city')
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <input type="text" placeholder="Address" name="address">
                         @error('address')
-                            <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="cv">Upload CV (Optional)</label>
                         <input type="file" name="cv" placeholder="Enter Your CV">
                         @error('cv')
-                            <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="text-start">
@@ -85,14 +112,14 @@
                         {{-- <input type="checkbox" name="fill_survy">Fill Survey <span>(Git 1 ticket free from the same type
                             when booking)</span> --}}
                         @error('fill_survy')
-                            <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="text-start">
                         <input type="checkbox" name="policies" required>I Accept <a
                             href="{{ route('polices.index') }}">Terms and Conditions</a>
                         @error('policies')
-                            <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
@@ -100,7 +127,8 @@
                     </div>
                 </form>
                 <div class="account-bottom">
-                    <span class="d-block cate pt-10">Are you a member? <a href="{{ route('login.show') }}">Login</a></span>
+                    <span class="d-block cate pt-10">Are you a member? <a
+                            href="{{ route('login.show') }}">Login</a></span>
 
                     <span class="or"><span>or</span></span>
                     <h5 class="subtitle">Login With Social Media</h5>
@@ -112,7 +140,8 @@
                             <a href="{{ route('google.login') }}" class="google"><i class="fab fa-google"></i></a>
                         </li>
                         <li>
-                            <a href="{{ route('instgram.login') }}" class="instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="{{ route('instgram.login') }}" class="instagram"><i
+                                    class="fab fa-instagram"></i></a>
                         </li>
                         <li>
                             <a href="{{ route('linkedin.login') }}" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
