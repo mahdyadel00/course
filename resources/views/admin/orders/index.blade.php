@@ -31,7 +31,15 @@
                                         <td>{{ $order->amount }}</td>
                                         <td>{{ $order->payment_option }}</td>
                                         <td>{{ $order->pricing ? $order->pricing->title : '' }}</td>
-                                        <td>{{ $order->status }}</td>
+                                        <td>
+                                            @if ($order->status == 'pending')
+                                                <button class="btn btn-warning" style="color:black">{{ $order->status }}</button>
+                                            @elseif($order->status == 'approved')
+                                                <span class="badge badge-success">{{ $order->status }}</span>
+                                            @elseif($order->status == 'FAILED')
+                                                <span class="badge badge-danger">{{ $order->status }}</span>
+                                            @endif
+                                        </td>
                                         <td>{{ $order->customerReference }}</td>
                                         <td class="align-middle text-center">
                                             <span
