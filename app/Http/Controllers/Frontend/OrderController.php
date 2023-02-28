@@ -53,7 +53,6 @@ class OrderController extends Controller
 
     public function callback(Request $request)
     {
-        dd($request->all());
 
         $order = Order::where('customerReference', $request->customerReference)->first();
 

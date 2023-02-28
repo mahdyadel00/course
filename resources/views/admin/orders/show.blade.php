@@ -28,7 +28,15 @@
                                 </tr>
                                 <tr>
                                     <th>Status</th>
-                                    <td>{{ $order->status }}</td>
+                                    <td>
+                                        @if ($order->status == 'pending')
+                                            <button class="btn btn-warning" style="color:black">{{ $order->status }}</button>
+                                        @elseif($order->status == 'approved')
+                                            <button class="btn btn-success" style="color:black">{{ $order->status }}</button>
+                                        @elseif($order->status == 'FAILED')
+                                            <button class="btn btn-danger" style="color:black">{{ $order->status }}</button>
+                                        @endif
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>Customer Reference</th>
