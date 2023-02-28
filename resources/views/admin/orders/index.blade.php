@@ -35,9 +35,9 @@
                                             @if ($order->status == 'pending')
                                                 <button class="btn btn-warning" style="color:black">{{ $order->status }}</button>
                                             @elseif($order->status == 'approved')
-                                                <span class="badge badge-success">{{ $order->status }}</span>
+                                                <button class="btn btn-success">{{ $order->status }}</button>
                                             @elseif($order->status == 'FAILED')
-                                                <span class="badge badge-danger">{{ $order->status }}</span>
+                                                <button class="btn btn-danger">{{ $order->status }}</button>
                                             @endif
                                         </td>
                                         <td>{{ $order->customerReference }}</td>

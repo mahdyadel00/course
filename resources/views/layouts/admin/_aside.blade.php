@@ -320,7 +320,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <span class="nav-link-text ms-1">Order</span>
+                        <span class="nav-link-text ms-1">Orders</span>
                     </a>
                 </li>
             @endcan
