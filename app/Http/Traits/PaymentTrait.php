@@ -11,6 +11,7 @@ trait PaymentTrait
 {
 
     public function payment(Request $request){
+
         $data['amount'] = 2;
         $data['currency'] = 'EGP';
         $data['paymentOptions'] = 2;
