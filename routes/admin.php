@@ -222,9 +222,7 @@ Route::prefix('admin')
             //orders Route
             Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
             Route::get('/orders/show/{id}', [OrderController::class, 'show'])->name('orders.show');
-            // Route::get('/orders/edit/{id}', [OrderController::class, 'edit'])->name('orders.edit');
-            // Route::post('/orders/update/{id}', [OrderController::class, 'update'])->name('orders.update');
-            Route::delete('/orders/delete/{id}', [OrderController::class, 'delete'])->name('orders.delete');
+            Route::delete('/orders/delete/{id}', [OrderController::class, 'destroy'])->name('orders.delete');
 
 
         });
